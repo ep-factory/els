@@ -1,0 +1,15 @@
+/config/databases.yml
+/cache/*
+/log/*
+/doc/*
+/data/sql/*
+/lib/filter/doctrine/base/*
+/lib/form/doctrine/base/*
+/lib/model/doctrine/base/*
+.channels/
+.depdb
+.depdblock
+.filemap
+.lock
+.registry
+/nbproject
