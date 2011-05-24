@@ -23,13 +23,19 @@ test:
     etag:                   false
 
 all:
+  .actions:
+    login_module:           sfGuardAuth
+    login_action:           signin
+    secure_module:          sfGuardAuth
+    secure_action:          secure
+    error_404_module:       front
+    error_404_action:       error404
   .settings:
-    # Form security secret (CSRF protection)
     csrf_secret:            42e51e41a347e15e8f7cfc59ea62262c0aef171b
-
-    # Output escaping settings
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
-
-    # Enable the database manager
     use_database:           true
+    enabled_modules:        [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission]
+    i18n:                   true
+    default_culture:        fr
+    standard_helpers:       [Partial, Cache, Asset, I18N, Tools, Date, Tags]

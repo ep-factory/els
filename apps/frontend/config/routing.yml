@@ -1,16 +1,84 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
-
-# default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: fiche, action: index }
 
-# generic rules
-# please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
+fiche:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Fiche
+    module:               fiche
+    prefix_path:          /fiche
+    column:               id
+    with_wildcard_routes: true
 
-default:
-  url:   /:module/:action/*
+atelier:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Atelier
+    module:               atelier
+    prefix_path:          /atelier
+    column:               id
+    with_wildcard_routes: true
+
+element:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Element
+    module:               element
+    prefix_path:          /element
+    column:               id
+    with_wildcard_routes: true
+
+batiment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Batiment
+    module:               batiment
+    prefix_path:          /batiment
+    column:               id
+    with_wildcard_routes: true
+
+demandeur:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Demandeur
+    module:               demandeur
+    prefix_path:          /demandeur
+    column:               id
+    with_wildcard_routes: true
+
+appareil:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Appareil
+    module:               appareil
+    prefix_path:          /appareil
+    column:               id
+    with_wildcard_routes: true
+
+case_code:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CaseCode
+    module:               case_code
+    prefix_path:          /code-affaire
+    column:               id
+    with_wildcard_routes: true
+
+category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Category
+    module:               category
+    prefix_path:          /categorie
+    column:               id
+    with_wildcard_routes: true
+
+poste:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Poste
+    module:               poste
+    prefix_path:          /poste
+    column:               id
+    with_wildcard_routes: true

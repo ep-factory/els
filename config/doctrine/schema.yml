@@ -1,0 +1,291 @@
+Poste:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
+Category:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
+CaseCode:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
+Appareil:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
+Demandeur:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    firstname:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
+Batiment:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    sigle:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
+Element:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    marque:
+      type: string(255)
+      notnull: true
+    type:
+      type: string(255)
+      notnull: true
+    ref:
+      type: string(255)
+      notnull: true
+    serial:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
+Atelier:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
+Fiche:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+    Taggable: ~
+  columns:
+    parent_id: integer(8)
+    is_finished:
+      type: boolean
+      default: false
+    author_id: integer
+    appareil_id: integer
+    category_id:
+      type: integer
+      notnull: true
+    number:
+      type: integer(12)
+      notnull: true
+    fiche_date:
+      type: date
+      notnull: true
+    poste_id:
+      type: integer
+      notnull: true
+    ppc_number: string(255)
+    ppi_number:
+      type: string(255)
+      notnull: true
+    mo_number:
+      type: string(255)
+      notnull: true
+    acr_number:
+      type: string(255)
+      notnull: true
+    case_code_id:
+      type: integer
+      notnull: true
+    is_cmr:
+      type: boolean
+      default: false
+    demandeur_id:
+      type: integer
+      notnull: true
+    appel_hour: time
+    start_hour:
+      type: time
+      notnull: true
+    end_hour:
+      type: time
+      notnull: true
+    time_spent:
+      type: time
+      notnull: true
+    batiment_id:
+      type: integer
+      notnull: true
+    problem: clob
+    cause: clob
+    resolution: clob
+    unsolved_name: string(255)
+    is_tested:
+      type: boolean
+      default: false
+    test_mechanic: string(255)
+    test_operator: string(255)
+    is_stopped:
+      type: boolean
+      default: false
+    is_ips:
+      type: boolean
+      default: false
+    is_controlled:
+      type: boolean
+      default: false
+  relations:
+    Author:
+      class: sfGuardUser
+      local: author_id
+      foreign: id
+      foreignAlias: Fiches
+    Appareil:
+      foreignAlias: Fiches
+    Category:
+      foreignAlias: Fiches
+    Poste:
+      foreignAlias: Fiches
+    CaseCode:
+      foreignAlias: Fiches
+    Demandeur:
+      foreignAlias: Fiches
+    Batiment:
+      foreignAlias: Fiches
+    Intervenants:
+      class: sfGuardUser
+      refClass: FicheSfGuardUser
+      local: fiche_id
+      foreign: sf_guard_user_id
+      foreignAlias: Fiches
+    Elements:
+      class: Element
+      refClass: FicheElement
+      local: fiche_id
+      foreign: element_id
+      foreignAlias: Fiches
+    Ateliers:
+      class: Atelier
+      refClass: FicheAtelier
+      local: fiche_id
+      foreign: atelier_id
+      foreignAlias: Fiches
+
+FicheSfGuardUser:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    sf_guard_user_id:
+      type: integer
+      notnull: true
+      primary: true
+      autoincrement: false
+    fiche_id:
+      type: integer
+      notnull: true
+      primary: true
+      autoincrement: false
+  relations:
+    sfGuardUser:
+      onDelete: CASCADE
+    Fiche:
+      onDelete: CASCADE
+
+FicheElement:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    element_id:
+      type: integer
+      notnull: true
+      primary: true
+      autoincrement: false
+    fiche_id:
+      type: integer
+      notnull: true
+      primary: true
+      autoincrement: false
+    operation_type:
+      type: enum
+      values: [changed, installed]
+      default: changed
+  relations:
+    Element:
+      onDelete: CASCADE
+    Fiche:
+      onDelete: CASCADE
+
+FicheAtelier:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    atelier_id:
+      type: integer
+      notnull: true
+      primary: true
+      autoincrement: false
+    fiche_id:
+      type: integer
+      notnull: true
+      primary: true
+      autoincrement: false
+  relations:
+    Atelier:
+      onDelete: CASCADE
+    Fiche:
+      onDelete: CASCADE
