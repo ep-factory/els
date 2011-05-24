@@ -14,7 +14,7 @@ class sfWidgetFormMultiple extends sfWidgetForm
     $this->addOption("callback");
 
     //Gestion d'un max
-    $this->addOption("max_number", null);
+    $this->addOption("max_number",null);
   }
 
   public function getJavaScripts()

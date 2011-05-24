@@ -45,8 +45,15 @@ class sfWidgetFormDateJQueryUI extends sfWidgetForm
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    if(preg_match("/(\d{4})\-(\d{2})\-(\d{2})/i", $value, $matches)) $value = $matches[3]."/".$matches[2]."/".$matches[1];
-    $attributes = $this->getAttributes();
+    if(preg_match("/(\d{4})-(\d{2})-(\d{2})/", $value)) {
+      $value = substr($value, 8, 2).'/'.substr($value, 5, 2).'/'.substr($value, 0, 4);
+    }
+    if(!isset($attributes['class'])) {
+      $attributes['class'] = 'maskedInputDate';
+    }
+    else {
+      $attributes['class'].= 'maskedInputDate';
+    }
     $input = new sfWidgetFormInput(array(), $attributes);
     $html = $input->render($name, $value);
     $id = $input->generateId($name);

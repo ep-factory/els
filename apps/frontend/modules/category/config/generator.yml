@@ -16,10 +16,15 @@ generator:
       fields:
         name:
           label: Nom
+        code:
+          label: Code
         is_active:
           label: Actif
-      list:    ~
+      list:
+        title: Catégories
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Edition de "%%name%% %%code%%"
+      new:
+        title: Nouvelle catégorie

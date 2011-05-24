@@ -4,6 +4,12 @@ class sfWidgetFormInputDate extends sfWidgetFormInputText
 {
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
+    if(!isset($attributes['class'])) {
+      $attributes['class'] = 'maskedInputDate';
+    }
+    else {
+      $attributes['class'].= ' maskedInputDate';
+    }
     if($value != null)
     {
       // Database format

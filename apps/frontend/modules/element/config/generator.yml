@@ -24,8 +24,11 @@ generator:
           label: N° de série
         is_active:
           label: Actif
-      list:    ~
+      list:
+        title: Eléments
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Edition de "%%type%% %%marque%% %%ref%%"
+      new:
+        title: Nouvel élément

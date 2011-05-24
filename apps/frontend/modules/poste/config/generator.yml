@@ -18,8 +18,11 @@ generator:
           label: Nom
         is_active:
           label: Actif
-      list:    ~
+      list:
+        title: Postes
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Edition de "%%name%%"
+      new:
+        title: Nouveau poste

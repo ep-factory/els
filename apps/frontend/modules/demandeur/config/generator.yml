@@ -20,8 +20,11 @@ generator:
           label: Prénom
         is_active:
           label: Actif
-      list:    ~
+      list:
+        title: Demandeurs
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Edition de "%%name%% %%firstname%%"
+      new:
+        title: Nouveau demandeur

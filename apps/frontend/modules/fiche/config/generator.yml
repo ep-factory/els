@@ -14,6 +14,8 @@ generator:
     config:
       actions: ~
       fields:
+        search:
+          label: Rechercher
         is_finished:
           label: Cloturé
         parent_id:
@@ -100,8 +102,13 @@ generator:
           label: Eléments installés
         ateliers_list:
           label: Ateliers
-      list:    ~
-      filter:  ~
+      list:
+        title: Fiches
+        display: [=number, Category, fiche_date, is_finished]
+      filter:
+        display: [search, is_finished, category_id, fiche_date]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Fiche n°%%number%%
+      new:
+        title: Nouvelle fiche
