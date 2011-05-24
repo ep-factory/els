@@ -13,3 +13,6 @@
 .lock
 .registry
 /nbproject
+/lib/model/doctrine/sfDoctrineGuardPlugin/base/*
+/lib/filter/doctrine/sfDoctrineGuardPlugin/base/*
+/lib/form/doctrine/sfDoctrineGuardPlugin/base/*
