@@ -1,0 +1,8 @@
+Poste:
+  developper:
+    name: Développeur
+  commercial:
+    name: Commercial
+  secretaire:
+    name: Secrétaire
+    is_active: false

@@ -1,0 +1,11 @@
+Demandeur:
+  vincent:
+    name: CHALAMON
+    firstname: Vincent
+  sebastien:
+    name: URIOS
+    firstname: Sébastien
+  sylvain:
+    name: LABRE
+    firstname: Sylvain
+    is_active: false

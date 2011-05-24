@@ -1,0 +1,8 @@
+Appareil:
+  mac:
+    name: Mac
+  linux:
+    name: Linux
+  pc:
+    name: PC
+    is_active: false

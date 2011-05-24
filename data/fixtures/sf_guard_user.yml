@@ -1,0 +1,8 @@
+sfGuardUser:
+  admin:
+    first_name: Vincent
+    last_name: CHALAMON
+    email_address: vincentchalamon@gmail.com
+    username: admin
+    password: admin
+    is_super_admin: true

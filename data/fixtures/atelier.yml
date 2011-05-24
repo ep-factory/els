@@ -1,0 +1,8 @@
+Atelier:
+  emul:
+    name: Emulsion
+  bille:
+    name: Billes
+  acry:
+    name: Acrylamide
+    is_active: false

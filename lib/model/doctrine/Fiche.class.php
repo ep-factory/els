@@ -12,27 +12,84 @@
  */
 class Fiche extends BaseFiche
 {
-  public function postHydrate($event) {
-    parent::postHydrate($event);
-    // Retrieve changed/installed elements
-    $this->_values['changed_elements'] = new Doctrine_Collection('Element');
-    $this->_values['installed_elements'] = new Doctrine_Collection('Element');
-    foreach($this->getFicheElement() as $object) {
-      if($object->getOperationType() == "changed") {
-        $this->_values['changed_elements']->add($object->getElement());
-      }
-      else {
-        $this->_values['installed_elements']->add($object->getElement());
-      }
-    }
-    // Retrieve parent
-    $this->_values['parent'] = false;
-    if($this->getParentId() != $this->getPrimaryKey()) {
-      $this->_values['parent'] = $this->getTable()->find($this->getParentId());
-    }
-  }
-
   public function hasParent() {
     return $this->getParentId() != $this->getPrimaryKey();
+  }
+
+  public function setParent(Fiche $record) {
+    $this->_values['parent'] = $record;
+    $this->setParentId($record->getPrimaryKey());
+    return $this;
+  }
+
+  public function getParent($force = false) {
+    if(!isset($this->_values['Parent']) || $force) {
+      $this->_values['Parent'] = $this->getParentId() ? $this->getTable()->find($this->getParentId()) : false;
+    }
+    return $this->_values['Parent'];
+  }
+
+  public function setChangedElements($elements) {
+    $this->_values['ChangedElements'] = $elements;
+    return $this;
+  }
+
+  public function getChangedElements() {
+    if(!isset($this->_values['ChangedElements'])) {
+      $this->_values['ChangedElements'] = new Doctrine_Collection('Element');
+      foreach($this->getFicheElement() as $ficheElement) {
+        if($ficheElement->getOperationType() == "changed") {
+          $this->_values['ChangedElements']->add($ficheElement->getElement());
+        }
+      }
+    }
+    return $this->_values['ChangedElements'];
+  }
+
+  public function setInstalledElements($elements) {
+    $this->_values['InstalledElements'] = $elements;
+    return $this;
+  }
+
+  public function getInstalledElements() {
+    if(!isset($this->_values['InstalledElements'])) {
+      $this->_values['InstalledElements'] = new Doctrine_Collection('Element');
+      foreach($this->getFicheElement() as $ficheElement) {
+        if($ficheElement->getOperationType() == "installed") {
+          $this->_values['InstalledElements']->add($ficheElement->getElement());
+        }
+      }
+    }
+    return $this->_values['InstalledElements'];
+  }
+  
+  public function preSave($event) {
+    parent::preSave($event);
+    // Force number
+    if(!$this->getNumber()) {
+      $number = 1;
+      if($this->isNew()) {
+        $last = $this->getTable()->findAll()->getLast();
+        if($last) {
+          $number = $last->getPrimaryKey()+1;
+        }
+      }
+      $this->setNumber(preg_replace('/\-/i', '', $this->getFicheDate()).str_pad($number, 4, "0", STR_PAD_LEFT));
+    }
+    // Force time spent
+    if(!$this->getTimeSpent()) {
+      $this->setTimeSpent(date('H:i:s', strtotime($this->getEndHour()-$this->getStartHour())));
+    }
+    // Save changed/installed elements
+    foreach(array('ChangedElements', 'InstalledElements') as $name) {
+      if(isset($this->_values[$name])) {
+        foreach($this->_values[$name] as $element) {
+          $ficheElement = new FicheElement();
+          $ficheElement->setOperationType(strtolower(preg_replace('/Elements/i', '', $name)));
+          $ficheElement->setElement($element);
+          $this->getFicheElement()->add($ficheElement);
+        }
+      }
+    }
   }
 }

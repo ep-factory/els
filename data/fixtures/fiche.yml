@@ -1,0 +1,28 @@
+Fiche:
+  cri:
+    Author: admin
+    Appareil: linux
+    Category: 481
+    fiche_date: '2011-05-24'
+    Poste: developper
+    ppc_number: "codePPC"
+    ppi_number: "codePPI"
+    mo_number: "codeMO"
+    acr_number: "codeACR"
+    CaseCode: CA01
+    is_cmr: true
+    Demandeur: vincent
+    appel_hour: '10:00:00'
+    start_hour: '10:00:00'
+    end_hour: '11:00:00'
+    Batiment: BM01
+    problem: "il n'y a pas de problème"
+    cause: "ta mère"
+    solution: "il n'y a que des solutions"
+    unsolved_name: "Tartenpion"
+    is_tested: true
+    test_mechanic: "Mario"
+    test_operator: "Luigi"
+    Intervenants: [admin]
+    Elements: [screen, keybord]
+    Ateliers: [bille]

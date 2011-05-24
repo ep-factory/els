@@ -18,6 +18,7 @@ Category:
     name:
       type: string(255)
       notnull: true
+    code: integer(3)
     is_active:
       type: boolean
       default: true

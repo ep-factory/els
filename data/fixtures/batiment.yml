@@ -1,0 +1,11 @@
+Batiment:
+  BM01:
+    name: Bâtiment Majeur 01
+    sigle: BM01
+  BM02:
+    name: Bâtiment Majeur 02
+    sigle: BM02
+  BM03:
+    name: Bâtiment Majeur 03
+    sigle: BM03
+    is_active: false
