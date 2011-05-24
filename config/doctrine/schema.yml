@@ -167,7 +167,7 @@ Fiche:
       notnull: true
     problem: clob
     cause: clob
-    resolution: clob
+    solution: clob
     unsolved_name: string(255)
     is_tested:
       type: boolean

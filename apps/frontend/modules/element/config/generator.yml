@@ -13,7 +13,17 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        marque:
+          label: Marque
+        type:
+          label: Type
+        ref:
+          label: Référence
+        serial:
+          label: N° de série
+        is_active:
+          label: Actif
       list:    ~
       filter:  ~
       form:    ~

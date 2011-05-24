@@ -13,7 +13,11 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        name:
+          label: Nom
+        is_active:
+          label: Actif
       list:    ~
       filter:  ~
       form:    ~

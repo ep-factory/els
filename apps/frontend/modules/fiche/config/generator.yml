@@ -13,7 +13,93 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        is_finished:
+          label: Cloturé
+        parent_id:
+          label: Parent
+        parent:
+          label: Parent
+        author_id:
+          label: Auteur
+        Author:
+          label: Auteur
+        appareil_id:
+          label: Appareil
+        Appareil:
+          label: Appareil
+        category_id:
+          label: Catégorie
+        Category:
+          label: Catégorie
+        number:
+          label: Numéro
+        fiche_date:
+          label: Date
+        poste_id:
+          label: Poste
+        Poste:
+          label: Poste
+        ppc_number:
+          label: Numéro PPC
+        ppi_number:
+          label: Numéro PPI
+        mo_number:
+          label: Numéro MO
+        acr_number:
+          label: Numéro ACR
+        case_code_id:
+          label: Code affaire
+        CaseCode:
+          label: Code affaire
+        is_cmr:
+          label: Zone CMR
+        demandeur_id:
+          label: Demandeur
+        Demandeur:
+          label: Demandeur
+        appel_hour:
+          label: Heure d'appel
+        start_hour:
+          label: Heure de début
+        end_hour:
+          label: Heure de fin
+        time_spent:
+          label: Temps passé
+        batiment_id:
+          label: Bâtiment
+        Batiment:
+          label: Bâtiment
+        problem:
+          label: Problème
+        cause:
+          label: Cause
+        solution:
+          label: Solution
+        unsolved_name:
+          label: Vu avec
+        is_tested:
+          label: Testé
+        test_mechanic:
+          label: Mécanicien
+        test_operator:
+          label: Opérateur
+        is_stopped:
+          label: Arrêt production
+        is_ips:
+          label: IPS
+        is_controlled:
+          label: Controllé
+        intervenants_list:
+          label: Intervenants
+        elements_list:
+          label: Eléments
+        changed_elements_list:
+          label: Eléments changés
+        installed_elements_list:
+          label: Eléments installés
+        ateliers_list:
+          label: Ateliers
       list:    ~
       filter:  ~
       form:    ~
