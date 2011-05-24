@@ -12,5 +12,6 @@ class ElementForm extends BaseElementForm
 {
   public function configure()
   {
+    unset($this['created_at'], $this['updated_at'], $this['deleted_at']);
   }
 }
