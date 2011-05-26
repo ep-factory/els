@@ -185,6 +185,11 @@ Fiche:
       type: boolean
       default: false
   relations:
+    Parent:
+      class: Fiche
+      local: parent_id
+      foreign: id
+      foreignAlias: Childrens
     Author:
       class: sfGuardUser
       local: author_id

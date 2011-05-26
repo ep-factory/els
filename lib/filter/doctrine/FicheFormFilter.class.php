@@ -26,6 +26,8 @@ class FicheFormFilter extends BaseFicheFormFilter
     // Fiche date
     $this->widgetSchema['fiche_date']->setOption('from_date', new sfWidgetFormDateJQueryUI());
     $this->widgetSchema['fiche_date']->setOption('to_date', new sfWidgetFormDateJQueryUI());
+    $this->validatorSchema['fiche_date']->setOption('from_date', new sfValidatorDateCustom(array('required' => false)));
+    $this->validatorSchema['fiche_date']->setOption('to_date', new sfValidatorDateCustom(array('required' => false)));
   }
   
   public function addSearchColumnQuery(Doctrine_Query $query, $field, $values)
@@ -36,9 +38,5 @@ class FicheFormFilter extends BaseFicheFormFilter
         $query->orWhere($query->getRootAlias().".$name = ?", $values);
       }
     }
-  }
-
-  public function getJavaScripts() {
-    return array_merge(array('jquery-1.5.1.min.js', 'jquery.maskedinput-1.2.2.min.js'), parent::getJavaScripts());
   }
 }

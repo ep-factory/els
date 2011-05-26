@@ -16,19 +16,6 @@ class Fiche extends BaseFiche
     return $this->getParentId() != $this->getPrimaryKey();
   }
 
-  public function setParent(Fiche $record) {
-    $this->_values['parent'] = $record;
-    $this->setParentId($record->getPrimaryKey());
-    return $this;
-  }
-
-  public function getParent($force = false) {
-    if(!isset($this->_values['Parent']) || $force) {
-      $this->_values['Parent'] = $this->getParentId() ? $this->getTable()->find($this->getParentId()) : false;
-    }
-    return $this->_values['Parent'];
-  }
-
   public function setChangedElements($elements) {
     $this->_values['ChangedElements'] = $elements;
     return $this;
