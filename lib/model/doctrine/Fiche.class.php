@@ -61,7 +61,7 @@ class Fiche extends BaseFiche
           $number = $last->getPrimaryKey()+1;
         }
       }
-      $this->setNumber(preg_replace('/\-/i', '', $this->getFicheDate()).str_pad($number, 4, "0", STR_PAD_LEFT));
+      $this->setNumber(preg_replace('/\-/i', '', $this->getFicheDate()).sfConfig::get('app_machine_id').str_pad($number, 4, "0", STR_PAD_LEFT));
     }
     // Force time spent
     if(!$this->getTimeSpent()) {

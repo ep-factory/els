@@ -9,6 +9,7 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <?php include_partial("global/keyboard") ?>
     <?php echo $sf_content ?>
   </body>
 </html>

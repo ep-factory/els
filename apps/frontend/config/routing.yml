@@ -2,6 +2,10 @@ homepage:
   url:   /
   param: { module: fiche, action: index }
 
+enable_keyboard:
+  url:   /enable_keyboard
+  param: { module: fiche, action: enableKeyboard }
+
 fiche:
   class: sfDoctrineRouteCollection
   options:
@@ -10,6 +14,8 @@ fiche:
     prefix_path:          /fiche
     column:               id
     with_wildcard_routes: true
+    collection_actions:
+      tags_autocomplete:  [post]
 
 atelier:
   class: sfDoctrineRouteCollection

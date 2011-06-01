@@ -13,4 +13,16 @@ require_once dirname(__FILE__).'/../lib/ficheGeneratorHelper.class.php';
  */
 class ficheActions extends autoFicheActions
 {
+  public function executeEnableKeyboard(sfWebRequest $request) {
+    $this->forward404Unless($request->isXmlHttpRequest() && $request->hasParameter('enable'));
+    $this->getUser()->setAttribute('enable_keyboard', $request->getParameter('enable', false) ? true : false);
+    return sfView::NONE;
+  }
+  
+  public function executeTags_autocomplete(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isXmlHttpRequest());
+    $tags = TagTable::getInstance()->createQuery("tag")->select("tag.name AS id, tag.name AS name")->where("tag.name LIKE ?", "%".$request->getParameter("q")."%")->limit(10)->fetchArray();
+    return $this->renderText(json_encode($tags));
+  }
 }

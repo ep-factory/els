@@ -1,6 +1,5 @@
 Fiche:
   cri:
-    Author: admin
     Appareil: linux
     Category: 481
     fiche_date: '2011-05-24'
@@ -26,3 +25,4 @@ Fiche:
     Intervenants: [admin]
     Elements: [screen, keybord]
     Ateliers: [bille]
+    tags: "toto, titi, tata, tutu"

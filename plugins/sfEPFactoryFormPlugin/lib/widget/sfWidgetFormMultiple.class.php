@@ -9,7 +9,7 @@ class sfWidgetFormMultiple extends sfWidgetForm {
     $this->addOption("widget_template", "<div class='widget_template %%widgetClass%%'>%%label%%%%input%%</div>");
 
     //Gestion add_empty FALSE
-    $this->addOption("empty_add_label", '<div class="widget_multiple_empty_add_label">Ajouter un premier Objet <a href="" title="Ajouter un Objet" class="tooltip_south ajouter"><span>+</span></a></div>');
+    $this->addOption("empty_add_label", '<div class="widget_multiple_empty_add_label"><a href="" title="Ajouter" class="ajouter">Ajouter</a></div>');
     $this->addOption("add_empty", true);
     $this->addOption("callback");
 

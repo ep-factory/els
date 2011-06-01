@@ -116,11 +116,16 @@ Fiche:
     SoftDelete: ~
     Taggable: ~
   columns:
+    label: string(255)
     parent_id: integer(8)
     is_finished:
       type: boolean
       default: false
-    author_id: integer
+    finished_author_id: integer
+    is_resolved:
+      type: boolean
+      default: false
+    resolved_author_id: integer
     appareil_id: integer
     category_id:
       type: integer
@@ -166,9 +171,15 @@ Fiche:
     batiment_id:
       type: integer
       notnull: true
-    problem: clob
-    cause: clob
-    solution: clob
+    problem:
+      type: clob
+      notnull: true
+    cause:
+      type: clob
+      notnull: true
+    solution:
+      type: clob
+      notnull: true
     unsolved_name: string(255)
     is_tested:
       type: boolean
@@ -190,9 +201,14 @@ Fiche:
       local: parent_id
       foreign: id
       foreignAlias: Childrens
-    Author:
+    FinishedAuthor:
       class: sfGuardUser
-      local: author_id
+      local: finished_author_id
+      foreign: id
+      foreignAlias: Fiches
+    ResolvedAuthor:
+      class: sfGuardUser
+      local: resolved_author_id
       foreign: id
       foreignAlias: Fiches
     Appareil:

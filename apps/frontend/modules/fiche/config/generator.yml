@@ -16,16 +16,24 @@ generator:
       fields:
         search:
           label: Rechercher
+        label:
+          label: Intitulé intervention
+        tags:
+          label: Tags
         is_finished:
           label: Cloturé
         parent_id:
           label: Parent
         parent:
           label: Parent
-        author_id:
+        finished_author_id:
           label: Auteur
-        Author:
+        FinishedAuthor:
           label: Auteur
+        resolved_author_id:
+          label: Auteur résolution
+        ResolvedAuthor:
+          label: Auteur résolution
         appareil_id:
           label: Appareil
         Appareil:
@@ -105,9 +113,24 @@ generator:
       list:
         title: Fiches
         display: [=number, Category, fiche_date, is_finished]
+        batch_actions: []
+        object_actions:
+          _edit: ~
+        actions:
+          _new: ~
       filter:
         display: [search, is_finished, category_id, fiche_date]
-      form:    ~
+      form:
+        actions:
+          _save: ~
+          _list: ~
+        display:
+          Présentation: [fiche_date, poste_id, ppc_number, ppi_number, mo_number, acr_number, is_cmr, is_finished, label]
+          Intervenants: [intervenants_list]
+          Demandeur: [demandeur_id, appel_hour, start_hour, end_hour, time_spent]
+          Description: [ateliers_list, tags, problem, cause, solution]
+          Résolution: [is_resolved, unsolved_name, is_tested, test_mechanic, test_operator, is_stopped, is_ips, is_controlled]
+          Eléments: [elements_list]
       edit:
         title: Fiche n°%%number%%
       new:

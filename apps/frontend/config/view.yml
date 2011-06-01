@@ -12,9 +12,9 @@ default:
     language:     fr
     robots:       index, follow
 
-  stylesheets:    [main.css]
+  stylesheets:    [/sfEPFactoryFormPlugin/switcher/js-switcher.css, main.css]
 
-  javascripts:    []
+  javascripts:    [/sfEPFactoryFormPlugin/js/jquery.min.js, /sfEPFactoryFormPlugin/switcher/switcher.js]
 
   has_layout:     true
   layout:         layout

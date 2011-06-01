@@ -10,7 +10,6 @@
   padding: 3px 6px;
   display: inline-block;
   width: 8px !important;
-  text-decoration: none;
   text-align: center;
   color: white;
   font-weight: bold;
@@ -31,7 +30,6 @@
   padding: 3px 6px;
   display: inline-block;
   width: 8px !important;
-  text-decoration: none;
   text-align: center;
   color: white;
   font-weight: bold;
@@ -44,6 +42,7 @@
 .retirer, .ajouter, .retirer:hover, .ajouter:hover {
   color: white !important;
   margin-top: 5px;
+  text-decoration: none !important;
 }
 
 .widget_template {

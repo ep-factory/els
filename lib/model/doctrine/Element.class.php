@@ -12,4 +12,7 @@
  */
 class Element extends BaseElement
 {
+  public function __toString() {
+    return sprintf("%s - %s (%s)", $this->getMarque(), $this->getType(), $this->getSerial());
+  }
 }

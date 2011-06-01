@@ -7,7 +7,7 @@ $(document).ready(function(){
     var clone = $(this).parents('.widget_multiple_element:first').clone().insertAfter($(this).parent());
     clone.find('input, textarea').val('').removeAttr('checked');
 
-    // On remplace les name de tous les inputs de l'objet du premier niveau
+    // On remplace les name et id de tous les champs de formulaire de l'objet de chaque niveau
     var foundNameArray = widgetMultipleMainContainer.children('.widget_multiple_element').last().prev().find('input, select, textarea').attr("name").match(/(\d+)/ig);
     var newId = parseInt(foundNameArray[foundNameArray.length-1]) + 1;
     clone.find('input, select, textarea, label').each(function(){
@@ -30,20 +30,19 @@ $(document).ready(function(){
         $(this).attr('id', $(this).attr("id").replace(regexId, "$1_" + newId + "_$3"));
       }
     });
-    if($(this).siblings(".retirer").length) {
-      // S'il y a un bouton annuler dans l'élément courant on hide le bouton +
-      $(this).hide();
-    }
-    else {
-      // Sinon on remplace le + par un -
-      $(this).removeClass('ajouter').addClass('retirer').html("-").attr('title', 'Retirer');
-    }
+    
+    // On remplace le + par un - dans l'élément courant
+    $(this).removeClass('ajouter').addClass('retirer').html("-").attr('title', 'Retirer');
+    
+    // Limite le nombre de résultats dans le clone
     var maxNumValue = parseInt(widgetMultipleMainContainer.attr("maxnum"));
-    if(widgetMultipleMainContainer.attr("maxnum") != undefined && maxNumValue > 0) {
-      if($(".widget_multiple_element", widgetMultipleMainContainer).length >= maxNumValue) {
-        $(".ajouter", clone).hide();
+    if(maxNumValue != null && maxNumValue > 0) {
+      if($(".widget_multiple_element", widgetMultipleMainContainer).length == maxNumValue) {
+        $(".ajouter", clone).removeClass('ajouter').addClass('retirer').html("-").attr('title', 'Retirer');
       }
     }
+    
+    // Appel callback
     if($(this).parents('.widget_multiple:last').attr('callback')) {
       eval($(this).parents('.widget_multiple:last').attr('callback') + "(clone)");
     }
@@ -54,8 +53,11 @@ $(document).ready(function(){
     event.preventDefault();
     var widgetMultipleMainContainer = $(this).parents('.widget_multiple:first');
     $('div.formError').click();
+
+    // Il ne reste plus qu'un élément
     if($(".widget_multiple_element", widgetMultipleMainContainer).length == 1) {
-      $(this).parents('.widget_multiple_element:first').hide();
+      // @TODO Faut-il toujours afficher le empty_add ?
+      $(this).parents('.widget_multiple_element:first').hide().find('.widget_multiple_empty_add_label').show();
     }
     else {
       $(this).parents('.widget_multiple_element:first').remove();
@@ -63,12 +65,12 @@ $(document).ready(function(){
     var maxNumValue = parseInt(widgetMultipleMainContainer.attr("maxnum"));
     if(maxNumValue != null && maxNumValue) {
       if($(".widget_multiple_element", widgetMultipleMainContainer).length < maxNumValue) {
-        if($(".widget_multiple_element", widgetMultipleMainContainer).length == 1 && $(".widget_multiple_element:first", widgetMultipleMainContainer).css("display") == "none") {
+        if($(".widget_multiple_element", widgetMultipleMainContainer).length == 1 && $(".widget_multiple_element:first", widgetMultipleMainContainer).is(':hidden')) {
           $('.widget_multiple_empty_add_label', widgetMultipleMainContainer).show();
           $(".widget_multiple_element:first", widgetMultipleMainContainer).find('input, select, textarea').attr("disabled", "disabled");
         }
         else {
-          $('.widget_multiple_element:last .ajouter', widgetMultipleMainContainer).show();
+          $('.widget_multiple_element:last .retirer', widgetMultipleMainContainer).removeClass('retirer').addClass('ajouter').html("+").attr('title', 'Ajouter');
         }
       }
     }

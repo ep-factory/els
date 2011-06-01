@@ -51,7 +51,9 @@ sfGuardGroupPermission:
       onDelete: CASCADE
 
 sfGuardUser:
-  actAs: [Timestampable]
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
   columns:
     first_name: string(255)
     last_name: string(255)

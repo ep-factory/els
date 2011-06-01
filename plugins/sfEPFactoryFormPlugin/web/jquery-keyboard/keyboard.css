@@ -15,3 +15,6 @@
 
 /* combo key styling - toggles diacritics on/off */
 .ui-keyboard-button.ui-keyboard-combo.ui-state-default { border-color: #ffaf0f; }
+
+/* autocomplete */
+.ui-autocomplete-loading { background: url('loader.gif') no-repeat top right; }
