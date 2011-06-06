@@ -10,6 +10,17 @@
   </head>
   <body>
     <?php include_partial("global/keyboard") ?>
+    <ul>
+      <li><?php echo link_to("Fiches", "@fiche") ?></li>
+      <li><?php echo link_to("Appareils", "@appareil") ?></li>
+      <li><?php echo link_to("Ateliers", "@atelier") ?></li>
+      <li><?php echo link_to("Bâtiments", "@batiment") ?></li>
+      <li><?php echo link_to("Codes affaire", "@case_code") ?></li>
+      <li><?php echo link_to("Catégories", "@category") ?></li>
+      <li><?php echo link_to("Demandeurs", "@demandeur") ?></li>
+      <li><?php echo link_to("Eléments", "@element") ?></li>
+      <li><?php echo link_to("Postes", "@poste") ?></li>
+    </ul>
     <?php echo $sf_content ?>
   </body>
 </html>

@@ -20,7 +20,7 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['number'] = new sfWidgetFormInputHidden();
 
     // Specific fields
-    $this->widgetSchema['tags'] = new sfWidgetFormInputText();
+    $this->widgetSchema['tags'] = new sfWidgetFormInputToken(array('url' => $this->genUrl('@fiche_tags_autocomplete')));
     $this->validatorSchema['tags'] = new sfValidatorString(array('required' => false));
     $this->widgetSchema['time_spent'] = new sfWidgetFormInputPlain();
     $this->widgetSchema['fiche_date'] = new sfWidgetFormDateJQueryUI();

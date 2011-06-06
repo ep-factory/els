@@ -14,14 +14,14 @@ generator:
     config:
       actions: ~
       fields:
-        search:
-          label: Rechercher
         label:
           label: Intitulé intervention
         tags:
           label: Tags
         is_finished:
           label: Cloturé
+        is_resolved:
+          label: Résolu
         parent_id:
           label: Parent
         parent:
@@ -119,7 +119,7 @@ generator:
         actions:
           _new: ~
       filter:
-        display: [search, is_finished, category_id, fiche_date]
+        display: [fiche_date]
       form:
         actions:
           _save: ~
