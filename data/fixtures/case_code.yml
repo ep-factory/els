@@ -1,8 +1,8 @@
 CaseCode:
-  CA01:
-    name: CA01
-  CA02:
-    name: CA02
-  CA03:
-    name: CA03
-    is_active: false
+  SAM-ELS0900:
+    name: SAM-ELS0900
+  SAM-ELS1000:
+    name: SAM-ELS1000
+  SAM-ELS1100:
+    name: SAM-ELS1100
+    is_active: true

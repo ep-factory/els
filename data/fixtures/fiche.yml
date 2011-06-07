@@ -1,28 +1,27 @@
 Fiche:
-  cri:
-    Appareil: linux
+  test:
+    tags: "AM"
+    sfGuardUser: admin
     Category: 481
-    fiche_date: '2011-05-24'
-    Poste: developper
-    ppc_number: "codePPC"
-    ppi_number: "codePPI"
-    mo_number: "codeMO"
-    acr_number: "codeACR"
-    CaseCode: CA01
-    is_cmr: true
+    CaseCode: SAM-ELS1100
+    fiche_date: '2011-06-07'
+    Poste: journee
+    ppc_number: '123456789'
+    ppi_number: '123456789'
+    mo_number: '123456789'
+    acr_number: '123456789'
+    Appareil: mac
     Demandeur: vincent
     appel_hour: '10:00:00'
     start_hour: '10:00:00'
     end_hour: '11:00:00'
-    Batiment: BM01
-    problem: "il n'y a pas de problème"
-    cause: "ta mère"
-    solution: "il n'y a que des solutions"
-    unsolved_name: "Tartenpion"
-    is_tested: true
-    test_mechanic: "Mario"
-    test_operator: "Luigi"
-    Intervenants: [admin]
-    Elements: [screen, keybord]
-    Ateliers: [bille]
-    tags: "toto, titi, tata, tutu"
+    problem: "Il n'y a pas de problème"
+    cause: "D'après toi ?"
+    solution: "Il n'y a que des solutions"
+    Batiment: batiment1
+    Elements:
+      test:
+        ElementChanged: screen
+        element_changed_serial: '123456789'
+        ElementInstalled: keybord
+        element_installed_serial: '123456789'

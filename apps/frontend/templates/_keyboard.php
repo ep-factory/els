@@ -6,8 +6,7 @@
       $.ajax({
         url: "<?php echo url_for('@enable_keyboard') ?>",
         data: "enable=" + $label.attr('for').replace(/^keyboard_(\d)$/i, '$1'),
-        success: function(){
-          // Need to reload current page to force keyboard
+        complete: function(){
           location.reload();
         }
       });

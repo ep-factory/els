@@ -12,4 +12,13 @@
  */
 class CaseCode extends BaseCaseCode
 {
+  public function postSave($event) {
+    parent::postSave($event);
+    if($this->is_active) {
+      $query = $this->getTable()->createQuery()
+              ->set('is_active', 0)
+              ->where('id != ?', $this->getPrimaryKey())
+              ->update()->execute();
+    }
+  }
 }

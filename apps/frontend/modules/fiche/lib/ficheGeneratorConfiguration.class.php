@@ -12,9 +12,7 @@ class ficheGeneratorConfiguration extends BaseFicheGeneratorConfiguration
 {
   public function getFieldsDefault() {
     $fields = parent::getFieldsDefault();
-    $fields['intervenants_list']['is_real'] = true;
     $fields['elements_list']['is_real'] = true;
-    $fields['ateliers_list']['is_real'] = true;
     $fields['tags']['is_real'] = true;
     return $fields;
   }

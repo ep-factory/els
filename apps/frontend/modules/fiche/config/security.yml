@@ -1,0 +1,14 @@
+new:
+  credentials: [create]
+
+create:
+  credentials: [create]
+
+edit:
+  credentials: [edit]
+
+resolve:
+  credentials: [resolve]
+
+close:
+  credentials: [close]

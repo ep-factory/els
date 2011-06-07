@@ -22,7 +22,7 @@ class sfGuardUserTable extends PluginsfGuardUserTable {
     }
     $query->andWhere($query->getRootAlias().'.is_active = 1')
             ->andWhere($query->getRootAlias().'.deleted_at IS NULL')
-            ->addOrderBy($query->getRootAlias().'.username ASC');
+            ->addOrderBy($query->getRootAlias().'.first_name ASC');
     return $action ? $query->$action() : $query;
   }
 

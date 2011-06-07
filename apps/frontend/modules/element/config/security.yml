@@ -1,0 +1,8 @@
+default:
+  credentials: [fixtures]
+
+new:
+  credentials: [create, edit]
+
+create:
+  credentials: [create, edit]

@@ -14,6 +14,10 @@ fiche:
     prefix_path:          /fiche
     column:               id
     with_wildcard_routes: true
+    object_actions:
+      resolve:            [get]
+      close:              [get]
+      add:                [get]
     collection_actions:
       tags_autocomplete:  [post]
 

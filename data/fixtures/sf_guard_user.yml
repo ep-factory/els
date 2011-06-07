@@ -6,3 +6,54 @@ sfGuardUser:
     username: admin
     password: admin
     is_super_admin: true
+
+sfGuardPermission:
+  create:
+    name:           create
+    description:    Créer une intervention
+  edit:
+    name:           edit
+    description:    Editer une intervention
+  resolve:
+    name:           resolve
+    description:    Résoudre une intervention
+  close:
+    name:           close
+    description:    Clore une intervention
+  fixtures:
+    name:           fixtures
+    description:    Gérer les données additionnelles
+
+sfGuardGroup:
+  consultant:
+    name:           consultant
+    description:    Groupe des consultants
+    Users:
+      consultant:
+        first_name: Consultant
+        last_name:  Consultant
+        email_address: consultant@els.com
+        username:   consultant
+        password:   consultant
+  technicien:
+    name:           technicien
+    description:    Groupe des techniciens
+    Permissions:    [create, edit, resolve]
+    Users:
+      technicien:
+        first_name: Technicien
+        last_name:  Technicien
+        email_address: technicien@els.com
+        username:   technicien
+        password:   technicien
+  coordinateur:
+    name:           coordinateur
+    description:    Groupe des coordinateurs
+    Permissions:    [create, edit, resolve, close, fixtures]
+    Users:
+      coordinateur:
+        first_name: Coordinateur
+        last_name:  Coordinateur
+        email_address: coordinateur@els.com
+        username:   coordinateur
+        password:   coordinateur

@@ -10,73 +10,69 @@
  * @author     Vincent CHALAMON <vincentchalamon@gmail.com>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Fiche extends BaseFiche
-{
+class Fiche extends BaseFiche {
+
   public function hasParent() {
-    return $this->getParentId() != $this->getPrimaryKey();
+    return $this->getParentId() != $this->getPrimaryKey() && $this->getParent();
   }
 
-  public function setChangedElements($elements) {
-    $this->_values['ChangedElements'] = $elements;
-    return $this;
-  }
-
-  public function getChangedElements() {
-    if(!isset($this->_values['ChangedElements'])) {
-      $this->_values['ChangedElements'] = new Doctrine_Collection('Element');
-      foreach($this->getFicheElement() as $ficheElement) {
-        if($ficheElement->getOperationType() == "changed") {
-          $this->_values['ChangedElements']->add($ficheElement->getElement());
-        }
-      }
+  public function resolve($return = false) {
+    if(!count($this->getHierarchyIds())) {
+      return;
     }
-    return $this->_values['ChangedElements'];
+    $this->getTable()->createQuery()
+            ->set('is_resolved', true)
+            ->set('resolved_author_id', sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
+            ->whereIn('id', $this->getHierarchyIds())
+            ->update()->execute();
   }
 
-  public function setInstalledElements($elements) {
-    $this->_values['InstalledElements'] = $elements;
-    return $this;
-  }
-
-  public function getInstalledElements() {
-    if(!isset($this->_values['InstalledElements'])) {
-      $this->_values['InstalledElements'] = new Doctrine_Collection('Element');
-      foreach($this->getFicheElement() as $ficheElement) {
-        if($ficheElement->getOperationType() == "installed") {
-          $this->_values['InstalledElements']->add($ficheElement->getElement());
-        }
-      }
+  public function close() {
+    if(!count($this->getHierarchyIds())) {
+      return;
     }
-    return $this->_values['InstalledElements'];
+    $this->getTable()->createQuery()
+            ->set('is_finished', true)
+            ->set('finished_author_id', sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
+            ->whereIn('id', $this->getHierarchyIds())
+            ->update()->execute();
   }
-  
+
+  /**
+   *
+   * @return array
+   */
+  protected function getHierarchyIds() {
+    if(!sfContext::hasInstance() || !sfContext::getInstance()->getUser()->isAuthenticated()) {
+      return array();
+    }
+    $ids = array($this->getPrimaryKey());
+    if($this->hasParent()) {
+      $ids = array_merge($ids, $this->getParent()->resolve(true));
+    }
+    if($this->getChildrens()->count()) {
+      $ids = array_merge($ids, $this->getChildrens()->getPrimaryKeys());
+    }
+    return $ids;
+  }
+
+  public function getCategoryCode() {
+    return $this->getCategory()->getCode();
+  }
+
   public function preSave($event) {
     parent::preSave($event);
     // Force number
     if(!$this->getNumber()) {
-      $number = 1;
-      if($this->isNew()) {
-        $last = $this->getTable()->findAll()->getLast();
-        if($last) {
-          $number = $last->getPrimaryKey()+1;
-        }
-      }
-      $this->setNumber(preg_replace('/\-/i', '', $this->getFicheDate()).sfConfig::get('app_machine_id').str_pad($number, 4, "0", STR_PAD_LEFT));
+      $number = $this->getTable()->createQuery()
+              ->where('fiche_date = ?', date('Y-m-d'))
+              ->count();
+      $this->setNumber(preg_replace('/\-/i', '', $this->getFicheDate()).sfConfig::get('app_machine_id').str_pad($number+1, 4, "0", STR_PAD_LEFT));
     }
     // Force time spent
     if(!$this->getTimeSpent()) {
-      $this->setTimeSpent(date('H:i:s', strtotime($this->getEndHour()-$this->getStartHour())));
-    }
-    // Save changed/installed elements
-    foreach(array('ChangedElements', 'InstalledElements') as $name) {
-      if(isset($this->_values[$name])) {
-        foreach($this->_values[$name] as $element) {
-          $ficheElement = new FicheElement();
-          $ficheElement->setOperationType(strtolower(preg_replace('/Elements/i', '', $name)));
-          $ficheElement->setElement($element);
-          $this->getFicheElement()->add($ficheElement);
-        }
-      }
+      $this->setTimeSpent(date('H:i:s', strtotime($this->getEndHour() - $this->getStartHour())));
     }
   }
+
 }

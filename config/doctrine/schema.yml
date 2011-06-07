@@ -110,14 +110,26 @@ Atelier:
       type: boolean
       default: true
 
+Annexe:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
 Fiche:
   actAs:
     Timestampable: ~
     SoftDelete: ~
     Taggable: ~
   columns:
-    label: string(255)
-    parent_id: integer(8)
+    sf_guard_user_id: integer
+    parent_id: integer
     is_finished:
       type: boolean
       default: false
@@ -126,13 +138,16 @@ Fiche:
       type: boolean
       default: false
     resolved_author_id: integer
-    appareil_id: integer
     category_id:
+      type: integer
+      notnull: true
+    case_code_id:
       type: integer
       notnull: true
     number:
       type: integer(12)
       notnull: true
+    label: string(255)
     fiche_date:
       type: date
       notnull: true
@@ -149,9 +164,7 @@ Fiche:
     acr_number:
       type: string(255)
       notnull: true
-    case_code_id:
-      type: integer
-      notnull: true
+    appareil_id: integer
     is_cmr:
       type: boolean
       default: false
@@ -168,19 +181,13 @@ Fiche:
     time_spent:
       type: time
       notnull: true
-    batiment_id:
-      type: integer
-      notnull: true
-    problem:
-      type: clob
-      notnull: true
-    cause:
-      type: clob
-      notnull: true
+    problem: clob
+    cause: clob
     solution:
       type: clob
       notnull: true
     unsolved_name: string(255)
+    unsolved_date: date
     is_tested:
       type: boolean
       default: false
@@ -195,6 +202,11 @@ Fiche:
     is_controlled:
       type: boolean
       default: false
+    batiment_id:
+      type: integer
+      notnull: true
+    atelier_id: integer
+    annexe_id: integer
   relations:
     Parent:
       class: Fiche
@@ -223,46 +235,12 @@ Fiche:
       foreignAlias: Fiches
     Batiment:
       foreignAlias: Fiches
-    Intervenants:
-      class: sfGuardUser
-      refClass: FicheSfGuardUser
-      local: fiche_id
-      foreign: sf_guard_user_id
+    Atelier:
       foreignAlias: Fiches
-    Elements:
-      class: Element
-      refClass: FicheElement
-      local: fiche_id
-      foreign: element_id
+    Annexe:
       foreignAlias: Fiches
-    Ateliers:
-      class: Atelier
-      refClass: FicheAtelier
-      local: fiche_id
-      foreign: atelier_id
-      foreignAlias: Fiches
-
-FicheSfGuardUser:
-  options:
-    symfony:
-      form:   false
-      filter: false
-  columns:
-    sf_guard_user_id:
-      type: integer
-      notnull: true
-      primary: true
-      autoincrement: false
-    fiche_id:
-      type: integer
-      notnull: true
-      primary: true
-      autoincrement: false
-  relations:
     sfGuardUser:
-      onDelete: CASCADE
-    Fiche:
-      onDelete: CASCADE
+      foreignAlias: Fiches
 
 FicheElement:
   options:
@@ -270,44 +248,22 @@ FicheElement:
       form:   false
       filter: false
   columns:
-    element_id:
-      type: integer
-      notnull: true
-      primary: true
-      autoincrement: false
     fiche_id:
       type: integer
       notnull: true
-      primary: true
-      autoincrement: false
-    operation_type:
-      type: enum
-      values: [changed, installed]
-      default: changed
+    element_changed_id: integer
+    element_changed_serial: string(255)
+    element_installed_id: integer
+    element_installed_serial: string(255)
   relations:
-    Element:
-      onDelete: CASCADE
+    ElementChanged:
+      class: Element
+      local: element_changed_id
+      onDelete: SET NULL
+    ElementInstalled:
+      class: Element
+      local: element_installed_id
+      onDelete: SET NULL
     Fiche:
       onDelete: CASCADE
-
-FicheAtelier:
-  options:
-    symfony:
-      form:   false
-      filter: false
-  columns:
-    atelier_id:
-      type: integer
-      notnull: true
-      primary: true
-      autoincrement: false
-    fiche_id:
-      type: integer
-      notnull: true
-      primary: true
-      autoincrement: false
-  relations:
-    Atelier:
-      onDelete: CASCADE
-    Fiche:
-      onDelete: CASCADE
+      foreignAlias: Elements
