@@ -13,6 +13,10 @@ require_once dirname(__FILE__).'/../lib/ficheGeneratorHelper.class.php';
  */
 class ficheActions extends autoFicheActions {
 
+  public function executeDashboard(sfWebRequest $request) {
+    $this->categories = CategoryTable::getInstance()->findAll();
+  }
+
   public function executeEdit(sfWebRequest $request) {
     parent::executeEdit($request);
     $this->forwardIf(($this->getUser()->hasGroup('technicien') && !is_null($this->fiche->getSfGuardUserId()) && ($this->fiche->getIsResolved() || $this->fiche->getIsClosed() || $this->fiche->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey())) || ($this->getUser()->hasGroup('coordinateur') && $this->fiche->getIsClosed()), sfConfig::get('sf_secure_module'), sfConfig::get('sf_secure_action'));

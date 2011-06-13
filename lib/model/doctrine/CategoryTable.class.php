@@ -16,6 +16,12 @@ class CategoryTable extends Doctrine_Table {
     return Doctrine_Core::getTable('Category');
   }
 
+  /**
+   *
+   * @param Doctrine_Query $query
+   * @param <type> $action
+   * @return Doctrine_Query
+   */
   public function findActive(Doctrine_Query $query = null, $action = null) {
     if(is_null($query)) {
       $query = $this->createQuery('q');

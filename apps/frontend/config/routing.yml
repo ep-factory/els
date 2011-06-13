@@ -1,6 +1,6 @@
 homepage:
   url:   /
-  param: { module: fiche, action: index }
+  param: { module: fiche, action: dashboard }
 
 enable_keyboard:
   url:   /enable_keyboard

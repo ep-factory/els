@@ -15,4 +15,26 @@ class Category extends BaseCategory
   public function __toString() {
     return $this->getName()." (".$this->getCode().")";
   }
+
+  public function getCountFiches() {
+    if(!isset($this->_values['count_fiches'])) {
+      $this->_values['count_fiches'] = FicheTable::getInstance()->createQuery()
+              ->where('category_id = ?', $this->getPrimaryKey())
+              ->andWhere('deleted_at IS NULL')
+              ->count();
+    }
+    return $this->_values['count_fiches'];
+  }
+
+  public function getLimitedFiches($limit = 10) {
+    if(!isset($this->_values['limited_fiches'])) {
+      $this->_values['limited_fiches'] = FicheTable::getInstance()->createQuery()
+              ->where('category_id = ?', $this->getPrimaryKey())
+              ->andWhere('deleted_at IS NULL')
+              ->limit($limit)
+              ->orderBy('fiche_date DESC')
+              ->execute();
+    }
+    return $this->_values['limited_fiches'];
+  }
 }
