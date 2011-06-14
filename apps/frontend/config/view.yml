@@ -14,7 +14,7 @@ default:
 
   stylesheets:    [/sfEPFactoryFormPlugin/switcher/js-switcher.css, main.css]
 
-  javascripts:    [/sfEPFactoryFormPlugin/js/jquery.min.js, /sfEPFactoryFormPlugin/switcher/switcher.js]
+  javascripts:    [/sfEPFactoryFormPlugin/switcher/switcher.js]
 
   has_layout:     true
-  layout:         layout
+  layout:         admin

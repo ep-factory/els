@@ -1,11 +1,7 @@
-<?php use_stylesheet('/sfDoctrinePlugin/css/global.css', 'first') ?>
-<?php use_stylesheet('/sfDoctrinePlugin/css/default.css', 'first') ?>
+<?php slot('menu', 'fiche') ?>
 <?php use_javascript('/sfEPFactoryFormPlugin/js/tools.js') ?>
 <script type="text/javascript">
   $(document).ready(function(){
-    $('.fancybox').fancybox({
-      overlayColor: '#000'
-    });
     $('.sf_admin_form_field_end_hour input, .sf_admin_form_field_start_hour input').live('change', function(){
       var $start = new Date(0, 0, 0, $('#fiche_start_hour').val().replace(/(\d{2})h(\d{2})/, '$1'), $('#fiche_start_hour').val().replace(/(\d{2})h(\d{2})/, '$2'), 0);
       var $end = new Date(0, 0, 0, $('#fiche_end_hour').val().replace(/(\d{2})h(\d{2})/, '$1'), $('#fiche_end_hour').val().replace(/(\d{2})h(\d{2})/, '$2'), 0);

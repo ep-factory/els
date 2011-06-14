@@ -15,5 +15,9 @@ class sfGuardFormSignin extends BasesfGuardFormSignin
    */
   public function configure()
   {
+    $this->widgetSchema['username']->setAttribute('class', 'logininput');
+    $this->widgetSchema['password']->setAttribute('class', 'logininput');
+    $this->getWidgetSchema()->setLabel('username', "Nom d'utilisateur ou email :");
+    $this->getWidgetSchema()->setLabel('password', "Mot de passe :");
   }
 }

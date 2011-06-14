@@ -4,3 +4,6 @@
 [submodule "plugins/sfEPFactoryFormPlugin"]
 	path = plugins/sfEPFactoryFormPlugin
 	url = git@github.com:vincentchalamon/sfEPFactoryFormPlugin.git
+[submodule "plugins/sfAdminTemplatePlugin"]
+	path = plugins/sfAdminTemplatePlugin
+	url = git@github.com:vincentchalamon/sfAdminTemplatePlugin.git

@@ -1,2 +1,22 @@
 all:
   machine_id: A
+  sf_admin_template:
+    menus:
+      fiche:
+        label: Fiches
+      appareil:
+        label: Appareils
+      atelier:
+        label: Ateliers
+      batiment:
+        label: Bâtiments
+      case_code:
+        label: Codes affaire
+      category:
+        label: Catégories
+      demandeur:
+        label: Demandeurs
+      element:
+        label: Eléments
+      poste:
+        label: Postes
