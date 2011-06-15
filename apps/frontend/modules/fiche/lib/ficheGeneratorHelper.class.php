@@ -15,7 +15,7 @@ class ficheGeneratorHelper extends BaseFicheGeneratorHelper
     if(($this->getUser()->hasGroup('technicien') && !is_null($this->fiche->getSfGuardUserId()) && ($this->fiche->getIsResolved() || $this->fiche->getIsClosed() || $this->fiche->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey())) || ($this->getUser()->hasGroup('coordinateur') && $this->fiche->getIsClosed())) {
       return;
     }
-    return '<li class="sf_admin_action_edit">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object).'</li>';
+    return parent::linkToEdit($object, $params);
   }
 
   /**
