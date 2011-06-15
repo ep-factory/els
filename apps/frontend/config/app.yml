@@ -6,17 +6,25 @@ all:
         label: Fiches
       appareil:
         label: Appareils
+        credentials: [fixtures]
       atelier:
         label: Ateliers
+        credentials: [fixtures]
       batiment:
         label: Bâtiments
+        credentials: [fixtures]
       case_code:
         label: Codes affaire
+        credentials: [fixtures]
       category:
         label: Catégories
+        credentials: [fixtures]
       demandeur:
         label: Demandeurs
+        credentials: [fixtures]
       element:
         label: Eléments
+        credentials: [fixtures]
       poste:
         label: Postes
+        credentials: [fixtures]
