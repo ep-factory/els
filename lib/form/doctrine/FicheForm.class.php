@@ -46,7 +46,7 @@ class FicheForm extends BaseFicheForm {
                     'element_installed_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => 'Element')),
                     'element_installed_serial' => new sfValidatorString(array('required' => false))
                     )));
-    $this->getWidgetSchema()->setHelp('elements_list', sprintf("<a href='%s' title='Créer un nouvel élément' class='fancybox iframe'>Créer un nouvel élément</a>", $this->genUrl('@element_new')));
+    $this->getWidgetSchema()->setHelp('elements_list', sprintf("<a href='%s' class='fancybox'>Créer un nouvel élément</a>", $this->genUrl('@element_new')));
     $this->getWidgetSchema()->setHelp('unsolved_name', "Si problème non résolu");
 
     // Validators & widgets

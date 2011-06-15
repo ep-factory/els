@@ -24,8 +24,8 @@ class FicheFormFilter extends BaseFicheFormFilter
     $this->widgetSchema['is_finished']->setOption('choices', array('' => 'tous', 1 => 'oui', 0 => 'non'));
 
     // Fiche date
-    $this->widgetSchema['fiche_date']->setOption('from_date', new sfWidgetFormDateJQueryUI());
-    $this->widgetSchema['fiche_date']->setOption('to_date', new sfWidgetFormDateJQueryUI());
+    $this->widgetSchema['fiche_date']->setOption('from_date', new sfWidgetFormDateJQueryUI(array(), array('title' => 'Depuis le', 'placeholder' => 'Depuis le')));
+    $this->widgetSchema['fiche_date']->setOption('to_date', new sfWidgetFormDateJQueryUI(array(), array('title' => "Jusqu'au", 'placeholder' => "Jusqu'au")));
     $this->validatorSchema['fiche_date']->setOption('from_date', new sfValidatorDateCustom(array('required' => false)));
     $this->validatorSchema['fiche_date']->setOption('to_date', new sfValidatorDateCustom(array('required' => false)));
   }

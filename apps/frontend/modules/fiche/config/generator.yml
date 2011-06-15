@@ -29,6 +29,8 @@ generator:
           label: Consulter
           action: show
       fields:
+        search:
+          label: Rechercher
         label:
           label: Intitulé intervention
         tags:
@@ -137,7 +139,7 @@ generator:
           label: Eléments installés
       list:
         title: Fiches
-        display: [=number, Category, fiche_date, is_finished]
+        display: [number, Category, fiche_date, is_finished]
         batch_actions: []
         object_actions:
           _edit: ~
@@ -160,6 +162,6 @@ generator:
           Résolution: [is_tested, test_mechanic, test_operator, is_stopped, is_ips, is_controlled, unsolved_name, unsolved_date]
           Maintenance: [elements_list]
       edit:
-        title: Fiche n°%%number%% <span>%%CaseCode%% %%category_code%%</span>
+        title: Fiche n°%%number%% %%CaseCode%% %%category_code%%
       new:
         title: Nouvelle fiche

@@ -12,6 +12,10 @@
  */
 class Fiche extends BaseFiche {
 
+  public function __toString() {
+    return sprintf("Fiche n°%s %s %s", $this->getNumber(), $this->getCaseCode(), $this->getCategoryCode());
+  }
+
   public function hasParent() {
     return $this->getParentId() != $this->getPrimaryKey() && $this->getParent();
   }
