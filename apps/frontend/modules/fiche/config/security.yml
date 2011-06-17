@@ -1,3 +1,6 @@
+enableKeyboard:
+  is_secure: false
+
 new:
   credentials: [create]
 

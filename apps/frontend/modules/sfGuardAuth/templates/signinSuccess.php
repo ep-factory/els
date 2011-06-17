@@ -1,3 +1,5 @@
+<?php use_javascripts_for_form($form) ?>
+<?php use_stylesheets_for_form($form) ?>
 <form action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
   <?php echo $form->renderHiddenFields() ?>
   <p><?php echo $form['username']->renderLabel() ?></p>

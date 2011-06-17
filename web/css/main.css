@@ -7,3 +7,6 @@
 .med, .sml{width: 100%; float: none;}
 .sml .sf_admin_form_row{float: left; width: 25%; clear: none !important;}
 .sf_admin_object_actions_list li{opacity: 1; filter : alpha(opacity=100); -moz-opacity : 1; -ms-filter: "alpha(opacity=100)";}
+#logincontainer #enable_keyboard{float: none; width: 100%; text-align: center; padding: 0 0 10px; border-bottom: 1px solid #424242;}
+#logincontainer #enable_keyboard p, #logincontainer #enable_keyboard .switch{float: none;}
+#logincontainer #enable_keyboard .switch{width: 175px; margin: 0 auto;}

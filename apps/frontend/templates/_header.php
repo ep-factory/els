@@ -10,7 +10,8 @@
           $.fancybox.showActivity();
         },
         error: function(){
-          $(this).removeClass('selected').siblings().addClass('selected');
+          $.fancybox.hideActivity();
+          $label.removeClass('selected').siblings().addClass('selected');
         },
         success: function(){
           location.reload();

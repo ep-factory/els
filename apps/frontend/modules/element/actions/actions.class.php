@@ -13,4 +13,11 @@ require_once dirname(__FILE__).'/../lib/elementGeneratorHelper.class.php';
  */
 class elementActions extends autoElementActions
 {
+  protected function getRedirect(Element $element)
+  {
+    if($this->getUser()->hasCredential('fixtures')) {
+      return "@element";
+    }
+    return "@fiche";
+  }
 }

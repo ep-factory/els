@@ -33,7 +33,7 @@ class FicheForm extends BaseFicheForm {
     $this->validatorSchema['start_hour'] = new sfValidatorDateCustom();
     $this->validatorSchema['end_hour'] = new sfValidatorDateCustom();
     $this->widgetSchema['elements_list'] = new sfWidgetFormMultiple(array(
-                'add_empty' => false,
+                'add_empty' => !$this->isNew(),
                 'widgets' => array(
                     'element_changed_id' => new sfWidgetFormDoctrineChoice(array('model' => 'Element', 'table_method' => 'findActive', 'add_empty' => true), array('widgetClass' => 'changed_id')),
                     'element_changed_serial' => new sfWidgetFormInputText(array(), array('widgetClass' => 'changed_serial')),
@@ -54,7 +54,12 @@ class FicheForm extends BaseFicheForm {
       if(isset($this->widgetSchema[$name])) {
         // Hour
         if(preg_match('/hour$/i', $name)) {
-          $this->widgetSchema[$name] = new sfWidgetFormInputMask(array('mask' => '99h99'));
+          if(!$this->getUser()->getAttribute('enable_keyboard', true)) {
+            $this->widgetSchema[$name] = new sfWidgetFormInputMask(array('mask' => '99h99'));
+          }
+          else {
+            $this->widgetSchema[$name] = new sfWidgetFormInputText();
+          }
         }
         // Keyboard
         if($this->getUser()->getAttribute('enable_keyboard', true)
@@ -65,8 +70,6 @@ class FicheForm extends BaseFicheForm {
           if(preg_match('/hour$/i', $name)) {
             $options['maxLength'] = 5;
             $options['layout'] = 'hour';
-            $options['renderer_class'] = "sfWidgetFormInputMask";
-            $options['renderer_options'] = array('mask' => '99h99');
           }
           $options['renderer_class'] = get_class($this->widgetSchema[$name]);
           $options['renderer_options'] = $this->widgetSchema[$name]->getOptions();
@@ -137,6 +140,7 @@ class FicheForm extends BaseFicheForm {
 
   public function updateDefaultsFromObject() {
     parent::updateDefaultsFromObject();
+    // Tags
     if(isset($this->widgetSchema['tags'])) {
       $tags = $this->getObject()->getTags();
       if($this->getUser()->getAttribute('enable_keyboard', true)) {
@@ -144,6 +148,7 @@ class FicheForm extends BaseFicheForm {
       }
       $this->widgetSchema['tags']->setDefault($tags);
     }
+    // Elements
     if(isset($this->widgetSchema['elements_list'])) {
       $this->widgetSchema['elements_list']->setDefault($this->getObject()->getElements());
     }
