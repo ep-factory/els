@@ -23,12 +23,14 @@
 <div class="contentcontainer med left">
   <?php foreach($categories as $key => $category): ?>
     <?php echo $key ? "<br />" : null ?>
+    <?php $helper->setCategoryId($category['id']) ?>
     <div class="headings">
       <h2><?php echo $category ?></h2>
     </div>
     <div class="contentbox">
       <?php if(!$category->getLimitedFiches($configuration->getPagerMaxPerPage()/2)->count()): ?>
         <p><?php echo __('No result', array(), 'sf_admin') ?></p>
+        <?php include_partial('fiche/list_actions', array('helper' => $helper)) ?>
       <?php else: ?>
         <table width="100%">
           <thead>
