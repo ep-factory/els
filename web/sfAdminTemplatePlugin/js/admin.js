@@ -29,8 +29,8 @@ $(document).ready(function(){
 
   // Login form
   $('#innerlogin form').live('submit', function(){
-    $('input:submit', $(this)).remove();
-    $(this).append('<img src="/sfAdminTemplatePlugin/images/ajax-loader.gif" alt="Chargement..." class="loading" />');
+    $('input:submit', $(this)).remove()
+    $('.loading', $(this)).show();
   });
 
   // Form placeholder

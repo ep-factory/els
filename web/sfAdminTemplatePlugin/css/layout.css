@@ -49,10 +49,12 @@ table tfoot .jqTransformSelectWrapper {float: left;}
 
 #leftside {width: 225px; height: 100%; background: #525252 url(../images/bg_leftside.png) repeat-x top; position: absolute; top: 70px; border-right:1px solid #fff; padding-top: 10px;}
 
-.user, .notifications {float: right; width:195px; padding: 10px; color: #ccc; text-shadow: 1px 1px 1px #111;}
+.user, .notifications {float: right; width:210px; padding: 10px; color: #ccc; text-shadow: 1px 1px 1px #111;}
 .notifications {width: 140px; margin-top: 5px;}
 .user img {float: right;}
-.username {color: #fff; font-size: 18px; font-weight:700; letter-spacing: -1px; clear: none;}
+.username {font-size: 18px; font-weight:700; letter-spacing: -1px; clear: none;}
+.username a {color: #fff; text-decoration: none;}
+.username a:hover {text-decoration: underline;}
 .userbtn {text-shadow: none; float: left; padding-right: 5px; text-align: center; clear: none;}
 .userbtn a {display: block; color: #000; text-shadow: 1px 1px 1px #eee; font-size: 11px; padding: 2px 5px; background: #ccc url(../images/bg_btn_grey_sml.png) repeat-x top; border: 1px solid #000; text-decoration: none; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px;}
 .userbtn a:hover {color: #fff; background: #eee url(../images/bg_btn_grey_sml.png) 0 -30px; text-shadow: none;}

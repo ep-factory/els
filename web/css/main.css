@@ -12,18 +12,64 @@ border-top: 1px solid #FFA3A3;text-shadow: 1px 1px 1px #FFA3A3;color:#5C1614;}
     color: #103141;
     cursor: pointer;}
 		
-/* 		
+/* HEADER */	
 #header>a>img{display:none;}		
-#header>a{display:block;width:97px;height:60px;background: url("../images/logoELS_header2.gif") no-repeat scroll left top;}		 */
+#header>a
+{display:block;float:left;width:97px;height:60px;margin: 7px 7px 0 11px;
+background: url("../images/logoELS_header2.gif") no-repeat scroll left top;}
+#header .user>a>img{display:none;}
+#header .user{float:right;width:159px;}
 
 #enable_keyboard{float: right; width: 250px; padding-top: 20px;}
 #enable_keyboard p{font-size: 1.2em; font-weight: bold; margin: 5px 10px; color: white; float: left;}
 #enable_keyboard .switch{float: left;}
+
+/* ELEMENTS DIVERS */
+select{padding:1px 2px;}
+#container label {display: inline;}
+body{ background: url("../images/bg_login_page.png") repeat-x scroll center top #E5E5E5;}
+
+/* FILTERS */
+.sml .sf_admin_form_row {width:636px;float:left;}
+.med, .sml{width: 100%; float: none;}
+.sml{width:668px;float:left;margin:0 0 15px 0;}
+
+.contentbox div.sf_admin_filter_field_name, .contentbox div.sf_admin_filter_field_code
+{float:left;width:250px;clear:none;margin:0 10px 0 0;}
+.contentbox div.sf_admin_filter_field_code{width:300px;}
+
+.contentbox div.sf_admin_filter_field_name label, 
+.contentbox div.sf_admin_filter_field_code label
+{float:left;width:auto;text-align:right;padding-right:0 !important;}
+
+.contentbox div.sf_admin_filter_field_name .jqTransformInputWrapper, 
+.contentbox div.sf_admin_filter_field_code .jqTransformInputWrapper
+{float:left;width:200px !important;background:none;}
+
+.contentbox div.sf_admin_filter_field_name .jqTransformInputWrapper .jqTransformInputInner, 
+.contentbox div.sf_admin_filter_field_code .jqTransformInputWrapper .jqTransformInputInner
+{background:none;}
+
+.contentbox div.sf_admin_filter_field_name .jqTransformInputWrapper .jqTransformInputInner div, 
+.contentbox div.sf_admin_filter_field_code .jqTransformInputWrapper .jqTransformInputInner div
+{height:auto;}
+
+.contentbox div.sf_admin_filter_field_name .jqTransformInputWrapper .jqTransformInputInner div input, 
+.contentbox div.sf_admin_filter_field_code .jqTransformInputWrapper .jqTransformInputInner div input
+{height:1.6em;line-height:1.6em;border:1px solid #CCC;}
+
+.contentbox div.sf_admin_filter_field_is_active{float:left;width:210px;clear:none;margin:0;}
+.sf_admin_filter_field_created_at{clear:both;}
+.sf_admin_filter_field_deleted_at{margin:0 0 15px 0;}
+.contentbox, .contentbox  form{width:636px;float:left;}
+.contentbox form>a, .contentbox form>input{float:left;}
+#category_filters_code_is_empty{float:left;}
+
 #wrapper{width: 700px;}
 #main_menu div{width: 660px;}
 #main_menu #main_menu_next{left: 685px;}
-.med, .sml{width: 100%; float: none;}
-.sml .sf_admin_form_row{float: left; width: 25%; clear: none !important;}
+
+/* .sml .sf_admin_form_row{float: left; width: 25%; clear: none !important;} */
 .sf_admin_object_actions_list li{opacity: 1; filter : alpha(opacity=100); -moz-opacity : 1; -ms-filter: "alpha(opacity=100)";}
 #logincontainer {margin: 0 auto !important; padding-top: 30px;}
 #logincontainer #enable_keyboard{float: none; width: 100%; text-align: center; padding: 0 0 10px; border-bottom: 1px solid #424242;}
