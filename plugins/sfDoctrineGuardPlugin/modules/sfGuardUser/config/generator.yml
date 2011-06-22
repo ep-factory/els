@@ -2,7 +2,7 @@ generator:
   class: sfDoctrineGenerator
   param:
     model_class:           sfGuardUser
-    theme:                 admin
+    theme:                 admin_template
     non_verbose_templates: true
     with_show:             false
     singular:              ~
@@ -11,21 +11,44 @@ generator:
     with_doctrine_route:   true
 
     config:
+      actions:
+        _delete:
+          credentials: [admin]
+        _new:
+          credentials: [admin]
+
       fields:
-        password_again: { label: "Password (again)" }
+        search: { label: "Rechercher" }
+        first_name: { label: "Prénom" }
+        last_name: { label: "Nom" }
+        email_address: { label: "E-mail" }
+        username: { label: "Nom d'utilisateur" }
+        password: { label: "Mot de passe" }
+        is_active: { label: "Actif" }
+        is_super_admin: { label: "Super admin" }
+        groups_list: { label: "Groupes" }
+        permissions_list: { label: "Permissions" }
+        password_again: { label: "Confirmation" }
+
+      show:
+        title:   %%first_name%% %%last_name%% (%%username%%)
+        display: [username, last_name, first_name, is_active, last_login]
 
       list:
-        title:   User list
-        display: [=username, created_at, updated_at, last_login]
+        title:   Utilisateurs
+        display: [username, last_name, first_name, is_active, last_login]
+
+      filter:
+        display: [search]
 
       form:
         class: sfGuardUserAdminForm
         display:
-          "User":                   [first_name, last_name, email_address, username, password, password_again]
-          "Permissions and groups": [is_active, is_super_admin, groups_list, permissions_list]
+          Utilisateur: [first_name, last_name, email_address, username, password, password_again]
+          "Permissions et groupes": [is_active, is_super_admin, groups_list, permissions_list]
 
       edit:
-        title: Editing User "%%username%%"
+        title: Utilisateur "%%username%%"
 
       new:
-        title: New User
+        title: Nouvel utilisateur

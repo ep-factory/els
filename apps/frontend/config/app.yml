@@ -28,3 +28,11 @@ all:
       poste:
         label: Postes
         credentials: [fixtures]
+      sf_guard_user:
+        label: Utilisateurs
+      sf_guard_group:
+        label: Groupes d'utilisateurs
+        credentials: [admin]
+      sf_guard_permission:
+        label: Permissions d'utilisateurs
+        credentials: [admin]

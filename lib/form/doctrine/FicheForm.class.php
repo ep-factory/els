@@ -30,10 +30,11 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['time_spent'] = new sfWidgetFormInputPlain();
     $this->widgetSchema['fiche_date'] = new sfWidgetFormDateJQueryUI();
     $this->widgetSchema['unsolved_date'] = new sfWidgetFormDateJQueryUI();
-    $this->validatorSchema['start_hour'] = new sfValidatorDateCustom();
-    $this->validatorSchema['end_hour'] = new sfValidatorDateCustom();
+    $this->validatorSchema['appel_hour'] = new sfValidatorHourCustom();
+    $this->validatorSchema['start_hour'] = new sfValidatorHourCustom();
+    $this->validatorSchema['end_hour'] = new sfValidatorHourCustom();
     $this->widgetSchema['elements_list'] = new sfWidgetFormMultiple(array(
-                'add_empty' => !$this->isNew(),
+                'add_empty' => !$this->isNew() && $this->getObject()->getElements()->count(),
                 'widgets' => array(
                     'element_changed_id' => new sfWidgetFormDoctrineChoice(array('model' => 'Element', 'table_method' => 'findActive', 'add_empty' => true), array('widgetClass' => 'changed_id')),
                     'element_changed_serial' => new sfWidgetFormInputText(array(), array('widgetClass' => 'changed_serial')),
@@ -154,17 +155,43 @@ class FicheForm extends BaseFicheForm {
     }
   }
 
-  protected function doBind(array $values) {
-    parent::doBind($values);
-    die('doBind');
-    if(isset($values['elements_list'])) {
-      $ids = array();
-      foreach($values as $value) {
-        if($value && is_array($value) && isset($value['id']) && $value['id']) {
-          $ids[] = $value['id'];
+  protected function doSave($con = null) {
+    $this->saveElementsList($con);
+    parent::doSave($con);
+  }
+  
+  public function saveElementsList($con = null) {
+    if(!$this->isValid()) {
+      throw $this->getErrorSchema();
+    }
+    if(!isset($this->widgetSchema['elements_list'])) {
+      return;
+    }
+    if(null === $con) {
+      $con = $this->getConnection();
+    }
+    $existing = $this->getObject()->setElements(new Doctrine_Collection('FicheElement'));
+    $values = $this->getValue('elements_list');
+    if(!is_array($values)) {
+      $values = array();
+    }
+    foreach($values as $element)
+    {
+      if(($element['element_changed_id'] && $element['element_changed_serial']) || ($element['element_installed_id'] && $element['element_installed_serial']))
+      {
+        $ficheElement = new FicheElement();
+        if($element['element_changed_id'] && $element['element_changed_serial'])
+        {
+          $ficheElement->setElementChangedId($element['element_changed_id']);
+          $ficheElement->setElementChangedSerial($element['element_changed_serial']);
         }
+        if($element['element_installed_id'] && $element['element_installed_serial'])
+        {
+          $ficheElement->setElementInstalledId($element['element_installed_id']);
+          $ficheElement->setElementInstalledSerial($element['element_installed_serial']);
+        }
+        $this->getObject()->getElements()->add($ficheElement);
       }
-      $values['elements_list'] = $ids;
     }
   }
 

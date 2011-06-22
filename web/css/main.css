@@ -38,12 +38,14 @@ body{ background: url("../images/bg_login_page.png") repeat-x scroll center top 
 .sml .sf_admin_form_row {width:636px;}
 .med, .sml{width: 100%; float: none;}
 .sml{width:668px;margin:0 0 15px 0;}
+.sml .headings{display: none;}
+.sml .contentbox{-moz-border-radius: 10px; border-top: 1px solid #CACACA;}
 #wrapper{width: 700px;}
 #main_menu div{width: 660px;}
 #main_menu #main_menu_next{left: 685px;}
 .sf_admin_object_actions_list li{opacity: 1; filter : alpha(opacity=100); -moz-opacity : 1; -ms-filter: "alpha(opacity=100)";}
 /* .sf_admin_form_row label{vertical-align:top;} */
-
+table.jqTransformTextarea td#jqTransformTextarea-mm textarea {width: 595px;}
 
 /* FILTERS */
 .sf_admin_filter_field_fiche_date .jqTransformInputWrapper{width:80px !important;display:inline-block;margin:0 5px 0 0;}
