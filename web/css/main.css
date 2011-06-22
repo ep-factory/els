@@ -1,3 +1,21 @@
+/* LOGIN */
+
+#loginheader {background:url('../images/logoELS_header.gif') no-repeat 50% 10px !important;height:110px;padding:0;}
+#loginheader img{display:none;}
+
+#logincontainer .loginbtn 
+{ background: url("../images/bg_login_btn.png") repeat-x scroll center top #e6001b ;
+border-top: 1px solid #FFA3A3;text-shadow: 1px 1px 1px #FFA3A3;color:#5C1614;}
+
+#logincontainer .loginbtn:hover {
+    background: url("../images/bg_login_btn.png") repeat scroll 0 -60px #3197CA;
+    color: #103141;
+    cursor: pointer;}
+		
+/* 		
+#header>a>img{display:none;}		
+#header>a{display:block;width:97px;height:60px;background: url("../images/logoELS_header2.gif") no-repeat scroll left top;}		 */
+
 #enable_keyboard{float: right; width: 250px; padding-top: 20px;}
 #enable_keyboard p{font-size: 1.2em; font-weight: bold; margin: 5px 10px; color: white; float: left;}
 #enable_keyboard .switch{float: left;}

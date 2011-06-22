@@ -1,0 +1,48 @@
+/*********************
+  Dashboard
+*********************/
+#dashboard .element {
+  margin-bottom: 20px;
+}
+
+#dashboard .element .gapistats {
+  border-right: thin solid #BBB;
+  border-left: thin solid #BBB;
+}
+
+#dashboard .element table {
+  margin: 0;
+}
+
+#dashboard .element h2 {
+  background: grey;
+  color: white;
+  padding: 5px;
+  margin: 0;
+  font-size: 1.3em;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+
+#dashboard .access {
+  background: #E5E5E5;
+  border: thin solid #BBB;
+  padding: 0 7px;
+  font-size: 1em;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+#dashboard .access a {
+  background: url('../images/google_analytics.png') no-repeat 2px -3px;
+  padding-left: 30px;
+  line-height: 35px;
+}
+
+#dashboard .right {
+  float: right;
+}
+
+#dashboard .left {
+  float: left;
+}
