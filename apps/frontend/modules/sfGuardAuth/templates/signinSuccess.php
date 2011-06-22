@@ -7,6 +7,7 @@
   <p><?php echo $form['password']->renderLabel() ?></p>
   <?php echo $form['password']->render() ?>
   <input type="submit" class="loginbtn noTransform" value="Se connecter" />
+  <img src="/sfAdminTemplatePlugin/images/ajax-loader.gif" alt="Chargement..." class="loading" style="display: none;" />
   <?php $routes = $sf_context->getRouting()->getRoutes() ?>
   <?php if (isset($routes['sf_guard_forgot_password'])): ?>
     <br /><p><a href="<?php echo url_for('@sf_guard_forgot_password') ?>" title="Mot de passe oublié ?">Mot de passe oublié ?</a></p>

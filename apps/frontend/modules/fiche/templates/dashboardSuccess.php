@@ -30,7 +30,10 @@
     <div class="contentbox">
       <?php if(!$category->getLimitedFiches($configuration->getPagerMaxPerPage()/2)->count()): ?>
         <p><?php echo __('No result', array(), 'sf_admin') ?></p>
-        <?php include_partial('fiche/list_actions', array('helper' => $helper)) ?>
+        <ul class="sf_admin_list_actions">
+          <?php echo $helper->linkToNew(array('credential' => array('create'), 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
+        </ul>
+        <div style="clear: both"></div>
       <?php else: ?>
         <table width="100%">
           <thead>
@@ -48,9 +51,11 @@
                   <?php endif; ?>
                 </span>
                 <span>
-                  <?php include_partial('fiche/list_actions', array('helper' => $helper)) ?>
+                  <ul class="sf_admin_list_actions">
+                    <?php echo $helper->linkToNew(array('credential' => array('create'), 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
+                  </ul>
+                  <div style="clear: both"></div>
                 </span>
-                <div style="clear: both;"></div>
               </td>
             </tr>
           </tfoot>

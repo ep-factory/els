@@ -147,6 +147,15 @@ generator:
           _add: ~
         actions:
           _new: ~
+      show:
+        display:
+          Intervenant: [sfGuardUser, Poste, label]
+          Sécurité: [ppc_number, ppi_number, acr_number, mo_number]
+          Intervention: [fiche_date, Demandeur, appel_hour, start_hour, end_hour, time_spent]
+          Localisation: [tags, Batiment, Atelier, Annexe, is_cmr]
+          Symptomes: [problem, cause, solution]
+          Résolution: [is_tested, test_mechanic, test_operator, is_stopped, is_ips, is_controlled, unsolved_name, unsolved_date]
+          Maintenance: [_elements]
       filter:
         display: [fiche_date, is_resolved, is_finished, search]
       form:
