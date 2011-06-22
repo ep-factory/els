@@ -25,7 +25,24 @@ class AppareilFormFilter extends BaseAppareilFormFilter
     foreach($this->getTable()->getColumns() as $name => $options)
     {
       if(in_array($options['type'], array('string', 'clob'))) {
-        $query->orWhere($query->getRootAlias().".$name = ?", $values);
+        $query->orWhere($query->getRootAlias().".$name LIKE ?", "%$values%");
+      }
+    }
+    // Tags
+    if($this->getTable()->hasTemplate('Taggable'))
+    {
+      $objects = TagTable::getObjectTaggedWith($values);
+      if($objects)
+      {
+        $ids = array();
+        foreach($objects as $object)
+        {
+          if(!in_array($object->getPrimaryKey(), $ids))
+          {
+            $ids[] = $object->getPrimaryKey();
+          }
+        }
+        $query->orWhereIn($query->getRootAlias().".id", $ids);
       }
     }
   }
