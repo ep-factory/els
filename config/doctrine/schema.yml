@@ -91,9 +91,6 @@ Element:
     ref:
       type: string(255)
       notnull: true
-    serial:
-      type: string(255)
-      notnull: true
     is_active:
       type: boolean
       default: true

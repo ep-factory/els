@@ -14,15 +14,22 @@ generator:
     config:
       actions: ~
       fields:
+        search:
+          label: Rechercher
         name:
           label: Nom
         code:
           label: Code
         is_active:
           label: Actif
+      show:
+        title: %%name%%
+        display: [name, code, is_active]
       list:
         title: Catégories
-      filter:  ~
+        display: [name, code, is_active]
+      filter:
+        display: [search]
       form:    ~
       edit:
         title: Edition de "%%name%% %%code%%"

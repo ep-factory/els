@@ -14,19 +14,24 @@ generator:
     config:
       actions: ~
       fields:
+        search:
+          label: Rechercher
         marque:
           label: Marque
         type:
           label: Type
         ref:
           label: Référence
-        serial:
-          label: N° de série
         is_active:
           label: Actif
+      show:
+        title: %%type%% %%marque%% %%ref%%
+        display: [marque, type, ref, is_active]
       list:
         title: Eléments
-      filter:  ~
+        display: [marque, type, ref, is_active]
+      filter:
+        display: [search]
       form:    ~
       edit:
         title: Edition de "%%type%% %%marque%% %%ref%%"

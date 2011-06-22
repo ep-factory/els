@@ -3,15 +3,12 @@ Element:
     marque: ViewSonic
     type: Ecran plat
     ref: VA1913w
-    serial: abcdef
   keybord:
     marque: HP
     type: Clavier
     ref: HP2PBvn
-    serial: abcdef
   mouse:
     marque: HP
     type: Souris
     ref: NGS
-    serial: abcdef
     is_active: false

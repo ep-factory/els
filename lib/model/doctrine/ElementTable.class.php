@@ -24,8 +24,7 @@ class ElementTable extends Doctrine_Table {
             ->andWhere($query->getRootAlias().'.deleted_at IS NULL')
             ->addOrderBy($query->getRootAlias().'.marque ASC')
             ->addOrderBy($query->getRootAlias().'.type ASC')
-            ->addOrderBy($query->getRootAlias().'.ref ASC')
-            ->addOrderBy($query->getRootAlias().'.serial ASC');
+            ->addOrderBy($query->getRootAlias().'.ref ASC');
     return $action ? $query->$action() : $query;
   }
 

@@ -12,5 +12,21 @@ class BatimentFormFilter extends BaseBatimentFormFilter
 {
   public function configure()
   {
+    // Search
+    $this->widgetSchema['search'] = new sfWidgetFormInputText();
+    $this->widgetSchema['search']->setAttribute("title", "Rechercher");
+    $this->widgetSchema['search']->setAttribute("placeholder", "Rechercher");
+    $this->widgetSchema['search']->setAttribute("alt", "Rechercher");
+    $this->validatorSchema['search'] = new sfValidatorPass();
+  }
+
+  public function addSearchColumnQuery(Doctrine_Query $query, $field, $values)
+  {
+    foreach($this->getTable()->getColumns() as $name => $options)
+    {
+      if(in_array($options['type'], array('string', 'clob'))) {
+        $query->orWhere($query->getRootAlias().".$name = ?", $values);
+      }
+    }
   }
 }
