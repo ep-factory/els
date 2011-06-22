@@ -21,15 +21,12 @@ class ficheGeneratorHelper extends BaseFicheGeneratorHelper {
   }
 
   public function linkToEdit($object, $params) {
-    if(($this->getUser()->hasGroup('technicien') && !is_null($this->fiche->getSfGuardUserId()) && ($this->fiche->getIsResolved() || $this->fiche->getIsClosed() || $this->fiche->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey())) || ($this->getUser()->hasGroup('coordinateur') && $this->fiche->getIsClosed())) {
-      return;
-    }
-    return parent::linkToEdit($object, $params);
+    return $this->getUser()->canEdit($object->getRawValue()) ? parent::linkToEdit($object, $params) : null;
   }
 
   /**
    *
-   * @return sfGuardSecurityUser
+   * @return myUser
    */
   protected function getUser() {
     return sfContext::getInstance()->getUser();

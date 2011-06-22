@@ -24,6 +24,9 @@ class Fiche extends BaseFiche {
     if(!count($this->getHierarchyIds())) {
       return;
     }
+    if($return) {
+      return $this->getHierarchyIds();
+    }
     $this->getTable()->createQuery()
             ->set('is_resolved', true)
             ->set('resolved_author_id', sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())

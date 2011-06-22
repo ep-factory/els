@@ -18,8 +18,12 @@ generator:
         _edit:
           credential: [edit]
         _resolve:
+          label: Résoudre
+          action: resolve
           credential: [resolve]
         _close:
+          label: Clore
+          action: close
           credential: [close]
         _add:
           label: 'Ajouter fille'
@@ -148,6 +152,12 @@ generator:
         actions:
           _new: ~
       show:
+        title: %%number%%
+        actions:
+          _list: ~
+          _edit: ~
+          _resolve: ~
+          _close: ~
         display:
           Intervenant: [sfGuardUser, Poste, label]
           Sécurité: [ppc_number, ppi_number, acr_number, mo_number]

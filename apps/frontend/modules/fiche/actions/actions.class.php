@@ -19,7 +19,7 @@ class ficheActions extends autoFicheActions {
 
   public function executeEdit(sfWebRequest $request) {
     parent::executeEdit($request);
-    $this->forwardIf(($this->getUser()->hasGroup('technicien') && !is_null($this->fiche->getSfGuardUserId()) && ($this->fiche->getIsResolved() || $this->fiche->getIsClosed() || $this->fiche->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey())) || ($this->getUser()->hasGroup('coordinateur') && $this->fiche->getIsClosed()), sfConfig::get('sf_secure_module'), sfConfig::get('sf_secure_action'));
+    $this->forwardIf(!$this->getUser()->canEdit($this->fiche), sfConfig::get('sf_secure_module'), sfConfig::get('sf_secure_action'));
   }
 
   public function executeEnableKeyboard(sfWebRequest $request) {
@@ -37,13 +37,13 @@ class ficheActions extends autoFicheActions {
   public function executeResolve(sfWebRequest $request) {
     $this->getRoute()->getObject()->resolve();
     $this->getUser()->setFlash('notice', "L'intervention a été correctement résolue.");
-    $this->redirect("@fiche");
+    $this->redirect("@fiche_show?id=".$this->getRoute()->getObject()->getPrimaryKey());
   }
 
   public function executeClose(sfWebRequest $request) {
     $this->getRoute()->getObject()->close();
     $this->getUser()->setFlash('notice', "L'intervention a été correctement fermée.");
-    $this->redirect("@fiche");
+    $this->redirect("@fiche_show?id=".$this->getRoute()->getObject()->getPrimaryKey());
   }
 
   public function executeAdd(sfWebRequest $request) {
