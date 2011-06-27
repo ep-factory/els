@@ -6,3 +6,6 @@ new:
 
 create:
   credentials: [create, edit]
+
+close:
+  credentials: [create, edit]

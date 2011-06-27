@@ -31,7 +31,9 @@
       <?php if(!$category->getLimitedFiches($configuration->getPagerMaxPerPage()/2)->count()): ?>
         <p><?php echo __('No result', array(), 'sf_admin') ?></p>
         <ul class="sf_admin_list_actions">
-          <?php echo $helper->linkToNew(array('credential' => array('create'), 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
+          <?php if($sf_user->hasCredential('create')): ?>
+            <?php echo $helper->linkToNew(array('credential' => array('create'), 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
+          <?php endif ?>
         </ul>
         <div style="clear: both"></div>
       <?php else: ?>
@@ -52,7 +54,9 @@
                 </span>
                 <span>
                   <ul class="sf_admin_list_actions">
-                    <?php echo $helper->linkToNew(array('credential' => array('create'), 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
+                    <?php if($sf_user->hasCredential('create')): ?>
+                      <?php echo $helper->linkToNew(array('credential' => array('create'), 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
+                    <?php endif ?>
                   </ul>
                   <div style="clear: both"></div>
                 </span>

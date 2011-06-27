@@ -3,7 +3,10 @@
 {background:url('../images/logoELS_header.gif') no-repeat 50% 10px !important;
 height:110px;padding:30px 0 0 0;margin: 0 auto !important; }
 #loginheader img{display:none;}
-
+#logincontainer {
+  margin: 0 auto !important;
+  padding-top: 30px !important;
+}
 #logincontainer .loginbtn , .btn  
 { background: url("../images/bg_login_btn.png") repeat-x scroll center top #e6001b ;
 border-top: 1px solid #FFA3A3;text-shadow: 1px 1px 1px #FFA3A3;color:#5C1614;}
@@ -50,31 +53,6 @@ table.jqTransformTextarea td#jqTransformTextarea-mm textarea {width: 595px;}
 /* FILTERS */
 .sf_admin_filter_field_fiche_date .jqTransformInputWrapper{width:80px !important;display:inline-block;margin:0 5px 0 0;}
 .sf_admin_filter_field_fiche_date .jqTransformInputWrapper input{cursor:pointer !important;}
-
-
-/* FICHES */
-.fiche_infos{ border-left: 1px solid #CACACA; border-right: 1px solid #CACACA;padding:10px 15px;}
-.sf_admin_show_row {line-height:1.4em;}
-.sf_admin_show_row strong{display:inline-block !important;width:100px ;text-align:right;vertical-align:top;}
-
-.sf_admin_show_row span{display:inline-block;width:500px;vertical-align:top;}
-
-.sf_admin_show_field_elements{width:615px;float:left;}
-.sf_admin_show_field_elements label
-{display:inline-block !important;width:100px ;text-align:right;vertical-align:top;float:left;cursor:default !important;}
-
-.elements_list {float:left;width:490px;}
-.elements_list .element{float:left;width:490px;margin:0 0 6px 0;}
-.elements_list span{width:auto;}
-.elements_list .changed strong, .elements_list .installed strong,
-.elements_list .changed span, .elements_list .installed span
-{display:block;}
-.elements_list .changed, .elements_list .installed{width:50%;float:left;}
-
-/* edition des fiches */
-.sf_admin_form_field_elements_list .widget_template,
-.sf_admin_form_field_elements_list .widget_template input,
-.sf_admin_form_field_elements_list .widget_template select{width:135px;padding:0;}
 
 
 /* 

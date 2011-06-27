@@ -11,9 +11,24 @@ generator:
     with_doctrine_route:   true
 
     config:
+      fields:
+        search:
+          label: Rechercher
+        name:
+          label: Nom
+        description:
+          label: Description
+          
       list:
-        title: Group list
-        display: [=name, description, created_at, updated_at]
+        title: Groupes d'utilisateurs
+        display: [name, description]
+
+      show:
+        title:   %%name%%
+        display: [name, description]
+
+      filter:
+        display: [search]
 
       form:
         display: [name, description, users_list, permissions_list]

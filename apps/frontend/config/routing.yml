@@ -38,6 +38,8 @@ element:
     prefix_path:          /element
     column:               id
     with_wildcard_routes: true
+    object_actions:
+      close:              [get]
 
 batiment:
   class: sfDoctrineRouteCollection

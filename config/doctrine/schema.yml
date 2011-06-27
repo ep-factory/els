@@ -145,9 +145,7 @@ Fiche:
       type: integer(12)
       notnull: true
     label: string(255)
-    fiche_date:
-      type: date
-      notnull: true
+    fiche_date: date
     poste_id:
       type: integer
       notnull: true
@@ -168,21 +166,13 @@ Fiche:
     demandeur_id:
       type: integer
       notnull: true
-    appel_hour: time
-    start_hour:
-      type: time
-      notnull: true
-    end_hour:
-      type: time
-      notnull: true
-    time_spent:
-      type: time
-      notnull: true
+    appel_hour: timestamp
+    start_hour: timestamp
+    end_hour: timestamp
+    time_spent: timestamp
     problem: clob
     cause: clob
-    solution:
-      type: clob
-      notnull: true
+    solution: clob
     unsolved_name: string(255)
     unsolved_date: date
     is_tested:

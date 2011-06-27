@@ -14,21 +14,21 @@ generator:
     config:
       actions:
         _new:
-          credential: [create]
+          credentials: [create]
         _edit:
-          credential: [edit]
+          credentials: [edit]
         _resolve:
           label: Résoudre
           action: resolve
-          credential: [resolve]
+          credentials: [resolve]
         _close:
           label: Clore
           action: close
-          credential: [close]
+          credentials: [close]
         _add:
           label: 'Ajouter fille'
           action: add
-          credential: [create]
+          credentials: [create]
         _show:
           label: Consulter
           action: show
@@ -172,6 +172,7 @@ generator:
         actions:
           _save: ~
           _list: ~
+          _show: ~
         display:
           Intervenant: [sf_guard_user_id, poste_id, label]
           Sécurité: [ppc_number, ppi_number, acr_number, mo_number]

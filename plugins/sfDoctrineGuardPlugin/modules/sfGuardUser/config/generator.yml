@@ -9,6 +9,7 @@ generator:
     plural:                ~
     route_prefix:          sf_guard_user
     with_doctrine_route:   true
+    actions_base_class:    sfActions
 
     config:
       actions:
@@ -18,24 +19,37 @@ generator:
           credentials: [admin]
 
       fields:
-        search: { label: "Rechercher" }
-        first_name: { label: "Prénom" }
-        last_name: { label: "Nom" }
-        email_address: { label: "E-mail" }
-        username: { label: "Nom d'utilisateur" }
-        password: { label: "Mot de passe" }
-        is_active: { label: "Actif" }
-        is_super_admin: { label: "Super admin" }
-        groups_list: { label: "Groupes" }
-        permissions_list: { label: "Permissions" }
-        password_again: { label: "Confirmation" }
-
-      show:
-        title:   %%first_name%% %%last_name%% (%%username%%)
-        display: [username, last_name, first_name, is_active, last_login]
+        search:
+          label: Rechercher
+        first_name:
+          label: Prénom
+        last_name:
+          label: Nom
+        email_address:
+          label: E-mail
+        username:
+          label: Nom d'utilisateur
+        password:
+          label: Mot de passe
+        is_active:
+          label: Actif
+        last_login:
+          label: Dernière connexion
+        is_super_admin:
+          label: Super admin
+        groups_list:
+          label: Groupes
+        permissions_list:
+          label: Permissions
+        password_again:
+          label: Confirmation
 
       list:
         title:   Utilisateurs
+        display: [username, last_name, first_name, is_active, last_login]
+
+      show:
+        title:   %%first_name%% %%last_name%% (%%username%%)
         display: [username, last_name, first_name, is_active, last_login]
 
       filter:

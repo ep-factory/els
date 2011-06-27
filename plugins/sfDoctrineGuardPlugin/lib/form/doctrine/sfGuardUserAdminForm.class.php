@@ -15,5 +15,9 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
    */
   public function configure()
   {
+    if(!$this->isNew() && !$this->getUser()->isSuperAdmin()) {
+      unset($this['is_active'], $this['is_super_admin'], $this['groups_list'], $this['permissions_list']);
+      $this->widgetSchema['username'] = new sfWidgetFormInputHidden();
+    }
   }
 }

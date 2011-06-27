@@ -12,9 +12,9 @@ Fiche:
     acr_number: '123456789'
     Appareil: mac
     Demandeur: vincent
-    appel_hour: '10:00:00'
-    start_hour: '10:00:00'
-    end_hour: '11:00:00'
+    appel_hour: '2011-06-07 09:00:00'
+    start_hour: '2011-06-07 10:00:00'
+    end_hour: '2011-06-07 11:00:00'
     problem: "Il n'y a pas de problème"
     cause: "D'après toi ?"
     solution: "Il n'y a que des solutions"
@@ -39,9 +39,9 @@ Fiche:
     acr_number: '123456789'
     Appareil: mac
     Demandeur: vincent
-    appel_hour: '10:00:00'
-    start_hour: '10:00:00'
-    end_hour: '11:00:00'
+    appel_hour: '2011-06-07 09:00:00'
+    start_hour: '2011-06-07 10:00:00'
+    end_hour: '2011-06-07 11:00:00'
     problem: "Il n'y a pas de problème"
     cause: "D'après toi ?"
     solution: "Il n'y a que des solutions"

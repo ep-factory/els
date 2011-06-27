@@ -18,6 +18,12 @@ class elementActions extends autoElementActions
     if($this->getUser()->hasCredential('fixtures')) {
       return "@element";
     }
-    return "@fiche";
+    return "@element_close?id=".$element->getPrimaryKey();
+  }
+
+  public function executeClose(sfWebRequest $request) {
+    sfConfig::set('sf_web_debug', false);
+    $element = $this->getRoute()->getObject();
+    return $this->renderText(json_encode(array('id' => $element->getPrimaryKey(), 'name' => (string)$element)));
   }
 }

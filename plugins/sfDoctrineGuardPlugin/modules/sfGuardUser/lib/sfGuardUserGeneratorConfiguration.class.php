@@ -10,4 +10,10 @@
  */
 class sfGuardUserGeneratorConfiguration extends BaseSfGuardUserGeneratorConfiguration
 {
+  public function getFieldsDefault() {
+    $fields = parent::getFieldsDefault();
+    $fields['groups_list']['is_real'] = true;
+    $fields['permissions_list']['is_real'] = true;
+    return $fields;
+  }
 }

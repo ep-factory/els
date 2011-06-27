@@ -12,5 +12,6 @@ class sfGuardGroupForm extends PluginsfGuardGroupForm
 {
   public function configure()
   {
+    unset($this['created_at'], $this['updated_at']);
   }
 }

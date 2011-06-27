@@ -13,4 +13,11 @@ require_once dirname(__FILE__).'/../lib/sfGuardUserGeneratorHelper.class.php';
  */
 class sfGuardUserActions extends autoSfGuardUserActions
 {
+  protected function buildQuery() {
+    $query = parent::buildQuery();
+    if(!$this->getUser()->isSuperAdmin()) {
+      $query->andWhere($query->getRootAlias().".id = ?", $this->getUser()->getGuardUser()->getPrimaryKey());
+    }
+    return $query;
+  }
 }
