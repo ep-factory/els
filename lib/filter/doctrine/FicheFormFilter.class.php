@@ -10,6 +10,9 @@
  */
 class FicheFormFilter extends BaseFicheFormFilter
 {
+  /**
+   * Init filters
+   */
   public function configure()
   {
     // Search
@@ -29,7 +32,14 @@ class FicheFormFilter extends BaseFicheFormFilter
     $this->validatorSchema['fiche_date']->setOption('from_date', new sfValidatorDateCustom(array('required' => false)));
     $this->validatorSchema['fiche_date']->setOption('to_date', new sfValidatorDateCustom(array('required' => false)));
   }
-  
+
+  /**
+   * Init search query using all text columns, and tags if table has template
+   *
+   * @param Doctrine_Query $query Search query
+   * @param string $field Form field name
+   * @param string $values Search value
+   */
   public function addSearchColumnQuery(Doctrine_Query $query, $field, $values)
   {
     foreach($this->getTable()->getColumns() as $name => $options)

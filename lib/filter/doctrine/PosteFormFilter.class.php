@@ -10,9 +10,12 @@
  */
 class PosteFormFilter extends BasePosteFormFilter
 {
+  /**
+   * Init filters
+   */
   public function configure()
   {
-    // Search
+    // Search field
     $this->widgetSchema['search'] = new sfWidgetFormInputText();
     $this->widgetSchema['search']->setAttribute("title", "Rechercher");
     $this->widgetSchema['search']->setAttribute("placeholder", "Rechercher");
@@ -20,6 +23,13 @@ class PosteFormFilter extends BasePosteFormFilter
     $this->validatorSchema['search'] = new sfValidatorPass();
   }
 
+  /**
+   * Init search query using all text columns, and tags if table has template
+   * 
+   * @param Doctrine_Query $query Search query
+   * @param string $field Form field name
+   * @param string $values Search value
+   */
   public function addSearchColumnQuery(Doctrine_Query $query, $field, $values)
   {
     foreach($this->getTable()->getColumns() as $name => $options)

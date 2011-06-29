@@ -12,14 +12,30 @@
  */
 class Fiche extends BaseFiche {
 
+  /**
+   * Render fiche to string
+   *
+   * @return string Label
+   */
   public function __toString() {
     return sprintf("Fiche n°%s %s %s", $this->getNumber(), $this->getCaseCode(), $this->getCategoryCode());
   }
 
+  /**
+   * Check if current fiche has parent
+   *
+   * @return boolean Condition
+   */
   public function hasParent() {
     return $this->getParentId() != $this->getPrimaryKey() && $this->getParent();
   }
 
+  /**
+   * Resolve current fiche, parent and children
+   *
+   * @param boolean $return Return list of ids to resolve hierarchy
+   * @return mixed Void or list of ids
+   */
   public function resolve($return = false) {
     if(!count($this->getHierarchyIds())) {
       return;
@@ -34,6 +50,11 @@ class Fiche extends BaseFiche {
             ->update()->execute();
   }
 
+  /**
+   * Close current fiche
+   *
+   * @return void
+   */
   public function close() {
     if(!count($this->getHierarchyIds())) {
       return;
@@ -47,7 +68,7 @@ class Fiche extends BaseFiche {
 
   /**
    *
-   * @return array
+   * @return array Ids
    */
   protected function getHierarchyIds() {
     if(!sfContext::hasInstance() || !sfContext::getInstance()->getUser()->isAuthenticated()) {
@@ -63,18 +84,28 @@ class Fiche extends BaseFiche {
     return $ids;
   }
 
+  /**
+   * Get category code
+   *
+   * @return string
+   */
   public function getCategoryCode() {
     return $this->getCategory()->getCode();
   }
 
+  /**
+   * Force fiche number and time spent
+   * 
+   * @param Doctrine_Event $event Event
+   */
   public function preSave($event) {
     parent::preSave($event);
     // Force number
     if(!$this->getNumber()) {
       $number = $this->getTable()->createQuery()
-              ->where('fiche_date = ?', date('Y-m-d'))
-              ->count();
-      $this->setNumber(preg_replace('/\-/i', '', $this->getFicheDate()).sfConfig::get('app_machine_id').str_pad($number+1, 4, "0", STR_PAD_LEFT));
+                      ->where('fiche_date = ?', date('Y-m-d'))
+                      ->count();
+      $this->setNumber(preg_replace('/\-/i', '', $this->getFicheDate()).sfConfig::get('app_machine_id').str_pad($number + 1, 4, "0", STR_PAD_LEFT));
     }
     // Force time spent
     if(!$this->getTimeSpent()) {

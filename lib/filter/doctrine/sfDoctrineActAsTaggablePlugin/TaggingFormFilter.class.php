@@ -10,6 +10,9 @@
  */
 class TaggingFormFilter extends PluginTaggingFormFilter
 {
+  /**
+   * Init filters
+   */
   public function configure()
   {
   }

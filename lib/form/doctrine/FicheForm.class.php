@@ -10,6 +10,9 @@
  */
 class FicheForm extends BaseFicheForm {
 
+  /**
+   * Init form
+   */
   public function configure() {
     unset($this['created_at'], $this['updated_at'], $this['deleted_at']);
     // Hidden fields
@@ -21,18 +24,31 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['is_resolved'] = new sfWidgetFormInputHidden();
     $this->widgetSchema['number'] = new sfWidgetFormInputHidden();
     $this->validatorSchema['number']->setOption('required', false);
-    
+
     // Specific fields
     if($this->getUser()->hasGroup('technicien')) {
       $this->widgetSchema['sf_guard_user_id'] = new sfWidgetFormInputHidden();
     }
     else {
       $this->widgetSchema['sf_guard_user_id']->setOption('order_by', array('first_name', 'ASC'));
+      $this->widgetSchema['sf_guard_user_id']->setOption('table_method', 'findActive');
     }
     $this->widgetSchema['poste_id']->setOption('order_by', array('id', 'ASC'));
+    $this->widgetSchema['poste_id']->setOption('table_method', 'findActive');
+    $this->widgetSchema['appareil_id']->setOption('table_method', 'findActive');
+    $this->widgetSchema['demandeur_id']->setOption('table_method', 'findActive');
+    $this->widgetSchema['batiment_id']->setOption('table_method', 'findActive');
+    $this->widgetSchema['atelier_id']->setOption('table_method', 'findActive');
+    $this->widgetSchema['annexe_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['tags'] = new sfWidgetFormInputToken(array('url' => $this->genUrl('@fiche_tags_autocomplete')));
     $this->validatorSchema['tags'] = new sfValidatorString(array('required' => false));
-    $this->widgetSchema['case_code_id'] = new sfWidgetFormInputPlain();
+    $caseCode = CaseCodeTable::getInstance()->findOneByIsActive(true);
+    if(!$caseCode) {
+      $this->getUser()->setFlash('error', 'Aucun code affaire actif. Veuillez contacter un administrateur.');
+      $this->getContext()->getController()->redirect("@fiche");
+    }
+    $this->setDefault('case_code_id', $caseCode->getPrimaryKey());
+    $this->widgetSchema['case_code_id'] = new sfWidgetFormInputPlain(array('value' => $this->isNew() ? $caseCode : $this->getObject()->getCaseCode()));
     $this->widgetSchema['time_spent'] = new sfWidgetFormInputPlain();
     $this->widgetSchema['fiche_date'] = new sfWidgetFormDateJQueryUI();
     $this->widgetSchema['unsolved_date'] = new sfWidgetFormDateJQueryUI();
@@ -57,7 +73,11 @@ class FicheForm extends BaseFicheForm {
     $this->getWidgetSchema()->setHelp('elements_list', sprintf("<a href='%s' class='fancybox'>Créer un nouvel élément</a>", $this->genUrl('@element_new')));
     $this->getWidgetSchema()->setHelp('unsolved_name', "Si problème non résolu");
 
-    // Validators & widgets
+    /**
+     * Set generic keyboard widget for text fields
+     * Set jQuery mask for hours fields
+     * Add validationEngine implementation for required fields
+     */
     foreach($this->getValidatorSchema()->getFields() as $name => $validator) {
       if(isset($this->widgetSchema[$name])) {
         // Hour
@@ -107,15 +127,15 @@ class FicheForm extends BaseFicheForm {
       }
     }
 
-    // Defaults
+    // Defaults from request & user
     $this->setDefault('parent_id', $this->getRequest()->getParameter('parent_id', null));
     if(!$this->getUser()->isSuperAdmin()) {
       $this->setDefault('sf_guard_user_id', $this->getUser()->getGuardUser()->getPrimaryKey());
     }
     $this->setDefault('category_id', $this->getRequest()->getParameter('category_id', CategoryTable::getInstance()->findByIsActive(true)->getFirst()->getPrimaryKey()));
 
-    // Specific fiche
-    $fields = array('id', 'parent_id', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'time_spent', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
+    // Specific form from category
+    $fields = array('id', 'parent_id', 'case_code_id', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'time_spent', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
     $category = CategoryTable::getInstance()->find($this->getDefault('category_id'));
     if($category) {
       switch($category->getCode()) {
@@ -137,10 +157,21 @@ class FicheForm extends BaseFicheForm {
     }
   }
 
+  /**
+   * Parse a timestamp
+   *
+   * @param string $value Timestamp to parse
+   * @return mixed Parsed timestamp
+   */
   public function parseTimestamp($value) {
-    return preg_replace('/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/i', '$3/$2/$1 $4:$5:$6', $value);
+    return $value ? date('d/m/Y H:i:s') : null;
   }
 
+  /**
+   * Get the javascript files list
+   *
+   * @return array Javascript files list
+   */
   public function getJavaScripts() {
     return array_merge(parent::getJavaScripts(), array(
         '/sfEPFactoryFormPlugin/js/jquery.min.js',
@@ -149,10 +180,18 @@ class FicheForm extends BaseFicheForm {
     ));
   }
 
+  /**
+   * Get the stylesheet files list
+   *
+   * @return array Stylesheet files list
+   */
   public function getStylesheets() {
     return array_merge(parent::getStylesheets(), array('/js/fancybox/jquery.fancybox-1.3.4.css' => 'screen'));
   }
 
+  /**
+   * Update form fields with object values
+   */
   public function updateDefaultsFromObject() {
     parent::updateDefaultsFromObject();
     // Tags
@@ -169,11 +208,22 @@ class FicheForm extends BaseFicheForm {
     }
   }
 
+  /**
+   * Hydrate object and save form
+   * 
+   * @param Doctrine_Connection $con Connection
+   */
   protected function doSave($con = null) {
     $this->saveElementsList($con);
     parent::doSave($con);
   }
-  
+
+  /**
+   * Save fiche elements list
+   * 
+   * @param Doctrine_Connection $con Connection
+   * @return void
+   */
   public function saveElementsList($con = null) {
     if(!$this->isValid()) {
       throw $this->getErrorSchema();
@@ -189,18 +239,14 @@ class FicheForm extends BaseFicheForm {
     if(!is_array($values)) {
       $values = array();
     }
-    foreach($values as $element)
-    {
-      if(($element['element_changed_id'] && $element['element_changed_serial']) || ($element['element_installed_id'] && $element['element_installed_serial']))
-      {
+    foreach($values as $element) {
+      if(($element['element_changed_id'] && $element['element_changed_serial']) || ($element['element_installed_id'] && $element['element_installed_serial'])) {
         $ficheElement = new FicheElement();
-        if($element['element_changed_id'] && $element['element_changed_serial'])
-        {
+        if($element['element_changed_id'] && $element['element_changed_serial']) {
           $ficheElement->setElementChangedId($element['element_changed_id']);
           $ficheElement->setElementChangedSerial($element['element_changed_serial']);
         }
-        if($element['element_installed_id'] && $element['element_installed_serial'])
-        {
+        if($element['element_installed_id'] && $element['element_installed_serial']) {
           $ficheElement->setElementInstalledId($element['element_installed_id']);
           $ficheElement->setElementInstalledSerial($element['element_installed_serial']);
         }

@@ -17,10 +17,11 @@ class CategoryTable extends Doctrine_Table {
   }
 
   /**
+   * Find active elements
    *
-   * @param Doctrine_Query $query
-   * @param <type> $action
-   * @return Doctrine_Query
+   * @param Doctrine_Query $query Query
+   * @param string $action Query action (count, execute, null to get query object)
+   * @return mixed Doctrine_Query object or query results
    */
   public function findActive(Doctrine_Query $query = null, $action = null) {
     if(is_null($query)) {

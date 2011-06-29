@@ -10,31 +10,48 @@
  * @author     Vincent CHALAMON <vincentchalamon@gmail.com>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Category extends BaseCategory
-{
+class Category extends BaseCategory {
+
+  /**
+   * Render category to string
+   *
+   * @return string Category to string
+   */
   public function __toString() {
     return $this->getName()." (".$this->getCode().")";
   }
 
+  /**
+   * Count current category fiches
+   * 
+   * @return integer Number
+   */
   public function getCountFiches() {
     if(!isset($this->_values['count_fiches'])) {
       $this->_values['count_fiches'] = FicheTable::getInstance()->createQuery()
-              ->where('category_id = ?', $this->getPrimaryKey())
-              ->andWhere('deleted_at IS NULL')
-              ->count();
+                      ->where('category_id = ?', $this->getPrimaryKey())
+                      ->andWhere('deleted_at IS NULL')
+                      ->count();
     }
     return $this->_values['count_fiches'];
   }
 
+  /**
+   * Retrieve last fiches for current category
+   * 
+   * @param integer $limit Query limit
+   * @return Doctrine_Collection Fiches
+   */
   public function getLimitedFiches($limit = 10) {
     if(!isset($this->_values['limited_fiches'])) {
       $this->_values['limited_fiches'] = FicheTable::getInstance()->createQuery()
-              ->where('category_id = ?', $this->getPrimaryKey())
-              ->andWhere('deleted_at IS NULL')
-              ->limit($limit)
-              ->orderBy('fiche_date DESC')
-              ->execute();
+                      ->where('category_id = ?', $this->getPrimaryKey())
+                      ->andWhere('deleted_at IS NULL')
+                      ->limit($limit)
+                      ->orderBy('fiche_date DESC')
+                      ->execute();
     }
     return $this->_values['limited_fiches'];
   }
+
 }

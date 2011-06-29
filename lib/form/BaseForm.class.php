@@ -5,13 +5,14 @@
  * 
  * @package    els
  * @subpackage form
- * @author     Your name here 
+ * @author     Vincent CHALAMON <vincentchalamon@gmail.com>
  * @version    SVN: $Id: BaseForm.class.php 20147 2009-07-13 11:46:57Z FabianLange $
  */
 class BaseForm extends sfFormSymfony
 {
   /**
-   *
+   * Retrieve context object
+   * 
    * @return sfContext
    */
   protected function getContext() {
@@ -22,7 +23,8 @@ class BaseForm extends sfFormSymfony
   }
 
   /**
-   *
+   * Generate an url
+   * 
    * @return String
    */
   protected function genUrl($url){
@@ -30,7 +32,8 @@ class BaseForm extends sfFormSymfony
   }
 
   /**
-   *
+   * Retrieve request object
+   * 
    * @return sfWebRequest
    */
   protected function getRequest() {
@@ -38,7 +41,8 @@ class BaseForm extends sfFormSymfony
   }
 
   /**
-   *
+   * Retrieve user object
+   * 
    * @return sfGuardSecurityUser
    */
   protected function getUser() {

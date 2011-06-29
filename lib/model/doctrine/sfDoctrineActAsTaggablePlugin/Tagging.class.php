@@ -10,6 +10,6 @@
  * @author     Vincent CHALAMON <vincentchalamon@gmail.com>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Tagging extends PluginTagging
-{
+class Tagging extends PluginTagging {
+
 }

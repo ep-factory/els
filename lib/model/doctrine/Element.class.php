@@ -10,9 +10,15 @@
  * @author     Vincent CHALAMON <vincentchalamon@gmail.com>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Element extends BaseElement
-{
+class Element extends BaseElement {
+
+  /**
+   * Render element to string
+   *
+   * @return string Element to string
+   */
   public function __toString() {
     return sprintf("%s - %s", $this->getMarque(), $this->getType());
   }
+
 }

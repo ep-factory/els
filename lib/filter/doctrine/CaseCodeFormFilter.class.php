@@ -10,6 +10,9 @@
  */
 class CaseCodeFormFilter extends BaseCaseCodeFormFilter
 {
+  /**
+   * Init filters
+   */
   public function configure()
   {
     // Search
@@ -20,6 +23,13 @@ class CaseCodeFormFilter extends BaseCaseCodeFormFilter
     $this->validatorSchema['search'] = new sfValidatorPass();
   }
 
+  /**
+   * Init search query using all text columns, and tags if table has template
+   *
+   * @param Doctrine_Query $query Search query
+   * @param string $field Form field name
+   * @param string $values Search value
+   */
   public function addSearchColumnQuery(Doctrine_Query $query, $field, $values)
   {
     foreach($this->getTable()->getColumns() as $name => $options)
