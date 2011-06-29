@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Référence de l&#39;espace de nommage phing::types::selectors</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>Liste&nbsp;des&nbsp;espaces&nbsp;de&nbsp;nommage</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath">
+    <ul>
+      <li><a class="el" href="namespacephing.html">phing</a>      </li>
+      <li><a class="el" href="namespacephing_1_1types.html">types</a>      </li>
+      <li><a class="el" href="namespacephing_1_1types_1_1selectors.html">selectors</a>      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<h1>Référence de l'espace de nommage phing::types::selectors</h1>  </div>
+</div>
+<div class="contents">
+<table class="memberdecls">
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<p>This selector has a collection of other selectors, all of which have to select a file in order for this selector to select it.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid, <a href="mailto:hans@xmpl.org">hans@xmpl.org</a> (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+<a href="mailto:bruce@callenish.com">Bruce Atherton</a> (Ant)</dd></dl>
+<p>Convenience base class for all selectors accessed through <a class="el" href="class_extend_selector.html">ExtendSelector</a>. It provides support for gathering the parameters together as well as for assigning an error message and throwing a build exception if an error is detected.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid, <a href="mailto:hans@xmpl.org">hans@xmpl.org</a> (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton, <a href="mailto:bruce@callenish.com">bruce@callenish.com</a> (Ant)</dd></dl>
+<p>A convenience base class that you can subclass Selectors from. It provides some helpful common behaviour. Note that there is no need for Selectors to inherit from this class, it is only necessary that they implement <a class="el" href="interface_file_selector.html">FileSelector</a>.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd><a href="mailto:bruce@callenish.com">Bruce Atherton</a></dd></dl>
+<p>This is the base class for selectors that can contain other selectors.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd><a href="mailto:bruce@callenish.com">Bruce Atherton</a> (Ant)</dd></dl>
+<p>Selector that filters files based on whether they contain a particular string using regexp.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.3 </dd></dl>
+<p>Selector that filters files based on whether they contain a particular string.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>Selector that filters files based on whether they are newer than a matching file in another directory tree. It can contain a mapper element, so isn't available as an <a class="el" href="class_extend_selector.html">ExtendSelector</a> (since those parameters can't hold other elements).</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.8 </dd></dl>
+<p>Selector that filters files based on the how deep in the directory tree they are.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.7 </dd></dl>
+<p>This is the interface to be used by all custom selectors, those that are called through the &lt;custom&gt; tag. It is the amalgamation of two interfaces, the <a class="el" href="interface_file_selector.html">FileSelector</a> and the Paramterizable interface. Note that you will almost certainly want the default behaviour for handling Parameters, so you probably want to use the <a class="el" href="class_base_extend_selector.html">BaseExtendSelector</a> class as the base class for your custom selector rather than implementing this interface from scratch.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>Selector that selects files by forwarding the request on to other classes.</p>
+<p>TODO - Consider adding <a class="el" href="class_path.html">Path</a> (phing.types.Path) support to this class and to the Mappers class. See Ant versions for implimentation details.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>Selector that filters files based on the filename.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid, <a href="mailto:hans@xmpl.org">hans@xmpl.org</a> (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton, <a href="mailto:bruce@callenish.com">bruce@callenish.com</a> (Ant)</dd></dl>
+<p>This is the interface to be used by all selectors.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid, <a href="mailto:hans@xmpl.org">hans@xmpl.org</a> (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton, <a href="mailto:bruce@callenish.com">bruce@callenish.com</a> (Ant)</dd></dl>
+<p>This selector is here just to shake up your thinking a bit. Don't get too caught up in boolean, there are other ways you can evaluate a collection of selectors. This one takes a vote of the selectors it contains, and majority wins. You could also have an "all-but-one" selector, a "weighted-average" selector, and so on. These are left as exercises for the reader (as are the usecases where this would be necessary).</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>This selector has a collection of other selectors. All of those selectors must refuse to select a file before the file is considered selected by this selector.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>This selector has one other selectors whose meaning it inverts. It actually relies on <a class="el" href="class_none_selector.html">NoneSelector</a> for its implementation of the isSelected() method, but it adds a check to ensure there is only one other selector contained within.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>This selector has a collection of other selectors, any of which have to select a file in order for this selector to select it.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>Selector that filters files based on whether they appear in another directory tree. It can contain a mapper element, so isn't available as an <a class="el" href="class_extend_selector.html">ExtendSelector</a> (since those parameters can't hold other elements).</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>This is the interface for selectors that can contain other selectors.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd><a href="mailto:bruce@callenish.com">Bruce Atherton</a></dd></dl>
+<p>An interface used to describe the actions required by any type of directory scanner that supports Selecters.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>This is a utility class used by selectors and <a class="el" href="class_directory_scanner.html">DirectoryScanner</a>. The functionality more properly belongs just to selectors, but unfortunately <a class="el" href="class_directory_scanner.html">DirectoryScanner</a> exposed these as protected methods. Thus we have to support any subclasses of <a class="el" href="class_directory_scanner.html">DirectoryScanner</a> that may access these methods.  </p>
+<p>This is a Singleton.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid, <a href="mailto:hans@xmpl.org">hans@xmpl.org</a> (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Arnout J. Kuiper, <a href="mailto:ajkuiper@wxs.nl">ajkuiper@wxs.nl</a> (Ant) </dd>
+<dd>
+Magesh Umasankar </dd>
+<dd>
+Bruce Atherton, <a href="mailto:bruce@callenish.com">bruce@callenish.com</a> (Ant)</dd></dl>
+<p>This selector just holds one other selector and forwards all requests to it. It exists so that there is a single selector type that can exist outside of any targets, as an element of project. It overrides all of the reference stuff so that it works as expected. Note that this is the only selector you can reference.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<p>Selector that filters files based on their size.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant)</dd></dl>
+<p>Selector that selects a certain kind of <a href="file:">file:</a> directory or regular file.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Jeff Turner &lt;<a href="mailto:jefft@apache.org">jefft@apache.org</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.3 </dd></dl>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:54 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

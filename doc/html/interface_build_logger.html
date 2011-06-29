@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Référence de l&#39;interface BuildLogger</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="classes.html"><span>Index&nbsp;des&nbsp;structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="functions.html"><span>Champs&nbsp;de&nbsp;donnée</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a>  </div>
+  <div class="headertitle">
+<h1>Référence de l'interface BuildLogger</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="BuildLogger" --><!-- doxytag: inherits="BuildListener" --><div class="dynheader">
+Graphe d'héritage de BuildLogger:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="interface_build_logger.png" usemap="#BuildLogger_map" alt=""/>
+  <map id="BuildLogger_map" name="BuildLogger_map">
+<area href="interface_build_listener.html" alt="BuildListener" shape="rect" coords="179,0,348,24"/>
+<area href="interface_stream_required_build_logger.html" alt="StreamRequiredBuildLogger" shape="rect" coords="89,112,258,136"/>
+<area href="class_xml_logger.html" alt="XmlLogger" shape="rect" coords="268,112,437,136"/>
+<area href="class_default_logger.html" alt="DefaultLogger" shape="rect" coords="89,168,258,192"/>
+<area href="class_ansi_color_logger.html" alt="AnsiColorLogger" shape="rect" coords="0,224,169,248"/>
+<area href="class_no_banner_logger.html" alt="NoBannerLogger" shape="rect" coords="179,224,348,248"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_build_logger.html#a84c36effdc39b809ad8f5698e5dd2146">setMessageOutputLevel</a> ($level)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_build_logger.html#a1dc51b03647dae50598814ad5b56f1dd">setOutputStream</a> (<a class="el" href="class_output_stream.html">OutputStream</a> $output)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_build_logger.html#adfc58ccb0519f4be92478d3dc140f6e1">setErrorStream</a> (<a class="el" href="class_output_stream.html">OutputStream</a> $err)</td></tr>
+</table>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="adfc58ccb0519f4be92478d3dc140f6e1"></a><!-- doxytag: member="BuildLogger::setErrorStream" ref="adfc58ccb0519f4be92478d3dc140f6e1" args="(OutputStream $err)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setErrorStream </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_output_stream.html">OutputStream</a> $&nbsp;</td>
+          <td class="paramname"> <em>err</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sets the output stream to use for errors. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_output_stream.html">OutputStream</a></em>&nbsp;</td><td>$err Configured output stream (e.g. STDERR) for errors. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémenté dans <a class="el" href="class_default_logger.html#adfc58ccb0519f4be92478d3dc140f6e1">DefaultLogger</a>, et <a class="el" href="class_xml_logger.html#adfc58ccb0519f4be92478d3dc140f6e1">XmlLogger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a84c36effdc39b809ad8f5698e5dd2146"></a><!-- doxytag: member="BuildLogger::setMessageOutputLevel" ref="a84c36effdc39b809ad8f5698e5dd2146" args="($level)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setMessageOutputLevel </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>level</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sets the min log level that this logger should respect.</p>
+<p>Messages below this level are ignored.</p>
+<p>Constants for the message levels are in Project.php. The order of the levels, from least to most verbose, is:</p>
+<ul>
+<li>Project::MSG_ERR</li>
+<li>Project::MSG_WARN</li>
+<li>Project::MSG_INFO</li>
+<li>Project::MSG_VERBOSE</li>
+<li>Project::MSG_DEBUG</li>
+</ul>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>int</em>&nbsp;</td><td>$level The log level integer (e.g. Project::MSG_VERBOSE, etc.). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémenté dans <a class="el" href="class_default_logger.html#a84c36effdc39b809ad8f5698e5dd2146">DefaultLogger</a>, et <a class="el" href="class_xml_logger.html#a84c36effdc39b809ad8f5698e5dd2146">XmlLogger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1dc51b03647dae50598814ad5b56f1dd"></a><!-- doxytag: member="BuildLogger::setOutputStream" ref="a1dc51b03647dae50598814ad5b56f1dd" args="(OutputStream $output)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setOutputStream </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_output_stream.html">OutputStream</a> $&nbsp;</td>
+          <td class="paramname"> <em>output</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sets the standard output stream to use. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_output_stream.html">OutputStream</a></em>&nbsp;</td><td>$output Configured output stream (e.g. STDOUT) for standard output. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémenté dans <a class="el" href="class_default_logger.html#a1dc51b03647dae50598814ad5b56f1dd">DefaultLogger</a>, et <a class="el" href="class_xml_logger.html#a1dc51b03647dae50598814ad5b56f1dd">XmlLogger</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette interface a été générée à partir du fichier suivant :<ul>
+<li>lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/BuildLogger.php</li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:12 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

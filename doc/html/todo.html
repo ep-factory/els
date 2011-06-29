@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Liste des choses à faire</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<h1>Liste des choses à faire </h1>  </div>
+</div>
+<div class="contents">
+<p><a class="anchor" id="_todo000049"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_d_b_adapter.html#aa8d5b208ef82811319878bc0bc230659">DBAdapter::useQuoteIdentifier</a> () </dt>
+<dd>should be abstract </dd>
+</dl>
+<p><a class="anchor" id="_todo000014"></a> </p>
+<dl>
+<dt>Espace de nommage <a class="el" href="namespace_doctrine.html">Doctrine</a>  </dt>
+<dd><p class="startdd">See <a class="el" href="class_doctrine___query.html">Doctrine_Query</a> </p>
+<p>Proposal: This class does far too much. It should have only 1 task: Collecting the DQL query parts and the query parameters (the query state and caching options/methods can remain here, too). The actual SQL construction could be done by a separate object (Doctrine_Query_SqlBuilder?) whose task it is to convert DQL into SQL. Furthermore the SqlBuilder? can then use other objects (<a class="el" href="class_doctrine___query___tokenizer.html">Doctrine_Query_Tokenizer</a>?), (Doctrine_Query_Parser(s)?) to accomplish his work. <a class="el" href="class_doctrine___query.html">Doctrine_Query</a> does not need to know the tokenizer/parsers. There could be extending implementations of SqlBuilder? that cover the specific SQL dialects. This would release <a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a> and the Doctrine_Connection_xxx classes from this tedious task. This would also largely reduce the currently huge interface of Doctrine_Query(_Abstract) and better hide all these transformation internals from the public Query API.</p>
+<p class="enddd">Composite key support? </p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000005"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___cli.html#af89f2bcaada66876d497ee3be954591b">Doctrine_Cli::_run</a> (array $args) </dt>
+<dd>Continue refactoring for testing </dd>
+</dl>
+<p><a class="anchor" id="_todo000006"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___cli.html#a4985cff34bf6d89bc69cdd9b92c3a925">Doctrine_Cli::prepareArgs</a> (array $args) </dt>
+<dd>Continue refactoring for testing </dd>
+</dl>
+<p><a class="anchor" id="_todo000007"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___cli.html#a508dde5f6c537b569a7305e9e287e585">Doctrine_Cli::printTasks</a> ($taskName=null, $full=false) </dt>
+<dd>Continue refactoring for testing </dd>
+</dl>
+<p><a class="anchor" id="_todo000004"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___cli.html#a483deb51a881a17d5fd91f42877b7711">Doctrine_Cli::run</a> (array $args) </dt>
+<dd>Should know more about what we're attempting to run so feedback can be improved. Continue refactoring. </dd>
+</dl>
+<p><a class="anchor" id="_todo000008"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___connection.html#aa4ddbee482d43ef83316a45744be018e">Doctrine_Connection::setAttribute</a> ($attribute, $value) </dt>
+<dd>why check for &gt;= 100? has this any special meaning when creating attributes?</dd>
+</dl>
+<p><a class="anchor" id="_todo000009"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___lib.html#a48c562db43f0a6dfec16dcc4bac5201c">Doctrine_Lib::formatSql</a> ($sql) </dt>
+<dd>: What about creating a config varialbe for the color? </dd>
+</dl>
+<p><a class="anchor" id="_todo000012"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___manager.html#afc7bc8691d825b2e02bc5b1bdd367af0">Doctrine_Manager::createDatabases</a> ($specifiedConnections=array()) </dt>
+<dd>package:dbal </dd>
+</dl>
+<p><a class="anchor" id="_todo000013"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___manager.html#a74f1a28b24337a5b4f752e942d38c929">Doctrine_Manager::dropDatabases</a> ($specifiedConnections=array()) </dt>
+<dd>package:dbal </dd>
+</dl>
+<p><a class="anchor" id="_todo000011"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___manager.html#aab57b2bfc8d52f06086ab4fd2c731df8">Doctrine_Manager::parseDsn</a> ($dsn) </dt>
+<dd>package:dbal </dd>
+</dl>
+<p><a class="anchor" id="_todo000010"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___manager.html#aec81db54645f3e87aa1ebe74ee020c34">Doctrine_Manager::parsePdoDsn</a> ($dsn) </dt>
+<dd>package:dbal </dd>
+</dl>
+<p><a class="anchor" id="_todo000029"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#ade950f3f728e050fec8181076a747f53">Doctrine_Query::buildInheritanceJoinSql</a> ($name, $componentAlias) </dt>
+<dd>DESCRIBE ME! </dd>
+</dl>
+<p><a class="anchor" id="_todo000021"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#adb60795d82b71ac68bef579efb98bece">Doctrine_Query::getExpressionOwner</a> ($expr) </dt>
+<dd><a class="el" href="class_description.html">Description</a>: What does it mean if a component is an 'owner' of an expression? What kind of 'expression' are we talking about here? </dd>
+</dl>
+<p><a class="anchor" id="_todo000026"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#abcd7c3b67ee35d0374ee5fbb8f8e1491">Doctrine_Query::getLimitSubquery</a> () </dt>
+<dd>A little refactor to make the method easier to understand &amp; maybe shorter? </dd>
+</dl>
+<p><a class="anchor" id="_todo000027"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#ac87ee0a918a6e05317a6bbee73f47c09">Doctrine_Query::load</a> ($path, $loadFields=true) </dt>
+<dd>Describe &amp; refactor... too long and nested. </dd>
+</dl>
+<p><a class="anchor" id="_todo000028"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#a5ff7d9c5209453555595ad0b59cc2190">Doctrine_Query::loadRoot</a> ($name, $componentAlias) </dt>
+<dd><p class="startdd">DESCRIBE ME! </p>
+<p class="enddd">this method is called only in <a class="el" href="class_doctrine___query.html">Doctrine_Query</a> class. Shouldn't be private or protected? </p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000023"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#a936f5bf645039bfa55851d65b5f40623">Doctrine_Query::parseClause</a> ($clause) </dt>
+<dd><a class="el" href="class_description.html">Description</a>: What is a 'dql clause' (and what not)? Refactor: Too long &amp; nesting level </dd>
+</dl>
+<p><a class="anchor" id="_todo000022"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#affdbc7d67c80416e21639d2ea213a67d">Doctrine_Query::parseSelect</a> ($dql) </dt>
+<dd><a class="el" href="class_description.html">Description</a>: What information is extracted (and then stored)? </dd>
+</dl>
+<p><a class="anchor" id="_todo000020"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#a980b64877f2be0da5df2c0e739d21f6b">Doctrine_Query::parseSelectField</a> ($field) </dt>
+<dd><a class="el" href="class_description.html">Description</a>: Explain what this method does. Is there a relation to parseSelect()? This method is not used from any class or testcase in the <a class="el" href="class_doctrine.html">Doctrine</a> package.</dd>
+</dl>
+<p><a class="anchor" id="_todo000025"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#a41e69e93dcf1d0626190466af566738f">Doctrine_Query::processPendingAggregates</a> () </dt>
+<dd>Better description. i.e. What is a 'pending aggregate'? What does 'processed' mean? </dd>
+</dl>
+<p><a class="anchor" id="_todo000019"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#a9eeb35ec9a7bccf7b6a9a0b57906f53c">Doctrine_Query::processPendingFields</a> ($componentAlias) </dt>
+<dd><a class="el" href="class_description.html">Description</a>: What is a 'pending field' (and are there non-pending fields, too)? What is 'processed'? (Meaning: What information is gathered &amp; stored away) </dd>
+</dl>
+<p><a class="anchor" id="_todo000024"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query.html#a5223bc1ad9a135e2844b7a9e0fdea7c6">Doctrine_Query::processPendingSubqueries</a> () </dt>
+<dd>Better description. i.e. What is a 'pending subquery'? What does 'processed' mean? (parsed? sql is constructed? some information is gathered?) </dd>
+</dl>
+<p><a class="anchor" id="_todo000017"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query___abstract.html#a0665d909f2433df9a7954980d7614358">Doctrine_Query_Abstract::_getParser</a> ($name) </dt>
+<dd>Doc/Description: What is the parameter for? Which parsers are available? </dd>
+</dl>
+<p><a class="anchor" id="_todo000016"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query___abstract.html#a6201c261b941a5068dd9d9667b19ecfb">Doctrine_Query_Abstract::_processDqlQueryPart</a> ($queryPartName, $queryParts) </dt>
+<dd>Better description. "parses given query part" ??? Then wheres the difference between process/parseQueryPart? I suppose this does something different. </dd>
+</dl>
+<p><a class="anchor" id="_todo000015"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___query___abstract.html#a1b944c776949e9c0660f4d7b08cf6a55">Doctrine_Query_Abstract::STATE_CLEAN</a>  </dt>
+<dd>document the query states (and the transitions between them). </dd>
+</dl>
+<p><a class="anchor" id="_todo000031"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___record.html#ada6a34cadf9b0048551aafaa91949760">Doctrine_Record::coreSetRelated</a> ($name, $value) </dt>
+<dd>Refactor. What about composite keys? </dd>
+</dl>
+<p><a class="anchor" id="_todo000033"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___record.html#ad7e5362deab35a944000a9fd8428ae6b">Doctrine_Record::getIncremented</a> () </dt>
+<dd>Better name? </dd>
+</dl>
+<p><a class="anchor" id="_todo000032"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___record.html#a267346deb5133b440067babb923cacba">Doctrine_Record::getPrepared</a> (array $array=array()) </dt>
+<dd>What about a little bit more expressive name? getPreparedData? </dd>
+</dl>
+<p><a class="anchor" id="_todo000035"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___relation___parser.html#ae46085b155ba23d93bd6b16873cb3f6b">Doctrine_Relation_Parser::completeDefinition</a> ($def) </dt>
+<dd><a class="el" href="class_description.html">Description</a>: What does it mean to complete a definition? What is done (not how)? Refactor (too long &amp; nesting level) </dd>
+</dl>
+<p><a class="anchor" id="_todo000039"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___table.html#ad1455363cd8c2784addb2965274a0000">Doctrine_Table::addRecord</a> (<a class="el" href="class_doctrine___record.html">Doctrine_Record</a> $record) </dt>
+<dd>Better name? registerRecord? </dd>
+</dl>
+<p><a class="anchor" id="_todo000036"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___table.html#a1309eef854e7bd31480dc7ebe56d3538">Doctrine_Table::bind</a> ($args, $type) </dt>
+<dd>Name proposal: addRelation </dd>
+</dl>
+<p><a class="anchor" id="_todo000038"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___table.html#aa821bec12eaa7e0f649397c9675ff505">Doctrine_Table::clear</a> () </dt>
+<dd>what about a more descriptive name? clearIdentityMap? </dd>
+</dl>
+<p><a class="anchor" id="_todo000037"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___table.html#ac3c1774b59f74d63ce3ce6fd3a728dd4">Doctrine_Table::findBySql</a> ($dql, $params=array(), $hydrationMode=null) </dt>
+<dd>This actually takes DQL, not SQL, but it requires column names instead of field names. This should be fixed to use raw SQL instead. </dd>
+</dl>
+<p><a class="anchor" id="_todo000040"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___table.html#af8cbc00c7479eb7912276eabd9bce2b2">Doctrine_Table::getClassnameToReturn</a> () </dt>
+<dd>this function could use reflection to check the first time it runs if the subclassing option is not set.</dd>
+</dl>
+<p><a class="anchor" id="_todo000042"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_doctrine___transaction.html#a74f817378fe226bbe5bc013f84008b93">Doctrine_Transaction::rollback</a> ($savepoint=null) </dt>
+<dd>Shouldnt this method only commit a rollback if the transactionLevel is 1 (STATE_ACTIVE)? Explanation: Otherwise a rollback that is triggered from inside doctrine in an (emulated) nested transaction would lead to a complete database level rollback even though the client code did not yet want to do that. In other words: if the user starts a transaction doctrine shouldnt roll it back. <a class="el" href="class_doctrine.html">Doctrine</a> should only roll back transactions started by doctrine. Thoughts? </dd>
+</dl>
+<p><a class="anchor" id="_todo000044"></a> </p>
+<dl>
+<dt>Classe <a class="el" href="class_ftp_deploy_task.html">FtpDeployTask</a>  </dt>
+<dd>Documentation </dd>
+</dl>
+<p><a class="anchor" id="_todo000043"></a> </p>
+<dl>
+<dt>Espace de nommage <a class="el" href="namespacephing_1_1filters.html">phing::filters</a>  </dt>
+<dd>-c use new PHP functions to perform this instead of regex. </dd>
+</dl>
+<p><a class="anchor" id="_todo000048"></a> </p>
+<dl>
+<dt>Espace de nommage <a class="el" href="namespacephing_1_1tasks_1_1system.html">phing::tasks::system</a>  </dt>
+<dd>Add support for evaluating expressions </dd>
+</dl>
+<p><a class="anchor" id="_todo000046"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_php_lint_task.html#ad876332d9a08009c5ad4d332ba68a4a4">PhpLintTask::setInterpreter</a> ($sPhp) </dt>
+<dd>Do some sort of checking if the path is correct but would require traversing the systems executeable path too </dd>
+</dl>
+<p><a class="anchor" id="_todo000050"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_propel_creole_transform_task.html#a1eb12ab9ad29f8fdf4fe7c07ee798f1f">PropelCreoleTransformTask::registerValidatorsForColumn</a> ($column) </dt>
+<dd><p class="startdd">find out how to evaluate the appropriate size and adjust maxValue rule values appropriate </p>
+<p class="enddd">find out if float type column values must always notMatch('[^\.]+'), i.e. digits and point for any db vendor, language etc. </p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000051"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_propel_o_m_task.html#a50c5d43da74ca8c58e6952ca4f60cccd">PropelOMTask::build</a> (<a class="el" href="class_o_m_builder.html">OMBuilder</a> $builder, $overwrite=true) </dt>
+<dd>-cPropelOMTask Consider refactoring build() method into <a class="el" href="class_abstract_propel_data_model_task.html">AbstractPropelDataModelTask</a> (would need to be more generic). </dd>
+</dl>
+<p><a class="anchor" id="_todo000052"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="class_propel_schema_reverse_task.html#ae1944d1343051a034b4d96433df81e8b">PropelSchemaReverseTask::addValidators</a> (<a class="el" href="class_database.html">Database</a> $database) </dt>
+<dd><p class="startdd">find out how to evaluate the appropriate size and adjust maxValue rule values appropriate </p>
+<p class="enddd">find out if float type column values must always notMatch('[^\.]+'), i.e. digits and point for any db vendor, language etc. </p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000001"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="classsf_date_format.html#a1886a78746b5906e3684a2649921643d">sfDateFormat::getEra</a> ($date, $pattern= 'G') </dt>
+<dd>How to support multiple Eras?, e.g. Japanese. </dd>
+</dl>
+<p><a class="anchor" id="_todo000002"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="classsf_date_format.html#a4049fe58de59f61a4b6e5b9b0e77b95d">sfDateFormat::getTimeZone</a> ($date, $pattern= 'z') </dt>
+<dd>How to get the timezone for a different region? </dd>
+</dl>
+<p><a class="anchor" id="_todo000003"></a> </p>
+<dl>
+<dt>Global(e) <a class="el" href="classsf_doctrine_form_generator.html#aea7f48787c7c0142585498070b786ccb">sfDoctrineFormGenerator::getPluginModels</a> () </dt>
+<dd>This method is ugly and is a very weird way of finding the models which belong to plugins. If we could come up with a better way that'd be great </dd>
+</dl>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:03 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

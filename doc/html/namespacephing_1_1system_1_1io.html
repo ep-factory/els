@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Référence de l&#39;espace de nommage phing::system::io</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>Liste&nbsp;des&nbsp;espaces&nbsp;de&nbsp;nommage</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath">
+    <ul>
+      <li><a class="el" href="namespacephing.html">phing</a>      </li>
+      <li><b>system</b>      </li>
+      <li><a class="el" href="namespacephing_1_1system_1_1io.html">io</a>      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<h1>Référence de l'espace de nommage phing::system::io</h1>  </div>
+</div>
+<div class="contents">
+<table class="memberdecls">
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<p>Convenience class for writing files.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.10 </dd></dl>
+<p>Convenience class for reading console input.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd>
+<dd>
+Matthew Hershberger &lt;<a href="mailto:matthewh@lightsp.com">matthewh@lightsp.com</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.4 </dd></dl>
+<p>Input stream subclass for file streams.</p>
+<p>Output stream subclass for file streams.</p>
+<p>Convenience class for reading files.</p>
+<p>This is an abstract class for platform specific filesystem implementations you have to implement each method in the platform specific filesystem implementation classes Your local filesytem implementation must extend this class. You should also use this class as a template to write your local implementation Some native PHP filesystem specific methods are abstracted here as well. Anyway you _must_ always use this methods via a <a class="el" href="class_phing_file.html">PhingFile</a> object (that by nature uses the *FileSystem drivers to access the real filesystem via this class using natives.</p>
+<p>FIXME:</p>
+<ul>
+<li>Error handling reduced to min fallthrough runtime excetions more precise errorhandling is done by the <a class="el" href="class_phing_file.html">PhingFile</a> class</li>
+</ul>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Charlie Killian &lt;<a href="mailto:charlie@tizac.com">charlie@tizac.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.11 </dd></dl>
+<p>Convenience class for performing file write operations.</p>
+<p>Wrapper class for readers, which can be used to apply filters.</p>
+<p>Wrapper class for PHP stream that supports read operations.</p>
+<p><a class="el" href="class_writer.html">Writer</a> class for <a class="el" href="class_output_stream.html">OutputStream</a> objects.</p>
+<p>Unlike the Java counterpart, this class does not (yet) handle character set transformations. This will be an important function of this class with move to supporting PHP6. *</p>
+<p>Extends Exception to take advantage of methods therein.</p>
+<p>Wrapper class for PHP stream that supports write operations.</p>
+<p><a class="el" href="class_writer.html">Writer</a> class for <a class="el" href="class_output_stream.html">OutputStream</a> objects.</p>
+<p>Unlike the Java counterpart, this class does not (yet) handle character set transformations. This will be an important function of this class with move to supporting PHP6.</p>
+<p>An abstract representation of file and directory pathnames.</p>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.1 </dd></dl>
+<p>Abstract class for reading character streams.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd>
+<dd>
+Yannick Lecaillez &lt;<a href="mailto:yl@seasonfive.com">yl@seasonfive.com</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.5 </dd></dl>
+<p>Dummy class for reading from string of characters.</p>
+<p><a class="el" href="class_unix_file_system.html">UnixFileSystem</a> class. This class encapsulates the basic file system functions for platforms using the unix (posix)-stylish filesystem. It wraps php native functions suppressing normal PHP error reporting and instead uses Exception to report and error.</p>
+<p>This class is part of a oop based filesystem abstraction and targeted to run on all supported php platforms.</p>
+<p>Note: For debugging turn track_errors on in the php.ini. The error messages and log messages from this class will then be clearer because $php_errormsg is passed as part of the message.</p>
+<p>FIXME:</p>
+<ul>
+<li>Comments</li>
+<li>Error handling reduced to min, error are handled by <a class="el" href="class_phing_file.html">PhingFile</a> mainly</li>
+</ul>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold, <a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a> </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.10 </dd></dl>
+<p><a class="el" href="class_file_system.html">FileSystem</a> for Windows NT/2000.</p>
+<p>Abstract class for writing character streams. </p>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:54 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

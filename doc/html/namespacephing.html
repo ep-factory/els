@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Référence de l&#39;espace de nommage phing</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>Liste&nbsp;des&nbsp;espaces&nbsp;de&nbsp;nommage</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Espaces de nommage</a>  </div>
+  <div class="headertitle">
+<h1>Référence de l'espace de nommage phing</h1>  </div>
+</div>
+<div class="contents">
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="namespaces"></a>
+Espaces de nommage</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephing_1_1filters.html">filters</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephing_1_1input.html">input</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephing_1_1lib.html">lib</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephing_1_1listener.html">listener</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephing_1_1mappers.html">mappers</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephing_1_1parser.html">parser</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephing_1_1types.html">types</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephing_1_1util.html">util</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<p>Encapsulates a build specific event.</p>
+<p>We have three sources of events all handled by this class:</p>
+<ul>
+<li>
+<a class="el" href="class_project.html">Project</a> level events </li>
+<li>
+<a class="el" href="class_target.html">Target</a> level events </li>
+<li>
+<a class="el" href="class_task.html">Task</a> level events </li>
+</ul>
+<p>Events are all fired from the project class by creating an event object using this class and passing it to the listeners.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.10 </dd></dl>
+<p><a class="el" href="class_build_exception.html">BuildException</a> is for when things go wrong in a build execution.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.12 </dd></dl>
+<p>Interface for build listeners.</p>
+<p>Classes that implement a listener must extend this class and (faux)implement all methods that are decleard as dummies below.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_build_event.html">BuildEvent</a> </dd>
+<dd>
+Project::addBuildListener()</dd></dl>
+<p>Interface for build loggers.</p>
+<p>Build loggers are build listeners but with some additional functionality:</p>
+<ul>
+<li>They can be configured with a log level (below which they will ignore messages)</li>
+<li>They have error and output streams</li>
+</ul>
+<p>Classes that implement a listener must implement this interface.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_build_event.html">BuildEvent</a> </dd>
+<dd>
+Project::addBuildListener()</dd></dl>
+<p><a class="el" href="class_configuration_exception.html">ConfigurationException</a> is thrown by <a class="el" href="class_phing.html">Phing</a> during the configuration and setup phase of the project.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd>$Revision$</dd></dl>
+<p>Helper class that collects the methods that a task or nested element holds to set attributes, create nested elements or hold PCDATA elements.</p>
+<ul>
+<li>
+<b>SMART-UP INLINE DOCS</b> </li>
+<li>
+<b>POLISH-UP THIS CLASS</b> </li>
+</ul>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt;  � 2001,2002 THYRELL. All rights reserved </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.19 </dd></dl>
+<p>Interface for build loggers that require that out/err streams be set in order to function.</p>
+<p>This is just an empty sub-interface to <a class="el" href="interface_build_logger.html">BuildLogger</a>, but is used by <a class="el" href="class_phing.html">Phing</a> to throw graceful errors when classes like phing.listener.DefaultLogger are being used as -listener.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_build_event.html">BuildEvent</a> </dd>
+<dd>
+Project::addBuildListener()</dd></dl>
+<p>Entry point into <a class="el" href="class_phing.html">Phing</a>. This class handles the full lifecycle of a build -- from parsing &amp; handling commandline arguments to assembling the project to shutting down and cleaning up in the end.</p>
+<p>If you are invoking <a class="el" href="class_phing.html">Phing</a> from an external application, this is still the class to use. Your applicaiton can invoke the start() method, passing any commandline arguments or additional properties.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.51 </dd></dl>
+<p>The <a class="el" href="class_phing.html">Phing</a> project class. Represents a completely configured <a class="el" href="class_phing.html">Phing</a> project. The class defines the project and all tasks/targets. It also contains methods to start a build as well as some properties and <a class="el" href="class_file_system.html">FileSystem</a> abstraction.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.29 </dd></dl>
+<p>Abstract class providing properties and methods common to all the project components</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.5 </dd></dl>
+<p>Wrapper class that holds the attributes of a <a class="el" href="class_task.html">Task</a> (or elements nested below that level) and takes care of configuring that element at runtime.</p>
+<p><b>SMART-UP INLINE DOCS</b></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<p>The <a class="el" href="class_target.html">Target</a> component. Carries all required target data. Implements the abstract class <a class="el" href="interface_task_container.html">TaskContainer</a></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt;  � 2001,2002 THYRELL. All rights reserved </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.10 </dd></dl>
+<dl class="rcs"><dt><b>Date:</b></dt><dd>2007-03-14 14:52:03 +0100 (Mer, 14 mar 2007) </dd></dl>
+<p>public </p>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="interface_task_container.html">TaskContainer</a></dd></dl>
+<p>The base class for all Tasks.</p>
+<p>Use <a class="el" href="class_project.html#a4f3371454a7152d614d73be664e8eca3">Project#createTask</a> to register a new <a class="el" href="class_task.html">Task</a>.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt;  � 2001,2002 THYRELL. All rights reserved </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.11 </dd></dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_project.html#a4f3371454a7152d614d73be664e8eca3">Project::createTask()</a></dd></dl>
+<p>Use introspection to "adapt" an arbitrary ( not extending <a class="el" href="class_task.html">Task</a>, but with similar patterns).</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt;  � 2001,2002 THYRELL. All rights reserved </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.7 </dd></dl>
+<p>Abstract interface for objects which can contain tasks (targets) Used to check if a class can contain tasks (via instanceof)</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt;  � 2001,2002 THYRELL. All rights reserved </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.5 </dd></dl>
+<dl class="rcs"><dt><b>Date:</b></dt><dd>2006-09-14 22:19:08 +0200 (Jeu, 14 sep 2006) </dd></dl>
+<p>public</p>
+<p>Wrapper class that holds all information necessary to create a task that did not exist when <a class="el" href="class_phing.html">Phing</a> started.</p>
+<p><em> This has something to do with phing encountering an task XML element it is not aware of at start time. This is a situation where special steps need to be taken so that the element is then known.</em></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.9 </dd></dl>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:54 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

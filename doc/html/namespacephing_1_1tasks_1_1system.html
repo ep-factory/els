@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Référence de l&#39;espace de nommage phing::tasks::system</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>Liste&nbsp;des&nbsp;espaces&nbsp;de&nbsp;nommage</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath">
+    <ul>
+      <li><a class="el" href="namespacephing.html">phing</a>      </li>
+      <li><b>tasks</b>      </li>
+      <li><a class="el" href="namespacephing_1_1tasks_1_1system.html">system</a>      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Espaces de nommage</a>  </div>
+  <div class="headertitle">
+<h1>Référence de l'espace de nommage phing::tasks::system</h1>  </div>
+</div>
+<div class="contents">
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="namespaces"></a>
+Espaces de nommage</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephing_1_1tasks_1_1system_1_1condition.html">condition</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<p>Handles Creole configuration needed by SQL type tasks.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Nick Chalko &lt;<a href="mailto:nick@chalko.com">nick@chalko.com</a>&gt; (Ant) </dd>
+<dd>
+Jeff Martin &lt;<a href="mailto:jeff@custommonkey.org">jeff@custommonkey.org</a>&gt; (Ant) </dd>
+<dd>
+Michael McCallum &lt;<a href="mailto:gholam@xtra.co.nz">gholam@xtra.co.nz</a>&gt; (Ant) </dd>
+<dd>
+Tim Stephenson &lt;<a href="mailto:tim.stephenson@sybase.com">tim.stephenson@sybase.com</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.13 </dd></dl>
+<p>Handles PDO configuration needed by SQL type tasks.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Nick Chalko &lt;<a href="mailto:nick@chalko.com">nick@chalko.com</a>&gt; (Ant) </dd>
+<dd>
+Jeff Martin &lt;<a href="mailto:jeff@custommonkey.org">jeff@custommonkey.org</a>&gt; (Ant) </dd>
+<dd>
+Michael McCallum &lt;<a href="mailto:gholam@xtra.co.nz">gholam@xtra.co.nz</a>&gt; (Ant) </dd>
+<dd>
+Tim Stephenson &lt;<a href="mailto:tim.stephenson@sybase.com">tim.stephenson@sybase.com</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.13 </dd></dl>
+<p>Abstract class for creating adhoc <a class="el" href="class_phing.html">Phing</a> components in buildfile.</p>
+<p>By itself this class can be used to declare a single class within your buildfile. You can then reference this class in any task that takes custom classes (selectors, mappers, filters, etc.)</p>
+<p>Subclasses exist for conveniently declaring and registering tasks and types.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<p>A class for creating adhoc tasks in build file.</p>
+<p>&lt;target name="test-adhoc"&gt; &lt;adhoc-task name="foo"&gt;&lt;![CDATA[</p>
+<p>class FooTest extends <a class="el" href="class_task.html">Task</a> { private $bar;</p>
+<p>function setBar($bar) { $this-&gt;bar = $bar; }</p>
+<p>function main() { $this-&gt;log("In FooTest: " . $this-&gt;bar); } }</p>
+<p>]]&gt;&lt;/adhoc-task&gt;</p>
+<p>&lt;foo bar="B.L.I.N.G"&gt; &lt;/target&gt;</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.5 </dd></dl>
+<p>A class for creating adhoc datatypes in build file.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.4 </dd></dl>
+<p>Appends text, contents of a file or set of files defined by a filelist to a destination file.</p>
+<p><code> &lt;append text="And another thing\n" destfile="badthings.log"&gt; </code> OR <code> &lt;append file="header.html" destfile="fullpage.html"&gt; &lt;append file="body.html" destfile="fullpage.html"&gt; &lt;append file="footer.html" destfile="fullpage.html"&gt; </code> OR <code> &lt;append destfile="${process.outputfile}"&gt; &lt;filterchain&gt; &lt;xsltfilter style="${process.stylesheet}"&gt; </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mode</em>&nbsp;</td><td><dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file_name</em>&nbsp;</td><td>&lt;/xsltfilter&gt; &lt;/filterchain&gt; &lt;filelist dir="book/" listfile="book/PhingGuide.book"&gt; &lt;/append&gt; </td></tr>
+  </table>
+  </dd>
+</dl>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.14 </dd></dl>
+<p></code></p>
+<p><code> &lt;available&gt; task.</code></p>
+<p><code> Note: implements condition interface (see condition/Condition.php)</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt;  � 2001,2002 THYRELL. All rights reserved </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.11 </dd></dl>
+<p></code></p>
+<p><code> <a class="el" href="class_task.html">Task</a> that changes the permissions on a file/directory.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Manuel Holtgrewe &lt;<a href="mailto:grin@gmx.net">grin@gmx.net</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.12 </dd></dl>
+<p></code></p>
+<p><code> <a class="el" href="class_task.html">Task</a> that changes the permissions on a file/directory.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Mehmet Emre Yilmaz &lt;<a href="mailto:mehmety@gmail.com">mehmety@gmail.com</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd>$Revision$</dd></dl>
+<p>&lt;condition&gt; task as a generalization of &lt;available&gt;</code></p>
+<p><code> </code></p>
+<p><code>This task supports boolean logic as well as pluggable conditions to decide, whether a property should be set.</code></p>
+<p><code> </code></p>
+<p><code>This task does not extend <a class="el" href="class_task.html">Task</a> to take advantage of <a class="el" href="class_condition_base.html">ConditionBase</a>.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt;  � 2001,2002 THYRELL. All rights reserved </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.7 </dd></dl>
+<dl class="rcs"><dt><b>Date:</b></dt><dd>2006-03-10 15:31:51 +0100 (Ven, 10 mar 2006) </dd></dl>
+<p>public</code></p>
+<p><code> A phing copy task. Copies a file or directory to a new file or directory. Files are only copied if the source file is newer than the destination file, or when the destination file does not exist. It is possible to explictly overwrite existing files.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold, <a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a> </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.16 </dd></dl>
+<dl class="rcs"><dt><b>Date:</b></dt><dd>2007-09-05 20:42:02 +0200 (Mer, 05 sep 2007) </dd></dl>
+<p></code></p>
+<p><code> Adds an new entry to a CVS password file.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Jeff Martin &lt;<a href="mailto:jeff@custommonkey.org">jeff@custommonkey.org</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.7 </dd></dl>
+<p></code></p>
+<p><code> <a class="el" href="class_task.html">Task</a> for performing CVS operations.</code></p>
+<p><code> NOTE: This implementation has been moved here from Cvs.java with the addition of some accessors for extensibility. Another task can extend this with some customized output processing.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+<a href="mailto:costin@dnt.ro">costin@dnt.ro</a> (Ant) </dd>
+<dd>
+<a href="mailto:stefano@apache.org">stefano@apache.org</a> (Ant) </dd>
+<dd>
+Wolfgang Werner &lt;<a href="mailto:wwerner@picturesafe.de">wwerner@picturesafe.de</a>&gt; (Ant) </dd>
+<dd>
+Kevin Ross &lt;<a href="mailto:kevin.ross@bredex.com">kevin.ross@bredex.com</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.14 </dd></dl>
+<p></code></p>
+<p><code> Deletes a file or directory, or set of files defined by a fileset.</code></p>
+<p><code> </p>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.13 </dd></dl>
+<p></code></p>
+<p><code> Echos a message to the logging system or to a file</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michiel Rook &lt;<a href="mailto:michiel.rook@gmail.com">michiel.rook@gmail.com</a>&gt; </dd>
+<dd>
+Andreas Aderhold, <a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a> </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.5 </dd></dl>
+<dl class="rcs"><dt><b>Date:</b></dt><dd>2007-02-05 16:19:00 +0100 (Lun, 05 fév 2007) </dd></dl>
+<p></code></p>
+<p><code> Executes a command on the shell.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.17 </dd></dl>
+<p></code></p>
+<p><code> Exits the active build, giving an additional message if available.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Nico Seessle &lt;<a href="mailto:nico@seessle.de">nico@seessle.de</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.7 </dd></dl>
+<p></code></p>
+<p><code> &lt;foreach&gt; task</code></p>
+<p><code> <a class="el" href="class_task.html">Task</a> definition for the foreach task. This task takes a list with delimited values, and executes a target with set param.</code></p>
+<p><code> Usage: &lt;foreach list="values" target="targ" param="name" delimiter="|"&gt;</code></p>
+<p><code> Attributes: list --&gt; The list of values to process, with the delimiter character, indicated by the "delimiter" attribute, separating each value. target --&gt; The target to call for each token, passing the token as the parameter with the name indicated by the "param" attribute. param --&gt; The name of the parameter to pass the tokens in as to the target. delimiter --&gt; The delimiter string that separates the values in the "list" parameter. The default is ",".</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Jason Hines &lt;<a href="mailto:jason@greenhell.com">jason@greenhell.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.9 </dd></dl>
+<p></code></p>
+<p><code> Adds a normalized path to the PHP include_path.</code></p>
+<p><code> This provides a way to alter the include_path without editing any global php.ini settings or PHP_CLASSPATH environment variable.</code></p>
+<p><code> <code> &lt;includepath classpath="new/path/here"&gt; </code></code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.1 </dd></dl>
+<p></code></p>
+<p><code> Reads input from the <a class="el" href="interface_input_handler.html">InputHandler</a>.</code></p>
+<p><code> </p>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_project.html#aa47ec0805d08ae31f72a31a0013d6562">Project::getInputHandler()</a> </dd></dl>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Ulrich Schmidt &lt;<a href="mailto:usch@usch.net">usch@usch.net</a>&gt; (Ant) </dd>
+<dd>
+Stefan Bodewig &lt;<a href="mailto:stefan.bodewig@epost.de">stefan.bodewig@epost.de</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<p></code></p>
+<p><code> This is an abstract task that should be used by all those tasks that require to include or exclude files based on pattern matching.</code></p>
+<p><code> This is very closely based on the ANT class of the same name.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Arnout J. Kuiper &lt;<a href="mailto:ajkuiper@wxs.nl">ajkuiper@wxs.nl</a>&gt; (Ant) </dd>
+<dd>
+Stefano Mazzocchi &lt;<a href="mailto:stefano@apache.org">stefano@apache.org</a>&gt; (Ant) </dd>
+<dd>
+Sam Ruby &lt;<a href="mailto:rubys@us.ibm.com">rubys@us.ibm.com</a>&gt; (Ant) </dd>
+<dd>
+Jon S. Stevens &lt;<a href="mailto:jon@clearink.com">jon@clearink.com</a>&gt; (Ant </dd>
+<dd>
+Stefan Bodewig &lt;<a href="mailto:stefan.bodewig@epost.de">stefan.bodewig@epost.de</a>&gt; (Ant) </dd>
+<dd>
+Bruce Atherton &lt;<a href="mailto:bruce@callenish.com">bruce@callenish.com</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.4 </dd></dl>
+<p></code></p>
+<p><code> <a class="el" href="class_task.html">Task</a> to create a directory.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold, <a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a> </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.8 </dd></dl>
+<p></code></p>
+<p><code> Moves a file or directory to a new file or directory.</code></p>
+<p><code> By default, the destination file is overwritten if it already exists. When overwrite is turned off, then files are only moved if the source file is newer than the destination file, or when the destination file does not exist.</code></p>
+<p><code> Source files and directories are only deleted when the file or directory has been copied to the destination successfully.</code></p>
+<p><code> </p>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.8 </dd></dl>
+<p></code></p>
+<p><code> Call another target in the same project.</code></p>
+<p><code> &lt;samp&gt; &lt;target name="foo"&gt; &lt;phingcall target="bar"&gt; &lt;property name="property1" value="aaaaa"&gt; &lt;property name="foo" value="baz"&gt; &lt;/phingcall&gt; &lt;/target&gt;</code></p>
+<p><code> &lt;target name="bar" depends="init"&gt; &lt;echo message="prop is ${property1} ${foo}"&gt; &lt;/target&gt; &lt;/samp&gt;</code></p>
+<p><code> This only works as expected if neither property1 nor foo are defined in the project itself.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt;  2001,2002 THYRELL. All rights reserved </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.9 </dd></dl>
+<p>public</code></p>
+<p><code> <a class="el" href="class_task.html">Task</a> that invokes phing on another build file.</code></p>
+<p><code> Use this task, for example, if you have nested buildfiles in your project. Unlike AntTask, <a class="el" href="class_phing_task.html">PhingTask</a> can even support filesets:</code></p>
+<p><code> </p>
+<pre>
+   &lt;phing&gt;
+    &lt;fileset dir="${srcdir}"&gt;
+       
+      &lt;exclude name="build.xml"&gt;
+    &lt;/fileset&gt;
+   &lt;/phing&gt;
+ </pre><p></code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.20 </dd></dl>
+<p></code></p>
+<p><code> Executes PHP function or evaluates expression and sets return value to a property.</code></p>
+<p><code> WARNING: This task can, of course, be abused with devastating effects. E.g. do not modify internal <a class="el" href="class_phing.html">Phing</a> classes unless you know what you are doing.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.7 </dd></dl>
+<p></code></p>
+<p><code></p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000048">À faire:</a></b></dt><dd>Add support for evaluating expressions </dd></dl>
+<p></code></p>
+<p><code> Deprecated task that uses console to prompt user for property values.</code></p>
+<p><code> This class is very slightly simpler than the <a class="el" href="class_input_task.html">InputTask</a>, but lacks the ability to use a non-console input handler. You should, therefore, use <a class="el" href="class_input_task.html">InputTask</a>. This class can serve as a reference, but will be removed in the future.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+Anthony J. Young-Garner &lt;<a href="mailto:ajyoung@alum.mit.edu">ajyoung@alum.mit.edu</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.4 </dd></dl>
+<p></code></p>
+<p><code></p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Obsolète:</a></b></dt><dd><ul>
+<li>in favor of the more capable <a class="el" href="class_input_task.html">InputTask</a> </li>
+</ul>
+</dd></dl>
+<p></code></p>
+<p><code> <a class="el" href="class_task.html">Task</a> for setting properties in buildfiles.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold &lt;<a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd>$Revision$</dd></dl>
+<p>This task is for using filter chains to make changes to files and overwrite the original files.</code></p>
+<p><code> This task was created to serve the need for "cleanup" tasks -- e.g. a <a class="el" href="class_replace_regexp.html">ReplaceRegexp</a> task or strip task being used to modify files and then overwrite the modified files. In many (most?) cases you probably should just use a copy task to preserve the original source files, but this task supports situations where there is no src vs. build directory, and modifying source files is actually desired.</code></p>
+<p><code> <code> &lt;reflexive&gt; &lt;fileset dir="."&gt;  &lt;/fileset&gt; &lt;filterchain&gt; &lt;replaceregexp&gt; &lt;regexp pattern="\n\r" replace="\n"&gt; &lt;/replaceregexp&gt; &lt;/filterchain&gt; &lt;/reflexive&gt; </code></code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.11 </dd></dl>
+<p></code></p>
+<p><code> <a class="el" href="class_task.html">Task</a> for resolving relative paths and setting absolute path in property value.</code></p>
+<p><code> This task was created to address a need for resolving absolute paths of files / directories. In many cases a relative directory (e.g. "./build") is specified, but it needs to be treated as an absolute path since other build files (e.g. in subdirs) should all be using the same path -- and not treating it as a relative path to their own directory.</code></p>
+<p><code> <code> &lt;property name="relative_path" value="./dirname"&gt; &lt;resolvepath propertyname="absolute_path" file="${relative_path}"&gt; &lt;echo&gt;Resolved [absolute] path: ${absolute_path}&lt;/echo&gt; </code></code></p>
+<p><code> TODO:</p>
+<ul>
+<li>Possibly integrate this with PackageAsPath, for handling/resolving dot-path paths.</li>
+</ul>
+<p></code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<p></code></p>
+<p><code> <a class="el" href="class_register.html">Register</a> a task for use within a buildfile.</code></p>
+<p><code> This is for registering your own tasks -- or any non-core <a class="el" href="class_task.html">Task</a> -- for use within a buildfile. If you find that you are using a particular class frequently, you may want to edit the phing/tasks/defaults.properties file so that it is included by default. You may also want to submit it (if LGPL or compatible license) to be included in <a class="el" href="class_phing.html">Phing</a> distribution.</code></p>
+<p><code> </p>
+<pre>
+   &lt;taskdef name="mytag" classname="path.to.MyHandlingClass"&gt;   &lt;mytag param1="val1" param2="val2"&gt;
+ </pre><p></code></p>
+<p><code> TODO: -- possibly refactor since this is almost the same as TypeDefTask (right now these are just too simple to really justify creating an abstract class)</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.11 </dd></dl>
+<p></code></p>
+<p><code> Touch a file and/or fileset(s); corresponds to the Unix touch command.</code></p>
+<p><code> If the file to touch doesn't exist, an empty one is created.</code></p>
+<p><code> </p>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.12 </dd></dl>
+<p></code></p>
+<p><code> Sets properties to the current time, or offsets from the current time. The default properties are TSTAMP, DSTAMP and TODAY;</code></p>
+<p><code> Based on Ant's Tstamp task.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michiel Rook &lt;<a href="mailto:michiel.rook@gmail.com">michiel.rook@gmail.com</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<p></code></p>
+<p><code> </p>
+<dl class="since"><dt><b>Depuis:</b></dt><dd>2.2.0</dd></dl>
+<p><a class="el" href="class_register.html">Register</a> a datatype for use within a buildfile.</code></p>
+<p><code> This is for registering your own datatypes for use within a buildfile.</code></p>
+<p><code> If you find that you are using a particular class frequently, you may want to edit the phing/types/defaults.properties file so that it is included by default. You may also want to submit it (if LGPL or compatible license) to be included in <a class="el" href="class_phing.html">Phing</a> distribution.</code></p>
+<p><code> </p>
+<pre>
+   &lt;typedef name="mytype" classname="path.to.MyHandlingClass"&gt;   &lt;sometask ...&gt;
+     &lt;mytype param1="val1" param2="val2"&gt;
+   &lt;/sometask&gt;
+ </pre><p></code></p>
+<p><code> TODO: -- possibly refactor since this is almost the same as TaskDefTask (right now these are just too simple to really justify creating an abstract class)</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.7 </dd></dl>
+<p></code></p>
+<p><code> Sets the given property if the specified target has a timestamp greater than all of the source files.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; (<a class="el" href="class_phing.html">Phing</a>) </dd>
+<dd>
+William Ferguson &lt;<a href="mailto:williamf@mincom.com">williamf@mincom.com</a>&gt; (Ant) </dd>
+<dd>
+Hiroaki Nakamura &lt;<a href="mailto:hnakamur@mc.neweb.ne.jp">hnakamur@mc.neweb.ne.jp</a>&gt; (Ant) </dd>
+<dd>
+Stefan Bodewig &lt;<a href="mailto:stefan.bodewig@epost.de">stefan.bodewig@epost.de</a>&gt; (Ant) </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.6 </dd></dl>
+<p></code></p>
+<p><code> Simple task to echo a warning message (Project::MSG_WARN) to all output devices.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.1 </dd></dl>
+<dl class="rcs"><dt><b>Date:</b></dt><dd>2007-02-05 16:19:00 +0100 (Lun, 05 fév 2007) </dd></dl>
+<p></code></p>
+<p><code> Implements an XSLT processing filter while copying files.</code></p>
+<p><code> This is a shortcut for calling the &lt;copy&gt; task with the XSLTFilter used in the &lt;filterchains&gt; section.</code></p>
+<p><code> </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Andreas Aderhold, <a href="mailto:andi@binarycloud.com">andi@binarycloud.com</a> </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1.8 </dd></dl>
+<p></code></p>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:54 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

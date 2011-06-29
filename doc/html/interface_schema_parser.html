@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Référence de l&#39;interface SchemaParser</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="classes.html"><span>Index&nbsp;des&nbsp;structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="functions.html"><span>Champs&nbsp;de&nbsp;donnée</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a>  </div>
+  <div class="headertitle">
+<h1>Référence de l'interface SchemaParser</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="SchemaParser" --><div class="dynheader">
+Graphe d'héritage de SchemaParser:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="interface_schema_parser.png" usemap="#SchemaParser_map" alt=""/>
+  <map id="SchemaParser_map" name="SchemaParser_map">
+<area href="class_base_schema_parser.html" alt="BaseSchemaParser" shape="rect" coords="288,56,422,80"/>
+<area href="class_mssql_schema_parser.html" alt="MssqlSchemaParser" shape="rect" coords="0,112,134,136"/>
+<area href="class_mysql_schema_parser.html" alt="MysqlSchemaParser" shape="rect" coords="144,112,278,136"/>
+<area href="class_oracle_schema_parser.html" alt="OracleSchemaParser" shape="rect" coords="288,112,422,136"/>
+<area href="class_pgsql_schema_parser.html" alt="PgsqlSchemaParser" shape="rect" coords="432,112,566,136"/>
+<area href="class_sqlite_schema_parser.html" alt="SqliteSchemaParser" shape="rect" coords="576,112,710,136"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_schema_parser.html#ab7a0a080d0e721c656eef11cd641638b">getConnection</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_schema_parser.html#ae2a053abdcf3cbcc83d96cbc5d71df44">setConnection</a> (PDO $dbh)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_schema_parser.html#a193def00c3feec20090a501f9c0b330b">setGeneratorConfig</a> (<a class="el" href="class_generator_config.html">GeneratorConfig</a> $config)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_schema_parser.html#a30687d6f7a0051d9260e6e6f20e8395e">getBuildProperty</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_schema_parser.html#adc3b82cf30d1a6f68351b9bbcc88602e">getWarnings</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_schema_parser.html#a54888b094dfea6813329f16c7067f066">parse</a> (<a class="el" href="class_database.html">Database</a> $database)</td></tr>
+</table>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a30687d6f7a0051d9260e6e6f20e8395e"></a><!-- doxytag: member="SchemaParser::getBuildProperty" ref="a30687d6f7a0051d9260e6e6f20e8395e" args="($name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getBuildProperty </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets a specific propel (renamed) property from the build.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>mixed </dd></dl>
+
+<p>Implémenté dans <a class="el" href="class_base_schema_parser.html#a30687d6f7a0051d9260e6e6f20e8395e">BaseSchemaParser</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7a0a080d0e721c656eef11cd641638b"></a><!-- doxytag: member="SchemaParser::getConnection" ref="ab7a0a080d0e721c656eef11cd641638b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getConnection </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets the database connection. </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>PDO </dd></dl>
+
+<p>Implémenté dans <a class="el" href="class_base_schema_parser.html#ab7a0a080d0e721c656eef11cd641638b">BaseSchemaParser</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc3b82cf30d1a6f68351b9bbcc88602e"></a><!-- doxytag: member="SchemaParser::getWarnings" ref="adc3b82cf30d1a6f68351b9bbcc88602e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getWarnings </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets array of warning messages. </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array string[] </dd></dl>
+
+<p>Implémenté dans <a class="el" href="class_base_schema_parser.html#adc3b82cf30d1a6f68351b9bbcc88602e">BaseSchemaParser</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54888b094dfea6813329f16c7067f066"></a><!-- doxytag: member="SchemaParser::parse" ref="a54888b094dfea6813329f16c7067f066" args="(Database $database)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">parse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_database.html">Database</a> $&nbsp;</td>
+          <td class="paramname"> <em>database</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Parse the schema and populate passed-in <a class="el" href="class_database.html">Database</a> model object.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_database.html">Database</a></em>&nbsp;</td><td>$database </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémenté dans <a class="el" href="class_mssql_schema_parser.html#a54888b094dfea6813329f16c7067f066">MssqlSchemaParser</a>, <a class="el" href="class_mysql_schema_parser.html#a54888b094dfea6813329f16c7067f066">MysqlSchemaParser</a>, <a class="el" href="class_oracle_schema_parser.html#a54888b094dfea6813329f16c7067f066">OracleSchemaParser</a>, <a class="el" href="class_pgsql_schema_parser.html#a54888b094dfea6813329f16c7067f066">PgsqlSchemaParser</a>, et <a class="el" href="class_sqlite_schema_parser.html#a54888b094dfea6813329f16c7067f066">SqliteSchemaParser</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2a053abdcf3cbcc83d96cbc5d71df44"></a><!-- doxytag: member="SchemaParser::setConnection" ref="ae2a053abdcf3cbcc83d96cbc5d71df44" args="(PDO $dbh)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setConnection </td>
+          <td>(</td>
+          <td class="paramtype">PDO $&nbsp;</td>
+          <td class="paramname"> <em>dbh</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sets the database connection.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>PDO</em>&nbsp;</td><td>$dbh </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémenté dans <a class="el" href="class_base_schema_parser.html#ae2a053abdcf3cbcc83d96cbc5d71df44">BaseSchemaParser</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a193def00c3feec20090a501f9c0b330b"></a><!-- doxytag: member="SchemaParser::setGeneratorConfig" ref="a193def00c3feec20090a501f9c0b330b" args="(GeneratorConfig $config)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setGeneratorConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_generator_config.html">GeneratorConfig</a> $&nbsp;</td>
+          <td class="paramname"> <em>config</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sets the <a class="el" href="class_generator_config.html">GeneratorConfig</a> to use in the parsing.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_generator_config.html">GeneratorConfig</a></em>&nbsp;</td><td>$config </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémenté dans <a class="el" href="class_base_schema_parser.html#a193def00c3feec20090a501f9c0b330b">BaseSchemaParser</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette interface a été générée à partir du fichier suivant :<ul>
+<li>lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/database/reverse/SchemaParser.php</li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:32 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

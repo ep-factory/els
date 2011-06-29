@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Référence de l&#39;espace de nommage propel::validator</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>Liste&nbsp;des&nbsp;espaces&nbsp;de&nbsp;nommage</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath">
+    <ul>
+      <li><a class="el" href="namespacepropel.html">propel</a>      </li>
+      <li><a class="el" href="namespacepropel_1_1validator.html">validator</a>      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<h1>Référence de l'espace de nommage propel::validator</h1>  </div>
+</div>
+<div class="contents">
+<table class="memberdecls">
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<p>Basic <a class="el" href="class_validator.html">Validator</a> interface.</p>
+<p><a class="el" href="interface_basic_validator.html">BasicValidator</a> objects perform validation without any knowledge of column/table context. They are simply given an input and some value and asked whether the input is valid.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>A validator for regular expressions.</p>
+<p>This validator will return true, when the passed value *matches* the regular expression.</p>
+<p>## This class replaces the former class MaskValidator ##</p>
+<p>If you do want to test if the value does *not* match an expression, you can use the <a class="el" href="class_match_validator.html">MatchValidator</a> class instead.</p>
+<p>Below is an example usage for your <a class="el" href="class_propel.html">Propel</a> xml schema file.</p>
+<p><code> &lt;column name="email" type="VARCHAR" size="128" required="true"&gt; &lt;validator column="username"&gt;</code></p>
+<p><code> &lt;rule name="match" value="/^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*@([a-zA-Z0-9])+(\.[a-zA-Z0-9_-]+)+$/" message="Please enter a valid email address."&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>A validator for maximum string length.</p>
+<p>Below is an example usage for your <a class="el" href="class_propel.html">Propel</a> xml schema file.</p>
+<p>Note that if you have specified the size attribute in the column tag you do not have to specify it as value in the validator rule again as this is done automatically.</p>
+<p><code> &lt;column name="username" type="VARCHAR" size="25" required="true"&gt;</code></p>
+<p><code> &lt;validator column="username"&gt; &lt;rule name="maxLength" message="Passwort must be at least ${value} characters !"&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>A validator for maximum values.</p>
+<p>Below is an example usage for your <a class="el" href="class_propel.html">Propel</a> xml schema file.</p>
+<p><code> &lt;column name="articles" type="INTEGER" required="true"&gt;</code></p>
+<p><code> &lt;validator column="articles"&gt; &lt;rule name="minValue" value="1" message="Minimum value for selected articles is ${value} !"&gt; &lt;rule name="maxValue" value="10" message="Maximum value for selected articles is ${value} !"&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>A validator for minimum string length.</p>
+<p><code> &lt;column name="password" type="VARCHAR" size="34" required="true"&gt;</code></p>
+<p><code> &lt;validator column="password"&gt; &lt;rule name="minLength" value="5" message="Passwort must be at least ${value} characters !"&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>A validator for minimum values.</p>
+<p>Below is an example usage for your <a class="el" href="class_propel.html">Propel</a> xml schema file.</p>
+<p><code> &lt;column name="articles" type="INTEGER" required="true"&gt;</code></p>
+<p><code> &lt;validator column="articles"&gt; &lt;rule name="minValue" value="1" message="Minimum value for selected articles is ${value} !"&gt; &lt;rule name="maxValue" value="10" message="Maximum value for selected articles is ${value} !"&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>A validator for regular expressions.</p>
+<p>This validator will return true, when the passed value does *not* match the regular expression.</p>
+<p>If you do want to test if the value *matches* an expression, you can use the <a class="el" href="class_match_validator.html">MatchValidator</a> class instead.</p>
+<p>Below is an example usage for your <a class="el" href="class_propel.html">Propel</a> xml schema file.</p>
+<p><code> &lt;column name="ISBN" type="VARCHAR" size="20" required="true"&gt; &lt;validator column="username"&gt;</code></p>
+<p><code> &lt;rule name="notMatch" value="/[^\d-]+/" message="Please enter a valid email adress."&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd>
+<dd>
+Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>A validator for required fields.</p>
+<p>Below is an example usage for your <a class="el" href="class_propel.html">Propel</a> xml schema file.</p>
+<p><code> &lt;column name="username" type="VARCHAR" size="25" required="true"&gt;</code></p>
+<p><code> &lt;validator column="username"&gt; &lt;rule name="required" message="Username is required."&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>A validator for validating the (PHP) type of the value submitted.</p>
+<p><code> &lt;column name="some_int" type="INTEGER" required="true"&gt;</code></p>
+<p><code> &lt;validator column="some_int"&gt; &lt;rule name="type" value="integer" message="Please specify an integer value for some_int column."&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>A validator for unique column names.</p>
+<p><code> &lt;column name="username" type="VARCHAR" size="25" required="true"&gt;</code></p>
+<p><code> &lt;validator column="username"&gt; &lt;rule name="unique" message="Username already exists !"&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<p>Simple class that serves as a container for any information about a failed validation.</p>
+<p>Currently this class stores the qualified column name (e.g. tablename.COLUMN_NAME) and the message that should be displayed to the user.</p>
+<p>An array of these objects will be returned by <a class="el" href="class_base_peer.html#a83251ece8c9c386dcb47ea70544be472">BasePeer::doValidate()</a> if validation failed.</p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Hans Lellelid &lt;<a href="mailto:hans@xmpl.org">hans@xmpl.org</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_base_peer.html#a83251ece8c9c386dcb47ea70544be472">BasePeer::doValidate()</a></dd></dl>
+<p>A validator for valid values (e.g. for enum fields)</p>
+<p><code> &lt;column name="address_type" type="VARCHAR" required="true" default="delivery"&gt;</code></p>
+<p><code> &lt;validator column="address_type"&gt; &lt;rule name="validValues" value="account|delivery" message="Please select a valid address type."&gt; &lt;/validator&gt; </code></p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Michael Aichler &lt;<a href="mailto:aichler@mediacluster.de">aichler@mediacluster.de</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Revision:</b></dt><dd>1262 </dd></dl>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:54 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

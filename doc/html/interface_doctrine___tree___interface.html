@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Référence de l&#39;interface Doctrine_Tree_Interface</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="classes.html"><span>Index&nbsp;des&nbsp;structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="functions.html"><span>Champs&nbsp;de&nbsp;donnée</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a>  </div>
+  <div class="headertitle">
+<h1>Référence de l'interface Doctrine_Tree_Interface</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Doctrine_Tree_Interface" --><div class="dynheader">
+Graphe d'héritage de Doctrine_Tree_Interface:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="interface_doctrine___tree___interface.png" usemap="#Doctrine_Tree_Interface_map" alt=""/>
+  <map id="Doctrine_Tree_Interface_map" name="Doctrine_Tree_Interface_map">
+<area href="class_doctrine___tree___adjacency_list.html" alt="Doctrine_Tree_AdjacencyList" shape="rect" coords="0,56,194,80"/>
+<area href="class_doctrine___tree___materialized_path.html" alt="Doctrine_Tree_MaterializedPath" shape="rect" coords="204,56,398,80"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_doctrine___tree___interface.html#af12e93d0963e4e9d9d05cc6650409f40">createRoot</a> (<a class="el" href="class_doctrine___record.html">Doctrine_Record</a> $record=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_doctrine___tree___interface.html#a1aa9bba168262d617c4fde2aaf09847f">fetchRoot</a> ($root_id=1)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_doctrine___tree___interface.html#a70d26e69c1e5cc9bde7738f8e754fae1">fetchTree</a> ($options=array(), $hydrationMode=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_doctrine___tree___interface.html#a8f713bf6ce52338540747a96dbc68e7c">fetchBranch</a> ($pk, $options=array(), $hydrationMode=null)</td></tr>
+</table>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="af12e93d0963e4e9d9d05cc6650409f40"></a><!-- doxytag: member="Doctrine_Tree_Interface::createRoot" ref="af12e93d0963e4e9d9d05cc6650409f40" args="(Doctrine_Record $record=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">createRoot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> $&nbsp;</td>
+          <td class="paramname"> <em>record</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>creates root node from given record or from a new record</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record.html">Doctrine_Record</a></em>&nbsp;</td><td>$record instance of <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8f713bf6ce52338540747a96dbc68e7c"></a><!-- doxytag: member="Doctrine_Tree_Interface::fetchBranch" ref="a8f713bf6ce52338540747a96dbc68e7c" args="($pk, $options=array(), $hydrationMode=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fetchBranch </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>pk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>options</em> = <code>array()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>hydrationMode</em> = <code>null</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>optimised method that returns iterator for traversal of the tree from the given record primary key</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>$pk primary key as used by table::find() to locate node to traverse tree from </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$options options </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>integer</em>&nbsp;</td><td>$fetchmode One of the Doctrine_Core::HYDRATE_* constants. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>iterator instance of Doctrine_Node_&lt;Implementation&gt;_PreOrderIterator </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1aa9bba168262d617c4fde2aaf09847f"></a><!-- doxytag: member="Doctrine_Tree_Interface::fetchRoot" ref="a1aa9bba168262d617c4fde2aaf09847f" args="($root_id=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fetchRoot </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>root_id</em> = <code>1</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns root node</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a70d26e69c1e5cc9bde7738f8e754fae1"></a><!-- doxytag: member="Doctrine_Tree_Interface::fetchTree" ref="a70d26e69c1e5cc9bde7738f8e754fae1" args="($options=array(), $hydrationMode=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fetchTree </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>options</em> = <code>array()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>hydrationMode</em> = <code>null</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>optimised method to returns iterator for traversal of the entire tree from root</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$options options </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>integer</em>&nbsp;</td><td>$fetchmode One of the Doctrine_Core::HYDRATE_* constants. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Iterator instance of Doctrine_Node_&lt;Implementation&gt;_PreOrderIterator </dd></dl>
+
+</div>
+</div>
+<hr/>La documentation de cette interface a été générée à partir du fichier suivant :<ul>
+<li>lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Tree/Interface.php</li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:22 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

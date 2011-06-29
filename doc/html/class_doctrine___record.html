@@ -1,0 +1,3349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ELS: Référence de la classe Doctrine_Record</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&nbsp;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="examples.html"><span>Exemples</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="classes.html"><span>Index&nbsp;des&nbsp;structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="functions.html"><span>Champs&nbsp;de&nbsp;donnée</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
+<a href="#pub-attribs">Champs de données</a> &#124;
+<a href="#pro-methods">Fonctions membres protégées</a> &#124;
+<a href="#pro-attribs">Attributs protégés</a> &#124;
+<a href="#pro-static-attribs">Attributs protégés statiques</a>  </div>
+  <div class="headertitle">
+<h1>Référence de la classe Doctrine_Record</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Doctrine_Record" --><!-- doxytag: inherits="Doctrine_Record_Abstract" --><div class="dynheader">
+Graphe d'héritage de Doctrine_Record:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_doctrine___record.png" usemap="#Doctrine_Record_map" alt=""/>
+  <map id="Doctrine_Record_map" name="Doctrine_Record_map">
+<area href="class_doctrine___record___abstract.html" alt="Doctrine_Record_Abstract" shape="rect" coords="191,112,372,136"/>
+<area href="class_doctrine___access.html" alt="Doctrine_Access" shape="rect" coords="191,56,372,80"/>
+<area href="class_doctrine___locator___injectable.html" alt="Doctrine_Locator_Injectable" shape="rect" coords="191,0,372,24"/>
+<area href="class_doctrine___file.html" alt="Doctrine_File" shape="rect" coords="0,224,181,248"/>
+<area href="class_doctrine___file___index.html" alt="Doctrine_File_Index" shape="rect" coords="191,224,372,248"/>
+<area href="classsf_doctrine_record.html" alt="sfDoctrineRecord" shape="rect" coords="382,224,563,248"/>
+<area href="class_base_annexe.html" alt="BaseAnnexe" shape="rect" coords="573,280,754,304"/>
+<area href="class_base_appareil.html" alt="BaseAppareil" shape="rect" coords="573,336,754,360"/>
+<area href="class_base_atelier.html" alt="BaseAtelier" shape="rect" coords="573,392,754,416"/>
+<area href="class_base_batiment.html" alt="BaseBatiment" shape="rect" coords="573,448,754,472"/>
+<area href="class_base_case_code.html" alt="BaseCaseCode" shape="rect" coords="573,504,754,528"/>
+<area href="class_base_category.html" alt="BaseCategory" shape="rect" coords="573,560,754,584"/>
+<area href="class_base_demandeur.html" alt="BaseDemandeur" shape="rect" coords="573,616,754,640"/>
+<area href="class_base_element.html" alt="BaseElement" shape="rect" coords="573,672,754,696"/>
+<area href="class_base_fiche.html" alt="BaseFiche" shape="rect" coords="573,728,754,752"/>
+<area href="class_base_fiche_element.html" alt="BaseFicheElement" shape="rect" coords="573,784,754,808"/>
+<area href="class_base_poste.html" alt="BasePoste" shape="rect" coords="573,840,754,864"/>
+<area href="class_basesf_guard_forgot_password.html" alt="BasesfGuardForgotPassword" shape="rect" coords="573,896,754,920"/>
+<area href="class_basesf_guard_group.html" alt="BasesfGuardGroup" shape="rect" coords="573,952,754,976"/>
+<area href="class_basesf_guard_group_permission.html" alt="BasesfGuardGroupPermission" shape="rect" coords="573,1008,754,1032"/>
+<area href="class_basesf_guard_permission.html" alt="BasesfGuardPermission" shape="rect" coords="573,1064,754,1088"/>
+<area href="class_basesf_guard_remember_key.html" alt="BasesfGuardRememberKey" shape="rect" coords="573,1120,754,1144"/>
+<area href="class_basesf_guard_user.html" alt="BasesfGuardUser" shape="rect" coords="573,1176,754,1200"/>
+<area href="class_basesf_guard_user_group.html" alt="BasesfGuardUserGroup" shape="rect" coords="573,1232,754,1256"/>
+<area href="class_basesf_guard_user_permission.html" alt="BasesfGuardUserPermission" shape="rect" coords="573,1288,754,1312"/>
+<area href="class_base_tag.html" alt="BaseTag" shape="rect" coords="573,1344,754,1368"/>
+<area href="class_base_tagging.html" alt="BaseTagging" shape="rect" coords="573,1400,754,1424"/>
+<area href="classmy_doctrine_record.html" alt="myDoctrineRecord" shape="rect" coords="573,1456,754,1480"/>
+<area href="class_test.html" alt="Test" shape="rect" coords="573,1512,754,1536"/>
+<area href="class_test_relation.html" alt="TestRelation" shape="rect" coords="573,1568,754,1592"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#afee89ab8ce27caea7e4f77f6bf01a4e4">__construct</a> ($table=null, $isNewEntry=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a4231900cb2c1842643b40f0c8c402831">serializeReferences</a> ($bool=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a0bc688732d2b3b162ffebaf7812e78da">setUp</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ad3cb4fb3b32b384ab2c22a785921c7d5">construct</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a9454f8eaf0253eee4607e6379979d72b">getOid</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad13eeeb0bf4babca4942a9cfc0c17f2d"></a><!-- doxytag: member="Doctrine_Record::oid" ref="ad13eeeb0bf4babca4942a9cfc0c17f2d" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>oid</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a0a444ea28a8ca39b4aeef61cad914030">invokeSaveHooks</a> ($when, $type, $event=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a67d5145ffb2563255c9571d7248cef84">clearInvokedSaveHooks</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a9775034ac2e22942abcb36b9671e9863">isValid</a> ($deep=false, $hooks=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a2a47634546e90de0563913e16c810baa">preSerialize</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a8eac7f4b9ef4c0a5e8d55113ac2f6160">postSerialize</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a5be23aa10c241ef7e442972938a2d778">preUnserialize</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a696882098fd4ff62b2538193a0c0d696">postUnserialize</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a2d88383cf4571a1bef74f632d7efdf20">preSave</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a1983196c21baae6ac8d46a60cfce6b06">postSave</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#afc969f5d3e7e458b91a88dad48e590db">preDelete</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a1048847dc8ed7492a4a43436204853f6">postDelete</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a53e9cbcfd206ac36902e640319a71147">preUpdate</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a21823f7cc0abe08c0620ac66652ffe3f">postUpdate</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a94114cf3687c937b4e8f06240a7175a0">preInsert</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#aea8f113e35660f4522930529e7b86f17">postInsert</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a8884abab663b6f275f95bb9e21a1595d">preValidate</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ac0e726f6b03fa156723fe91a950aa555">postValidate</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a77f7a41bbc5101b9ba024815f87d3146">preDqlSelect</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a7e80876ecf683ea0f1d8c84a8028ac00">preDqlUpdate</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#aad75a36d739d14f9422c57808a9167c8">preDqlDelete</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a5546ef0acb372e1cc5bd6b87ad035278">preHydrate</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a542c2158060b76ec31a0d708159af6c4">postHydrate</a> ($event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a7c6a26b9264bef1afbc56c27dc2f8640">getErrorStackAsString</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a3057da5278a933f157508e7bde7a1bd3">getErrorStack</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#afb9575063e11bf59144e06d2c5589fa6">errorStack</a> ($stack=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#aee8b44edfabcc45aca20f8b5c261d2d5">assignInheritanceValues</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a76ca8785dea4bdd1dce1574bb0a221e3">assignDefaultValues</a> ($overwrite=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ab5e52b64fad805bc48d8dbd276a9d751">cleanData</a> (&amp;$data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a6b31c8dc242bb761b1fb221df0f3beb1">hydrate</a> (array $data, $overwriteLocalChanges=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a4d9813fea8525b19a1d370eeb8fe41d6">serialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ac2f3a0997c46fd9bb24fe4190f738eb0">unserialize</a> ($serialized)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ac027bb87b3d819a8d572aa9288488aac">state</a> ($state=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a48367edddc844a07558cb3037752ee62">refresh</a> ($deep=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a7b9dcc1bd790511b67901f31e2fc70e9">refreshRelated</a> ($name=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#afc73a824f14f5826dd35c78341a5ae50">clearRelated</a> ($name=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#aa3bbb0c444d1114dd52b664ae303f75f">relatedExists</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#aa0dd4bf57d57bc2a3697e40c9f6bddce">getTable</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a81a67162a6288d78fc4c55283325f0b4">getData</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#af125915402b4ee00ebaa72c8cd68f521">rawGet</a> ($fieldName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#aa03c17cfa7557341c1c5ec4ddb02c2ba">load</a> (array $data=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a9a2766f89a3c102109876edfd10195a9">isInProxyState</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a876719aecf538f855de8185f7f0735a9">hasAccessor</a> ($fieldName, $accessor=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a56817850248276922cb935ea8c59f28a">clearAccessor</a> ($fieldName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a28d22782741eb2d766033ef97e419a44">getAccessor</a> ($fieldName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a0983134fad1d3281a471fd1cdeb252be">getAccessors</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#accc8593c9a6a59d61eb2a74548ccac87">hasMutator</a> ($fieldName, $mutator=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ae1538cb1b1af8cdf6ac4d5ad7033ed4f">getMutator</a> ($fieldName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a2f7b0fe3bd6ce454c0ca39cec2e8bcce">clearMutator</a> ($fieldName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a4dc9dcc0addf0e9a53b1326d20441259">getMutators</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a1bee3921b733a3a970e1d36b8998a8df">hasAccessorMutator</a> ($fieldName, $accessor, $mutator)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#adc0df62f55e2e29af96c1c5e79609698">get</a> ($fieldName, $load=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ab5f8f1510eccedeee31d382cadd2c60b">mapValue</a> ($name, $value=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a33790d5511ad90f0d5c513c0b259f8b3">hasMappedValue</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ae461cb10239bdfef6eef1252f522839b">set</a> ($fieldName, $value, $load=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ada6a34cadf9b0048551aafaa91949760">coreSetRelated</a> ($name, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ab9452a90ce0f717c5177212589a32b0c">contains</a> ($fieldName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a8a93654c7bfe3f0a9bb7af531e513d44">__unset</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#afed0112b01bb8002456c7a43bfb27cbb">getPendingDeletes</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a4eddbfcaf7b8b030b5fcca65dcd3b602">getPendingUnlinks</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a7214d5d51809b0a1f149f7403efa7d79">resetPendingUnlinks</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a22153d2454f4a0df7aa892d82a8fa070">save</a> (<a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a> $conn=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a33c3ba2a8afad1b61babfc317b1a2826">trySave</a> (<a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a> $conn=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a102345073d61aa2229b816684bb4e587">replace</a> (<a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a> $conn=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#aa6ec3a6109c4dd4eb9ed885ec99eac43">getModified</a> ($old=false, $last=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a1c5deebbcdea150edf5f6f9ed6517040">getLastModified</a> ($old=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a267346deb5133b440067babb923cacba">getPrepared</a> (array $array=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ac751e87b3d4c4bf2feb03bee8b092755">count</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a1cd0e18d5cc164a888f7bb39d5811dd6">columnCount</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#afa8986200ff3e9c9de5d7f94cc49dc72">toArray</a> ($deep=true, $prefixKey=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a53907e4336f8939fab873ca075d2e91d">merge</a> ($data, $deep=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a6f3b5648e4f84d5f6250b4d83f79b39e">fromArray</a> (array $array, $deep=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#aede156af55baac03c5fc55018dd534e4">synchronizeWithArray</a> (array $array, $deep=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ac16304699c41db863951d82d177e48de">exportTo</a> ($type, $deep=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a99dfba392f5194158f9b8accfb79d476">importFrom</a> ($type, $data, $deep=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ac2f864b72dc2f778e68ad96364c48c5e">exists</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a350867e38fd4ec8c720e39420badf678">isModified</a> ($deep=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a4ea7c63734113d28b333f7cbc280ecdf">hasRelation</a> ($fieldName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a7a9f937c2958e6f4dd7b030f86fb70b7">getIterator</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a1f1a5edb169f8c924ebe52ac0374d755">delete</a> (<a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a> $conn=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#adfdb0ff86ef9d89a792f3c84a7806088">copy</a> ($deep=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a972e9fbdb419be9c5fece5ba888f5f1e">assignIdentifier</a> ($id=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ab90ee01b314413d7fb35af1f282d0a29">identifier</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ad7e5362deab35a944000a9fd8428ae6b">getIncremented</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a9316ede6960667d832997c8e20223623">getLast</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a7b3c0ce5d5177b688cedb510c9ab3035">hasReference</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#addb3e066c662b9da00fafb0f2b48812e">reference</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a418b83019e7e91e8fe3ea72aabda3015">obtainReference</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a14eee92df72ec639998545a21043d26f">getReferences</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ad168f3619349421fa0d8d64d7ce370f7">setRelated</a> ($alias, <a class="el" href="class_doctrine___access.html">Doctrine_Access</a> $coll)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#af730fc6b55e64b0bbc3a8a6015f9fcf7">loadReference</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a6a539982bc20d879fb168ac7298b3f46">call</a> ($callback, $column)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a3a0d17930cbcc57bef84064afcc1a837">getNode</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2289799a5e61e4393167edb4d917bbc8"></a><!-- doxytag: member="Doctrine_Record::unshiftFilter" ref="a2289799a5e61e4393167edb4d917bbc8" args="(Doctrine_Record_Filter $filter)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>unshiftFilter</b> (<a class="el" href="class_doctrine___record___filter.html">Doctrine_Record_Filter</a> $filter)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a79a88442587dd05c7382fff5a5a5c3b2">unlink</a> ($alias, $ids=array(), $now=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a5a400ff708dd6d47736fa1640311ed70">unlinkInDb</a> ($alias, $ids=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a9eb76b6545365931e16a446b8411eea3">link</a> ($alias, $ids, $now=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a9e1795ba8b825c5639b827ed03bc7827">linkInDb</a> ($alias, $ids)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a9f1179240d068c94a040021326032bed">__call</a> ($method, $args)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ac60b5af6f0dfbdb096892055fef5471c">deleteNode</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a97c62a59d441931f724c194cbff4e2c6">free</a> ($deep=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a5558c5d549f41597377fa1ea8a1cefa3">toString</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a7516ca30af0db3cdbf9a7739b48ce91d">__toString</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Fonctions membres publiques statiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ae6e5915f9bc30496486bc32a667bb5ae">_index</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Champs de données</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a53f40b6aa8360fb891d6516dea517b57">STATE_DIRTY</a> = 1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a4f671d30eda680905ed81d520917b11a">STATE_TDIRTY</a> = 2</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a1b944c776949e9c0660f4d7b08cf6a55">STATE_CLEAN</a> = 3</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a1e3e1b93ec033ad9ab397dc77f6b349b">STATE_PROXY</a> = 4</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a6eeedb3a75ea2fbe951b00ec31522f39">STATE_TCLEAN</a> = 5</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a64bd61dc65fa8d6e20adb49b6919d978">STATE_LOCKED</a> = 6</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#aeeeaba07b88663c92f16905096a32945">STATE_TLOCKED</a> = 7</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Fonctions membres protégées</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a184909dab34698899937d810a9f5d393">validate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#ab013b4e3f709d9761e12bbf2da3414f4">validateOnUpdate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a73578695a3eef042e063ae2446404bd7">validateOnInsert</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae04f324ddd37eba23d4412c2fc3302ca"></a><!-- doxytag: member="Doctrine_Record::_get" ref="ae04f324ddd37eba23d4412c2fc3302ca" args="($fieldName, $load=true)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>_get</b> ($fieldName, $load=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac79936df54e3649212cbd80a34acaddd"></a><!-- doxytag: member="Doctrine_Record::_set" ref="ac79936df54e3649212cbd80a34acaddd" args="($fieldName, $value, $load=true)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set</b> ($fieldName, $value, $load=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#a403a7fc0928c92fba44c92dd2528ad3e">_isValueModified</a> ($type, $old, $new)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#af9845f65ff16397d712efe625a2405f7">_resetModified</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Attributs protégés</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed99b33031f3844d94b6ce228e196063"></a><!-- doxytag: member="Doctrine_Record::$_node" ref="aed99b33031f3844d94b6ce228e196063" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_node</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64da16c4a1c7b2dc6784f6ef26341ed7"></a><!-- doxytag: member="Doctrine_Record::$_id" ref="a64da16c4a1c7b2dc6784f6ef26341ed7" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_id</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a3006290f2de94fff2dd63ca739d15a"></a><!-- doxytag: member="Doctrine_Record::$_data" ref="a5a3006290f2de94fff2dd63ca739d15a" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_data</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e161358e5e21c262d947e44ed04500c"></a><!-- doxytag: member="Doctrine_Record::$_values" ref="a2e161358e5e21c262d947e44ed04500c" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_values</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0f3a3293f7ceef4b9f7f318dc9dff9d"></a><!-- doxytag: member="Doctrine_Record::$_state" ref="ae0f3a3293f7ceef4b9f7f318dc9dff9d" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_state</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a605c7c6162e4d21b2ef1dbb9fad304b7"></a><!-- doxytag: member="Doctrine_Record::$_lastModified" ref="a605c7c6162e4d21b2ef1dbb9fad304b7" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_lastModified</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3a8a656d77dd51f673f4198149e689b"></a><!-- doxytag: member="Doctrine_Record::$_modified" ref="ac3a8a656d77dd51f673f4198149e689b" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_modified</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2961cd07f16d065e29757dd0bf58996d"></a><!-- doxytag: member="Doctrine_Record::$_oldValues" ref="a2961cd07f16d065e29757dd0bf58996d" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_oldValues</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e79df1a742d76203c8f5450ff7b9168"></a><!-- doxytag: member="Doctrine_Record::$_errorStack" ref="a7e79df1a742d76203c8f5450ff7b9168" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_errorStack</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0608cac4d7d36216f8ec187ed82948a"></a><!-- doxytag: member="Doctrine_Record::$_references" ref="ad0608cac4d7d36216f8ec187ed82948a" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_references</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2e9ebd9dce71ceafd4a4118f48ddb0e"></a><!-- doxytag: member="Doctrine_Record::$_pendingDeletes" ref="ad2e9ebd9dce71ceafd4a4118f48ddb0e" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_pendingDeletes</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_doctrine___record.html#af2901477fc9ae2f95c3b7172644a0071">$_pendingUnlinks</a> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ea903e49130913312c5190f9365260e"></a><!-- doxytag: member="Doctrine_Record::$_serializeReferences" ref="a9ea903e49130913312c5190f9365260e" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_serializeReferences</b> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad01bb9a70281569410394ff98e7378b6"></a><!-- doxytag: member="Doctrine_Record::$_invokedSaveHooks" ref="ad01bb9a70281569410394ff98e7378b6" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_invokedSaveHooks</b> = false</td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Attributs protégés statiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0152c6e011fb07f43eb6b5bff49bddcf"></a><!-- doxytag: member="Doctrine_Record::$_customAccessors" ref="a0152c6e011fb07f43eb6b5bff49bddcf" args="" -->
+static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_customAccessors</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b8a560dfcbd05f22d8d4963572e6be1"></a><!-- doxytag: member="Doctrine_Record::$_customMutators" ref="a1b8a560dfcbd05f22d8d4963572e6be1" args="" -->
+static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$_customMutators</b> = array()</td></tr>
+</table>
+<hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="afee89ab8ce27caea7e4f77f6bf01a4e4"></a><!-- doxytag: member="Doctrine_Record::__construct" ref="afee89ab8ce27caea7e4f77f6bf01a4e4" args="($table=null, $isNewEntry=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>table</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>isNewEntry</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>constructor </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>Doctrine_Table|null</em>&nbsp;</td><td>$table a <a class="el" href="class_doctrine___table.html">Doctrine_Table</a> object or null, if null the table object is retrieved from current connection</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$isNewEntry whether or not this record is transient</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___connection___exception.html">Doctrine_Connection_Exception</a></em>&nbsp;</td><td>if object is created using the new operator and there are no open connections </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record___exception.html">Doctrine_Record_Exception</a></em>&nbsp;</td><td>if the cleanData operation fails somehow </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a9f1179240d068c94a040021326032bed"></a><!-- doxytag: member="Doctrine_Record::__call" ref="a9f1179240d068c94a040021326032bed" args="($method, $args)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__call </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>args</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>magic method used for method overloading</p>
+<p>the function of this method is to try to find a given method from the templates (behaviors) the record is using, and if found, execute it. Note that already existing methods would not be overloaded.</p>
+<p>So, in sense, this method replicates the usage of mixins (as seen in some programming languages)</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$method name of the method </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$args method arguments </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>mixed the return value of the given method </dd></dl>
+
+<p>Réimplémentée dans <a class="el" href="classsf_doctrine_record.html#acfa40ec504c3c792c3b84cf2f1af511d">sfDoctrineRecord</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7516ca30af0db3cdbf9a7739b48ce91d"></a><!-- doxytag: member="Doctrine_Record::__toString" ref="a7516ca30af0db3cdbf9a7739b48ce91d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__toString </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>magic method </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>string representation of this object </dd></dl>
+
+<p>Réimplémentée dans <a class="el" href="class_category.html#a7516ca30af0db3cdbf9a7739b48ce91d">Category</a>, <a class="el" href="class_element.html#a7516ca30af0db3cdbf9a7739b48ce91d">Element</a>, <a class="el" href="class_fiche.html#a7516ca30af0db3cdbf9a7739b48ce91d">Fiche</a>, <a class="el" href="classsf_doctrine_record.html#a7516ca30af0db3cdbf9a7739b48ce91d">sfDoctrineRecord</a>, <a class="el" href="class_category.html#a7516ca30af0db3cdbf9a7739b48ce91d">Category</a>, <a class="el" href="class_category.html#a7516ca30af0db3cdbf9a7739b48ce91d">Category</a>, <a class="el" href="class_plugin_tag.html#a7516ca30af0db3cdbf9a7739b48ce91d">PluginTag</a>, et <a class="el" href="class_pluginsf_guard_user.html#a7516ca30af0db3cdbf9a7739b48ce91d">PluginsfGuardUser</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a93654c7bfe3f0a9bb7af531e513d44"></a><!-- doxytag: member="Doctrine_Record::__unset" ref="a8a93654c7bfe3f0a9bb7af531e513d44" args="($name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__unset </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>deletes a column or a related component. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_doctrine___access.html#a8a93654c7bfe3f0a9bb7af531e513d44">Doctrine_Access</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6e5915f9bc30496486bc32a667bb5ae"></a><!-- doxytag: member="Doctrine_Record::_index" ref="ae6e5915f9bc30496486bc32a667bb5ae" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static _index </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>the current instance counter used to generate unique ids for php objects. <a class="el" href="class_contains.html">Contains</a> the next identifier.</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>integer </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a403a7fc0928c92fba44c92dd2528ad3e"></a><!-- doxytag: member="Doctrine_Record::_isValueModified" ref="a403a7fc0928c92fba44c92dd2528ad3e" args="($type, $old, $new)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_isValueModified </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>new</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Check if a value has changed according to <a class="el" href="class_doctrine.html">Doctrine</a> <a class="el" href="class_doctrine.html">Doctrine</a> is loose with type checking in the same ways PHP is for consistancy of behavior</p>
+<p>This function basically says if what is being set is of <a class="el" href="class_doctrine.html">Doctrine</a> type boolean and something like current_value == 1 &amp;&amp; new_value = true would not be considered modified</p>
+<p>Simply doing $old !== $new will return false for boolean columns would mark the field as modified and change it in the database when it is not necessary</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$type <a class="el" href="class_doctrine.html">Doctrine</a> type of the column </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$old Old value </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$new New value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean $modified Whether or not <a class="el" href="class_doctrine.html">Doctrine</a> considers the value modified </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af9845f65ff16397d712efe625a2405f7"></a><!-- doxytag: member="Doctrine_Record::_resetModified" ref="af9845f65ff16397d712efe625a2405f7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_resetModified </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Reset the modified array and store the old array in lastModified so it can be accessed by users after saving a record, since the modified array is reset after the object is saved.</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a76ca8785dea4bdd1dce1574bb0a221e3"></a><!-- doxytag: member="Doctrine_Record::assignDefaultValues" ref="a76ca8785dea4bdd1dce1574bb0a221e3" args="($overwrite=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">assignDefaultValues </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>overwrite</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>setDefaultValues sets the default values for records internal data</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$overwrite whether or not to overwrite the already set values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a972e9fbdb419be9c5fece5ba888f5f1e"></a><!-- doxytag: member="Doctrine_Record::assignIdentifier" ref="a972e9fbdb419be9c5fece5ba888f5f1e" args="($id=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">assignIdentifier </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>id</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>assigns an identifier to the instance, for database storage</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>$id a key value or an array of keys </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aee8b44edfabcc45aca20f8b5c261d2d5"></a><!-- doxytag: member="Doctrine_Record::assignInheritanceValues" ref="aee8b44edfabcc45aca20f8b5c261d2d5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">assignInheritanceValues </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Assign the inheritance column values</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6a539982bc20d879fb168ac7298b3f46"></a><!-- doxytag: member="Doctrine_Record::call" ref="a6a539982bc20d879fb168ac7298b3f46" args="($callback, $column)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">call </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>column</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>call</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string|array</em>&nbsp;</td><td>$callback valid callback </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$column column name </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>arg1 ... argN optional callback arguments </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> provides a fluent interface </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab5e52b64fad805bc48d8dbd276a9d751"></a><!-- doxytag: member="Doctrine_Record::cleanData" ref="ab5e52b64fad805bc48d8dbd276a9d751" args="(&amp;$data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cleanData </td>
+          <td>(</td>
+          <td class="paramtype">&amp;$&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>cleanData leaves the $data array only with values whose key is a field inside this record and returns the values that were removed from $data. Also converts any values of 'null' to objects of type <a class="el" href="class_doctrine___null.html">Doctrine_Null</a>.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$data data array to be cleaned </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array values cleaned from data </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a56817850248276922cb935ea8c59f28a"></a><!-- doxytag: member="Doctrine_Record::clearAccessor" ref="a56817850248276922cb935ea8c59f28a" args="($fieldName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clearAccessor </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>clears the accessor for a field name</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$fieldName </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a67d5145ffb2563255c9571d7248cef84"></a><!-- doxytag: member="Doctrine_Record::clearInvokedSaveHooks" ref="a67d5145ffb2563255c9571d7248cef84" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clearInvokedSaveHooks </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>makes all the already used save hooks available again </p>
+
+</div>
+</div>
+<a class="anchor" id="a2f7b0fe3bd6ce454c0ca39cec2e8bcce"></a><!-- doxytag: member="Doctrine_Record::clearMutator" ref="a2f7b0fe3bd6ce454c0ca39cec2e8bcce" args="($fieldName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clearMutator </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>clears the custom mutator for a field name</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$fieldName </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afc73a824f14f5826dd35c78341a5ae50"></a><!-- doxytag: member="Doctrine_Record::clearRelated" ref="afc73a824f14f5826dd35c78341a5ae50" args="($name=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clearRelated </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Clear a related reference or all references</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name The relationship reference to clear </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1cd0e18d5cc164a888f7bb39d5811dd6"></a><!-- doxytag: member="Doctrine_Record::columnCount" ref="a1cd0e18d5cc164a888f7bb39d5811dd6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">columnCount </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>alias for </p>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_doctrine___record.html#ac751e87b3d4c4bf2feb03bee8b092755">count()</a></dd></dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>integer the number of columns in this record </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad3cb4fb3b32b384ab2c22a785921c7d5"></a><!-- doxytag: member="Doctrine_Record::construct" ref="ad3cb4fb3b32b384ab2c22a785921c7d5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">construct </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>construct Empty template method to provide concrete Record classes with the possibility to hook into the constructor procedure</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+<p>Réimplémentée dans <a class="el" href="classsf_doctrine_record.html#ad3cb4fb3b32b384ab2c22a785921c7d5">sfDoctrineRecord</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9452a90ce0f717c5177212589a32b0c"></a><!-- doxytag: member="Doctrine_Record::contains" ref="ab9452a90ce0f717c5177212589a32b0c" args="($fieldName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">contains </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>test whether a field (column, mapped value, related component, accessor) is accessible by </p>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_doctrine___record.html#adc0df62f55e2e29af96c1c5e79609698">get()</a></dd></dl>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$fieldName </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_doctrine___access.html#ad22ae1201e5fa17fa61fa685e313463e">Doctrine_Access</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adfdb0ff86ef9d89a792f3c84a7806088"></a><!-- doxytag: member="Doctrine_Record::copy" ref="adfdb0ff86ef9d89a792f3c84a7806088" args="($deep=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">copy </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>generates a copy of this object. Returns an instance of the same class of $this.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$deep whether to duplicates the objects targeted by the relations </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ada6a34cadf9b0048551aafaa91949760"></a><!-- doxytag: member="Doctrine_Record::coreSetRelated" ref="ada6a34cadf9b0048551aafaa91949760" args="($name, $value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coreSetRelated </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Places a related component in the object graph.</p>
+<p>This method inserts a related component instance in this record relations, populating the foreign keys accordingly.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name related component alias in the relation </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Doctrine_Record|Doctrine_Collection</em>&nbsp;</td><td>$value object to be linked as a related component </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">À faire:</a></b></dt><dd>Refactor. What about composite keys? </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac751e87b3d4c4bf2feb03bee8b092755"></a><!-- doxytag: member="Doctrine_Record::count" ref="ac751e87b3d4c4bf2feb03bee8b092755" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">count </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>implements Countable interface</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>integer the number of columns in this record </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1f1a5edb169f8c924ebe52ac0374d755"></a><!-- doxytag: member="Doctrine_Record::delete" ref="a1f1a5edb169f8c924ebe52ac0374d755" args="(Doctrine_Connection $conn=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delete </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a> $&nbsp;</td>
+          <td class="paramname"> <em>conn</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>deletes this data access object and all the related composites this operation is isolated by a transaction</p>
+<p>this event can be listened by the onPreDelete and onDelete listeners</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac60b5af6f0dfbdb096892055fef5471c"></a><!-- doxytag: member="Doctrine_Record::deleteNode" ref="ac60b5af6f0dfbdb096892055fef5471c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">deleteNode </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>used to delete node from tree - MUST BE USE TO DELETE RECORD IF TABLE ACTS AS TREE </p>
+
+</div>
+</div>
+<a class="anchor" id="afb9575063e11bf59144e06d2c5589fa6"></a><!-- doxytag: member="Doctrine_Record::errorStack" ref="afb9575063e11bf59144e06d2c5589fa6" args="($stack=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">errorStack </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>stack</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>assigns the ErrorStack or returns it if called without parameters</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>Doctrine_Validator_ErrorStack</em>&nbsp;</td><td>errorStack to be assigned for this record </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void|Doctrine_Validator_ErrorStack returns the errorStack associated with this record </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac2f864b72dc2f778e68ad96364c48c5e"></a><!-- doxytag: member="Doctrine_Record::exists" ref="ac2f864b72dc2f778e68ad96364c48c5e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">exists </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns true if this record is saved in the database, otherwise false (it is transient)</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac16304699c41db863951d82d177e48de"></a><!-- doxytag: member="Doctrine_Record::exportTo" ref="ac16304699c41db863951d82d177e48de" args="($type, $deep=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">exportTo </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>exports instance to a chosen format</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$type format type: array, xml, yml, json </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$deep whether or not to export all relationships </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>string representation as $type format. Array is $type is array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a97c62a59d441931f724c194cbff4e2c6"></a><!-- doxytag: member="Doctrine_Record::free" ref="a97c62a59d441931f724c194cbff4e2c6" args="($deep=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">free </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Helps freeing the memory occupied by the entity. Cuts all references the entity has to other entities and removes the entity from the instance pool. Note: The entity is no longer useable after <a class="el" href="class_doctrine___record.html#a97c62a59d441931f724c194cbff4e2c6">free()</a> has been called. Any operations done with the entity afterwards can lead to unpredictable results. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$deep whether to free also the related components </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f3b5648e4f84d5f6250b4d83f79b39e"></a><!-- doxytag: member="Doctrine_Record::fromArray" ref="a6f3b5648e4f84d5f6250b4d83f79b39e" args="(array $array, $deep=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fromArray </td>
+          <td>(</td>
+          <td class="paramtype">array $&nbsp;</td>
+          <td class="paramname"> <em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>imports data from a php array</p>
+<p><a class="el" href="">string $array array of data, see link for documentation  bool $deep whether or not to act on relations  void </a></p>
+
+</div>
+</div>
+<a class="anchor" id="adc0df62f55e2e29af96c1c5e79609698"></a><!-- doxytag: member="Doctrine_Record::get" ref="adc0df62f55e2e29af96c1c5e79609698" args="($fieldName, $load=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">get </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>load</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns a value of a property or a related component</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>$fieldName name of the property or related component </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$load whether or not to invoke the loading procedure </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record___exception.html">Doctrine_Record_Exception</a></em>&nbsp;</td><td>if trying to get a value of unknown property / related component </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>mixed </dd></dl>
+
+<p>Réimplémentée dans <a class="el" href="class_doctrine___file.html#a3dd8127f4791b455a4b921f2daee8c01">Doctrine_File</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a28d22782741eb2d766033ef97e419a44"></a><!-- doxytag: member="Doctrine_Record::getAccessor" ref="a28d22782741eb2d766033ef97e419a44" args="($fieldName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getAccessor </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>gets the custom accessor for a field name</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$fieldName </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>string $accessor </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0983134fad1d3281a471fd1cdeb252be"></a><!-- doxytag: member="Doctrine_Record::getAccessors" ref="a0983134fad1d3281a471fd1cdeb252be" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getAccessors </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>gets all accessors for this component instance</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array $accessors </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a81a67162a6288d78fc4c55283325f0b4"></a><!-- doxytag: member="Doctrine_Record::getData" ref="a81a67162a6288d78fc4c55283325f0b4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getData </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>return all the internal data (columns)</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array an array containing all the properties </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3057da5278a933f157508e7bde7a1bd3"></a><!-- doxytag: member="Doctrine_Record::getErrorStack" ref="a3057da5278a933f157508e7bde7a1bd3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getErrorStack </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>retrieves the ErrorStack. To be called after a failed validation attempt (</p>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_doctrine___record.html#a9775034ac2e22942abcb36b9671e9863">isValid()</a>).</dd></dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Doctrine_Validator_ErrorStack returns the errorStack associated with this record </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c6a26b9264bef1afbc56c27dc2f8640"></a><!-- doxytag: member="Doctrine_Record::getErrorStackAsString" ref="a7c6a26b9264bef1afbc56c27dc2f8640" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getErrorStackAsString </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the record error stack as a human readable string. Useful for outputting errors to user via web browser</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>string $message </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad7e5362deab35a944000a9fd8428ae6b"></a><!-- doxytag: member="Doctrine_Record::getIncremented" ref="ad7e5362deab35a944000a9fd8428ae6b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getIncremented </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [final]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns the value of autoincremented primary key of this object (if any)</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>integer </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">À faire:</a></b></dt><dd>Better name? </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7a9f937c2958e6f4dd7b030f86fb70b7"></a><!-- doxytag: member="Doctrine_Record::getIterator" ref="a7a9f937c2958e6f4dd7b030f86fb70b7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getIterator </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>implements IteratorAggregate interface </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record___iterator.html">Doctrine_Record_Iterator</a> iterator through data </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9316ede6960667d832997c8e20223623"></a><!-- doxytag: member="Doctrine_Record::getLast" ref="a9316ede6960667d832997c8e20223623" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getLast </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>getLast this method is used internally by <a class="el" href="class_doctrine___query.html">Doctrine_Query</a> it is needed to provide compatibility between records and collections</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1c5deebbcdea150edf5f6f9ed6517040"></a><!-- doxytag: member="Doctrine_Record::getLastModified" ref="a1c5deebbcdea150edf5f6f9ed6517040" args="($old=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getLastModified </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>old</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns an array of the modified fields from the last transaction.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$old pick the old values (instead of the new ones) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa6ec3a6109c4dd4eb9ed885ec99eac43"></a><!-- doxytag: member="Doctrine_Record::getModified" ref="aa6ec3a6109c4dd4eb9ed885ec99eac43" args="($old=false, $last=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getModified </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>old</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>last</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>retrieves an array of modified fields and associated new values.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$old pick the old values (instead of the new ones) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$last pick only lastModified values (</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_doctrine___record.html#a1c5deebbcdea150edf5f6f9ed6517040">getLastModified()</a>) </dd></dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array $a </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae1538cb1b1af8cdf6ac4d5ad7033ed4f"></a><!-- doxytag: member="Doctrine_Record::getMutator" ref="ae1538cb1b1af8cdf6ac4d5ad7033ed4f" args="($fieldName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getMutator </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>gets the custom mutator for a field name</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$fieldname </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>string </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4dc9dcc0addf0e9a53b1326d20441259"></a><!-- doxytag: member="Doctrine_Record::getMutators" ref="a4dc9dcc0addf0e9a53b1326d20441259" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getMutators </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>gets all custom mutators for this component instance</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array $mutators </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3a0d17930cbcc57bef84064afcc1a837"></a><!-- doxytag: member="Doctrine_Record::getNode" ref="a3a0d17930cbcc57bef84064afcc1a837" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getNode </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>getter for node associated with this record</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___node.html">Doctrine_Node</a> false if component is not a Tree </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9454f8eaf0253eee4607e6379979d72b"></a><!-- doxytag: member="Doctrine_Record::getOid" ref="a9454f8eaf0253eee4607e6379979d72b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getOid </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="see"><dt><b>Voir également:</b></dt><dd>$_oid;</dd></dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>integer the object identifier </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afed0112b01bb8002456c7a43bfb27cbb"></a><!-- doxytag: member="Doctrine_Record::getPendingDeletes" ref="afed0112b01bb8002456c7a43bfb27cbb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getPendingDeletes </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> instances which need to be deleted on save</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4eddbfcaf7b8b030b5fcca65dcd3b602"></a><!-- doxytag: member="Doctrine_Record::getPendingUnlinks" ref="a4eddbfcaf7b8b030b5fcca65dcd3b602" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getPendingUnlinks </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> instances which need to be unlinked (deleting the relation) on save</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array $pendingUnlinks </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a267346deb5133b440067babb923cacba"></a><!-- doxytag: member="Doctrine_Record::getPrepared" ref="a267346deb5133b440067babb923cacba" args="(array $array=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getPrepared </td>
+          <td>(</td>
+          <td class="paramtype">array $&nbsp;</td>
+          <td class="paramname"> <em>array</em> = <code>array()</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Retrieves data prepared for a sql transaction.</p>
+<p>Returns an array of modified fields and values with data preparation; adds column aggregation inheritance and converts Records into primary key values.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000032">À faire:</a></b></dt><dd>What about a little bit more expressive name? getPreparedData? </dd></dl>
+
+<p><p>TODO: if ($this-&gt;_data[$v] === null) { throw new <a class="el" href="class_doctrine___record___exception.html">Doctrine_Record_Exception</a>('Unexpected null value.'); }</p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a14eee92df72ec639998545a21043d26f"></a><!-- doxytag: member="Doctrine_Record::getReferences" ref="a14eee92df72ec639998545a21043d26f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getReferences </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>get all related components </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array various <a class="el" href="class_doctrine___collection.html">Doctrine_Collection</a> or <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> instances </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa0dd4bf57d57bc2a3697e40c9f6bddce"></a><!-- doxytag: member="Doctrine_Record::getTable" ref="aa0dd4bf57d57bc2a3697e40c9f6bddce" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getTable </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns the table object for this record.</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___table.html">Doctrine_Table</a> a <a class="el" href="class_doctrine___table.html">Doctrine_Table</a> object </dd></dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_doctrine___record___abstract.html#aa0dd4bf57d57bc2a3697e40c9f6bddce">Doctrine_Record_Abstract</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a876719aecf538f855de8185f7f0735a9"></a><!-- doxytag: member="Doctrine_Record::hasAccessor" ref="a876719aecf538f855de8185f7f0735a9" args="($fieldName, $accessor=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hasAccessor </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>accessor</em> = <code>null</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>sets a fieldname to have a custom accessor or check if a field has a custom accessor defined (when called without $accessor parameter).</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$fieldName </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$accessor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1bee3921b733a3a970e1d36b8998a8df"></a><!-- doxytag: member="Doctrine_Record::hasAccessorMutator" ref="a1bee3921b733a3a970e1d36b8998a8df" args="($fieldName, $accessor, $mutator)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hasAccessorMutator </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>accessor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>mutator</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set a fieldname to have a custom accessor and mutator</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$fieldname </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$accessor </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$mutator </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a33790d5511ad90f0d5c513c0b259f8b3"></a><!-- doxytag: member="Doctrine_Record::hasMappedValue" ref="a33790d5511ad90f0d5c513c0b259f8b3" args="($name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hasMappedValue </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Tests whether a mapped value exists</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name the name of the property </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="accc8593c9a6a59d61eb2a74548ccac87"></a><!-- doxytag: member="Doctrine_Record::hasMutator" ref="accc8593c9a6a59d61eb2a74548ccac87" args="($fieldName, $mutator=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hasMutator </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>mutator</em> = <code>null</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>sets a fieldname to have a custom mutator or check if a field has a custom mutator defined (when called without the $mutator parameter)</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$fieldName </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$mutator </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7b3c0ce5d5177b688cedb510c9ab3035"></a><!-- doxytag: member="Doctrine_Record::hasReference" ref="a7b3c0ce5d5177b688cedb510c9ab3035" args="($name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hasReference </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>tests whether a relation is set </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name relation alias </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4ea7c63734113d28b333f7cbc280ecdf"></a><!-- doxytag: member="Doctrine_Record::hasRelation" ref="a4ea7c63734113d28b333f7cbc280ecdf" args="($fieldName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hasRelation </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>checks existence of properties and related components </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>$fieldName name of the property or reference </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b31c8dc242bb761b1fb221df0f3beb1"></a><!-- doxytag: member="Doctrine_Record::hydrate" ref="a6b31c8dc242bb761b1fb221df0f3beb1" args="(array $data, $overwriteLocalChanges=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hydrate </td>
+          <td>(</td>
+          <td class="paramtype">array $&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>overwriteLocalChanges</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>hydrate hydrates this object from given array</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$data </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$overwriteLocalChanges whether to overwrite the unsaved (dirty) data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab90ee01b314413d7fb35af1f282d0a29"></a><!-- doxytag: member="Doctrine_Record::identifier" ref="ab90ee01b314413d7fb35af1f282d0a29" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer $oid object identifier each Record object has a unique object identifier </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns the primary keys of this object</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a99dfba392f5194158f9b8accfb79d476"></a><!-- doxytag: member="Doctrine_Record::importFrom" ref="a99dfba392f5194158f9b8accfb79d476" args="($type, $data, $deep=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">importFrom </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>imports data from a chosen format in the current instance</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$type Format type: xml, yml, json </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$data <a class="el" href="namespace_data.html">Data</a> to be parsed and imported </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0a444ea28a8ca39b4aeef61cad914030"></a><!-- doxytag: member="Doctrine_Record::invokeSaveHooks" ref="a0a444ea28a8ca39b4aeef61cad914030" args="($when, $type, $event=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">invokeSaveHooks </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>when</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em> = <code>null</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>calls a subclass hook. Idempotent until </p>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_doctrine___record.html#a67d5145ffb2563255c9571d7248cef84">clearInvokedSaveHooks()</a> is called.</dd></dl>
+<p><code> $this-&gt;invokeSaveHooks('pre', 'save'); </code></p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$when 'post' or 'pre' </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$type serialize, unserialize, save, delete, update, insert, validate, dqlSelect, dqlDelete, hydrate </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___event.html">Doctrine_Event</a></em>&nbsp;</td><td>$event event raised </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___event.html">Doctrine_Event</a> the event generated using the type, if not specified </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9a2766f89a3c102109876edfd10195a9"></a><!-- doxytag: member="Doctrine_Record::isInProxyState" ref="a9a2766f89a3c102109876edfd10195a9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">isInProxyState </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>indicates whether record has any not loaded fields</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a350867e38fd4ec8c720e39420badf678"></a><!-- doxytag: member="Doctrine_Record::isModified" ref="a350867e38fd4ec8c720e39420badf678" args="($deep=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">isModified </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns true if this record was modified, otherwise false</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$deep whether to process also the relations for changes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9775034ac2e22942abcb36b9671e9863"></a><!-- doxytag: member="Doctrine_Record::isValid" ref="a9775034ac2e22942abcb36b9671e9863" args="($deep=false, $hooks=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">isValid </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>hooks</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>tests validity of the record using the current data.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$deep run the validation process on the relations </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$hooks invoke save hooks before start </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean whether or not this record is valid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9eb76b6545365931e16a446b8411eea3"></a><!-- doxytag: member="Doctrine_Record::link" ref="a9eb76b6545365931e16a446b8411eea3" args="($alias, $ids, $now=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">link </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>alias</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>now</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>creates links from this record to given records</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$alias related component alias </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$ids the identifiers of the related records </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$now wether or not to execute now or set pending </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> this object (fluent interface) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e1795ba8b825c5639b827ed03bc7827"></a><!-- doxytag: member="Doctrine_Record::linkInDb" ref="a9e1795ba8b825c5639b827ed03bc7827" args="($alias, $ids)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">linkInDb </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>alias</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>ids</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>creates links from this record to given records now, querying the db</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$alias related component alias </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$ids the identifiers of the related records </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> this object (fluent interface) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa03c17cfa7557341c1c5ec4ddb02c2ba"></a><!-- doxytag: member="Doctrine_Record::load" ref="aa03c17cfa7557341c1c5ec4ddb02c2ba" args="(array $data=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">load </td>
+          <td>(</td>
+          <td class="paramtype">array $&nbsp;</td>
+          <td class="paramname"> <em>data</em> = <code>array()</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>loads all the uninitialized properties from the database. Used to move a record from PROXY to CLEAN/DIRTY state.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$data overwriting data to load in the record. Instance is hydrated from the table if not specified. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af730fc6b55e64b0bbc3a8a6015f9fcf7"></a><!-- doxytag: member="Doctrine_Record::loadReference" ref="af730fc6b55e64b0bbc3a8a6015f9fcf7" args="($name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">loadReference </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>loadReference loads a related component</p>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___table___exception.html">Doctrine_Table_Exception</a></em>&nbsp;</td><td>if trying to load an unknown related component </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name alias of the relation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab5f8f1510eccedeee31d382cadd2c60b"></a><!-- doxytag: member="Doctrine_Record::mapValue" ref="ab5f8f1510eccedeee31d382cadd2c60b" args="($name, $value=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mapValue </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>value</em> = <code>null</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>sets a value that will be managed as if it were a field by magic accessor and mutators, </p>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_doctrine___record.html#adc0df62f55e2e29af96c1c5e79609698">get()</a> and </dd>
+<dd>
+<a class="el" href="class_doctrine___record.html#ae461cb10239bdfef6eef1252f522839b">set()</a>. Normally used by <a class="el" href="class_doctrine.html">Doctrine</a> for the mapping of aggregate values.</dd></dl>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name the name of the mapped value </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>$value mixed value to be mapped </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a53907e4336f8939fab873ca075d2e91d"></a><!-- doxytag: member="Doctrine_Record::merge" ref="a53907e4336f8939fab873ca075d2e91d" args="($data, $deep=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">merge </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>merges this record with an array of values or with another existing instance of this object</p>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_doctrine___record.html#a6f3b5648e4f84d5f6250b4d83f79b39e">fromArray()</a> <a class="el" href="">string $array array of data to merge, see link for documentation  bool $deep whether or not to merge relations  void </a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a418b83019e7e91e8fe3ea72aabda3015"></a><!-- doxytag: member="Doctrine_Record::obtainReference" ref="a418b83019e7e91e8fe3ea72aabda3015" args="($name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">obtainReference </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>gets a related component and fails if it does not exist</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record___exception.html">Doctrine_Record_Exception</a></em>&nbsp;</td><td>if trying to get an unknown related component </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1048847dc8ed7492a4a43436204853f6"></a><!-- doxytag: member="Doctrine_Record::postDelete" ref="a1048847dc8ed7492a4a43436204853f6" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">postDelete </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the deletion procedure. </p>
+
+</div>
+</div>
+<a class="anchor" id="a542c2158060b76ec31a0d708159af6c4"></a><!-- doxytag: member="Doctrine_Record::postHydrate" ref="a542c2158060b76ec31a0d708159af6c4" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">postHydrate </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide Record classes with the ability to alter hydration after it runs </p>
+
+</div>
+</div>
+<a class="anchor" id="aea8f113e35660f4522930529e7b86f17"></a><!-- doxytag: member="Doctrine_Record::postInsert" ref="aea8f113e35660f4522930529e7b86f17" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">postInsert </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the saving procedure only when the record is going to be inserted into the data store the first time. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1983196c21baae6ac8d46a60cfce6b06"></a><!-- doxytag: member="Doctrine_Record::postSave" ref="a1983196c21baae6ac8d46a60cfce6b06" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">postSave </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the saving procedure. </p>
+
+<p>Réimplémentée dans <a class="el" href="class_case_code.html#a1983196c21baae6ac8d46a60cfce6b06">CaseCode</a>, <a class="el" href="class_pluginsf_guard_user_group.html#a1983196c21baae6ac8d46a60cfce6b06">PluginsfGuardUserGroup</a>, et <a class="el" href="class_pluginsf_guard_user_permission.html#a1983196c21baae6ac8d46a60cfce6b06">PluginsfGuardUserPermission</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8eac7f4b9ef4c0a5e8d55113ac2f6160"></a><!-- doxytag: member="Doctrine_Record::postSerialize" ref="a8eac7f4b9ef4c0a5e8d55113ac2f6160" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">postSerialize </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the serializing procedure. </p>
+
+</div>
+</div>
+<a class="anchor" id="a696882098fd4ff62b2538193a0c0d696"></a><!-- doxytag: member="Doctrine_Record::postUnserialize" ref="a696882098fd4ff62b2538193a0c0d696" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">postUnserialize </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the serializing procedure. </p>
+
+</div>
+</div>
+<a class="anchor" id="a21823f7cc0abe08c0620ac66652ffe3f"></a><!-- doxytag: member="Doctrine_Record::postUpdate" ref="a21823f7cc0abe08c0620ac66652ffe3f" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">postUpdate </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the saving procedure only when the record is going to be updated. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac0e726f6b03fa156723fe91a950aa555"></a><!-- doxytag: member="Doctrine_Record::postValidate" ref="ac0e726f6b03fa156723fe91a950aa555" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">postValidate </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the validation procedure. </p>
+
+</div>
+</div>
+<a class="anchor" id="afc969f5d3e7e458b91a88dad48e590db"></a><!-- doxytag: member="Doctrine_Record::preDelete" ref="afc969f5d3e7e458b91a88dad48e590db" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preDelete </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the deletion procedure. </p>
+
+</div>
+</div>
+<a class="anchor" id="aad75a36d739d14f9422c57808a9167c8"></a><!-- doxytag: member="Doctrine_Record::preDqlDelete" ref="aad75a36d739d14f9422c57808a9167c8" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preDqlDelete </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide Record classes with the ability to alter DQL delete queries at runtime </p>
+
+</div>
+</div>
+<a class="anchor" id="a77f7a41bbc5101b9ba024815f87d3146"></a><!-- doxytag: member="Doctrine_Record::preDqlSelect" ref="a77f7a41bbc5101b9ba024815f87d3146" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preDqlSelect </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide Record classes with the ability to alter DQL select queries at runtime </p>
+
+</div>
+</div>
+<a class="anchor" id="a7e80876ecf683ea0f1d8c84a8028ac00"></a><!-- doxytag: member="Doctrine_Record::preDqlUpdate" ref="a7e80876ecf683ea0f1d8c84a8028ac00" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preDqlUpdate </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide Record classes with the ability to alter DQL update queries at runtime </p>
+
+</div>
+</div>
+<a class="anchor" id="a5546ef0acb372e1cc5bd6b87ad035278"></a><!-- doxytag: member="Doctrine_Record::preHydrate" ref="a5546ef0acb372e1cc5bd6b87ad035278" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preHydrate </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide Record classes with the ability to alter hydration before it runs </p>
+
+</div>
+</div>
+<a class="anchor" id="a94114cf3687c937b4e8f06240a7175a0"></a><!-- doxytag: member="Doctrine_Record::preInsert" ref="a94114cf3687c937b4e8f06240a7175a0" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preInsert </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the saving procedure only when the record is going to be inserted into the data store the first time. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2d88383cf4571a1bef74f632d7efdf20"></a><!-- doxytag: member="Doctrine_Record::preSave" ref="a2d88383cf4571a1bef74f632d7efdf20" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preSave </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the saving procedure. </p>
+
+<p>Réimplémentée dans <a class="el" href="class_fiche.html#a2d88383cf4571a1bef74f632d7efdf20">Fiche</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a47634546e90de0563913e16c810baa"></a><!-- doxytag: member="Doctrine_Record::preSerialize" ref="a2a47634546e90de0563913e16c810baa" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preSerialize </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the serializing procedure. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5be23aa10c241ef7e442972938a2d778"></a><!-- doxytag: member="Doctrine_Record::preUnserialize" ref="a5be23aa10c241ef7e442972938a2d778" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preUnserialize </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the serializing procedure. </p>
+
+</div>
+</div>
+<a class="anchor" id="a53e9cbcfd206ac36902e640319a71147"></a><!-- doxytag: member="Doctrine_Record::preUpdate" ref="a53e9cbcfd206ac36902e640319a71147" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preUpdate </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the saving procedure only when the record is going to be updated. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8884abab663b6f275f95bb9e21a1595d"></a><!-- doxytag: member="Doctrine_Record::preValidate" ref="a8884abab663b6f275f95bb9e21a1595d" args="($event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">preValidate </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the validation procedure. Useful for cleaning up data before validating it. </p>
+
+</div>
+</div>
+<a class="anchor" id="af125915402b4ee00ebaa72c8cd68f521"></a><!-- doxytag: member="Doctrine_Record::rawGet" ref="af125915402b4ee00ebaa72c8cd68f521" args="($fieldName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rawGet </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns the value of a property (column). If the property is not yet loaded this method does NOT load it.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$name</em>&nbsp;</td><td>name of the property </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record___exception.html">Doctrine_Record_Exception</a></em>&nbsp;</td><td>if trying to get an unknown property </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>mixed </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="addb3e066c662b9da00fafb0f2b48812e"></a><!-- doxytag: member="Doctrine_Record::reference" ref="addb3e066c662b9da00fafb0f2b48812e" args="($name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">reference </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>gets a related component</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Doctrine_Record|Doctrine_Collection </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a48367edddc844a07558cb3037752ee62"></a><!-- doxytag: member="Doctrine_Record::refresh" ref="a48367edddc844a07558cb3037752ee62" args="($deep=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">refresh </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>refresh refresh internal data from the database</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>bool</em>&nbsp;</td><td>$deep If true, fetch also current relations. Caution: this deletes any aggregated values you may have queried beforee</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record___exception.html">Doctrine_Record_Exception</a></em>&nbsp;</td><td>When the refresh operation fails (when the database row this record represents does not exist anymore) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7b9dcc1bd790511b67901f31e2fc70e9"></a><!-- doxytag: member="Doctrine_Record::refreshRelated" ref="a7b9dcc1bd790511b67901f31e2fc70e9" args="($name=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">refreshRelated </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>refresh refresh data of related objects from the database</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name name of a related component. if set, this method only refreshes the specified related component</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> this object </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa3bbb0c444d1114dd52b664ae303f75f"></a><!-- doxytag: member="Doctrine_Record::relatedExists" ref="aa3bbb0c444d1114dd52b664ae303f75f" args="($name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">relatedExists </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Check if a related relationship exists. Will lazily load the relationship in order to check. If the reference didn't already exist and it doesn't exist in the database, the related reference will be cleared immediately.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean Whether or not the related relationship exists </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a102345073d61aa2229b816684bb4e587"></a><!-- doxytag: member="Doctrine_Record::replace" ref="a102345073d61aa2229b816684bb4e587" args="(Doctrine_Connection $conn=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">replace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a> $&nbsp;</td>
+          <td class="paramname"> <em>conn</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>executes a SQL REPLACE query. A REPLACE query is identical to a INSERT query, except that if there is already a row in the table with the same key field values, the REPLACE query just updates its values instead of inserting a new row.</p>
+<p>The REPLACE type of query does not make part of the SQL standards. Since practically only MySQL and SQLIte implement it natively, this type of query isemulated through this method for other DBMS using standard types of queries inside a transaction to assure the atomicity of the operation.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a></em>&nbsp;</td><td>$conn optional connection parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___connection___exception.html">Doctrine_Connection_Exception</a></em>&nbsp;</td><td>if some of the key values was null </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___connection___exception.html">Doctrine_Connection_Exception</a></em>&nbsp;</td><td>if there were no key fields </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___connection___exception.html">Doctrine_Connection_Exception</a></em>&nbsp;</td><td>if something fails at database level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>integer number of rows affected </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7214d5d51809b0a1f149f7403efa7d79"></a><!-- doxytag: member="Doctrine_Record::resetPendingUnlinks" ref="a7214d5d51809b0a1f149f7403efa7d79" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">resetPendingUnlinks </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>resets pending record unlinks</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a22153d2454f4a0df7aa892d82a8fa070"></a><!-- doxytag: member="Doctrine_Record::save" ref="a22153d2454f4a0df7aa892d82a8fa070" args="(Doctrine_Connection $conn=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">save </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a> $&nbsp;</td>
+          <td class="paramname"> <em>conn</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>applies the changes made to this object into database this method is smart enough to know if any changes are made and whether to use INSERT or UPDATE statement</p>
+<p>this method also saves the related components</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a></em>&nbsp;</td><td>$conn optional connection parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>Exception</em>&nbsp;</td><td>if record is not valid and validation is active </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4d9813fea8525b19a1d370eeb8fe41d6"></a><!-- doxytag: member="Doctrine_Record::serialize" ref="a4d9813fea8525b19a1d370eeb8fe41d6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">serialize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>serialize this method is automatically called when an instance of <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> is serialized</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>string </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4231900cb2c1842643b40f0c8c402831"></a><!-- doxytag: member="Doctrine_Record::serializeReferences" ref="a4231900cb2c1842643b40f0c8c402831" args="($bool=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">serializeReferences </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>bool</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set whether or not to serialize references. This is used by caching since we want to serialize references when caching but not when just normally serializing a instance</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$bool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>boolean $bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae461cb10239bdfef6eef1252f522839b"></a><!-- doxytag: member="Doctrine_Record::set" ref="ae461cb10239bdfef6eef1252f522839b" args="($fieldName, $value, $load=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">set </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>load</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>alters mapped values, properties and related components.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>$name name of the property or reference </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>$value value of the property or reference </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$load whether or not to refresh / load the uninitialized record data</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record___exception.html">Doctrine_Record_Exception</a></em>&nbsp;</td><td>if trying to set a value for unknown property / related component </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record___exception.html">Doctrine_Record_Exception</a></em>&nbsp;</td><td>if trying to set a value of wrong type for related component</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad168f3619349421fa0d8d64d7ce370f7"></a><!-- doxytag: member="Doctrine_Record::setRelated" ref="ad168f3619349421fa0d8d64d7ce370f7" args="($alias, Doctrine_Access $coll)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setRelated </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>alias</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_doctrine___access.html">Doctrine_Access</a> $&nbsp;</td>
+          <td class="paramname"> <em>coll</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [final]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>set a related component</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$alias </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___access.html">Doctrine_Access</a></em>&nbsp;</td><td>$coll </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0bc688732d2b3b162ffebaf7812e78da"></a><!-- doxytag: member="Doctrine_Record::setUp" ref="a0bc688732d2b3b162ffebaf7812e78da" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setUp </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>setUp this method is used for setting up relations and attributes it should be implemented by child classes</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_doctrine___record___abstract.html">Doctrine_Record_Abstract</a>.</p>
+
+<p>Réimplémentée dans <a class="el" href="class_base_annexe.html#a0bc688732d2b3b162ffebaf7812e78da">BaseAnnexe</a>, <a class="el" href="class_base_appareil.html#a0bc688732d2b3b162ffebaf7812e78da">BaseAppareil</a>, <a class="el" href="class_base_atelier.html#a0bc688732d2b3b162ffebaf7812e78da">BaseAtelier</a>, <a class="el" href="class_base_batiment.html#a0bc688732d2b3b162ffebaf7812e78da">BaseBatiment</a>, <a class="el" href="class_base_case_code.html#a0bc688732d2b3b162ffebaf7812e78da">BaseCaseCode</a>, <a class="el" href="class_base_category.html#a0bc688732d2b3b162ffebaf7812e78da">BaseCategory</a>, <a class="el" href="class_base_demandeur.html#a0bc688732d2b3b162ffebaf7812e78da">BaseDemandeur</a>, <a class="el" href="class_base_element.html#a0bc688732d2b3b162ffebaf7812e78da">BaseElement</a>, <a class="el" href="class_base_fiche.html#a0bc688732d2b3b162ffebaf7812e78da">BaseFiche</a>, <a class="el" href="class_base_fiche_element.html#a0bc688732d2b3b162ffebaf7812e78da">BaseFicheElement</a>, <a class="el" href="class_base_poste.html#a0bc688732d2b3b162ffebaf7812e78da">BasePoste</a>, <a class="el" href="class_base_tag.html#a0bc688732d2b3b162ffebaf7812e78da">BaseTag</a>, <a class="el" href="class_base_tagging.html#a0bc688732d2b3b162ffebaf7812e78da">BaseTagging</a>, <a class="el" href="class_basesf_guard_forgot_password.html#a0bc688732d2b3b162ffebaf7812e78da">BasesfGuardForgotPassword</a>, <a class="el" href="class_basesf_guard_group.html#a0bc688732d2b3b162ffebaf7812e78da">BasesfGuardGroup</a>, <a class="el" href="class_basesf_guard_group_permission.html#a0bc688732d2b3b162ffebaf7812e78da">BasesfGuardGroupPermission</a>, <a class="el" href="class_basesf_guard_permission.html#a0bc688732d2b3b162ffebaf7812e78da">BasesfGuardPermission</a>, <a class="el" href="class_basesf_guard_remember_key.html#a0bc688732d2b3b162ffebaf7812e78da">BasesfGuardRememberKey</a>, <a class="el" href="class_basesf_guard_user.html#a0bc688732d2b3b162ffebaf7812e78da">BasesfGuardUser</a>, <a class="el" href="class_basesf_guard_user_group.html#a0bc688732d2b3b162ffebaf7812e78da">BasesfGuardUserGroup</a>, <a class="el" href="class_basesf_guard_user_permission.html#a0bc688732d2b3b162ffebaf7812e78da">BasesfGuardUserPermission</a>, <a class="el" href="class_doctrine___file___index.html#a0bc688732d2b3b162ffebaf7812e78da">Doctrine_File_Index</a>, <a class="el" href="class_doctrine___file.html#a0bc688732d2b3b162ffebaf7812e78da">Doctrine_File</a>, <a class="el" href="class_test.html#a0bc688732d2b3b162ffebaf7812e78da">Test</a>, et <a class="el" href="class_test_relation.html#a0bc688732d2b3b162ffebaf7812e78da">TestRelation</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac027bb87b3d819a8d572aa9288488aac"></a><!-- doxytag: member="Doctrine_Record::state" ref="ac027bb87b3d819a8d572aa9288488aac" args="($state=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">state </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>state</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>assigns the state of this record or returns it if called without parameters</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>integer|string</em>&nbsp;</td><td>$state if set, this method tries to set the record state to $state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd>Doctrine_Record::STATE_* constants</dd></dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record___state___exception.html">Doctrine_Record_State_Exception</a></em>&nbsp;</td><td>if trying to set an unknown state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>null|integer </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aede156af55baac03c5fc55018dd534e4"></a><!-- doxytag: member="Doctrine_Record::synchronizeWithArray" ref="aede156af55baac03c5fc55018dd534e4" args="(array $array, $deep=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronizeWithArray </td>
+          <td>(</td>
+          <td class="paramtype">array $&nbsp;</td>
+          <td class="paramname"> <em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>synchronizes a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> instance and its relations with data from an array</p>
+<p>it expects an array representation of a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> similar to the return value of the <a class="el" href="class_doctrine___record.html#afa8986200ff3e9c9de5d7f94cc49dc72">toArray()</a> method. If the array contains relations it will create those that don't exist, update the ones that do, and delete the ones missing on the array but available on the <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> (unlike </p>
+<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="class_doctrine___record.html#a6f3b5648e4f84d5f6250b4d83f79b39e">fromArray()</a> that does not touch what it is not in $array)</dd></dl>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$array representation of a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>bool</em>&nbsp;</td><td>$deep whether or not to act on relations </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afa8986200ff3e9c9de5d7f94cc49dc72"></a><!-- doxytag: member="Doctrine_Record::toArray" ref="afa8986200ff3e9c9de5d7f94cc49dc72" args="($deep=true, $prefixKey=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">toArray </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>deep</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>prefixKey</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns the record representation as an array</p>
+<p><a class="el" href="">boolean $deep whether to include relations  boolean $prefixKey not used  array </a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5558c5d549f41597377fa1ea8a1cefa3"></a><!-- doxytag: member="Doctrine_Record::toString" ref="a5558c5d549f41597377fa1ea8a1cefa3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">toString </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>__toString alias</p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>string </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a33c3ba2a8afad1b61babfc317b1a2826"></a><!-- doxytag: member="Doctrine_Record::trySave" ref="a33c3ba2a8afad1b61babfc317b1a2826" args="(Doctrine_Connection $conn=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">trySave </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a> $&nbsp;</td>
+          <td class="paramname"> <em>conn</em> = <code>null</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>tries to save the object and all its related components. In contrast to <a class="el" href="class_doctrine___record.html#a22153d2454f4a0df7aa892d82a8fa070">Doctrine_Record::save()</a>, this method does not throw an exception when validation fails but returns TRUE on success or FALSE on failure.</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___connection.html">Doctrine_Connection</a></em>&nbsp;</td><td>$conn optional connection parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>TRUE if the record was saved sucessfully without errors, FALSE otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a79a88442587dd05c7382fff5a5a5c3b2"></a><!-- doxytag: member="Doctrine_Record::unlink" ref="a79a88442587dd05c7382fff5a5a5c3b2" args="($alias, $ids=array(), $now=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unlink </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>alias</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>ids</em> = <code>array()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>now</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>unlink removes links from this record to given records if no ids are given, it removes all links</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$alias related component alias </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$ids the identifiers of the related records </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>boolean</em>&nbsp;</td><td>$now whether or not to execute now or set as pending unlinks </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> this object (fluent interface) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5a400ff708dd6d47736fa1640311ed70"></a><!-- doxytag: member="Doctrine_Record::unlinkInDb" ref="a5a400ff708dd6d47736fa1640311ed70" args="($alias, $ids=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unlinkInDb </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>alias</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>ids</em> = <code>array()</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>unlink now the related components, querying the db </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$alias related component alias </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$ids the identifiers of the related records </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd><a class="el" href="class_doctrine___record.html">Doctrine_Record</a> this object (fluent interface) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac2f3a0997c46fd9bb24fe4190f738eb0"></a><!-- doxytag: member="Doctrine_Record::unserialize" ref="ac2f3a0997c46fd9bb24fe4190f738eb0" args="($serialized)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unserialize </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>serialized</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>this method is automatically called everytime an instance is unserialized</p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$serialized <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> as serialized string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_doctrine___record___exception.html">Doctrine_Record_Exception</a></em>&nbsp;</td><td>if the cleanData operation fails somehow </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a184909dab34698899937d810a9f5d393"></a><!-- doxytag: member="Doctrine_Record::validate" ref="a184909dab34698899937d810a9f5d393" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">validate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the validation procedure, doing any custom / specialized validations that are neccessary. </p>
+
+</div>
+</div>
+<a class="anchor" id="a73578695a3eef042e063ae2446404bd7"></a><!-- doxytag: member="Doctrine_Record::validateOnInsert" ref="a73578695a3eef042e063ae2446404bd7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">validateOnInsert </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the validation procedure only when the record is going to be inserted into the data store the first time. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab013b4e3f709d9761e12bbf2da3414f4"></a><!-- doxytag: member="Doctrine_Record::validateOnUpdate" ref="ab013b4e3f709d9761e12bbf2da3414f4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">validateOnUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Empty template method to provide concrete Record classes with the possibility to hook into the validation procedure only when the record is going to be updated. </p>
+
+</div>
+</div>
+<hr/><h2>Documentation des champs</h2>
+<a class="anchor" id="af2901477fc9ae2f95c3b7172644a0071"></a><!-- doxytag: member="Doctrine_Record::$_pendingUnlinks" ref="af2901477fc9ae2f95c3b7172644a0071" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">array $_pendingUnlinks = array()<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Array of pending un links in format alias =&gt; keys to be executed after save </p>
+
+</div>
+</div>
+<a class="anchor" id="a1b944c776949e9c0660f4d7b08cf6a55"></a><!-- doxytag: member="Doctrine_Record::STATE_CLEAN" ref="a1b944c776949e9c0660f4d7b08cf6a55" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_doctrine___record.html#a1b944c776949e9c0660f4d7b08cf6a55">STATE_CLEAN</a> = 3</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>CLEAN STATE a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> is in clean state when all of its properties are loaded from the database and none of its properties are changed </p>
+
+</div>
+</div>
+<a class="anchor" id="a53f40b6aa8360fb891d6516dea517b57"></a><!-- doxytag: member="Doctrine_Record::STATE_DIRTY" ref="a53f40b6aa8360fb891d6516dea517b57" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_doctrine___record.html#a53f40b6aa8360fb891d6516dea517b57">STATE_DIRTY</a> = 1</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>STATE CONSTANTS DIRTY STATE a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> is in dirty state when its properties are changed </p>
+
+</div>
+</div>
+<a class="anchor" id="a64bd61dc65fa8d6e20adb49b6919d978"></a><!-- doxytag: member="Doctrine_Record::STATE_LOCKED" ref="a64bd61dc65fa8d6e20adb49b6919d978" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_doctrine___record.html#a64bd61dc65fa8d6e20adb49b6919d978">STATE_LOCKED</a> = 6</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>LOCKED STATE a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> is temporarily locked during deletes and saves</p>
+<p>This state is used internally to ensure that circular deletes and saves will not cause infinite loops </p>
+
+</div>
+</div>
+<a class="anchor" id="a1e3e1b93ec033ad9ab397dc77f6b349b"></a><!-- doxytag: member="Doctrine_Record::STATE_PROXY" ref="a1e3e1b93ec033ad9ab397dc77f6b349b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_doctrine___record.html#a1e3e1b93ec033ad9ab397dc77f6b349b">STATE_PROXY</a> = 4</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>PROXY STATE a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> is in proxy state when its properties are not fully loaded </p>
+
+</div>
+</div>
+<a class="anchor" id="a6eeedb3a75ea2fbe951b00ec31522f39"></a><!-- doxytag: member="Doctrine_Record::STATE_TCLEAN" ref="a6eeedb3a75ea2fbe951b00ec31522f39" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_doctrine___record.html#a6eeedb3a75ea2fbe951b00ec31522f39">STATE_TCLEAN</a> = 5</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>NEW TCLEAN a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> is in transient clean state when it is created and none of its fields are modified </p>
+
+</div>
+</div>
+<a class="anchor" id="a4f671d30eda680905ed81d520917b11a"></a><!-- doxytag: member="Doctrine_Record::STATE_TDIRTY" ref="a4f671d30eda680905ed81d520917b11a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_doctrine___record.html#a4f671d30eda680905ed81d520917b11a">STATE_TDIRTY</a> = 2</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>TDIRTY STATE a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> is in transient dirty state when it is created and some of its fields are modified but it is NOT yet persisted into database </p>
+
+</div>
+</div>
+<a class="anchor" id="aeeeaba07b88663c92f16905096a32945"></a><!-- doxytag: member="Doctrine_Record::STATE_TLOCKED" ref="aeeeaba07b88663c92f16905096a32945" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_doctrine___record.html#aeeeaba07b88663c92f16905096a32945">STATE_TLOCKED</a> = 7</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>TLOCKED STATE a <a class="el" href="class_doctrine___record.html">Doctrine_Record</a> is temporarily locked (and transient) during deletes and saves</p>
+<p>This state is used internally to ensure that circular deletes and saves will not cause infinite loops </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Record.php</li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:20 pour ELS par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>
