@@ -33,6 +33,7 @@ class FicheForm extends BaseFicheForm {
       $this->widgetSchema['sf_guard_user_id']->setOption('order_by', array('first_name', 'ASC'));
       $this->widgetSchema['sf_guard_user_id']->setOption('table_method', 'findActive');
     }
+    $this->widgetSchema['criticity'] = new sfWidgetFormSelectSlider(array('choices' => array(0, 1, 2, 3, 4, 5)));
     $this->widgetSchema['poste_id']->setOption('order_by', array('id', 'ASC'));
     $this->widgetSchema['poste_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['appareil_id']->setOption('table_method', 'findActive');
@@ -49,7 +50,7 @@ class FicheForm extends BaseFicheForm {
     }
     $this->setDefault('case_code_id', $caseCode->getPrimaryKey());
     $this->widgetSchema['case_code_id'] = new sfWidgetFormInputPlain(array('value' => $this->isNew() ? $caseCode : $this->getObject()->getCaseCode()));
-    $this->widgetSchema['time_spent'] = new sfWidgetFormInputPlain();
+    $this->widgetSchema['time_spent'] = new sfWidgetFormInputPlain(array('value' => $this->getObject()->getTimeSpent() ? gmdate('H\hi', $this->getObject()->getTimeSpent()) : null));
     $this->widgetSchema['fiche_date'] = new sfWidgetFormDateJQueryUI();
     $this->widgetSchema['unsolved_date'] = new sfWidgetFormDateJQueryUI();
     $this->validatorSchema['appel_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
@@ -135,7 +136,7 @@ class FicheForm extends BaseFicheForm {
     $this->setDefault('category_id', $this->getRequest()->getParameter('category_id', CategoryTable::getInstance()->findByIsActive(true)->getFirst()->getPrimaryKey()));
 
     // Specific form from category
-    $fields = array('id', 'parent_id', 'case_code_id', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'time_spent', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
+    $fields = array('id', 'parent_id', 'case_code_id', 'criticity', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'time_spent', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
     $category = CategoryTable::getInstance()->find($this->getDefault('category_id'));
     if($category) {
       switch($category->getCode()) {
@@ -164,7 +165,7 @@ class FicheForm extends BaseFicheForm {
    * @return mixed Parsed timestamp
    */
   public function parseTimestamp($value) {
-    return $value ? date('d/m/Y H:i:s') : null;
+    return $value ? date('d/m/Y H\hi', strtotime($value)) : null;
   }
 
   /**

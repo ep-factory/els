@@ -125,6 +125,9 @@ Fiche:
     SoftDelete: ~
     Taggable: ~
   columns:
+    criticity:
+      type: integer
+      default: 0
     sf_guard_user_id: integer
     parent_id: integer
     is_finished:
@@ -145,9 +148,7 @@ Fiche:
       type: integer(12)
       notnull: true
     label: string(255)
-    fiche_date:
-      type: date
-      notnull: true
+    fiche_date: date
     poste_id:
       type: integer
       notnull: true
@@ -171,7 +172,7 @@ Fiche:
     appel_hour: timestamp
     start_hour: timestamp
     end_hour: timestamp
-    time_spent: timestamp
+    time_spent: integer
     problem: clob
     cause: clob
     solution: clob

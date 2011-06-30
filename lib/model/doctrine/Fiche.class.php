@@ -105,11 +105,11 @@ class Fiche extends BaseFiche {
       $number = $this->getTable()->createQuery()
                       ->where('fiche_date = ?', date('Y-m-d'))
                       ->count();
-      $this->setNumber(preg_replace('/\-/i', '', $this->getFicheDate()).sfConfig::get('app_machine_id').str_pad($number + 1, 4, "0", STR_PAD_LEFT));
+      $this->setNumber(preg_replace('/\-/i', '', date('Y-m-d')).sfConfig::get('app_machine_id').str_pad($number + 1, 4, "0", STR_PAD_LEFT));
     }
     // Force time spent
     if(!$this->getTimeSpent()) {
-      $this->setTimeSpent(date('H:i:s', strtotime($this->getEndHour() - $this->getStartHour())));
+      $this->setTimeSpent(strtotime($this->getEndHour()) - strtotime($this->getStartHour()));
     }
   }
 
