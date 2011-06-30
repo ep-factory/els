@@ -60,13 +60,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <h1>Référence de la classe sfWebResponse</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="sfWebResponse" --><!-- doxytag: inherits="sfResponse" --><div class="dynheader">
+<!-- doxytag: class="sfWebResponse" --><!-- doxytag: inherits="sfResponse,sfResponse" --><div class="dynheader">
 Graphe d'héritage de sfWebResponse:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classsf_web_response.png" usemap="#sfWebResponse_map" alt=""/>
   <map id="sfWebResponse_map" name="sfWebResponse_map">
-<area href="classsf_response.html" alt="sfResponse" shape="rect" coords="118,0,226,24"/>
+<area href="classsf_response.html" alt="sfResponse" shape="rect" coords="59,0,167,24"/>
+<area href="classsf_response.html" alt="sfResponse" shape="rect" coords="177,0,285,24"/>
 <area href="classmy_response.html" alt="myResponse" shape="rect" coords="0,112,108,136"/>
 <area href="classmy_web_response.html" alt="myWebResponse" shape="rect" coords="118,112,226,136"/>
 <area href="classmy_web_response.html" alt="myWebResponse" shape="rect" coords="236,112,344,136"/>
@@ -75,6 +76,86 @@ Graphe d'héritage de sfWebResponse:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a059359080b31e5c8cae601182b05c95c"></a><!-- doxytag: member="sfWebResponse::initialize" ref="a059359080b31e5c8cae601182b05c95c" args="(sfEventDispatcher $dispatcher, $options=array())" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (<a class="el" href="classsf_event_dispatcher.html">sfEventDispatcher</a> $dispatcher, $options=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a017c9024b8075fd9b5dae7f59c3fe6f9"></a><!-- doxytag: member="sfWebResponse::setHeaderOnly" ref="a017c9024b8075fd9b5dae7f59c3fe6f9" args="($value=true)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setHeaderOnly</b> ($value=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c44c66c4d35e3d788105467dca2f11c"></a><!-- doxytag: member="sfWebResponse::isHeaderOnly" ref="a5c44c66c4d35e3d788105467dca2f11c" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>isHeaderOnly</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea65f27edb061af24c1f8ca59fd2fb17"></a><!-- doxytag: member="sfWebResponse::setCookie" ref="aea65f27edb061af24c1f8ca59fd2fb17" args="($name, $value, $expire=null, $path= '/', $domain= '', $secure=false, $httpOnly=false)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setCookie</b> ($name, $value, $expire=null, $path= '/', $domain= '', $secure=false, $httpOnly=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af044136c042eb59368780739979292ed"></a><!-- doxytag: member="sfWebResponse::setStatusCode" ref="af044136c042eb59368780739979292ed" args="($code, $name=null)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setStatusCode</b> ($code, $name=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab26af198dc3a59295747084b85435ff"></a><!-- doxytag: member="sfWebResponse::getStatusText" ref="aab26af198dc3a59295747084b85435ff" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getStatusText</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a094778dd1c04fe44626000b47ea0c0bb"></a><!-- doxytag: member="sfWebResponse::getStatusCode" ref="a094778dd1c04fe44626000b47ea0c0bb" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getStatusCode</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97d299f260fee32f57702be7afb6782c"></a><!-- doxytag: member="sfWebResponse::setHttpHeader" ref="a97d299f260fee32f57702be7afb6782c" args="($name, $value, $replace=true)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setHttpHeader</b> ($name, $value, $replace=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6b4974280ac1fdce33b2da9cb4fff9a"></a><!-- doxytag: member="sfWebResponse::getHttpHeader" ref="aa6b4974280ac1fdce33b2da9cb4fff9a" args="($name, $default=null)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getHttpHeader</b> ($name, $default=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a64a5d2baeaa6de0afd91bd580b18b0"></a><!-- doxytag: member="sfWebResponse::hasHttpHeader" ref="a7a64a5d2baeaa6de0afd91bd580b18b0" args="($name)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>hasHttpHeader</b> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd488d639195d633aa3d22c72754aae8"></a><!-- doxytag: member="sfWebResponse::setContentType" ref="abd488d639195d633aa3d22c72754aae8" args="($value)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setContentType</b> ($value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abca2d528da8311b6fcfe040768cbaa24"></a><!-- doxytag: member="sfWebResponse::getCharset" ref="abca2d528da8311b6fcfe040768cbaa24" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCharset</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa843137beb02bc2516fe0551c00ff7d7"></a><!-- doxytag: member="sfWebResponse::getContentType" ref="aa843137beb02bc2516fe0551c00ff7d7" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getContentType</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b93115f45f6b0a7750e4220946ed3da"></a><!-- doxytag: member="sfWebResponse::sendHttpHeaders" ref="a1b93115f45f6b0a7750e4220946ed3da" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendHttpHeaders</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3edae72c871ac25cab152d5022355d4"></a><!-- doxytag: member="sfWebResponse::sendContent" ref="ab3edae72c871ac25cab152d5022355d4" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>sendContent</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12bcef5130168b80d3d52dc82213f19a"></a><!-- doxytag: member="sfWebResponse::send" ref="a12bcef5130168b80d3d52dc82213f19a" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>send</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b276846905e6d497478800099e6dc29"></a><!-- doxytag: member="sfWebResponse::addVaryHttpHeader" ref="a3b276846905e6d497478800099e6dc29" args="($header)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>addVaryHttpHeader</b> ($header)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9a7cb67fe4a40da17f3f33f7d576682"></a><!-- doxytag: member="sfWebResponse::addCacheControlHttpHeader" ref="ab9a7cb67fe4a40da17f3f33f7d576682" args="($name, $value=null)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>addCacheControlHttpHeader</b> ($name, $value=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affc0cf1ef4aca66c0eee023ce4c004aa"></a><!-- doxytag: member="sfWebResponse::getHttpMetas" ref="affc0cf1ef4aca66c0eee023ce4c004aa" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getHttpMetas</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b9ee61aedc83a6bc3da16f3674377b7"></a><!-- doxytag: member="sfWebResponse::addHttpMeta" ref="a6b9ee61aedc83a6bc3da16f3674377b7" args="($key, $value, $replace=true)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>addHttpMeta</b> ($key, $value, $replace=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9ff38f0120835e79bf04b345b9a06c1"></a><!-- doxytag: member="sfWebResponse::getMetas" ref="ae9ff38f0120835e79bf04b345b9a06c1" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getMetas</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a508c5696e448fd3d93d91539be0a7824"></a><!-- doxytag: member="sfWebResponse::addMeta" ref="a508c5696e448fd3d93d91539be0a7824" args="($key, $value, $replace=true, $escape=true)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>addMeta</b> ($key, $value, $replace=true, $escape=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95e859a4588a39a1824b717378a84c29"></a><!-- doxytag: member="sfWebResponse::getTitle" ref="a95e859a4588a39a1824b717378a84c29" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getTitle</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c254cf52664c855e3c7f8ae1bd18bd6"></a><!-- doxytag: member="sfWebResponse::setTitle" ref="a1c254cf52664c855e3c7f8ae1bd18bd6" args="($title, $escape=true)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setTitle</b> ($title, $escape=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f3ffc994c6851ddd8879985a81d2d8f"></a><!-- doxytag: member="sfWebResponse::getPositions" ref="a1f3ffc994c6851ddd8879985a81d2d8f" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getPositions</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac8462683d212b34993fa9b985e7275f"></a><!-- doxytag: member="sfWebResponse::getStylesheets" ref="aac8462683d212b34993fa9b985e7275f" args="($position=self::ALL)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getStylesheets</b> ($position=self::ALL)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a884eefb61e082d4e9f6f1f85601fdf"></a><!-- doxytag: member="sfWebResponse::addStylesheet" ref="a8a884eefb61e082d4e9f6f1f85601fdf" args="($file, $position= '', $options=array())" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>addStylesheet</b> ($file, $position= '', $options=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada5d912d81392886255af9ec71ba1352"></a><!-- doxytag: member="sfWebResponse::removeStylesheet" ref="ada5d912d81392886255af9ec71ba1352" args="($file)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>removeStylesheet</b> ($file)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1458229f991b849e09bc491bb4b11875"></a><!-- doxytag: member="sfWebResponse::getJavascripts" ref="a1458229f991b849e09bc491bb4b11875" args="($position=self::ALL)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getJavascripts</b> ($position=self::ALL)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed334c2d406ec0696e34140ee93287d9"></a><!-- doxytag: member="sfWebResponse::addJavascript" ref="aed334c2d406ec0696e34140ee93287d9" args="($file, $position= '', $options=array())" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>addJavascript</b> ($file, $position= '', $options=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5edec55c118b664596f66ec87b740955"></a><!-- doxytag: member="sfWebResponse::removeJavascript" ref="a5edec55c118b664596f66ec87b740955" args="($file)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>removeJavascript</b> ($file)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add6fa98e1434ebfe9005313307f868a4"></a><!-- doxytag: member="sfWebResponse::getSlots" ref="add6fa98e1434ebfe9005313307f868a4" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getSlots</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60ac40a9d1947f775ada4e0745e1a6bc"></a><!-- doxytag: member="sfWebResponse::setSlot" ref="a60ac40a9d1947f775ada4e0745e1a6bc" args="($name, $content)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setSlot</b> ($name, $content)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a374b645410526cbbb498b140242a00ba"></a><!-- doxytag: member="sfWebResponse::getCookies" ref="a374b645410526cbbb498b140242a00ba" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCookies</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea30a162bcb88958cac92866dd8e2329"></a><!-- doxytag: member="sfWebResponse::getHttpHeaders" ref="aea30a162bcb88958cac92866dd8e2329" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getHttpHeaders</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2bbc2d3f9017ee075dac1b0b60e16a67"></a><!-- doxytag: member="sfWebResponse::clearHttpHeaders" ref="a2bbc2d3f9017ee075dac1b0b60e16a67" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>clearHttpHeaders</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd9e209ceff33b6ed9c5f6c6bdfd1cf8"></a><!-- doxytag: member="sfWebResponse::copyProperties" ref="abd9e209ceff33b6ed9c5f6c6bdfd1cf8" args="(sfWebResponse $response)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>copyProperties</b> (<a class="el" href="classsf_web_response.html">sfWebResponse</a> $response)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15ff55c6cbb30357a9b4d8ab94f6c888"></a><!-- doxytag: member="sfWebResponse::merge" ref="a15ff55c6cbb30357a9b4d8ab94f6c888" args="(sfWebResponse $response)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>merge</b> (<a class="el" href="classsf_web_response.html">sfWebResponse</a> $response)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d9813fea8525b19a1d370eeb8fe41d6"></a><!-- doxytag: member="sfWebResponse::serialize" ref="a4d9813fea8525b19a1d370eeb8fe41d6" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>serialize</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2f3a0997c46fd9bb24fe4190f738eb0"></a><!-- doxytag: member="sfWebResponse::unserialize" ref="ac2f3a0997c46fd9bb24fe4190f738eb0" args="($serialized)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>unserialize</b> ($serialized)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_web_response.html#a059359080b31e5c8cae601182b05c95c">initialize</a> (<a class="el" href="classsf_event_dispatcher.html">sfEventDispatcher</a> $dispatcher, $options=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_web_response.html#a017c9024b8075fd9b5dae7f59c3fe6f9">setHeaderOnly</a> ($value=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_web_response.html#a5c44c66c4d35e3d788105467dca2f11c">isHeaderOnly</a> ()</td></tr>
@@ -117,6 +198,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_web_response.html#ac2f3a0997c46fd9bb24fe4190f738eb0">unserialize</a> ($serialized)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c2fb3f126400dc5a7a25db7c9f29ea8"></a><!-- doxytag: member="sfWebResponse::getDate" ref="a1c2fb3f126400dc5a7a25db7c9f29ea8" args="($timestamp, $type= 'rfc1123')" -->
+static&nbsp;</td><td class="memItemRight" valign="bottom"><b>getDate</b> ($timestamp, $type= 'rfc1123')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_web_response.html#a1c2fb3f126400dc5a7a25db7c9f29ea8">getDate</a> ($timestamp, $type= 'rfc1123')</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Champs de données</h2></td></tr>
@@ -132,6 +215,12 @@ const&nbsp;</td><td class="memItemRight" valign="bottom"><b>ALL</b> = 'ALL'</td>
 const&nbsp;</td><td class="memItemRight" valign="bottom"><b>RAW</b> = 'RAW'</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Fonctions membres protégées</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4433256e79edbe53046247bce18541e6"></a><!-- doxytag: member="sfWebResponse::normalizeHeaderName" ref="a4433256e79edbe53046247bce18541e6" args="($name)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>normalizeHeaderName</b> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4137f65308bb8df58d139c86af065331"></a><!-- doxytag: member="sfWebResponse::validatePosition" ref="a4137f65308bb8df58d139c86af065331" args="($position)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>validatePosition</b> ($position)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa53fb688c1af2994120fdc6c475b7749"></a><!-- doxytag: member="sfWebResponse::fixContentType" ref="aa53fb688c1af2994120fdc6c475b7749" args="($contentType)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>fixContentType</b> ($contentType)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_web_response.html#a4433256e79edbe53046247bce18541e6">normalizeHeaderName</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_web_response.html#a4137f65308bb8df58d139c86af065331">validatePosition</a> ($position)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_web_response.html#aa53fb688c1af2994120fdc6c475b7749">fixContentType</a> ($contentType)</td></tr>
@@ -161,7 +250,7 @@ Attributs protégés</h2></td></tr>
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>$slots</b> = array()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
 Attributs protégés statiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada173a2da067c98bfb9a49e51ebf1df3"></a><!-- doxytag: member="sfWebResponse::$statusTexts" ref="ada173a2da067c98bfb9a49e51ebf1df3" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c3de4a8bd71ea77b7fec8fa7854132d"></a><!-- doxytag: member="sfWebResponse::$statusTexts" ref="a6c3de4a8bd71ea77b7fec8fa7854132d" args="" -->
 static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></td></tr>
 </table>
 <hr/><h2>Documentation des fonctions membres</h2>
@@ -756,8 +845,6 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 <p>Retrieves status text for the current web response.</p>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>string Status text </dd></dl>
 
-<p>Réimplémentée dans <a class="el" href="classmy_web_response.html#aab26af198dc3a59295747084b85435ff">myWebResponse</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aac8462683d212b34993fa9b985e7275f"></a><!-- doxytag: member="sfWebResponse::getStylesheets" ref="aac8462683d212b34993fa9b985e7275f" args="($position=self::ALL)" -->
@@ -875,7 +962,7 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 </dl>
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_response.html">sfResponse</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_response.html#a059359080b31e5c8cae601182b05c95c">sfResponse</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_response.html">sfResponse</a>.</p>
 
 </div>
 </div>
@@ -947,8 +1034,6 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>string Normalized header </dd></dl>
 
-<p>Réimplémentée dans <a class="el" href="classmy_web_response.html#a4433256e79edbe53046247bce18541e6">myWebResponse</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a5edec55c118b664596f66ec87b740955"></a><!-- doxytag: member="sfWebResponse::removeJavascript" ref="a5edec55c118b664596f66ec87b740955" args="($file)" -->
@@ -1017,9 +1102,7 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 <div class="memdoc">
 <p>Sends the HTTP headers and the content. </p>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_response.html#a12bcef5130168b80d3d52dc82213f19a">sfResponse</a>.</p>
-
-<p>Réimplémentée dans <a class="el" href="classmy_web_response.html#a12bcef5130168b80d3d52dc82213f19a">myWebResponse</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_response.html">sfResponse</a>.</p>
 
 </div>
 </div>
@@ -1039,7 +1122,7 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 <div class="memdoc">
 <p>Send content for the current web response. </p>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_response.html#ab3edae72c871ac25cab152d5022355d4">sfResponse</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_response.html">sfResponse</a>.</p>
 
 </div>
 </div>
@@ -1059,8 +1142,6 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 <div class="memdoc">
 <p>Sends HTTP headers and cookies. Only the first invocation of this method will send the headers. Subsequent invocations will silently do nothing. This allows certain actions to send headers early, while still using the standard controller. </p>
 
-<p>Réimplémentée dans <a class="el" href="classmy_web_response.html#a1b93115f45f6b0a7750e4220946ed3da">myWebResponse</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a4d9813fea8525b19a1d370eeb8fe41d6"></a><!-- doxytag: member="sfWebResponse::serialize" ref="a4d9813fea8525b19a1d370eeb8fe41d6" args="()" -->
@@ -1079,9 +1160,7 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_response.html">sfResponse</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_response.html#a4d9813fea8525b19a1d370eeb8fe41d6">sfResponse</a>.</p>
-
-<p>Réimplémentée dans <a class="el" href="classmy_response.html#a4d9813fea8525b19a1d370eeb8fe41d6">myResponse</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_response.html">sfResponse</a>.</p>
 
 </div>
 </div>
@@ -1375,9 +1454,7 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_response.html">sfResponse</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_response.html#ac2f3a0997c46fd9bb24fe4190f738eb0">sfResponse</a>.</p>
-
-<p>Réimplémentée dans <a class="el" href="classmy_response.html#ac2f3a0997c46fd9bb24fe4190f738eb0">myResponse</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_response.html">sfResponse</a>.</p>
 
 </div>
 </div>
@@ -1412,8 +1489,9 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 
 </div>
 </div>
-<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>lib/vendor/symfony/lib/response/sfWebResponse.class.php</li>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>/var/www/els/cache/frontend/prod/config/config_core_compile.yml.php</li>
+<li>/var/www/els/lib/vendor/symfony/lib/response/sfWebResponse.class.php</li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -1430,7 +1508,7 @@ static&nbsp;</td><td class="memItemRight" valign="bottom"><b>$statusTexts</b></t
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:44 pour ELS par&nbsp;
+<hr class="footer"/><address class="footer"><small>Généré le Thu Jun 30 2011 11:31:19 pour ELS par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

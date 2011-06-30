@@ -58,13 +58,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <h1>Référence de la classe sfPatternRouting</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="sfPatternRouting" --><!-- doxytag: inherits="sfRouting" --><div class="dynheader">
+<!-- doxytag: class="sfPatternRouting" --><!-- doxytag: inherits="sfRouting,sfRouting" --><div class="dynheader">
 Graphe d'héritage de sfPatternRouting:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classsf_pattern_routing.png" usemap="#sfPatternRouting_map" alt=""/>
   <map id="sfPatternRouting_map" name="sfPatternRouting_map">
-<area href="classsf_routing.html" alt="sfRouting" shape="rect" coords="137,0,264,24"/>
+<area href="classsf_routing.html" alt="sfRouting" shape="rect" coords="68,0,195,24"/>
+<area href="classsf_routing.html" alt="sfRouting" shape="rect" coords="205,0,332,24"/>
 <area href="classmy_routing.html" alt="myRouting" shape="rect" coords="0,112,127,136"/>
 <area href="classsf_pattern_routing_test.html" alt="sfPatternRoutingTest" shape="rect" coords="137,112,264,136"/>
 <area href="classtaggable_routing.html" alt="taggableRouting" shape="rect" coords="274,112,401,136"/>
@@ -73,6 +74,46 @@ Graphe d'héritage de sfPatternRouting:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60cd6d1833aa3c3ce567729aaf2e6661"></a><!-- doxytag: member="sfPatternRouting::initialize" ref="a60cd6d1833aa3c3ce567729aaf2e6661" args="(sfEventDispatcher $dispatcher, sfCache $cache=null, $options=array())" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (<a class="el" href="classsf_event_dispatcher.html">sfEventDispatcher</a> $dispatcher, <a class="el" href="classsf_cache.html">sfCache</a> $cache=null, $options=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6f1fad776a35f7b12077fc27c53317f"></a><!-- doxytag: member="sfPatternRouting::loadConfiguration" ref="aa6f1fad776a35f7b12077fc27c53317f" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>loadConfiguration</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35e753537b1d89247dc9b0ec534f683a"></a><!-- doxytag: member="sfPatternRouting::setDefaultParameter" ref="a35e753537b1d89247dc9b0ec534f683a" args="($key, $value)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setDefaultParameter</b> ($key, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b297e3e5a9a6999a3792519bf3736bc"></a><!-- doxytag: member="sfPatternRouting::setDefaultParameters" ref="a7b297e3e5a9a6999a3792519bf3736bc" args="($parameters)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setDefaultParameters</b> ($parameters)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55371436592d70f3bde9d903aebb4320"></a><!-- doxytag: member="sfPatternRouting::getCurrentInternalUri" ref="a55371436592d70f3bde9d903aebb4320" args="($withRouteName=false)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCurrentInternalUri</b> ($withRouteName=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e1712152c0cadcb9019fe33e2523e23"></a><!-- doxytag: member="sfPatternRouting::getCurrentRouteName" ref="a6e1712152c0cadcb9019fe33e2523e23" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCurrentRouteName</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18da86bf318ebe47e501aaad267d59ed"></a><!-- doxytag: member="sfPatternRouting::getRoutes" ref="a18da86bf318ebe47e501aaad267d59ed" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getRoutes</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ba88e52d51768f46f94112ece1eef8d"></a><!-- doxytag: member="sfPatternRouting::setRoutes" ref="a2ba88e52d51768f46f94112ece1eef8d" args="($routes)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setRoutes</b> ($routes)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a435d6ff7cf24607ebfa5b891dcc6ed63"></a><!-- doxytag: member="sfPatternRouting::hasRoutes" ref="a435d6ff7cf24607ebfa5b891dcc6ed63" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>hasRoutes</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac34ae5445bdf4179f08498db48cd27f"></a><!-- doxytag: member="sfPatternRouting::clearRoutes" ref="aac34ae5445bdf4179f08498db48cd27f" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>clearRoutes</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18d6233072f23ba90e333e4a5f0374cd"></a><!-- doxytag: member="sfPatternRouting::hasRouteName" ref="a18d6233072f23ba90e333e4a5f0374cd" args="($name)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>hasRouteName</b> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abdbd42703ab51f9d94802d2720cfc537"></a><!-- doxytag: member="sfPatternRouting::prependRoute" ref="abdbd42703ab51f9d94802d2720cfc537" args="($name, $route)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>prependRoute</b> ($name, $route)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2d1c4ed943bcc6d6a08cad99e34e9f4"></a><!-- doxytag: member="sfPatternRouting::appendRoute" ref="ae2d1c4ed943bcc6d6a08cad99e34e9f4" args="($name, $route)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>appendRoute</b> ($name, $route)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac0abde3883ead2a770a12cd982761d68"></a><!-- doxytag: member="sfPatternRouting::insertRouteBefore" ref="ac0abde3883ead2a770a12cd982761d68" args="($pivot, $name, $route)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>insertRouteBefore</b> ($pivot, $name, $route)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a081c4f7b38e67b253ae22552042c8335"></a><!-- doxytag: member="sfPatternRouting::connect" ref="a081c4f7b38e67b253ae22552042c8335" args="($name, $route)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>connect</b> ($name, $route)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add15249caf04fb3e5384803afadf01c6"></a><!-- doxytag: member="sfPatternRouting::configureRoute" ref="add15249caf04fb3e5384803afadf01c6" args="(sfRoute $route)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>configureRoute</b> (<a class="el" href="classsf_route.html">sfRoute</a> $route)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95386326221764eff889cefa76722bcb"></a><!-- doxytag: member="sfPatternRouting::generate" ref="a95386326221764eff889cefa76722bcb" args="($name, $params=array(), $absolute=false)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>generate</b> ($name, $params=array(), $absolute=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9abf038f9fb49aecb092df745ced446d"></a><!-- doxytag: member="sfPatternRouting::parse" ref="a9abf038f9fb49aecb092df745ced446d" args="($url)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>parse</b> ($url)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20a555275ba099bc0d6855c89f826f47"></a><!-- doxytag: member="sfPatternRouting::findRoute" ref="a20a555275ba099bc0d6855c89f826f47" args="($url)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>findRoute</b> ($url)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a482087c71391537bfe6fece68a58d420"></a><!-- doxytag: member="sfPatternRouting::shutdown" ref="a482087c71391537bfe6fece68a58d420" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>shutdown</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_pattern_routing.html#a60cd6d1833aa3c3ce567729aaf2e6661">initialize</a> (<a class="el" href="classsf_event_dispatcher.html">sfEventDispatcher</a> $dispatcher, <a class="el" href="classsf_cache.html">sfCache</a> $cache=null, $options=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_pattern_routing.html#aa6f1fad776a35f7b12077fc27c53317f">loadConfiguration</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_pattern_routing.html#a35e753537b1d89247dc9b0ec534f683a">setDefaultParameter</a> ($key, $value)</td></tr>
@@ -98,8 +139,22 @@ Fonctions membres publiques</h2></td></tr>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a892dd987b38b267bf4672af3d907c712"></a><!-- doxytag: member="sfPatternRouting::flattenRoutes" ref="a892dd987b38b267bf4672af3d907c712" args="($routes)" -->
 static&nbsp;</td><td class="memItemRight" valign="bottom"><b>flattenRoutes</b> ($routes)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a892dd987b38b267bf4672af3d907c712"></a><!-- doxytag: member="sfPatternRouting::flattenRoutes" ref="a892dd987b38b267bf4672af3d907c712" args="($routes)" -->
+static&nbsp;</td><td class="memItemRight" valign="bottom"><b>flattenRoutes</b> ($routes)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Fonctions membres protégées</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b5e362fe600283f2fb4775862c5d22b"></a><!-- doxytag: member="sfPatternRouting::ensureDefaultParametersAreSet" ref="a9b5e362fe600283f2fb4775862c5d22b" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>ensureDefaultParametersAreSet</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d168ea95601c164caa14ca00e8042cf"></a><!-- doxytag: member="sfPatternRouting::getConfigFileName" ref="a5d168ea95601c164caa14ca00e8042cf" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getConfigFileName</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3460f633a905699aeb79172fa01bb005"></a><!-- doxytag: member="sfPatternRouting::updateCurrentInternalUri" ref="a3460f633a905699aeb79172fa01bb005" args="($name, array $parameters)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>updateCurrentInternalUri</b> ($name, array $parameters)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f6d4881f5cb970f08a274e162fd2081"></a><!-- doxytag: member="sfPatternRouting::getRouteThatMatchesUrl" ref="a5f6d4881f5cb970f08a274e162fd2081" args="($url)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getRouteThatMatchesUrl</b> ($url)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a885c6b2ffc337f9a6b3d3ffe33953457"></a><!-- doxytag: member="sfPatternRouting::getRouteThatMatchesParameters" ref="a885c6b2ffc337f9a6b3d3ffe33953457" args="($parameters)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getRouteThatMatchesParameters</b> ($parameters)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5df6d43761dd037ff3343b51d5972b9"></a><!-- doxytag: member="sfPatternRouting::normalizeUrl" ref="ad5df6d43761dd037ff3343b51d5972b9" args="($url)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>normalizeUrl</b> ($url)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_pattern_routing.html#a9b5e362fe600283f2fb4775862c5d22b">ensureDefaultParametersAreSet</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d168ea95601c164caa14ca00e8042cf"></a><!-- doxytag: member="sfPatternRouting::getConfigFileName" ref="a5d168ea95601c164caa14ca00e8042cf" args="()" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>getConfigFileName</b> ()</td></tr>
@@ -153,7 +208,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <p>Adds a new route.</p>
 <p>Alias for the connect method.</p>
-<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_pattern_routing.html#a081c4f7b38e67b253ae22552042c8335">connect</a> </dd></dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd>connect </dd></dl>
 
 </div>
 </div>
@@ -173,7 +228,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#aac34ae5445bdf4179f08498db48cd27f">sfRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -303,7 +358,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a95386326221764eff889cefa76722bcb">sfRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -324,9 +379,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a2cf784e497c2ec7c6635d768998efb4f">sfRouting</a>.</p>
-
-<p>Réimplémentée dans <a class="el" href="classmy_routing.html#a2cf784e497c2ec7c6635d768998efb4f">myRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -347,8 +400,6 @@ Attributs protégés</h2></td></tr>
 <p>Gets the current route name.</p>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>string The route name </dd></dl>
 
-<p>Réimplémentée dans <a class="el" href="classsf_pattern_routing_test.html#a6e1712152c0cadcb9019fe33e2523e23">sfPatternRoutingTest</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a18da86bf318ebe47e501aaad267d59ed"></a><!-- doxytag: member="sfPatternRouting::getRoutes" ref="a18da86bf318ebe47e501aaad267d59ed" args="()" -->
@@ -367,7 +418,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a18da86bf318ebe47e501aaad267d59ed">sfRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -413,7 +464,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a435d6ff7cf24607ebfa5b891dcc6ed63">sfRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -452,9 +503,7 @@ Attributs protégés</h2></td></tr>
 <p>* suffix: The default suffix * variable_prefixes: An array of characters that starts a variable name (: by default) * segment_separators: An array of allowed characters for segment separators (/ and . by default) * variable_regex: A regex that match a valid variable name ([]+ by default) * generate_shortest_url: Whether to generate the shortest URL possible (true by default) * extra_parameters_as_query_string: Whether to generate extra parameters as a query string * lookup_cache_dedicated_keys: Whether to use dedicated keys for parse/generate cache (false by default) WARNING: When this option is activated, do not use <a class="el" href="classsf_file_cache.html">sfFileCache</a>; use a fast access cache backend (like <a class="el" href="classsf_a_p_c_cache.html">sfAPCCache</a>).</p>
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a60cd6d1833aa3c3ce567729aaf2e6661">sfRouting</a>.</p>
-
-<p>Réimplémentée dans <a class="el" href="classsf_pattern_routing_test.html#a60cd6d1833aa3c3ce567729aaf2e6661">sfPatternRoutingTest</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -489,7 +538,7 @@ Attributs protégés</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Adds a new route before a given one in the current list of routes.</p>
-<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_pattern_routing.html#a081c4f7b38e67b253ae22552042c8335">connect</a> </dd></dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd>connect </dd></dl>
 
 </div>
 </div>
@@ -509,7 +558,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#aa6f1fad776a35f7b12077fc27c53317f">sfRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -530,9 +579,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a9abf038f9fb49aecb092df745ced446d">sfRouting</a>.</p>
-
-<p>Réimplémentée dans <a class="el" href="classsf_pattern_routing_test.html#a9abf038f9fb49aecb092df745ced446d">sfPatternRoutingTest</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -561,7 +608,7 @@ Attributs protégés</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Adds a new route at the beginning of the current list of routes.</p>
-<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_pattern_routing.html#a081c4f7b38e67b253ae22552042c8335">connect</a> </dd></dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd>connect </dd></dl>
 
 </div>
 </div>
@@ -591,7 +638,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a35e753537b1d89247dc9b0ec534f683a">sfRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -612,7 +659,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a7b297e3e5a9a6999a3792519bf3736bc">sfRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -633,7 +680,7 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a2ba88e52d51768f46f94112ece1eef8d">sfRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
@@ -653,12 +700,13 @@ Attributs protégés</h2></td></tr>
 <div class="memdoc">
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html">sfRouting</a> </dd></dl>
 
-<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html#a482087c71391537bfe6fece68a58d420">sfRouting</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="classsf_routing.html">sfRouting</a>.</p>
 
 </div>
 </div>
-<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>lib/vendor/symfony/lib/routing/sfPatternRouting.class.php</li>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>/var/www/els/cache/frontend/prod/config/config_core_compile.yml.php</li>
+<li>/var/www/els/lib/vendor/symfony/lib/routing/sfPatternRouting.class.php</li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -675,7 +723,7 @@ Attributs protégés</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:40 pour ELS par&nbsp;
+<hr class="footer"/><address class="footer"><small>Généré le Thu Jun 30 2011 11:31:15 pour ELS par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

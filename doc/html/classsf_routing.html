@@ -65,14 +65,56 @@ Graphe d'héritage de sfRouting:</div>
   <map id="sfRouting_map" name="sfRouting_map">
 <area href="classsf_no_routing.html" alt="sfNoRouting" shape="rect" coords="0,56,127,80"/>
 <area href="classsf_pattern_routing.html" alt="sfPatternRouting" shape="rect" coords="137,56,264,80"/>
+<area href="classsf_pattern_routing.html" alt="sfPatternRouting" shape="rect" coords="548,56,675,80"/>
 <area href="classmy_routing.html" alt="myRouting" shape="rect" coords="0,112,127,136"/>
 <area href="classsf_pattern_routing_test.html" alt="sfPatternRoutingTest" shape="rect" coords="137,112,264,136"/>
 <area href="classtaggable_routing.html" alt="taggableRouting" shape="rect" coords="274,112,401,136"/>
+<area href="classmy_routing.html" alt="myRouting" shape="rect" coords="411,112,538,136"/>
+<area href="classsf_pattern_routing_test.html" alt="sfPatternRoutingTest" shape="rect" coords="548,112,675,136"/>
+<area href="classtaggable_routing.html" alt="taggableRouting" shape="rect" coords="685,112,812,136"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a283dd9e880c4ba0ce30c409c41b59cb3"></a><!-- doxytag: member="sfRouting::__construct" ref="a283dd9e880c4ba0ce30c409c41b59cb3" args="(sfEventDispatcher $dispatcher, sfCache $cache=null, $options=array())" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>__construct</b> (<a class="el" href="classsf_event_dispatcher.html">sfEventDispatcher</a> $dispatcher, <a class="el" href="classsf_cache.html">sfCache</a> $cache=null, $options=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4d56a528ec8b416428a2c3c86672dc8"></a><!-- doxytag: member="sfRouting::getCache" ref="ac4d56a528ec8b416428a2c3c86672dc8" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCache</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60cd6d1833aa3c3ce567729aaf2e6661"></a><!-- doxytag: member="sfRouting::initialize" ref="a60cd6d1833aa3c3ce567729aaf2e6661" args="(sfEventDispatcher $dispatcher, sfCache $cache=null, $options=array())" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (<a class="el" href="classsf_event_dispatcher.html">sfEventDispatcher</a> $dispatcher, <a class="el" href="classsf_cache.html">sfCache</a> $cache=null, $options=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a49b8dded6e91a52e2fd07195d334da"></a><!-- doxytag: member="sfRouting::getOptions" ref="a1a49b8dded6e91a52e2fd07195d334da" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getOptions</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6f1fad776a35f7b12077fc27c53317f"></a><!-- doxytag: member="sfRouting::loadConfiguration" ref="aa6f1fad776a35f7b12077fc27c53317f" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>loadConfiguration</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cf784e497c2ec7c6635d768998efb4f"></a><!-- doxytag: member="sfRouting::getCurrentInternalUri" ref="a2cf784e497c2ec7c6635d768998efb4f" args="($with_route_name=false)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCurrentInternalUri</b> ($with_route_name=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18da86bf318ebe47e501aaad267d59ed"></a><!-- doxytag: member="sfRouting::getRoutes" ref="a18da86bf318ebe47e501aaad267d59ed" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getRoutes</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ba88e52d51768f46f94112ece1eef8d"></a><!-- doxytag: member="sfRouting::setRoutes" ref="a2ba88e52d51768f46f94112ece1eef8d" args="($routes)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setRoutes</b> ($routes)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a435d6ff7cf24607ebfa5b891dcc6ed63"></a><!-- doxytag: member="sfRouting::hasRoutes" ref="a435d6ff7cf24607ebfa5b891dcc6ed63" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>hasRoutes</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac34ae5445bdf4179f08498db48cd27f"></a><!-- doxytag: member="sfRouting::clearRoutes" ref="aac34ae5445bdf4179f08498db48cd27f" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>clearRoutes</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95386326221764eff889cefa76722bcb"></a><!-- doxytag: member="sfRouting::generate" ref="a95386326221764eff889cefa76722bcb" args="($name, $params=array(), $absolute=false)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>generate</b> ($name, $params=array(), $absolute=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9abf038f9fb49aecb092df745ced446d"></a><!-- doxytag: member="sfRouting::parse" ref="a9abf038f9fb49aecb092df745ced446d" args="($url)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>parse</b> ($url)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc7285c6639730467eb4a71daae1c985"></a><!-- doxytag: member="sfRouting::getDefaultParameters" ref="afc7285c6639730467eb4a71daae1c985" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getDefaultParameters</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc9a9c90c614931f189f62d955380014"></a><!-- doxytag: member="sfRouting::getDefaultParameter" ref="afc9a9c90c614931f189f62d955380014" args="($key)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>getDefaultParameter</b> ($key)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35e753537b1d89247dc9b0ec534f683a"></a><!-- doxytag: member="sfRouting::setDefaultParameter" ref="a35e753537b1d89247dc9b0ec534f683a" args="($key, $value)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setDefaultParameter</b> ($key, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b297e3e5a9a6999a3792519bf3736bc"></a><!-- doxytag: member="sfRouting::setDefaultParameters" ref="a7b297e3e5a9a6999a3792519bf3736bc" args="($parameters)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>setDefaultParameters</b> ($parameters)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5083b1367444e89c98a80eb903ceff14"></a><!-- doxytag: member="sfRouting::listenToChangeCultureEvent" ref="a5083b1367444e89c98a80eb903ceff14" args="(sfEvent $event)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>listenToChangeCultureEvent</b> (<a class="el" href="classsf_event.html">sfEvent</a> $event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c4a5223ae2757f0f1b2d8787a7d002a"></a><!-- doxytag: member="sfRouting::filterParametersEvent" ref="a2c4a5223ae2757f0f1b2d8787a7d002a" args="(sfEvent $event, $parameters)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>filterParametersEvent</b> (<a class="el" href="classsf_event.html">sfEvent</a> $event, $parameters)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a482087c71391537bfe6fece68a58d420"></a><!-- doxytag: member="sfRouting::shutdown" ref="a482087c71391537bfe6fece68a58d420" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>shutdown</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_routing.html#a283dd9e880c4ba0ce30c409c41b59cb3">__construct</a> (<a class="el" href="classsf_event_dispatcher.html">sfEventDispatcher</a> $dispatcher, <a class="el" href="classsf_cache.html">sfCache</a> $cache=null, $options=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_routing.html#ac4d56a528ec8b416428a2c3c86672dc8">getCache</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_routing.html#a60cd6d1833aa3c3ce567729aaf2e6661">initialize</a> (<a class="el" href="classsf_event_dispatcher.html">sfEventDispatcher</a> $dispatcher, <a class="el" href="classsf_cache.html">sfCache</a> $cache=null, $options=array())</td></tr>
@@ -94,6 +136,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_routing.html#a482087c71391537bfe6fece68a58d420">shutdown</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Fonctions membres protégées</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac5bfe4a6f6d8548a0ee9f82df617581"></a><!-- doxytag: member="sfRouting::fixGeneratedUrl" ref="aac5bfe4a6f6d8548a0ee9f82df617581" args="($url, $absolute=false)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>fixGeneratedUrl</b> ($url, $absolute=false)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac5bfe4a6f6d8548a0ee9f82df617581"></a><!-- doxytag: member="sfRouting::fixGeneratedUrl" ref="aac5bfe4a6f6d8548a0ee9f82df617581" args="($url, $absolute=false)" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>fixGeneratedUrl</b> ($url, $absolute=false)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
@@ -139,7 +183,7 @@ Attributs protégés</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Class constructor.</p>
-<dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="classsf_routing.html#a60cd6d1833aa3c3ce567729aaf2e6661">initialize()</a> </dd></dl>
+<dl class="see"><dt><b>Voir également:</b></dt><dd>initialize() </dd></dl>
 
 </div>
 </div>
@@ -287,7 +331,7 @@ Attributs protégés</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>string The current internal URI </dd></dl>
 
-<p>Réimplémentée dans <a class="el" href="classsf_pattern_routing.html#a55371436592d70f3bde9d903aebb4320">sfPatternRouting</a>, <a class="el" href="classsf_no_routing.html#a2cf784e497c2ec7c6635d768998efb4f">sfNoRouting</a>, et <a class="el" href="classmy_routing.html#a2cf784e497c2ec7c6635d768998efb4f">myRouting</a>.</p>
+<p>Réimplémentée dans <a class="el" href="classsf_pattern_routing.html#a55371436592d70f3bde9d903aebb4320">sfPatternRouting</a>, et <a class="el" href="classsf_no_routing.html#a2cf784e497c2ec7c6635d768998efb4f">sfNoRouting</a>.</p>
 
 </div>
 </div>
@@ -439,7 +483,7 @@ Attributs protégés</h2></td></tr>
   </dd>
 </dl>
 
-<p>Réimplémentée dans <a class="el" href="classsf_pattern_routing.html#a60cd6d1833aa3c3ce567729aaf2e6661">sfPatternRouting</a>, et <a class="el" href="classsf_pattern_routing_test.html#a60cd6d1833aa3c3ce567729aaf2e6661">sfPatternRoutingTest</a>.</p>
+<p>Réimplémentée dans <a class="el" href="classsf_pattern_routing.html#a60cd6d1833aa3c3ce567729aaf2e6661">sfPatternRouting</a>.</p>
 
 </div>
 </div>
@@ -514,7 +558,7 @@ Attributs protégés</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>array|false An array of parameters or false if the route does not match </dd></dl>
 
-<p>Réimplémentée dans <a class="el" href="classsf_pattern_routing.html#a9abf038f9fb49aecb092df745ced446d">sfPatternRouting</a>, <a class="el" href="classsf_pattern_routing_test.html#a9abf038f9fb49aecb092df745ced446d">sfPatternRoutingTest</a>, et <a class="el" href="classsf_no_routing.html#a9abf038f9fb49aecb092df745ced446d">sfNoRouting</a>.</p>
+<p>Réimplémentée dans <a class="el" href="classsf_pattern_routing.html#a9abf038f9fb49aecb092df745ced446d">sfPatternRouting</a>, et <a class="el" href="classsf_no_routing.html#a9abf038f9fb49aecb092df745ced446d">sfNoRouting</a>.</p>
 
 </div>
 </div>
@@ -631,8 +675,9 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>lib/vendor/symfony/lib/routing/sfRouting.class.php</li>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>/var/www/els/cache/frontend/prod/config/config_core_compile.yml.php</li>
+<li>/var/www/els/lib/vendor/symfony/lib/routing/sfRouting.class.php</li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -649,7 +694,7 @@ Attributs protégés</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Généré le Wed Jun 29 2011 19:34:41 pour ELS par&nbsp;
+<hr class="footer"/><address class="footer"><small>Généré le Thu Jun 30 2011 11:31:16 pour ELS par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
