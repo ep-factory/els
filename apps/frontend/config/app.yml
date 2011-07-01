@@ -13,8 +13,14 @@ all:
       batiment:
         label: Bâtiments
         credentials: [fixtures]
+      annexe:
+        label: Annexes
+        credentials: [fixtures]
       case_code:
         label: Codes affaire
+        credentials: [fixtures]
+      ppc:
+        label: Numéros PPC
         credentials: [fixtures]
       category:
         label: Catégories

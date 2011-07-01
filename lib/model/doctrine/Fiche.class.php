@@ -107,10 +107,6 @@ class Fiche extends BaseFiche {
                       ->count();
       $this->setNumber(preg_replace('/\-/i', '', date('Y-m-d')).sfConfig::get('app_machine_id').str_pad($number + 1, 4, "0", STR_PAD_LEFT));
     }
-    // Force time spent
-    if(!$this->getTimeSpent()) {
-      $this->setTimeSpent(strtotime($this->getEndHour()) - strtotime($this->getStartHour()));
-    }
   }
 
 }

@@ -1,13 +1,13 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           Atelier
+    model_class:           Annexe
     theme:                 admin_template
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          atelier
+    route_prefix:          annexe
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
@@ -24,7 +24,7 @@ generator:
         title: %%name%%
         display: [name, is_active]
       list:
-        title: Ateliers
+        title: Annexes
         display: [name, is_active]
         table_method: findActive
       filter:
@@ -33,4 +33,4 @@ generator:
       edit:
         title: Edition de "%%name%%"
       new:
-        title: Nouvel atelier
+        title: Nouvelle annexe

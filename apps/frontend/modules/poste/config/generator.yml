@@ -26,6 +26,7 @@ generator:
       list:
         title: Postes
         display: [name, is_active]
+        table_method: findActive
       filter:
         display: [search]
       form:    ~

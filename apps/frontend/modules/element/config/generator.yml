@@ -30,6 +30,7 @@ generator:
       list:
         title: Eléments
         display: [marque, type, ref, is_active]
+        table_method: findActive
       filter:
         display: [search]
       form:    ~

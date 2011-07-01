@@ -73,7 +73,9 @@ generator:
           label: Poste
         Poste:
           label: Poste
-        ppc_number:
+        ppc_id:
+          label: Numéro PPC
+        Ppc:
           label: Numéro PPC
         ppi_number:
           label: Numéro PPI
@@ -97,8 +99,6 @@ generator:
           label: Heure de début
         end_hour:
           label: Heure de fin
-        time_spent:
-          label: Temps passé
         batiment_id:
           label: Bâtiment
         Batiment:
@@ -147,6 +147,7 @@ generator:
         title: Fiches
         display: [number, Category, fiche_date, is_finished]
         batch_actions: []
+        table_method: findActive
         object_actions:
           _edit: ~
           _show: ~
@@ -162,8 +163,8 @@ generator:
           _close: ~
         display:
           Intervenant: [sfGuardUser, Poste, label]
-          Sécurité: [ppc_number, ppi_number, acr_number, mo_number]
-          Intervention: [fiche_date, criticity, Demandeur, appel_hour, start_hour, end_hour, time_spent]
+          Sécurité: [Ppc, ppi_number, acr_number, mo_number]
+          Intervention: [fiche_date, criticity, Demandeur, appel_hour, start_hour, end_hour, _time_spent]
           Localisation: [tags, Batiment, Atelier, Annexe, is_cmr]
           Symptomes: [problem, cause, solution]
           Résolution: [is_tested, test_mechanic, test_operator, is_stopped, is_ips, is_controlled, unsolved_name, unsolved_date]
@@ -177,8 +178,8 @@ generator:
           _show: ~
         display:
           Intervenant: [sf_guard_user_id, poste_id, label]
-          Sécurité: [ppc_number, ppi_number, acr_number, mo_number]
-          Intervention: [case_code_id, fiche_date, criticity, demandeur_id, appel_hour, start_hour, end_hour, time_spent]
+          Sécurité: [ppc_id, ppi_number, acr_number, mo_number]
+          Intervention: [case_code_id, fiche_date, criticity, demandeur_id, appel_hour, start_hour, end_hour, _time_spent]
           Localisation: [tags, batiment_id, atelier_id, annexe_id, is_cmr]
           Symptomes: [problem, cause, solution]
           Résolution: [is_tested, test_mechanic, test_operator, is_stopped, is_ips, is_controlled, unsolved_name, unsolved_date]

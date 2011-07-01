@@ -42,6 +42,7 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['atelier_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['annexe_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['tags'] = new sfWidgetFormInputToken(array('url' => $this->genUrl('@fiche_tags_autocomplete')));
+    $this->getWidgetSchema()->setHelp('tags', 'Séparez vos tags par des virgules : toto, tata, titi.');
     $this->validatorSchema['tags'] = new sfValidatorString(array('required' => false));
     $caseCode = CaseCodeTable::getInstance()->findOneByIsActive(true);
     if(!$caseCode) {
@@ -50,12 +51,20 @@ class FicheForm extends BaseFicheForm {
     }
     $this->setDefault('case_code_id', $caseCode->getPrimaryKey());
     $this->widgetSchema['case_code_id'] = new sfWidgetFormInputPlain(array('value' => $this->isNew() ? $caseCode : $this->getObject()->getCaseCode()));
-    $this->widgetSchema['time_spent'] = new sfWidgetFormInputPlain(array('value' => $this->getObject()->getTimeSpent() ? gmdate('H\hi', $this->getObject()->getTimeSpent()) : null));
+    $ppc = PpcTable::getInstance()->findOneByIsActive(true);
+    if(!$ppc) {
+      $this->getUser()->setFlash('error', 'Aucun PPC actif. Veuillez contacter un administrateur.');
+      $this->getContext()->getController()->redirect("@fiche");
+    }
+    $this->setDefault('ppc_id', $ppc->getPrimaryKey());
+    $this->widgetSchema['ppc_id'] = new sfWidgetFormInputPlain(array('value' => $this->isNew() ? $ppc : $this->getObject()->getPpc()));
     $this->widgetSchema['fiche_date'] = new sfWidgetFormDateJQueryUI();
+    $this->widgetSchema['fiche_date']->setAttribute('class', 'validate[optional,custom[date_custom]]');
+    $this->getWidgetSchema()->setHelp('fiche_date', 'Format requis : dd/mm/YYYY');
     $this->widgetSchema['unsolved_date'] = new sfWidgetFormDateJQueryUI();
-    $this->validatorSchema['appel_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
-    $this->validatorSchema['start_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
-    $this->validatorSchema['end_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
+    $this->validatorSchema['appel_hour'] = new sfValidatorTimestamp(array('required' => false));
+    $this->validatorSchema['start_hour'] = new sfValidatorTimestamp(array('required' => false));
+    $this->validatorSchema['end_hour'] = new sfValidatorTimestamp(array('required' => false));
     $this->widgetSchema['elements_list'] = new sfWidgetFormMultiple(array(
                 'add_empty' => !$this->isNew() && $this->getObject()->getElements()->count(),
                 'callback' => $this->getUser()->getAttribute('enable_keyboard', true) ? 'addElementsKeyboard' : null,
@@ -87,21 +96,15 @@ class FicheForm extends BaseFicheForm {
             $this->widgetSchema[$name] = new sfWidgetFormInputMask(array('mask' => '99/99/9999 99h99', 'formatter' => array($this, 'parseTimestamp')));
           }
           else {
-            $this->widgetSchema[$name] = new sfWidgetFormInputText();
+            $this->widgetSchema[$name] = new sfWidgetFormTimestamp(array('widget' => new sfWidgetFormKeyboard(array('maxLength' => 5, 'layout' => 'hour'))));
           }
+          $this->getWidgetSchema()->setHelp($name, 'Format requis : dd/mm/YYYY HHhii');
         }
         // Keyboard
         if($this->getUser()->getAttribute('enable_keyboard', true)
                 && ($this->widgetSchema[$name] instanceof sfWidgetFormInputText || $this->widgetSchema[$name] instanceof sfWidgetFormTextarea)
-                && !in_array(get_class($this->widgetSchema[$name]), array('sfWidgetFormDateJQueryUI', 'sfWidgetFormKeyboard'))) {
-          $options = array();
-          // Hour fields
-          if(preg_match('/hour$/i', $name)) {
-            $options['maxLength'] = 5;
-            $options['layout'] = 'hour';
-          }
-          $options['renderer_class'] = get_class($this->widgetSchema[$name]);
-          $options['renderer_options'] = $this->widgetSchema[$name]->getOptions();
+                && !in_array(get_class($this->widgetSchema[$name]), array('sfWidgetFormDateJQueryUI', 'sfWidgetFormKeyboard', 'sfWidgetFormTimestamp'))) {
+          $options = array('renderer_class' => get_class($this->widgetSchema[$name]), 'renderer_options' => $this->widgetSchema[$name]->getOptions());
           if($this->widgetSchema[$name] instanceof sfWidgetFormInputToken) {
             unset($options['renderer_options']['url']);
             $options['renderer_class'] = 'sfWidgetFormInputText';
@@ -136,13 +139,13 @@ class FicheForm extends BaseFicheForm {
     $this->setDefault('category_id', $this->getRequest()->getParameter('category_id', CategoryTable::getInstance()->findByIsActive(true)->getFirst()->getPrimaryKey()));
 
     // Specific form from category
-    $fields = array('id', 'parent_id', 'case_code_id', 'criticity', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'time_spent', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
+    $fields = array('id', 'parent_id', 'case_code_id', 'criticity', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
     $category = CategoryTable::getInstance()->find($this->getDefault('category_id'));
     if($category) {
       switch($category->getCode()) {
         default:
         case 481:
-          $fields = array_merge($fields, array('appareil_id', 'ppc_number', 'is_cmr', 'demandeur_id', 'appel_hour', 'unsolved_name', 'unsolved_date', 'is_tested', 'test_mechanic', 'test_operator', 'is_stopped', 'is_ips', 'is_controlled', 'elements_list', 'problem', 'cause'));
+          $fields = array_merge($fields, array('appareil_id', 'ppc_id', 'is_cmr', 'demandeur_id', 'appel_hour', 'unsolved_name', 'unsolved_date', 'is_tested', 'test_mechanic', 'test_operator', 'is_stopped', 'is_ips', 'is_controlled', 'elements_list', 'problem', 'cause'));
           break;
 
         case 472:

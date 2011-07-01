@@ -35,6 +35,18 @@ CaseCode:
       type: boolean
       default: true
 
+Ppc:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    is_active:
+      type: boolean
+      default: true
+
 Appareil:
   actAs:
     Timestampable: ~
@@ -144,6 +156,7 @@ Fiche:
     case_code_id:
       type: integer
       notnull: true
+    ppc_id: integer
     number:
       type: integer(12)
       notnull: true
@@ -152,7 +165,6 @@ Fiche:
     poste_id:
       type: integer
       notnull: true
-    ppc_number: string(255)
     ppi_number:
       type: string(255)
       notnull: true
@@ -172,7 +184,6 @@ Fiche:
     appel_hour: timestamp
     start_hour: timestamp
     end_hour: timestamp
-    time_spent: integer
     problem: clob
     cause: clob
     solution: clob
@@ -220,6 +231,8 @@ Fiche:
     Poste:
       foreignAlias: Fiches
     CaseCode:
+      foreignAlias: Fiches
+    Ppc:
       foreignAlias: Fiches
     Demandeur:
       foreignAlias: Fiches

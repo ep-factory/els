@@ -26,6 +26,7 @@ generator:
       list:
         title: Appareils
         display: [name, is_active]
+        table_method: findActive
       filter:
         display: [search]
       form:    ~

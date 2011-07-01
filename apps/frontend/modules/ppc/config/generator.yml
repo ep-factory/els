@@ -1,13 +1,13 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           Atelier
+    model_class:           Ppc
     theme:                 admin_template
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          atelier
+    route_prefix:          ppc
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
@@ -24,7 +24,7 @@ generator:
         title: %%name%%
         display: [name, is_active]
       list:
-        title: Ateliers
+        title: Numéros PPC
         display: [name, is_active]
         table_method: findActive
       filter:
@@ -33,4 +33,4 @@ generator:
       edit:
         title: Edition de "%%name%%"
       new:
-        title: Nouvel atelier
+        title: Nouveau numéro PPC

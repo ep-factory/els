@@ -50,7 +50,7 @@ class ficheActions extends autoFicheActions {
     $object = $this->getRoute()->getObject();
     $class = get_class($object);
     $values = $object->toArray();
-    unset($values['id'], $values['fiche_date'], $values['sf_guard_user_id'], $values['start_hour'], $values['end_hour'], $values['time_spent']);
+    unset($values['id'], $values['fiche_date'], $values['sf_guard_user_id'], $values['start_hour'], $values['end_hour']);
     $values['parent_id'] = $request->getParameter('id');
     $values['tags'] = $object->getTags();
     $values['Elements'] = $object->getElements();

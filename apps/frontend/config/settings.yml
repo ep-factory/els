@@ -28,7 +28,7 @@ all:
     login_action:           signin
     secure_module:          sfGuardAuth
     secure_action:          secure
-    error_404_module:       front
+    error_404_module:       sfGuardAuth
     error_404_action:       error404
   .settings:
     csrf_secret:            42e51e41a347e15e8f7cfc59ea62262c0aef171b

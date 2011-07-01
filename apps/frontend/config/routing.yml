@@ -1,3 +1,12 @@
+ppc:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Ppc
+    module:               ppc
+    prefix_path:          /ppc
+    column:               id
+    with_wildcard_routes: true
+
 homepage:
   url:   /
   param: { module: fiche, action: dashboard }
@@ -47,6 +56,15 @@ batiment:
     model:                Batiment
     module:               batiment
     prefix_path:          /batiment
+    column:               id
+    with_wildcard_routes: true
+
+annexe:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Annexe
+    module:               annexe
+    prefix_path:          /annexe
     column:               id
     with_wildcard_routes: true
 

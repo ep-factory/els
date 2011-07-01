@@ -6,7 +6,6 @@ Fiche:
     CaseCode: SAM-ELS1100
     fiche_date: '2011-06-07'
     Poste: journee
-    ppc_number: '123456789'
     ppi_number: '123456789'
     mo_number: '123456789'
     acr_number: '123456789'
@@ -33,7 +32,6 @@ Fiche:
     fiche_date: '2011-06-07'
     Parent: test
     Poste: journee
-    ppc_number: '123456789'
     ppi_number: '123456789'
     mo_number: '123456789'
     acr_number: '123456789'
