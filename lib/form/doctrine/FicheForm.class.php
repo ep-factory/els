@@ -63,16 +63,9 @@ class FicheForm extends BaseFicheForm {
     $this->getWidgetSchema()->setHelp('fiche_date', 'Format requis : dd/mm/YYYY');
     $this->validatorSchema['fiche_date'] = new sfValidatorDateCustom(array('required' => false));
     $this->widgetSchema['unsolved_date'] = new sfWidgetFormDateJQueryUI();
-    if($this->getUser()->getAttribute('enable_keyboard', false)) {
-      $this->validatorSchema['appel_hour'] = new sfValidatorTimestamp(array('required' => false));
-      $this->validatorSchema['start_hour'] = new sfValidatorTimestamp(array('required' => false));
-      $this->validatorSchema['end_hour'] = new sfValidatorTimestamp(array('required' => false));
-    }
-    else {
-      $this->validatorSchema['appel_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
-      $this->validatorSchema['start_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
-      $this->validatorSchema['end_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
-    }
+    $this->validatorSchema['appel_hour'] = new sfValidatorTimestamp(array('required' => false));
+    $this->validatorSchema['start_hour'] = new sfValidatorTimestamp(array('required' => false));
+    $this->validatorSchema['end_hour'] = new sfValidatorTimestamp(array('required' => false));
     $this->widgetSchema['elements_list'] = new sfWidgetFormMultiple(array(
                 'add_empty' => !$this->isNew() && $this->getObject()->getElements()->count(),
                 'callback' => $this->getUser()->getAttribute('enable_keyboard', false) ? 'addElementsKeyboard' : null,
@@ -100,11 +93,12 @@ class FicheForm extends BaseFicheForm {
       if(isset($this->widgetSchema[$name])) {
         // Hour
         if(preg_match('/hour$/i', $name)) {
-          if(!$this->getUser()->getAttribute('enable_keyboard', false)) {
-            $this->widgetSchema[$name] = new sfWidgetFormInputMask(array('mask' => '99/99/9999 99h99', 'formatter' => array($this, 'parseTimestamp')));
+          $this->widgetSchema[$name] = new sfWidgetFormTimestamp();
+          if($this->getUser()->getAttribute('enable_keyboard', false)) {
+            $this->widgetSchema[$name]->setOption('widget', new sfWidgetFormKeyboard(array('maxLength' => 5, 'layout' => 'hour')));
           }
           else {
-            $this->widgetSchema[$name] = new sfWidgetFormTimestamp(array('widget' => new sfWidgetFormKeyboard(array('maxLength' => 5, 'layout' => 'hour'))));
+            $this->widgetSchema[$name]->setOption('widget', new sfWidgetFormInputMask(array('mask' => '99h99', 'formatter' => array($this, 'parseTimestamp'))));
           }
           $this->getWidgetSchema()->setHelp($name, 'Format requis : dd/mm/YYYY HHhii');
         }
@@ -176,7 +170,7 @@ class FicheForm extends BaseFicheForm {
    * @return mixed Parsed timestamp
    */
   public function parseTimestamp($value) {
-    return $value ? date('d/m/Y H\hi', strtotime($value)) : null;
+    return $value ? date('H\hi', strtotime($value)) : null;
   }
 
   /**

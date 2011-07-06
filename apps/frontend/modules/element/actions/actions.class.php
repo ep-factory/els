@@ -15,10 +15,10 @@ class elementActions extends autoElementActions
 {
   protected function getRedirect(Element $element)
   {
-    if($this->getUser()->hasCredential('fixtures')) {
-      return "@element";
+    if($this->getRequest()->isXmlHttpRequest()) {
+      return "@element_close?id=".$element->getPrimaryKey();
     }
-    return "@element_close?id=".$element->getPrimaryKey();
+    return "@element";
   }
 
   public function executeClose(sfWebRequest $request) {

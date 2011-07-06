@@ -32,7 +32,7 @@ all:
         credentials: [fixtures]
       element:
         label: Eléments
-        credentials: [fixtures]
+        credentials: [[fixtures, create, edit]]
       poste:
         label: Postes
         credentials: [fixtures]
