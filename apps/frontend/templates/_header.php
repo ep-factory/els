@@ -23,6 +23,6 @@
   </script>
   <div id="enable_keyboard">
     <p>Clavier</p>
-    <?php echo $widget->render('keyboard', $sf_user->getAttribute('enable_keyboard', true)) ?>
+    <?php echo $widget->render('keyboard', $sf_user->getAttribute('enable_keyboard', false)) ?>
   </div>
 <?php endif ?>

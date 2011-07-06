@@ -3,7 +3,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $('.sf_admin_form_field_end_hour input, .sf_admin_form_field_start_hour input').live('change', function(){
-      <?php if($sf_user->getAttribute('enable_keyboard', true)): ?>
+      <?php if($sf_user->getAttribute('enable_keyboard', false)): ?>
         var $start = new Date($('#fiche_start_hour_date').val().replace(/(\d{2})\/(\d{2})\/(\d{4})/i, '$2 $1 $3') + " " + $('#fiche_start_hour_hour').val().replace(/(\d{2})h(\d{2})/i, '$1:$2:00'));
         var $end = new Date($('#fiche_end_hour_date').val().replace(/(\d{2})\/(\d{2})\/(\d{4})/i, '$2 $1 $3') + " " + $('#fiche_end_hour_hour').val().replace(/(\d{2})h(\d{2})/i, '$1:$2:00'));
       <?php else: ?>

@@ -61,18 +61,26 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['fiche_date'] = new sfWidgetFormDateJQueryUI();
     $this->widgetSchema['fiche_date']->setAttribute('class', 'validate[optional,custom[date_custom]]');
     $this->getWidgetSchema()->setHelp('fiche_date', 'Format requis : dd/mm/YYYY');
+    $this->validatorSchema['fiche_date'] = new sfValidatorDateCustom(array('required' => false));
     $this->widgetSchema['unsolved_date'] = new sfWidgetFormDateJQueryUI();
-    $this->validatorSchema['appel_hour'] = new sfValidatorTimestamp(array('required' => false));
-    $this->validatorSchema['start_hour'] = new sfValidatorTimestamp(array('required' => false));
-    $this->validatorSchema['end_hour'] = new sfValidatorTimestamp(array('required' => false));
+    if($this->getUser()->getAttribute('enable_keyboard', false)) {
+      $this->validatorSchema['appel_hour'] = new sfValidatorTimestamp(array('required' => false));
+      $this->validatorSchema['start_hour'] = new sfValidatorTimestamp(array('required' => false));
+      $this->validatorSchema['end_hour'] = new sfValidatorTimestamp(array('required' => false));
+    }
+    else {
+      $this->validatorSchema['appel_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
+      $this->validatorSchema['start_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
+      $this->validatorSchema['end_hour'] = new sfValidatorDateTime(array('required' => false, 'date_format' => '~(?P<day>\d{2})/(?P<month>\d{2})/(?P<year>\d{4}) (?P<hour>\d{2})h(?P<minute>\d{2})~'));
+    }
     $this->widgetSchema['elements_list'] = new sfWidgetFormMultiple(array(
                 'add_empty' => !$this->isNew() && $this->getObject()->getElements()->count(),
-                'callback' => $this->getUser()->getAttribute('enable_keyboard', true) ? 'addElementsKeyboard' : null,
+                'callback' => $this->getUser()->getAttribute('enable_keyboard', false) ? 'addElementsKeyboard' : null,
                 'widgets' => array(
                     'element_changed_id' => new sfWidgetFormDoctrineChoice(array('model' => 'Element', 'table_method' => 'findActive', 'add_empty' => true), array('widgetClass' => 'changed_id')),
-                    'element_changed_serial' => $this->getUser()->getAttribute('enable_keyboard', true) ? new sfWidgetFormKeyboard(array(), array('renderer_options' => array('widgetClass' => 'changed_serial'))) : new sfWidgetFormInputText(array(), array('widgetClass' => 'changed_serial')),
+                    'element_changed_serial' => $this->getUser()->getAttribute('enable_keyboard', false) ? new sfWidgetFormKeyboard(array(), array('renderer_options' => array('widgetClass' => 'changed_serial'))) : new sfWidgetFormInputText(array(), array('widgetClass' => 'changed_serial')),
                     'element_installed_id' => new sfWidgetFormDoctrineChoice(array('model' => 'Element', 'table_method' => 'findActive', 'add_empty' => true), array('widgetClass' => 'installed_id')),
-                    'element_installed_serial' => $this->getUser()->getAttribute('enable_keyboard', true) ? new sfWidgetFormKeyboard(array(), array('renderer_options' => array('widgetClass' => 'changed_serial'))) : new sfWidgetFormInputText(array(), array('widgetClass' => 'installed_serial'))
+                    'element_installed_serial' => $this->getUser()->getAttribute('enable_keyboard', false) ? new sfWidgetFormKeyboard(array(), array('renderer_options' => array('widgetClass' => 'changed_serial'))) : new sfWidgetFormInputText(array(), array('widgetClass' => 'installed_serial'))
                     )));
     $this->validatorSchema['elements_list'] = new sfValidatorMultiple(array('required' => false, 'validators' => array(
                     'element_changed_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => 'Element')),
@@ -92,7 +100,7 @@ class FicheForm extends BaseFicheForm {
       if(isset($this->widgetSchema[$name])) {
         // Hour
         if(preg_match('/hour$/i', $name)) {
-          if(!$this->getUser()->getAttribute('enable_keyboard', true)) {
+          if(!$this->getUser()->getAttribute('enable_keyboard', false)) {
             $this->widgetSchema[$name] = new sfWidgetFormInputMask(array('mask' => '99/99/9999 99h99', 'formatter' => array($this, 'parseTimestamp')));
           }
           else {
@@ -101,7 +109,7 @@ class FicheForm extends BaseFicheForm {
           $this->getWidgetSchema()->setHelp($name, 'Format requis : dd/mm/YYYY HHhii');
         }
         // Keyboard
-        if($this->getUser()->getAttribute('enable_keyboard', true)
+        if($this->getUser()->getAttribute('enable_keyboard', false)
                 && ($this->widgetSchema[$name] instanceof sfWidgetFormInputText || $this->widgetSchema[$name] instanceof sfWidgetFormTextarea)
                 && !in_array(get_class($this->widgetSchema[$name]), array('sfWidgetFormDateJQueryUI', 'sfWidgetFormKeyboard', 'sfWidgetFormTimestamp'))) {
           $options = array('renderer_class' => get_class($this->widgetSchema[$name]), 'renderer_options' => $this->widgetSchema[$name]->getOptions());
@@ -201,7 +209,7 @@ class FicheForm extends BaseFicheForm {
     // Tags
     if(isset($this->widgetSchema['tags'])) {
       $tags = $this->getObject()->getTags();
-      if($this->getUser()->getAttribute('enable_keyboard', true)) {
+      if($this->getUser()->getAttribute('enable_keyboard', false)) {
         $tags = implode(', ', $tags);
       }
       $this->widgetSchema['tags']->setDefault($tags);

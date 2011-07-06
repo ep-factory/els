@@ -15,7 +15,7 @@ class sfGuardFormSignin extends BasesfGuardFormSignin
    */
   public function configure()
   {
-    if($this->getUser()->getAttribute('enable_keyboard', true)) {
+    if($this->getUser()->getAttribute('enable_keyboard', false)) {
       $this->widgetSchema['username'] = new sfWidgetFormKeyboard();
       $this->widgetSchema['password'] = new sfWidgetFormKeyboard(array('renderer_class' => 'sfWidgetFormInputPassword'));
     }

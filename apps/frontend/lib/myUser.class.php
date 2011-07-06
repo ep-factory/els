@@ -5,7 +5,7 @@ class myUser extends sfGuardSecurityUser
   public function canEdit(Fiche $fiche)
   {
     if($this->hasGroup('technicien')) {
-      return (is_null($fiche->getSfGuardUserId()) || $fiche->getSfGuardUserId() == $this->getGuardUser()->getPrimaryKey()) && !$fiche->getIsResolved() && !$fiche->getIsClosed();
+      return (is_null($fiche->getSfGuardUserId()) || $fiche->getSfGuardUserId() == $this->getGuardUser()->getPrimaryKey()) && !$fiche->getIsResolved() && !$fiche->getIsFinished();
     }
     elseif($this->hasGroup('coordinateur')) {
       return !$fiche->getIsFinished();

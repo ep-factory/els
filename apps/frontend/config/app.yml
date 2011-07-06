@@ -1,4 +1,6 @@
 all:
+  sf_guard_plugin:
+    success_signin_url: "@homepage"
   machine_id: A
   sf_admin_template:
     menus:
