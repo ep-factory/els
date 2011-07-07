@@ -19,5 +19,15 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
       unset($this['is_active'], $this['is_super_admin'], $this['groups_list'], $this['permissions_list']);
       $this->widgetSchema['username'] = new sfWidgetFormInputHidden();
     }
+    else {
+      $this->widgetSchema['username'] = new sfWidgetFormKeyboard();
+    }
+    if($this->getUser()->getAttribute('enable_keyboard', false)) {
+      $this->widgetSchema['first_name'] = new sfWidgetFormKeyboard();
+      $this->widgetSchema['last_name'] = new sfWidgetFormKeyboard();
+      $this->widgetSchema['email_address'] = new sfWidgetFormKeyboard();
+      $this->widgetSchema['password'] = new sfWidgetFormKeyboard(array('renderer_class' => 'sfWidgetFormInputPassword'));
+      $this->widgetSchema['password_again'] = new sfWidgetFormKeyboard(array('renderer_class' => 'sfWidgetFormInputPassword'));
+    }
   }
 }

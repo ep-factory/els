@@ -15,5 +15,9 @@ class sfGuardChangeUserPasswordForm extends BasesfGuardChangeUserPasswordForm
    */
   public function configure()
   {
+    if($this->getUser()->getAttribute('enable_keyboard', false)) {
+      $this->widgetSchema['password'] = new sfWidgetFormKeyboard(array('renderer_class' => 'sfWidgetFormInputPassword'));
+      $this->widgetSchema['password_again'] = new sfWidgetFormKeyboard(array('renderer_class' => 'sfWidgetFormInputPassword'));
+    }
   }
 }

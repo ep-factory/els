@@ -1,5 +1,5 @@
 default:
-  credentials: [fixtures]
+  credentials: [[fixtures, create, edit]]
 
 new:
   credentials: [create, edit]

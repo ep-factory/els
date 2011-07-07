@@ -23,16 +23,15 @@
 <div class="contentcontainer med left">
   <?php foreach($categories as $key => $category): ?>
     <?php echo $key ? "<br />" : null ?>
-    <?php $helper->setCategoryId($category['id']) ?>
     <div class="headings">
       <h2><?php echo $category ?></h2>
     </div>
     <div class="contentbox">
-      <?php if(!$category->getLimitedFiches($configuration->getPagerMaxPerPage()/2)->count()): ?>
+      <?php if(!$category->getLimitedFiches($configuration->getPagerMaxPerPage()/2, $sf_user->hasGroup('technicien') ? false : null)->count()): ?>
         <p><?php echo __('No result', array(), 'sf_admin') ?></p>
         <ul class="sf_admin_list_actions">
           <?php if($sf_user->hasCredential('create')): ?>
-            <?php echo $helper->linkToNew(array('credential' => array('create'), 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
+            <?php echo $helper->linkToNew(array('credential' => array('create'), 'category_id' => $category['id'], 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
           <?php endif ?>
         </ul>
         <div style="clear: both"></div>
@@ -48,14 +47,14 @@
               <td colspan="5">
                 <span>
                   <?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $category->getCountFiches()), $category->getCountFiches(), 'sf_admin') ?>
-                  <?php if($category->getCountFiches() > $category->getLimitedFiches($configuration->getPagerMaxPerPage()/2)->count()): ?>
-                    <?php echo link_to(sprintf('Afficher les %s autres...', $category->getCountFiches()-$category->getLimitedFiches($configuration->getPagerMaxPerPage()/2)->count()), '@fiche?page=2') ?>
+                  <?php if($category->getCountFiches() > $category->getLimitedFiches($configuration->getPagerMaxPerPage()/2, $sf_user->hasGroup('technicien') ? false : null)->count()): ?>
+                    <?php echo link_to(sprintf('Afficher les %s autres...', $category->getCountFiches()-$category->getLimitedFiches($configuration->getPagerMaxPerPage()/2, $sf_user->hasGroup('technicien') ? false : null)->count()), '@fiche?page=2') ?>
                   <?php endif; ?>
                 </span>
                 <span>
                   <ul class="sf_admin_list_actions">
                     <?php if($sf_user->hasCredential('create')): ?>
-                      <?php echo $helper->linkToNew(array('credential' => array('create'), 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
+                      <?php echo $helper->linkToNew(array('credential' => array('create'), 'category_id' => $category['id'], 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
                     <?php endif ?>
                   </ul>
                   <div style="clear: both"></div>
@@ -64,12 +63,12 @@
             </tr>
           </tfoot>
           <tbody>
-            <?php foreach($category->getLimitedFiches($configuration->getPagerMaxPerPage()/2) as $i => $fiche): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
+            <?php foreach($category->getLimitedFiches($configuration->getPagerMaxPerPage()/2, $sf_user->hasGroup('technicien') ? false : null) as $i => $fiche): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
               <tr class="sf_admin_row <?php echo $odd ?>">
                 <?php include_partial('fiche/list_td_tabular', array('fiche' => $fiche)) ?>
               </tr>
               <tr class="sf_admin_row_object_actions">
-                <?php include_partial('fiche/list_td_actions', array('fiche' => $fiche, 'helper' => $helper, 'i' => $i)) ?>
+                <?php include_partial('fiche/list_td_actions', array('fiche' => $fiche, 'helper' => $helper, 'i' => $key."_".$i)) ?>
               </tr>
             <?php endforeach; ?>
           </tbody>

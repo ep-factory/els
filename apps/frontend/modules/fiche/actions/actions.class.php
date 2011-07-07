@@ -17,6 +17,16 @@ class ficheActions extends autoFicheActions {
     $this->categories = CategoryTable::getInstance()->findAll();
   }
 
+  protected function buildQuery()
+  {
+    $query = parent::buildQuery();
+    if($this->getUser()->hasGroup('technicien'))
+    {
+      $query->andWhere($query->getRootAlias().".is_resolved = 0");
+    }
+    return $query;
+  }
+
   public function executeEdit(sfWebRequest $request) {
     parent::executeEdit($request);
     $this->forwardIf(!$this->getUser()->canEdit($this->fiche), sfConfig::get('sf_secure_module'), sfConfig::get('sf_secure_action'));

@@ -164,7 +164,7 @@ generator:
         display:
           Intervenant: [sfGuardUser, Poste, label]
           Sécurité: [Ppc, ppi_number, acr_number, mo_number]
-          Intervention: [fiche_date, criticity, Demandeur, appel_hour, start_hour, end_hour, _time_spent]
+          Intervention: [Parent, fiche_date, criticity, Demandeur, appel_hour, start_hour, end_hour, _time_spent]
           Localisation: [appareil_id, tags, Batiment, Atelier, Annexe, is_cmr]
           Symptomes: [problem, cause, solution]
           Résolution: [is_tested, test_mechanic, test_operator, is_stopped, is_ips, is_controlled, unsolved_name, unsolved_date]

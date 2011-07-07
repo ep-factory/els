@@ -12,7 +12,11 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
+      actions:
+        _edit:
+          credentials: [fixtures]
+        _delete:
+          credentials: [fixtures]
       fields:
         search:
           label: Rechercher

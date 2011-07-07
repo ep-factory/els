@@ -15,6 +15,10 @@ class CategoryForm extends BaseCategoryForm {
    */
   public function configure() {
     unset($this['created_at'], $this['updated_at'], $this['deleted_at']);
+    if($this->getUser()->getAttribute('enable_keyboard', false)) {
+      $this->widgetSchema['name'] = new sfWidgetFormKeyboard();
+      $this->widgetSchema['code'] = new sfWidgetFormKeyboard();
+    }
   }
 
 }

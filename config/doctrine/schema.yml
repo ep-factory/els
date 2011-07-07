@@ -158,7 +158,7 @@ Fiche:
       notnull: true
     ppc_id: integer
     number:
-      type: integer(12)
+      type: string(13)
       notnull: true
     label: string(255)
     fiche_date: date
@@ -178,9 +178,7 @@ Fiche:
     is_cmr:
       type: boolean
       default: false
-    demandeur_id:
-      type: integer
-      notnull: true
+    demandeur_id: integer
     appel_hour: timestamp
     start_hour: timestamp
     end_hour: timestamp

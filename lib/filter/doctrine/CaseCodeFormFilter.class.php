@@ -16,6 +16,9 @@ class CaseCodeFormFilter extends BaseCaseCodeFormFilter {
   public function configure() {
     // Search
     $this->widgetSchema['search'] = new sfWidgetFormInputText();
+    if($this->getUser()->getAttribute('enable_keyboard', false)) {
+      $this->widgetSchema['search'] = new sfWidgetFormKeyboard();
+    }
     $this->widgetSchema['search']->setAttribute("title", "Rechercher");
     $this->widgetSchema['search']->setAttribute("placeholder", "Rechercher");
     $this->widgetSchema['search']->setAttribute("alt", "Rechercher");

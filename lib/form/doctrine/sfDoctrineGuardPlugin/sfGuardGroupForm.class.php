@@ -15,6 +15,10 @@ class sfGuardGroupForm extends PluginsfGuardGroupForm {
    */
   public function configure() {
     unset($this['created_at'], $this['updated_at']);
+    if($this->getUser()->getAttribute('enable_keyboard', false)) {
+      $this->widgetSchema['name'] = new sfWidgetFormKeyboard();
+      $this->widgetSchema['description'] = new sfWidgetFormKeyboard(array('renderer_class' => 'sfWidgetFormTextarea'));
+    }
   }
 
 }

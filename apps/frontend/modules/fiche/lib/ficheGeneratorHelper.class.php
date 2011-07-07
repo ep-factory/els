@@ -10,14 +10,8 @@
  */
 class ficheGeneratorHelper extends BaseFicheGeneratorHelper {
 
-  protected $categoryId;
-
-  public function setCategoryId($categoryId) {
-    $this->categoryId = $categoryId;
-  }
-
   public function linkToNew($params) {
-    return '<li class="sf_admin_action_add">'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('new').($this->categoryId ? "?category_id=$this->categoryId" : null), array('title' => __($params['label'], array(), 'sf_admin'))).'</li>';
+    return '<li class="sf_admin_action_add">'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('new').(isset($params['category_id']) ? "?category_id=".$params['category_id'] : null), array('title' => __($params['label'], array(), 'sf_admin'))).'</li>';
   }
 
   public function linkToEdit($object, $params) {

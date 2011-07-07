@@ -17,6 +17,9 @@ class PosteFormFilter extends BasePosteFormFilter
   {
     // Search field
     $this->widgetSchema['search'] = new sfWidgetFormInputText();
+    if($this->getUser()->getAttribute('enable_keyboard', false)) {
+      $this->widgetSchema['search'] = new sfWidgetFormKeyboard();
+    }
     $this->widgetSchema['search']->setAttribute("title", "Rechercher");
     $this->widgetSchema['search']->setAttribute("placeholder", "Rechercher");
     $this->widgetSchema['search']->setAttribute("alt", "Rechercher");

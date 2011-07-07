@@ -98,7 +98,7 @@ class FicheForm extends BaseFicheForm {
             $this->widgetSchema[$name]->setOption('widget', new sfWidgetFormKeyboard(array('maxLength' => 5, 'layout' => 'hour')));
           }
           else {
-            $this->widgetSchema[$name]->setOption('widget', new sfWidgetFormInputMask(array('mask' => '99h99', 'formatter' => array($this, 'parseTimestamp'))));
+            $this->widgetSchema[$name]->setOption('widget', new sfWidgetFormInputMask(array('mask' => '99h99')));
           }
           $this->getWidgetSchema()->setHelp($name, 'Format requis : dd/mm/YYYY HHhii');
         }
@@ -134,14 +134,14 @@ class FicheForm extends BaseFicheForm {
     }
 
     // Defaults from request & user
-    $this->setDefault('parent_id', $this->getRequest()->getParameter('parent_id', null));
+    $this->setDefault('parent_id', $this->getRequest()->getParameter('parent_id', $this->getObject()->getParentId()));
     if(!$this->getUser()->isSuperAdmin()) {
       $this->setDefault('sf_guard_user_id', $this->getUser()->getGuardUser()->getPrimaryKey());
     }
-    $this->setDefault('category_id', $this->getRequest()->getParameter('category_id', CategoryTable::getInstance()->findByIsActive(true)->getFirst()->getPrimaryKey()));
+    $this->setDefault('category_id', $this->getRequest()->getParameter('category_id', $this->getObject()->hasParent() ? $this->getObject()->getParent()->getCategoryId() : CategoryTable::getInstance()->findByIsActive(true)->getFirst()->getPrimaryKey()));
 
     // Specific form from category
-    $fields = array('id', 'parent_id', 'case_code_id', 'criticity', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
+    $fields = array('id', 'category_id', 'parent_id', 'case_code_id', 'criticity', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
     $category = CategoryTable::getInstance()->find($this->getDefault('category_id'));
     if($category) {
       switch($category->getCode()) {

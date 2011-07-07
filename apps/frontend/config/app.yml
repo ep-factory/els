@@ -19,10 +19,10 @@ all:
         label: Annexes
         credentials: [fixtures]
       case_code:
-        label: Codes affaire
+        label: Codes
         credentials: [fixtures]
       ppc:
-        label: Numéros PPC
+        label: PPC
         credentials: [fixtures]
       category:
         label: Catégories
@@ -39,8 +39,8 @@ all:
       sf_guard_user:
         label: Utilisateurs
       sf_guard_group:
-        label: Groupes d'utilisateurs
+        label: Groupes
         credentials: [admin]
       sf_guard_permission:
-        label: Permissions d'utilisateurs
+        label: Permissions
         credentials: [admin]
