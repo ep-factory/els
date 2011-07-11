@@ -19,7 +19,7 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
       unset($this['is_active'], $this['is_super_admin'], $this['groups_list'], $this['permissions_list']);
       $this->widgetSchema['username'] = new sfWidgetFormInputHidden();
     }
-    else {
+    elseif($this->getUser()->getAttribute('enable_keyboard', false)) {
       $this->widgetSchema['username'] = new sfWidgetFormKeyboard();
     }
     if($this->getUser()->getAttribute('enable_keyboard', false)) {

@@ -142,7 +142,7 @@ class FicheForm extends BaseFicheForm {
 
     // Specific form from category
     $fields = array('id', 'category_id', 'parent_id', 'case_code_id', 'criticity', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
-    $category = CategoryTable::getInstance()->find($this->getDefault('category_id'));
+    $category = CategoryTable::getInstance()->find($this->isNew() ? $this->getDefault('category_id') : $this->getObject()->getCategoryId());
     if($category) {
       switch($category->getCode()) {
         default:

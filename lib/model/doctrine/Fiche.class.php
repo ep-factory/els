@@ -27,7 +27,7 @@ class Fiche extends BaseFiche {
    * @return boolean Condition
    */
   public function hasParent() {
-    return $this->getParentId() != $this->getPrimaryKey() && $this->getParent();
+    return $this->getParentId() != $this->getPrimaryKey() && $this->getParentId() && $this->getParent() && !$this->getParent()->isNew();
   }
 
   /**
@@ -98,15 +98,13 @@ class Fiche extends BaseFiche {
    * 
    * @param Doctrine_Event $event Event
    */
-  public function preSave($event) {
-    parent::preSave($event);
+  public function preInsert($event) {
+    parent::preInsert($event);
     // Force number
-    if(!$this->getNumber()) {
-      $number = $this->getTable()->createQuery()
-                      ->where('fiche_date = ?', date('Y-m-d'))
-                      ->count();
-      $this->setNumber(preg_replace('/\-/i', '', date('Y-m-d')).sfConfig::get('app_machine_id').str_pad($number + 1, 4, "0", STR_PAD_LEFT));
-    }
+    $number = $this->getTable()->createQuery()
+                    ->where('created_at >= ?', date('Y-m-d 00:00:00'))
+                    ->count();
+    $this->setNumber(preg_replace('/\-/i', '', date('Y-m-d')).sfConfig::get('app_machine_id').str_pad($number + 1, 4, "0", STR_PAD_LEFT));
   }
 
 }
