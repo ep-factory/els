@@ -34,6 +34,9 @@ class FicheFormFilter extends BaseFicheFormFilter
     $this->widgetSchema['fiche_date']->setOption('to_date', new sfWidgetFormDateJQueryUI(array(), array('title' => "Jusqu'au", 'placeholder' => "Jusqu'au")));
     $this->validatorSchema['fiche_date']->setOption('from_date', new sfValidatorDateCustom(array('required' => false)));
     $this->validatorSchema['fiche_date']->setOption('to_date', new sfValidatorDateCustom(array('required' => false)));
+    if(!count($this->getDefaults())) {
+      $this->setDefault('fiche_date', array('from' => date('Y-m-d', strtotime('-7 days')), 'to' => null));
+    }
   }
 
   /**

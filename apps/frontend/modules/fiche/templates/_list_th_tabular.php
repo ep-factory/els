@@ -32,6 +32,13 @@
   </th>
   <?php end_slot(); ?>
   <?php include_slot('sf_admin.current_header') ?>
+<?php elseif($sf_user->hasGroup('coordinateur')): ?>
+  <?php slot('sf_admin.current_header') ?>
+  <th class="sf_admin_text sf_admin_list_th_sfGuardUser">
+    <?php echo __('Résolue', array(), 'messages') ?>
+  </th>
+  <?php end_slot(); ?>
+  <?php include_slot('sf_admin.current_header') ?>
 <?php else: ?>
   <?php slot('sf_admin.current_header') ?>
   <th class="sf_admin_boolean sf_admin_list_th_is_finished">
