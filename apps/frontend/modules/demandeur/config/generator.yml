@@ -18,21 +18,19 @@ generator:
           label: Rechercher
         name:
           label: Nom
-        firstname:
-          label: Prénom
         is_active:
           label: Actif
       show:
-        title: %%name%% %%firstname%%
-        display: [name, firstname, is_active]
+        title: %%name%%
+        display: [name, is_active]
       list:
         title: Demandeurs
-        display: [name, firstname, is_active]
+        display: [name, is_active]
         table_method: findActive
       filter:
         display: [search]
       form:    ~
       edit:
-        title: Edition de "%%name%% %%firstname%%"
+        title: %%name%%
       new:
         title: Nouveau demandeur

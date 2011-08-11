@@ -67,9 +67,6 @@ Demandeur:
     name:
       type: string(255)
       notnull: true
-    firstname:
-      type: string(255)
-      notnull: true
     is_active:
       type: boolean
       default: true
@@ -149,6 +146,7 @@ Fiche:
     is_resolved:
       type: boolean
       default: false
+    resolved_date: timestamp
     resolved_author_id: integer
     category_id:
       type: integer

@@ -10,6 +10,20 @@
  */
 class ficheGeneratorConfiguration extends BaseFicheGeneratorConfiguration {
 
+  public function getFilterDefaults() {
+    return array('fiche_date' => array('from' => date('Y-m-d', sfContext::getInstance()->getUser()->hasGroup('consultant') ? strtotime('+7 days') : strtotime('-7 days')), 'to' => null));
+  }
+
+  public function getCategoryFilters(BaseForm $form, Category $category, $isResolved = null) {
+    return array(
+        $form->getCSRFFieldName() => $form->getCSRFToken(),
+        'fiche_date' => array('from' => null, 'to' => null),
+        'category_id' => $category->getPrimaryKey(),
+        'is_finished' => 0,
+        'is_resolved' => $isResolved
+        );
+  }
+  
   public function getFieldsDefault() {
     $allowed = parent::getFieldsDefault();
     $allowed['elements_list']['is_real'] = true;
@@ -33,7 +47,7 @@ class ficheGeneratorConfiguration extends BaseFicheGeneratorConfiguration {
                 'acr_number',
                 'mo_number'),
             'Intervention' => array(
-                'Parent',
+                '_parent',
                 'fiche_date',
                 'criticity',
                 'Demandeur',

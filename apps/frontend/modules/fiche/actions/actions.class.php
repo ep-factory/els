@@ -14,7 +14,41 @@ require_once dirname(__FILE__).'/../lib/ficheGeneratorHelper.class.php';
 class ficheActions extends autoFicheActions {
 
   public function executeDashboard(sfWebRequest $request) {
+    // sorting
+    if($request->getParameter('sort') && $this->isValidSortColumn($request->getParameter('sort')))
+    {
+      $this->setSort(array($request->getParameter('sort'), $request->getParameter('sort_type')));
+    }
+    if($request->getParameter('page'))
+    {
+      $this->setPage($request->getParameter('page'));
+    }
+    $this->pager = $this->getPager();
+    $this->sort = $this->getSort();
+  }
+
+  public function executeIndex(sfWebRequest $request) {
     $this->categories = CategoryTable::getInstance()->findAll();
+    $this->filters = $this->configuration->getFilterForm($this->getFilters());
+  }
+
+  public function executeFilter(sfWebRequest $request) {
+    $this->setPage(1);
+    if($request->hasParameter('_reset'))
+    {
+      $this->setFilters($this->configuration->getFilterDefaults());
+      $this->redirect('@search');
+    }
+    $this->filters = $this->configuration->getFilterForm($this->getFilters());
+    $this->filters->bind($request->getParameter($this->filters->getName()));
+    if($this->filters->isValid())
+    {
+      $this->setFilters($this->filters->getValues());
+      $this->redirect('@search');
+    }
+    $this->pager = $this->getPager();
+    $this->sort = $this->getSort();
+    $this->setTemplate('index');
   }
 
   protected function buildQuery()
@@ -38,22 +72,56 @@ class ficheActions extends autoFicheActions {
     return sfView::NONE;
   }
 
+  public function executeDemandeur_autocomplete(sfWebRequest $request) {
+    $this->forward404Unless($request->isXmlHttpRequest());
+    $objects = DemandeurTable::getInstance()->createQuery()->select("id, name")->where("name LIKE ?", "%".$request->getParameter("q")."%")->andWhere('is_active = 1')->limit(10)->fetchArray();
+    return $this->renderText(json_encode($objects));
+  }
+
   public function executeTags_autocomplete(sfWebRequest $request) {
     $this->forward404Unless($request->isXmlHttpRequest());
     $tags = TagTable::getInstance()->createQuery("tag")->select("tag.name AS id, tag.name AS name")->where("tag.name LIKE ?", "%".$request->getParameter("q")."%")->limit(10)->fetchArray();
     return $this->renderText(json_encode($tags));
   }
 
+  public function executeUnresolve(sfWebRequest $request) {
+    $this->getRoute()->getObject()->unresolve();
+    $this->getUser()->setFlash('notice', "L'intervention a été correctement rouverte.");
+    $this->redirect("@fiche_show?id=".$this->getRoute()->getObject()->getPrimaryKey());
+  }
+
   public function executeResolve(sfWebRequest $request) {
     $this->getRoute()->getObject()->resolve();
-    $this->getUser()->setFlash('notice', "L'intervention a été correctement résolue.");
+    $this->getUser()->setFlash('notice', "L'intervention a été correctement fermée.");
     $this->redirect("@fiche_show?id=".$this->getRoute()->getObject()->getPrimaryKey());
   }
 
   public function executeClose(sfWebRequest $request) {
     $this->getRoute()->getObject()->close();
-    $this->getUser()->setFlash('notice', "L'intervention a été correctement fermée.");
+    $this->getUser()->setFlash('notice', "L'intervention a été correctement clos.");
     $this->redirect("@fiche_show?id=".$this->getRoute()->getObject()->getPrimaryKey());
+  }
+
+  public function executeCreate(sfWebRequest $request)
+  {
+    $this->form = $this->configuration->getForm();
+    $datas = $request->getParameter($this->form->getName());
+    if(isset($datas['parent_id']) && $datas['parent_id'] && $object = FicheTable::getInstance()->find($datas['parent_id'])) {
+      $class = get_class($object);
+      $values = $object->toArray();
+      unset($values['id'], $values['fiche_date'], $values['sf_guard_user_id'], $values['start_hour'], $values['end_hour']);
+      $values['parent_id'] = $object->getPrimaryKey();
+      $values['tags'] = $object->getTags();
+      $values['Elements'] = $object->getElements();
+      $this->fiche = new $class();
+      $this->fiche->fromArray($values);
+      $this->form = $this->configuration->getForm($this->fiche);
+    }
+    else {
+      $this->fiche = $this->form->getObject();
+    }
+    $this->processForm($request, $this->form);
+    $this->setTemplate('new');
   }
 
   public function executeAdd(sfWebRequest $request) {
@@ -61,7 +129,7 @@ class ficheActions extends autoFicheActions {
     $class = get_class($object);
     $values = $object->toArray();
     unset($values['id'], $values['fiche_date'], $values['sf_guard_user_id'], $values['start_hour'], $values['end_hour']);
-    $values['parent_id'] = $request->getParameter('id');
+    $values['parent_id'] = $object->getPrimaryKey();
     $values['tags'] = $object->getTags();
     $values['Elements'] = $object->getElements();
     $this->fiche = new $class();

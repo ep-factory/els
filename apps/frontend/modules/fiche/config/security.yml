@@ -13,5 +13,8 @@ edit:
 resolve:
   credentials: [resolve]
 
+unresolve:
+  credentials: [resolve]
+
 close:
   credentials: [close]

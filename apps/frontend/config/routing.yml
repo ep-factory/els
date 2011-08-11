@@ -1,14 +1,9 @@
-ppc:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                Ppc
-    module:               ppc
-    prefix_path:          /ppc
-    column:               id
-    with_wildcard_routes: true
-
 homepage:
   url:   /
+  param: { module: fiche, action: index }
+
+search:
+  url:   /rechercher
   param: { module: fiche, action: dashboard }
 
 enable_keyboard:
@@ -25,10 +20,21 @@ fiche:
     with_wildcard_routes: true
     object_actions:
       resolve:            [get]
+      unresolve:          [get]
       close:              [get]
       add:                [get]
     collection_actions:
       tags_autocomplete:  [post]
+      demandeur_autocomplete: [post]
+
+ppc:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Ppc
+    module:               ppc
+    prefix_path:          /ppc
+    column:               id
+    with_wildcard_routes: true
 
 atelier:
   class: sfDoctrineRouteCollection

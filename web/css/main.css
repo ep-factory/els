@@ -21,7 +21,7 @@ color: #103141;cursor: pointer;}
 
 		
 /* HEADER */	
-#header>a>img{display:none;}		
+#header>a>img{display:none;}
 #header>a
 {display:block;float:left;width:97px;height:60px;margin: 7px 7px 0 11px;
 background: url("../images/logoELS_header2.gif") no-repeat scroll left top;}
@@ -35,7 +35,7 @@ background: url("../images/logoELS_header2.gif") no-repeat scroll left top;}
 
 /* ELEMENTS DIVERS */
 select{padding:1px 2px;}
-#container label {display: inline;}
+#container .contentbox label {display: inline; width: auto !important;}
 body{ background: url("../images/bg_login_page.png") repeat-x scroll center top #E5E5E5;}
 .contentbox div.sf_admin_form_row {margin:0 0 10px 0;}
 .sml .sf_admin_form_row {width:636px;}
@@ -51,42 +51,64 @@ body{ background: url("../images/bg_login_page.png") repeat-x scroll center top 
 table.jqTransformTextarea td#jqTransformTextarea-mm textarea {width: 595px;}
 
 /* FILTERS */
-.sf_admin_filter_field_fiche_date .jqTransformInputWrapper{width:80px !important;display:inline-block;margin:0 5px 0 0;}
-.sf_admin_filter_field_fiche_date .jqTransformInputWrapper input{cursor:pointer !important;}
+.right .sf_admin_date .jqTransformInputWrapper, .right .sf_admin_timestamp .jqTransformInputWrapper{width:80px !important;display:inline-block;margin:0 5px 0 0;}
+.right .sf_admin_date .jqTransformInputWrapper input, .right .sf_admin_timestamp .jqTransformInputWrapper input{cursor:pointer !important;}
 
-
-/* 
-.contentbox div.sf_admin_filter_field_name, .contentbox div.sf_admin_filter_field_code
-{float:left;width:250px;clear:none;margin:0 10px 0 0;}
-.contentbox div.sf_admin_filter_field_code{width:300px;}
-
-.contentbox div.sf_admin_filter_field_name label, 
-.contentbox div.sf_admin_filter_field_code label
-{float:left;width:auto;text-align:right;padding-right:0 !important;}
-
-.contentbox div.sf_admin_filter_field_name .jqTransformInputWrapper, 
-.contentbox div.sf_admin_filter_field_code .jqTransformInputWrapper
-{float:left;width:200px !important;background:none;}
-
-.contentbox div.sf_admin_filter_field_name .jqTransformInputWrapper .jqTransformInputInner, 
-.contentbox div.sf_admin_filter_field_code .jqTransformInputWrapper .jqTransformInputInner
-{background:none;}
-
-.contentbox div.sf_admin_filter_field_name .jqTransformInputWrapper .jqTransformInputInner div, 
-.contentbox div.sf_admin_filter_field_code .jqTransformInputWrapper .jqTransformInputInner div
-{height:auto;}
-
-.contentbox div.sf_admin_filter_field_name .jqTransformInputWrapper .jqTransformInputInner div input, 
-.contentbox div.sf_admin_filter_field_code .jqTransformInputWrapper .jqTransformInputInner div input
-{height:1.6em;line-height:1.6em;border:1px solid #CCC;}
-
-.contentbox div.sf_admin_filter_field_is_active{float:left;width:210px;clear:none;margin:0;}
-.sf_admin_filter_field_created_at{clear:both;}
-.sf_admin_filter_field_deleted_at{margin:0 0 15px 0;} 
-.contentbox, .contentbox  form{width:636px;}
-.contentbox form>a, .contentbox form>input{float:left;}
-#category_filters_code_is_empty{float:left;}
-*/
-
-
-/* .sml .sf_admin_form_row{float: left; width: 25%; clear: none !important;} */
+/* WIDGET MULTIPLE */
+.widget_multiple_empty_add_label {
+  margin-top: 10px;
+}
+.widget_multiple_element {
+  border-bottom: thin dashed black;
+  padding-bottom: 100px;
+  position: relative;
+}
+.widget_multiple_element .ajouter, .widget_multiple_element .retirer {
+  position: absolute;
+  right: 0;
+  top: 25%;
+}
+.widget_multiple_element .retirer {
+  right: 20px;
+}
+.widget_multiple_element .widget_template {
+  float: none;
+  position: absolute;
+  width: 50%;
+}
+.widget_multiple_element .widget_template input,
+.widget_multiple_element .widget_template select
+{
+  width: 85%;
+}
+.widget_multiple_element .widget_template.changed_id {
+  left: 0;
+  top: 0;
+}
+.widget_multiple_element .widget_template.changed_serial {
+  left: 0;
+  top: 60px;
+}
+.widget_multiple_element .widget_template.installed_id {
+  left: 50%;
+  top: 0;
+}
+.widget_multiple_element .widget_template.installed_serial {
+  left: 50%;
+  top: 60px;
+}
+.widget_multiple_element .widget_template.changed_id label,
+.widget_multiple_element .widget_template.installed_id label {
+  text-align: center;
+}
+.widget_multiple_element .widget_template.changed_serial label,
+.widget_multiple_element .widget_template.installed_serial label {
+  float: left;
+  font-style: italic;
+  font-weight: normal !important;
+}
+.widget_multiple_element .widget_template.changed_serial input,
+.widget_multiple_element .widget_template.installed_serial input {
+  float: left;
+  width: auto;
+}

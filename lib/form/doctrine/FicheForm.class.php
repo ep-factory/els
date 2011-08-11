@@ -37,7 +37,10 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['poste_id']->setOption('order_by', array('id', 'ASC'));
     $this->widgetSchema['poste_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['appareil_id']->setOption('table_method', 'findActive');
-    $this->widgetSchema['demandeur_id']->setOption('table_method', 'findActive');
+    $this->widgetSchema['appareil_id']->setOption('add_empty', 'Autre');
+    $demandeurQuery = DemandeurTable::getInstance()->createQuery()->where('is_active = 1');
+    $this->widgetSchema['demandeur_id'] = new sfWidgetFormInputDoctrineAutocomplete(array('url' => $this->genUrl('@fiche_demandeur_autocomplete'), 'model' => 'Demandeur', 'query' => $demandeurQuery));
+    $this->validatorSchema['demandeur_id'] = new sfValidatorDoctrineAutocomplete(array('model' => 'Demandeur', 'column' => 'name', 'autosave' => true, 'query' => $demandeurQuery));
     $this->widgetSchema['batiment_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['atelier_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['annexe_id']->setOption('table_method', 'findActive');
@@ -50,7 +53,7 @@ class FicheForm extends BaseFicheForm {
       $this->getContext()->getController()->redirect("@fiche");
     }
     $this->setDefault('case_code_id', $caseCode->getPrimaryKey());
-    $this->widgetSchema['case_code_id'] = new sfWidgetFormInputPlain(array('value' => $this->isNew() ? $caseCode : $this->getObject()->getCaseCode()));
+    $this->widgetSchema['case_code_id'] = new sfWidgetFormInputPlain(array('value' => $this->isNew() ? $caseCode.' '.$this->getObject()->getCategoryCode() : $this->getObject()->getCaseCode().' '.$this->getObject()->getCategoryCode()));
     $ppc = PpcTable::getInstance()->findOneByIsActive(true);
     if(!$ppc) {
       $this->getUser()->setFlash('error', 'Aucun PPC actif. Veuillez contacter un administrateur.');
@@ -63,6 +66,7 @@ class FicheForm extends BaseFicheForm {
     $this->getWidgetSchema()->setHelp('fiche_date', 'Format requis : dd/mm/YYYY');
     $this->validatorSchema['fiche_date'] = new sfValidatorDateCustom(array('required' => false));
     $this->widgetSchema['unsolved_date'] = new sfWidgetFormDateJQueryUI();
+    $this->validatorSchema['unsolved_date'] = new sfValidatorDateCustom(array('required' => false));
     $this->validatorSchema['appel_hour'] = new sfValidatorTimestamp(array('required' => false));
     $this->validatorSchema['start_hour'] = new sfValidatorTimestamp(array('required' => false));
     $this->validatorSchema['end_hour'] = new sfValidatorTimestamp(array('required' => false));
@@ -70,10 +74,10 @@ class FicheForm extends BaseFicheForm {
                 'add_empty' => !$this->isNew() && $this->getObject()->getElements()->count(),
                 'callback' => $this->getUser()->getAttribute('enable_keyboard', false) ? 'addElementsKeyboard' : null,
                 'widgets' => array(
-                    'element_changed_id' => new sfWidgetFormDoctrineChoice(array('model' => 'Element', 'table_method' => 'findActive', 'add_empty' => true), array('widgetClass' => 'changed_id')),
-                    'element_changed_serial' => $this->getUser()->getAttribute('enable_keyboard', false) ? new sfWidgetFormKeyboard(array(), array('renderer_options' => array('widgetClass' => 'changed_serial'))) : new sfWidgetFormInputText(array(), array('widgetClass' => 'changed_serial')),
-                    'element_installed_id' => new sfWidgetFormDoctrineChoice(array('model' => 'Element', 'table_method' => 'findActive', 'add_empty' => true), array('widgetClass' => 'installed_id')),
-                    'element_installed_serial' => $this->getUser()->getAttribute('enable_keyboard', false) ? new sfWidgetFormKeyboard(array(), array('renderer_options' => array('widgetClass' => 'changed_serial'))) : new sfWidgetFormInputText(array(), array('widgetClass' => 'installed_serial'))
+                    'element_changed_id' => new sfWidgetFormDoctrineChoice(array('label' => 'Changé', 'model' => 'Element', 'table_method' => 'findActive', 'add_empty' => true), array('widgetClass' => 'changed_id')),
+                    'element_changed_serial' => $this->getUser()->getAttribute('enable_keyboard', false) ? new sfWidgetFormKeyboard(array('label' => 'N° série'), array('renderer_options' => array('widgetClass' => 'changed_serial'))) : new sfWidgetFormInputText(array('label' => 'N° série'), array('widgetClass' => 'changed_serial')),
+                    'element_installed_id' => new sfWidgetFormDoctrineChoice(array('label' => 'Installé', 'model' => 'Element', 'table_method' => 'findActive', 'add_empty' => true), array('widgetClass' => 'installed_id')),
+                    'element_installed_serial' => $this->getUser()->getAttribute('enable_keyboard', false) ? new sfWidgetFormKeyboard(array('label' => 'N° série'), array('renderer_options' => array('widgetClass' => 'changed_serial'))) : new sfWidgetFormInputText(array('label' => 'N° série'), array('widgetClass' => 'installed_serial'))
                     )));
     $this->validatorSchema['elements_list'] = new sfValidatorMultiple(array('required' => false, 'validators' => array(
                     'element_changed_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => 'Element')),
@@ -93,13 +97,7 @@ class FicheForm extends BaseFicheForm {
       if(isset($this->widgetSchema[$name])) {
         // Hour
         if(preg_match('/hour$/i', $name)) {
-          $this->widgetSchema[$name] = new sfWidgetFormTimestamp();
-          if($this->getUser()->getAttribute('enable_keyboard', false)) {
-            $this->widgetSchema[$name]->setOption('widget', new sfWidgetFormKeyboard(array('maxLength' => 5, 'layout' => 'hour')));
-          }
-          else {
-            $this->widgetSchema[$name]->setOption('widget', new sfWidgetFormInputMask(array('mask' => '99h99')));
-          }
+          $this->widgetSchema[$name] = new sfWidgetFormTimestamp(array('stepMinute' => 15));
           $this->getWidgetSchema()->setHelp($name, 'Format requis : dd/mm/YYYY HHhii');
         }
         // Keyboard
@@ -108,6 +106,13 @@ class FicheForm extends BaseFicheForm {
                 && !in_array(get_class($this->widgetSchema[$name]), array('sfWidgetFormDateJQueryUI', 'sfWidgetFormKeyboard', 'sfWidgetFormTimestamp'))) {
           $options = array('renderer_class' => get_class($this->widgetSchema[$name]), 'renderer_options' => $this->widgetSchema[$name]->getOptions());
           if($this->widgetSchema[$name] instanceof sfWidgetFormInputToken) {
+            $options['url'] = $options['renderer_options']['url'];
+            unset($options['renderer_options']['url']);
+            $options['multi'] = true;
+            $options['renderer_class'] = 'sfWidgetFormInputText';
+          }
+          elseif($this->widgetSchema[$name] instanceof sfWidgetFormInputAutocomplete) {
+            $options['url'] = $options['renderer_options']['url'];
             unset($options['renderer_options']['url']);
             $options['renderer_class'] = 'sfWidgetFormInputText';
           }
@@ -131,6 +136,11 @@ class FicheForm extends BaseFicheForm {
           $this->widgetSchema[$name]->setOption('order_by', array('name', 'ASC'));
         }
       }
+    }
+
+    if($this->getObject()->getParentId()) {
+      $this->widgetSchema['appel_hour'] = new sfWidgetFormInputPlain(array('value' => preg_replace('/^(\d{4})-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{1,2}):(\d{1,2})$/i', '$3/$2/$1 $4H$5', $this->getObject()->getParent()->getAppelHour())));
+      $this->validatorSchema['appel_hour'] = new sfValidatorDateTime(array('required' => false));
     }
 
     // Defaults from request & user
@@ -161,16 +171,6 @@ class FicheForm extends BaseFicheForm {
       }
       $this->useFields($fields);
     }
-  }
-
-  /**
-   * Parse a timestamp
-   *
-   * @param string $value Timestamp to parse
-   * @return mixed Parsed timestamp
-   */
-  public function parseTimestamp($value) {
-    return $value ? date('H\hi', strtotime($value)) : null;
   }
 
   /**

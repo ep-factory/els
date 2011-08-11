@@ -1,11 +1,8 @@
 Demandeur:
   vincent:
-    name: CHALAMON
-    firstname: Vincent
+    name: CHALAMON Vincent
   sebastien:
-    name: URIOS
-    firstname: Sébastien
+    name: URIOS Sébastien
   sylvain:
-    name: LABRE
-    firstname: Sylvain
+    name: LABRE Sylvain
     is_active: false

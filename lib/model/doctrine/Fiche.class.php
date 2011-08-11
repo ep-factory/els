@@ -31,6 +31,15 @@ class Fiche extends BaseFiche {
   }
 
   /**
+   * Unresolve current fiche, parent and children
+   *
+   * @return mixed Void or list of ids
+   */
+  public function unresolve() {
+    $this->setIsResolved(false)->save();
+  }
+
+  /**
    * Resolve current fiche, parent and children
    *
    * @param boolean $return Return list of ids to resolve hierarchy
@@ -45,6 +54,7 @@ class Fiche extends BaseFiche {
     }
     $this->getTable()->createQuery()
             ->set('is_resolved', true)
+            ->set('resolved_date', '"'.date('Y-m-d H:i:s').'"')
             ->set('resolved_author_id', sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
             ->whereIn('id', $this->getHierarchyIds())
             ->update()->execute();

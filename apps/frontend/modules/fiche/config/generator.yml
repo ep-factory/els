@@ -1,5 +1,5 @@
 generator:
-  class: sfDoctrineGenerator
+  class: sfAdminTemplateGenerator
   param:
     model_class:           Fiche
     theme:                 admin_template
@@ -17,8 +17,12 @@ generator:
           credentials: [create]
         _edit:
           credentials: [edit]
+        _unresolve:
+          label: Rouvrir fiche
+          action: unresolve
+          credentials: [resolve]
         _resolve:
-          label: Résoudre
+          label: Fermer fiche
           action: resolve
           credentials: [resolve]
         _close:
@@ -35,6 +39,8 @@ generator:
       fields:
         search:
           label: Rechercher
+        created_at:
+          label: Créée le
         criticity:
           label: Criticité
         label:
@@ -74,15 +80,15 @@ generator:
         Poste:
           label: Poste
         ppc_id:
-          label: Numéro PPC
+          label: N° Plan Prévention Cadre
         Ppc:
-          label: Numéro PPC
+          label: N° Plan Prévention Cadre
         ppi_number:
-          label: Numéro PPI
+          label: N° Plan de Prévention pour l'Intervention
         mo_number:
-          label: Numéro MO
+          label: N° Mode Opératoire
         acr_number:
-          label: Numéro ACR
+          label: N° Analyse Commune des Risques
         case_code_id:
           label: Code affaire
         CaseCode:
@@ -132,7 +138,7 @@ generator:
         is_ips:
           label: IPS
         is_controlled:
-          label: Controllé
+          label: Résolue
         sf_guard_user_id:
           label: Intervenant
         sfGuardUser:
@@ -160,17 +166,18 @@ generator:
           _list: ~
           _edit: ~
           _resolve: ~
+          _unresolve: ~
           _close: ~
         display:
           Intervenant: [sfGuardUser, Poste, label]
           Sécurité: [Ppc, ppi_number, acr_number, mo_number]
-          Intervention: [Parent, fiche_date, criticity, Demandeur, appel_hour, start_hour, end_hour, _time_spent]
+          Intervention: [_parent, fiche_date, criticity, Demandeur, appel_hour, start_hour, end_hour, _time_spent]
           Localisation: [appareil_id, tags, Batiment, Atelier, Annexe, is_cmr]
           Symptomes: [problem, cause, solution]
           Résolution: [is_tested, test_mechanic, test_operator, is_stopped, is_ips, is_controlled, unsolved_name, unsolved_date]
           Maintenance: [_elements]
       filter:
-        display: [fiche_date, is_resolved, is_finished, search]
+        display: [fiche_date, created_at, is_resolved, is_finished, search]
       form:
         actions:
           _save: ~

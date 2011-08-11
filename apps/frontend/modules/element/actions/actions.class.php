@@ -18,6 +18,10 @@ class elementActions extends autoElementActions
     if($this->getRequest()->isXmlHttpRequest()) {
       return "@element_close?id=".$element->getPrimaryKey();
     }
+    elseif($this->getRequest()->hasParameter('_save_and_add')) {
+      $this->getUser()->setFlash('notice', 'The item was created successfully. You can add another one below.');
+      $this->redirect('@element_new');
+    }
     return "@element";
   }
 

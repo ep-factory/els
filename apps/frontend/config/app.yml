@@ -6,6 +6,8 @@ all:
     menus:
       fiche:
         label: Fiches
+      search:
+        label: Rechercher
       appareil:
         label: Appareils
         credentials: [fixtures]

@@ -1,6 +1,7 @@
 Fiche:
-  test:
-    tags: "AM"
+<?php for($i = 1; $i <= 30; $i++): ?>
+  test<?php echo $i ?>:
+    tags: "toto, titi, tata, tutu"
     sfGuardUser: admin
     Category: 481
     CaseCode: SAM-ELS1100
@@ -19,34 +20,9 @@ Fiche:
     solution: "Il n'y a que des solutions"
     Batiment: batiment1
     Elements:
-      test:
+      test<?php echo $i ?>:
         ElementChanged: screen
         element_changed_serial: '123456789'
         ElementInstalled: keybord
         element_installed_serial: '123456789'
-  test2:
-    tags: "AM"
-    sfGuardUser: admin
-    Category: 481
-    CaseCode: SAM-ELS1100
-    fiche_date: '2011-06-07'
-    Parent: test
-    Poste: journee
-    ppi_number: '123456789'
-    mo_number: '123456789'
-    acr_number: '123456789'
-    Appareil: mac
-    Demandeur: vincent
-    appel_hour: '2011-06-07 09:00:00'
-    start_hour: '2011-06-07 10:00:00'
-    end_hour: '2011-06-07 11:00:00'
-    problem: "Il n'y a pas de problème"
-    cause: "D'après toi ?"
-    solution: "Il n'y a que des solutions"
-    Batiment: batiment1
-    Elements:
-      test:
-        ElementChanged: screen
-        element_changed_serial: '123456789'
-        ElementInstalled: keybord
-        element_installed_serial: '123456789'
+<?php endfor ?>

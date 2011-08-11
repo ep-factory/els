@@ -26,12 +26,18 @@ class Category extends BaseCategory {
    * 
    * @return integer Number
    */
-  public function getCountFiches() {
+  public function getCountFiches($resolved = null, $finished = null) {
     if(!isset($this->_values['count_fiches'])) {
-      $this->_values['count_fiches'] = FicheTable::getInstance()->createQuery()
-                      ->where('category_id = ?', $this->getPrimaryKey())
-                      ->andWhere('deleted_at IS NULL')
-                      ->count();
+      $query = FicheTable::getInstance()->createQuery('fiche')
+                      ->where('fiche.category_id = ?', $this->getPrimaryKey())
+                      ->innerJoin('fiche.CaseCode case_code')
+                      ->innerJoin('fiche.Category category')
+                      ->andWhere('fiche.deleted_at IS NULL')
+                      ->andWhere('fiche.is_finished = ?', !is_null($finished) ? true : false);
+      if(!is_null($resolved)) {
+        $query->andWhere('fiche.is_resolved = ?', $resolved);
+      }
+      $this->_values['count_fiches'] = $query->count();
     }
     return $this->_values['count_fiches'];
   }
@@ -42,15 +48,18 @@ class Category extends BaseCategory {
    * @param integer $limit Query limit
    * @return Doctrine_Collection Fiches
    */
-  public function getLimitedFiches($limit = 10, $resolved = null) {
+  public function getLimitedFiches($limit = 10, $resolved = null, $finished = null) {
     if(!isset($this->_values['limited_fiches'])) {
-      $query = FicheTable::getInstance()->createQuery()
-                      ->where('category_id = ?', $this->getPrimaryKey())
-                      ->andWhere('deleted_at IS NULL')
+      $query = FicheTable::getInstance()->createQuery('fiche')
+                      ->where('fiche.category_id = ?', $this->getPrimaryKey())
+                      ->innerJoin('fiche.CaseCode case_code')
+                      ->innerJoin('fiche.Category category')
+                      ->andWhere('fiche.deleted_at IS NULL')
+                      ->andWhere('fiche.is_finished = ?', !is_null($finished) ? true : false)
                       ->limit($limit)
-                      ->orderBy('fiche_date DESC');
+                      ->orderBy('fiche.fiche_date DESC');
       if(!is_null($resolved)) {
-        $query->andWhere('is_resolved = ?', $resolved);
+        $query->andWhere('fiche.is_resolved = ?', $resolved);
       }
       $this->_values['limited_fiches'] = $query->execute();
     }

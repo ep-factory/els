@@ -29,8 +29,7 @@ class DemandeurTable extends Doctrine_Table {
     }
     $query->andWhere($query->getRootAlias().'.is_active = 1')
             ->andWhere($query->getRootAlias().'.deleted_at IS NULL')
-            ->addOrderBy($query->getRootAlias().'.name ASC')
-            ->addOrderBy($query->getRootAlias().'.firstname ASC');
+            ->addOrderBy($query->getRootAlias().'.name ASC');
     return $action ? $query->$action() : $query;
   }
 

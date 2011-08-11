@@ -1,6 +1,6 @@
 <?php if($fiche->getElements()->count()): ?>
   <div class="sf_admin_show_row sf_admin_text sf_admin_show_field_elements">
-    <label>Elements</label>
+    <label>Eléments</label>
     <div class="elements_list">
       <?php foreach($fiche->getElements() as $element): ?>
         <div class="element">

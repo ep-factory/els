@@ -28,7 +28,9 @@ class FicheTable extends Doctrine_Table {
       $query = $this->createQuery('q');
     }
     $query->andWhere($query->getRootAlias().'.deleted_at IS NULL')
-            ->addOrderBy($query->getRootAlias().'.number ASC');
+          ->addOrderBy($query->getRootAlias().'.number ASC')
+          ->innerJoin($query->getRootAlias().'.CaseCode case_code')
+          ->innerJoin($query->getRootAlias().'.Category category');
     return $action ? $query->$action() : $query;
   }
 
