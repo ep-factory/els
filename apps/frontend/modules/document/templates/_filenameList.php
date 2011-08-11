@@ -1,0 +1,1 @@
+<?php echo link_to("Télécharger le fichier", $document->getFilename(), array('target' => '_blank')) ?>

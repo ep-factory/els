@@ -26,6 +26,12 @@ sfGuardPermission:
   export:
     name:           export
     description:    Exporter les interventions
+  create_document:
+    name:           create_document
+    description:    Dépôt de documents
+  document:
+    name:           document
+    description:    Consultation de documents
 
 sfGuardGroup:
   consultant:
@@ -52,7 +58,7 @@ sfGuardGroup:
   coordinateur:
     name:           coordinateur
     description:    Groupe des coordinateurs
-    Permissions:    [create, edit, resolve, close, fixtures, export]
+    Permissions:    [create, edit, resolve, close, fixtures, export, create_document, document]
     Users:
       coordinateur:
         first_name: Coordinateur

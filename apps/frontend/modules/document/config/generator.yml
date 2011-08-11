@@ -1,0 +1,38 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Document
+    theme:                 admin_template
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          document
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        search:
+          label: Rechercher
+        name:
+          label: Nom
+        filename:
+          label: Fichier
+        filenameList:
+          label: Fichier
+      show:
+        title: %%name%%
+        display: [_filename, _tags]
+      list:
+        title: Documents
+        display: [name, _filenameList]
+        table_method: findActive
+      filter:
+        display: [search]
+      form:    ~
+      edit:
+        title: %%name%%
+      new:
+        title: Nouveau document

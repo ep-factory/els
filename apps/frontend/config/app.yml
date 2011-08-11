@@ -11,6 +11,9 @@ all:
       export:
         label: Exporter
         credentials: [export]
+      document:
+        label: Documents
+        credentials: [[create_document, document]]
       appareil:
         label: Appareils
         credentials: [fixtures]

@@ -1,3 +1,16 @@
+document:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Document
+    module:               document
+    prefix_path:          /document
+    column:               id
+    with_wildcard_routes: true
+
+uploadify:
+  url:   /uploadify
+  param: { module: document, action: uploadify }
+
 homepage:
   url:   /
   param: { module: fiche, action: index }

@@ -1,0 +1,5 @@
+default:
+  credentials: [[create_document, document]]
+
+uploadify:
+  is_secure: false

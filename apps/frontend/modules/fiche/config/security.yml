@@ -21,3 +21,9 @@ close:
 
 export:
   credentials: [export]
+
+tags_autocomplete:
+  is_secure: false
+
+demandeur_autocomplete:
+  is_secure: false
