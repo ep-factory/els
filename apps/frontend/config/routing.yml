@@ -10,6 +10,10 @@ enable_keyboard:
   url:   /enable_keyboard
   param: { module: fiche, action: enableKeyboard }
 
+export:
+  url:   /export
+  param: { module: fiche, action: export }
+
 fiche:
   class: sfDoctrineRouteCollection
   options:

@@ -21,6 +21,11 @@ class Fiche extends BaseFiche {
     return sprintf("Fiche n°%s %s %s", $this->getNumber(), $this->getCaseCode(), $this->getCategoryCode());
   }
 
+  public function getTimeSpent() {
+    $diff = $this->getEndHour() - $this->getStartHour();
+    return $this->getEndHour() && $this->getStartHour() && $diff ? date('H:i:s', strtotime($diff)) : null;
+  }
+
   /**
    * Check if current fiche has parent
    *

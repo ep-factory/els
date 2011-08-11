@@ -23,6 +23,9 @@ sfGuardPermission:
   fixtures:
     name:           fixtures
     description:    Gérer les données additionnelles
+  export:
+    name:           export
+    description:    Exporter les interventions
 
 sfGuardGroup:
   consultant:
@@ -49,7 +52,7 @@ sfGuardGroup:
   coordinateur:
     name:           coordinateur
     description:    Groupe des coordinateurs
-    Permissions:    [create, edit, resolve, close, fixtures]
+    Permissions:    [create, edit, resolve, close, fixtures, export]
     Users:
       coordinateur:
         first_name: Coordinateur

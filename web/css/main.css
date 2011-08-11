@@ -51,7 +51,7 @@ body{ background: url("../images/bg_login_page.png") repeat-x scroll center top 
 table.jqTransformTextarea td#jqTransformTextarea-mm textarea {width: 595px;}
 
 /* FILTERS */
-.right .sf_admin_date .jqTransformInputWrapper, .right .sf_admin_timestamp .jqTransformInputWrapper{width:80px !important;display:inline-block;margin:0 5px 0 0;}
+.right .sf_admin_date .jqTransformInputWrapper, .right .sf_admin_timestamp .jqTransformInputWrapper{width:120px !important;display:inline-block;margin:0 5px 0 0;}
 .right .sf_admin_date .jqTransformInputWrapper input, .right .sf_admin_timestamp .jqTransformInputWrapper input{cursor:pointer !important;}
 
 /* WIDGET MULTIPLE */

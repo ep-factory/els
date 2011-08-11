@@ -8,6 +8,9 @@ all:
         label: Fiches
       search:
         label: Rechercher
+      export:
+        label: Exporter
+        credentials: [export]
       appareil:
         label: Appareils
         credentials: [fixtures]

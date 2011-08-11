@@ -15,7 +15,7 @@
     <?php endif ?>
     <?php echo $form->renderHiddenFields(false) ?>
 
-    <?php if ($form->hasGlobalErrors()): ?>
+    <?php if($form->hasGlobalErrors()): ?>
       <?php echo $form->renderGlobalErrors() ?>
     <?php endif; ?>
 

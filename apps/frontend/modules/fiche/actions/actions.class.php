@@ -13,6 +13,97 @@ require_once dirname(__FILE__).'/../lib/ficheGeneratorHelper.class.php';
  */
 class ficheActions extends autoFicheActions {
 
+  public function executeExport(sfWebRequest $request) {
+    $this->form = new ExportFormFilter();
+    if($request->isMethod("post")) {
+      $this->form->bind($request->getParameter($this->form->getName()));
+      if($this->form->isValid()) {
+        $this->setFilters($this->form->getValues());
+        ini_set("max_execution_time", 3600);
+        ini_set("memory_limit", '512M');
+        $results = $this->buildQuery()->execute();
+        $filename = sfConfig::get('sf_upload_dir').'/'.$this->getModuleName().'.csv';
+        $handle = fopen($filename, 'w+');
+        chmod($filename, 0777);
+        // Headers
+        $headers = array();
+        foreach($this->configuration->getValue('show.display') as $header) {
+          if(is_array($header)) {
+            foreach($header as $name) {
+              $headers[] = $this->retrieveLabel($name);
+            }
+          }
+          else {
+            $headers[] = $this->retrieveLabel($header);
+          }
+        }
+        fputcsv($handle, $headers, ";", '"');
+        // Results
+        foreach($results as $result) {
+          $line = array();
+          foreach($this->configuration->getValue('show.display') as $column) {
+            if(is_array($column)) {
+              foreach($column as $name) {
+                $line[] = $this->retrieveValue($result, $name);
+              }
+            }
+            else {
+              $line[] = $this->retrieveValue($result, $column);
+            }
+          }
+          fputcsv($handle, $line, ";", '"');
+        }
+        fclose($handle);
+        $this->setLayout(false);
+        $response = $this->getResponse();
+        $response->setHttpHeader('Content-Disposition', 'attachment; filename="'.basename($filename).'"');
+        $response->setContentType('text/csv; charset=windows-1252/Winlatin1');
+        $response->setContent(file_get_contents($filename));
+        unlink($filename);
+        return sfView::NONE;
+      }
+      else {
+        $this->getUser()->setFlash('error', "Le formulaire comporte des erreurs.", false);
+      }
+    }
+  }
+
+  protected function retrieveLabel($name) {
+    return utf8_decode($this->configuration->getFieldConfiguration("list", preg_replace('/^[_~](.*)$/i', '$1', $name))->getConfig('label'));
+  }
+
+  protected function retrieveValue(Fiche $fiche, $column) {
+    $name = preg_replace('/^[_~](.*)$/i', '$1', $column);
+    if(FicheTable::getInstance()->hasRelation(ucfirst($name))) {
+      $name = ucfirst($name);
+    }
+    $value = $fiche->{"get".ucfirst(sfInflector::camelize($name))}();
+    // Array
+    if(is_object($value) && $value instanceof Doctrine_Collection) {
+      $objects = array();
+      foreach($value as $object) {
+        $objects[] = $object->__toString();
+      }
+      $value = $objects;
+    }
+    if(is_array($value)) {
+      $value = implode(", ", $value);
+    }
+    // Timestamp
+    if(preg_match('/^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/i', $value)) {
+      $value = date('d/m/Y H\hi', strtotime($value));
+    }
+    // Date
+    elseif(preg_match('/^(\d{4})-(\d{2})-(\d{2})$/i', $value)) {
+      $value = date('d/m/Y', strtotime($value));
+    }
+    // Time
+    elseif(preg_match('/^(\d{2}):(\d{2}):(\d{2})$/i', $value)) {
+      $value = date('H\hi', strtotime($value));
+    }
+    return utf8_decode($value);
+  }
+
   public function executeDashboard(sfWebRequest $request) {
     // sorting
     if($request->getParameter('sort') && $this->isValidSortColumn($request->getParameter('sort')))
