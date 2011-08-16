@@ -1,13 +1,3 @@
-function addElementsKeyboard(clone) {
-  $('input:text', clone).each(function(){
-    $(this).keyboard({
-      layout: "arabic-azerty",
-      maxLength: false,
-      autoAccept: true
-    });
-  });
-}
-
 $(document).ready(function(){
   $('#fancybox-wrap .sf_admin_form form').live('submit', function(event){
     event.preventDefault();
@@ -30,7 +20,7 @@ $(document).ready(function(){
       success: function(data) {
         $.fancybox.close();
         $('.sf_admin_form_field_elements_list').prepend('<div class="status success"><p class="closestatus"><a href="#" title="Close">x</a></p><p><img src="/sfAdminTemplatePlugin/images/icon_success.png" /><span>Succès!</span> L\'élément a été correctement créé.</p></div>');
-        $('.sf_admin_form_field_elements_list select').append("<option value='" + data.id + "'>" + data.name + "</option>");
+        $('.sf_admin_form_field_elements_list select:visible').append("<option value='" + data.id + "'>" + data.name + "</option>");
       },
       error: function() {
         $('#fancybox-wrap .sf_admin_form form .loading').hide();

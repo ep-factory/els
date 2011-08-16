@@ -19,6 +19,7 @@ class BasesfGuardAuthActions extends sfActions
 {
   public function executeSignin($request)
   {
+    $this->getResponse()->setStatusCode(401);
     $user = $this->getUser();
     if ($user->isAuthenticated())
     {

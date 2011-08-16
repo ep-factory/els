@@ -55,60 +55,34 @@ table.jqTransformTextarea td#jqTransformTextarea-mm textarea {width: 595px;}
 .right .sf_admin_date .jqTransformInputWrapper input, .right .sf_admin_timestamp .jqTransformInputWrapper input{cursor:pointer !important;}
 
 /* WIDGET MULTIPLE */
-.widget_multiple_empty_add_label {
-  margin-top: 10px;
+.jquery-multiple {
+  padding-top: 10px;
 }
-.widget_multiple_element {
-  border-bottom: thin dashed black;
-  padding-bottom: 100px;
+.jquery-multiple-row {
   position: relative;
+  height: 90px;
 }
-.widget_multiple_element .ajouter, .widget_multiple_element .retirer {
+.jquery-multiple-actions {
   position: absolute;
   right: 0;
-  top: 25%;
+  top: 0;
 }
-.widget_multiple_element .retirer {
-  right: 20px;
-}
-.widget_multiple_element .widget_template {
-  float: none;
+.jquery-multiple-element {
   position: absolute;
-  width: 50%;
 }
-.widget_multiple_element .widget_template input,
-.widget_multiple_element .widget_template select
-{
-  width: 85%;
-}
-.widget_multiple_element .widget_template.changed_id {
-  left: 0;
+.jquery-multiple-element.jquery-multiple-element-element_changed_id {
   top: 0;
-}
-.widget_multiple_element .widget_template.changed_serial {
   left: 0;
-  top: 60px;
 }
-.widget_multiple_element .widget_template.installed_id {
-  left: 50%;
+.jquery-multiple-element.jquery-multiple-element-element_changed_serial {
+  top: 30px;
+  left: 0;
+}
+.jquery-multiple-element.jquery-multiple-element-element_installed_id {
   top: 0;
-}
-.widget_multiple_element .widget_template.installed_serial {
   left: 50%;
-  top: 60px;
 }
-.widget_multiple_element .widget_template.changed_id label,
-.widget_multiple_element .widget_template.installed_id label {
-  text-align: center;
-}
-.widget_multiple_element .widget_template.changed_serial label,
-.widget_multiple_element .widget_template.installed_serial label {
-  float: left;
-  font-style: italic;
-  font-weight: normal !important;
-}
-.widget_multiple_element .widget_template.changed_serial input,
-.widget_multiple_element .widget_template.installed_serial input {
-  float: left;
-  width: auto;
+.jquery-multiple-element.jquery-multiple-element-element_installed_serial {
+  top: 30px;
+  left: 50%;
 }

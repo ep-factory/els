@@ -47,13 +47,25 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['tags'] = new sfWidgetFormInputToken(array('url' => $this->genUrl('@fiche_tags_autocomplete')));
     $this->getWidgetSchema()->setHelp('tags', 'Séparez vos tags par des virgules : toto, tata, titi.');
     $this->validatorSchema['tags'] = new sfValidatorString(array('required' => false));
-    $caseCode = CaseCodeTable::getInstance()->findOneByIsActive(true);
-    if(!$caseCode) {
-      $this->getUser()->setFlash('error', 'Aucun code affaire actif. Veuillez contacter un administrateur.');
-      $this->getContext()->getController()->redirect("@fiche");
+    if($this->isNew()) {
+      $caseCode = CaseCodeTable::getInstance()->findOneByIsActive(true);
+      if(!$caseCode) {
+        $this->getUser()->setFlash('error', 'Aucun code affaire actif. Veuillez contacter un administrateur.');
+        $this->getContext()->getController()->redirect("@fiche");
+      }
+      $this->setDefault('case_code_id', $caseCode->getPrimaryKey());
+      if($categoryId = $this->getRequest()->getParameter('category_id', $this->getObject()->hasParent() ? $this->getObject()->getParent()->getCategoryId() : false)) {
+        $category = CategoryTable::getInstance()->find($categoryId);
+      }
+      else {
+        $category = CategoryTable::getInstance()->findByIsActive(true)->getFirst()->getPrimaryKey();
+      }
+      $value = $caseCode.' '.$category['code'];
     }
-    $this->setDefault('case_code_id', $caseCode->getPrimaryKey());
-    $this->widgetSchema['case_code_id'] = new sfWidgetFormInputPlain(array('value' => $this->isNew() ? $caseCode.' '.$this->getObject()->getCategoryCode() : $this->getObject()->getCaseCode().' '.$this->getObject()->getCategoryCode()));
+    else {
+      $value = $this->getObject()->getCaseCode().' '.$this->getObject()->getCategoryCode();
+    }
+    $this->widgetSchema['case_code_id'] = new sfWidgetFormInputPlain(array('value' => $value));
     $ppc = PpcTable::getInstance()->findOneByIsActive(true);
     if(!$ppc) {
       $this->getUser()->setFlash('error', 'Aucun PPC actif. Veuillez contacter un administrateur.');
@@ -71,8 +83,17 @@ class FicheForm extends BaseFicheForm {
     $this->validatorSchema['start_hour'] = new sfValidatorTimestamp(array('required' => false));
     $this->validatorSchema['end_hour'] = new sfValidatorTimestamp(array('required' => false));
     $this->widgetSchema['elements_list'] = new sfWidgetFormMultiple(array(
-                'add_empty' => !$this->isNew() && $this->getObject()->getElements()->count(),
-                'callback' => $this->getUser()->getAttribute('enable_keyboard', false) ? 'addElementsKeyboard' : null,
+                'createLabel' => "Changer un élément",
+                'onAdd' => !$this->getUser()->getAttribute('enable_keyboard', false) ? null : sprintf(<<<EOF
+$('input:text', object).each(function(){
+  $(this).keyboard({
+    layout: "arabic-azerty",
+    maxLength: false,
+    autoAccept: true
+  });
+});
+EOF
+                ),
                 'widgets' => array(
                     'element_changed_id' => new sfWidgetFormDoctrineChoice(array('label' => 'Changé', 'model' => 'Element', 'table_method' => 'findActive', 'add_empty' => true), array('widgetClass' => 'changed_id')),
                     'element_changed_serial' => $this->getUser()->getAttribute('enable_keyboard', false) ? new sfWidgetFormKeyboard(array('label' => 'N° série'), array('renderer_options' => array('widgetClass' => 'changed_serial'))) : new sfWidgetFormInputText(array('label' => 'N° série'), array('widgetClass' => 'changed_serial')),
@@ -107,14 +128,14 @@ class FicheForm extends BaseFicheForm {
           $options = array('renderer_class' => get_class($this->widgetSchema[$name]), 'renderer_options' => $this->widgetSchema[$name]->getOptions());
           if($this->widgetSchema[$name] instanceof sfWidgetFormInputToken) {
             $options['url'] = $options['renderer_options']['url'];
-            unset($options['renderer_options']['url']);
             $options['multi'] = true;
             $options['renderer_class'] = 'sfWidgetFormInputText';
+            $options['renderer_options'] = array();
           }
           elseif($this->widgetSchema[$name] instanceof sfWidgetFormInputAutocomplete) {
             $options['url'] = $options['renderer_options']['url'];
-            unset($options['renderer_options']['url']);
             $options['renderer_class'] = 'sfWidgetFormInputText';
+            $options['renderer_options'] = array();
           }
           $this->widgetSchema[$name] = new sfWidgetFormKeyboard($options, $this->widgetSchema[$name]->getAttributes());
         }
