@@ -145,7 +145,8 @@ class ficheActions extends autoFicheActions {
   protected function buildQuery()
   {
     $query = parent::buildQuery();
-    if($this->getUser()->hasGroup('technicien'))
+    $action = $this->getRequest()->getParameter('action');
+    if($this->getUser()->hasGroup('technicien') && !in_array($action, array('filter', 'dashboard')))
     {
       $query->andWhere($query->getRootAlias().".is_resolved = 0");
     }

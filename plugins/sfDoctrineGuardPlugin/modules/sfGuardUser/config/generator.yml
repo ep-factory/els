@@ -39,6 +39,8 @@ generator:
           label: Super admin
         groups_list:
           label: Groupes
+        Groups:
+          label: Groupes
         permissions_list:
           label: Permissions
         password_again:
@@ -50,7 +52,7 @@ generator:
 
       show:
         title:   %%first_name%% %%last_name%% (%%username%%)
-        display: [username, last_name, first_name, is_active, last_login]
+        display: [username, last_name, first_name, is_active, last_login, Groups, Permissions]
 
       filter:
         display: [search]

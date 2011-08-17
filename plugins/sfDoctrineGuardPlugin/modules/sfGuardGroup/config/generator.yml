@@ -18,14 +18,22 @@ generator:
           label: Nom
         description:
           label: Description
+        Users:
+          label: Utilisateurs
           
       list:
         title: Groupes d'utilisateurs
         display: [name, description]
+        batch_actions: []
+        actions: []
+        object_actions:
+          _show: ~
 
       show:
         title:   %%name%%
-        display: [name, description]
+        display: [name, description, Permissions, Users]
+        actions:
+          _list: ~
 
       filter:
         display: [search]

@@ -1,6 +1,18 @@
 <?php slot('menu', 'fiche') ?>
 <?php use_javascript('/sfEPFactoryFormPlugin/js/tools.js') ?>
 <style type="text/css">
+  .sf_admin_show_field_Ppc strong,
+  .sf_admin_show_field_ppi_number strong,
+  .sf_admin_show_field_acr_number strong,
+  .sf_admin_show_field_mo_number strong{
+    width: 230px;
+  }
+  .sf_admin_show_field_Ppc span,
+  .sf_admin_show_field_ppi_number span,
+  .sf_admin_show_field_acr_number span,
+  .sf_admin_show_field_mo_number span{
+    width: 380px;
+  }
   .sf_admin_form_field_unsolved_name, .sf_admin_form_field_unsolved_date,
   .sf_admin_form_field_test_mechanic, .sf_admin_form_field_test_operator
   {
@@ -10,6 +22,9 @@
   }
   .sf_admin_form_field_unsolved_date, .sf_admin_form_field_test_operator {
     float: right;
+  }
+  .sf_admin_form_field_unsolved_date label {
+    margin-bottom: 12px;
   }
 </style>
 <script type="text/javascript">

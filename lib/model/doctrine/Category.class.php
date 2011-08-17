@@ -33,7 +33,7 @@ class Category extends BaseCategory {
                       ->innerJoin('fiche.CaseCode case_code')
                       ->innerJoin('fiche.Category category')
                       ->andWhere('fiche.deleted_at IS NULL')
-                      ->andWhere('fiche.is_finished = ?', !is_null($finished) ? true : false);
+                      ->andWhere('fiche.is_finished = ?', !is_null($finished) ? $finished : false);
       if(!is_null($resolved)) {
         $query->andWhere('fiche.is_resolved = ?', $resolved);
       }
@@ -55,7 +55,7 @@ class Category extends BaseCategory {
                       ->innerJoin('fiche.CaseCode case_code')
                       ->innerJoin('fiche.Category category')
                       ->andWhere('fiche.deleted_at IS NULL')
-                      ->andWhere('fiche.is_finished = ?', !is_null($finished) ? true : false)
+                      ->andWhere('fiche.is_finished = ?', !is_null($finished) ? $finished : false)
                       ->limit($limit)
                       ->orderBy('fiche.fiche_date DESC');
       if(!is_null($resolved)) {

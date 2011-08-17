@@ -35,7 +35,9 @@ background: url("../images/logoELS_header2.gif") no-repeat scroll left top;}
 
 /* ELEMENTS DIVERS */
 select{padding:1px 2px;}
-#container .contentbox label {display: inline; width: auto !important;}
+#container .contentbox label {display: block; width: auto !important;}
+#container .sml .contentbox label {display: inline;}
+#container .sml .contentbox .radio_list {clear: none;}
 body{ background: url("../images/bg_login_page.png") repeat-x scroll center top #E5E5E5;}
 .contentbox div.sf_admin_form_row {margin:0 0 10px 0;}
 .sml .sf_admin_form_row {width:636px;}
@@ -60,12 +62,14 @@ table.jqTransformTextarea td#jqTransformTextarea-mm textarea {width: 595px;}
 }
 .jquery-multiple-row {
   position: relative;
-  height: 90px;
+  height: 130px;
+  margin-top: 10px;
+  border-bottom: dashed thin #ccc;
 }
 .jquery-multiple-actions {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 5px;
 }
 .jquery-multiple-element {
   position: absolute;
@@ -75,7 +79,7 @@ table.jqTransformTextarea td#jqTransformTextarea-mm textarea {width: 595px;}
   left: 0;
 }
 .jquery-multiple-element.jquery-multiple-element-element_changed_serial {
-  top: 30px;
+  top: 60px;
   left: 0;
 }
 .jquery-multiple-element.jquery-multiple-element-element_installed_id {
@@ -83,6 +87,6 @@ table.jqTransformTextarea td#jqTransformTextarea-mm textarea {width: 595px;}
   left: 50%;
 }
 .jquery-multiple-element.jquery-multiple-element-element_installed_serial {
-  top: 30px;
+  top: 60px;
   left: 50%;
 }

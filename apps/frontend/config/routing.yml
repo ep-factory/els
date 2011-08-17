@@ -108,6 +108,8 @@ appareil:
     prefix_path:          /appareil
     column:               id
     with_wildcard_routes: true
+    object_actions:
+      close:              [get]
 
 case_code:
   class: sfDoctrineRouteCollection

@@ -49,6 +49,3 @@ all:
       sf_guard_group:
         label: Groupes
         credentials: [admin]
-      sf_guard_permission:
-        label: Permissions
-        credentials: [admin]

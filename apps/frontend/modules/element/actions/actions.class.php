@@ -28,6 +28,6 @@ class elementActions extends autoElementActions
   public function executeClose(sfWebRequest $request) {
     sfConfig::set('sf_web_debug', false);
     $element = $this->getRoute()->getObject();
-    return $this->renderText(json_encode(array('id' => $element->getPrimaryKey(), 'name' => (string)$element)));
+    return $this->renderText(json_encode(array('selector' => '.sf_admin_form_field_elements_list', 'message' => "L'élément a été correctement créé.", 'id' => $element->getPrimaryKey(), 'name' => (string)$element)));
   }
 }

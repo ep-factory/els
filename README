@@ -2,3 +2,13 @@ Projet réalisé en symfony 1.4
 Certains plugins sont des sous-modules de github :
 - sfAdminTemplatePlugin : https://vincentchalamon@github.com/vincentchalamon/sfAdminTemplatePlugin.git
 - sfEPFactoryFormPlugin : https://vincentchalamon@github.com/vincentchalamon/sfEPFactoryFormPlugin.git
+
+TODO
+X bouton "Ajouter appareil" sur formulaire Fiche
+X bug save_and_add au redirect
+X traduire les filtres date
+X enlever les actions sur sfGuardGroup & sfGuardPermission
+- revoir credentials en sfGuardPermission (cf. mail loic)
+X rajouter sfGuardUser (show) : groups & permissions
+X rajouter sfGuardGroup (show) : permissions & users
+X masquer sfGuardPermission

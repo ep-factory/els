@@ -38,6 +38,8 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['poste_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['appareil_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['appareil_id']->setOption('add_empty', 'Autre');
+    $this->widgetSchema['appareil_id']->setAttribute('class', 'noTransform');
+    $this->getWidgetSchema()->setHelp('appareil_id', sprintf("<a href='%s' class='fancybox'>Créer un nouvel appareil</a>", $this->genUrl('@appareil_new')));
     $demandeurQuery = DemandeurTable::getInstance()->createQuery()->where('is_active = 1');
     $this->widgetSchema['demandeur_id'] = new sfWidgetFormInputDoctrineAutocomplete(array('url' => $this->genUrl('@fiche_demandeur_autocomplete'), 'model' => 'Demandeur', 'query' => $demandeurQuery));
     $this->validatorSchema['demandeur_id'] = new sfValidatorDoctrineAutocomplete(array('model' => 'Demandeur', 'column' => 'name', 'autosave' => true, 'query' => $demandeurQuery));
