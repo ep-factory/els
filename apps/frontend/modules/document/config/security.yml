@@ -1,5 +1,5 @@
 default:
-  credentials: [[create_document, document]]
+  credentials: [[create-document, document]]
 
 uploadify:
   is_secure: false

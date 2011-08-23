@@ -12,7 +12,9 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
+      actions:
+        _new:
+          credentials: [create-document]
       fields:
         search:
           label: Rechercher

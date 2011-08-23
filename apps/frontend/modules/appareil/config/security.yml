@@ -1,2 +1,2 @@
 default:
-  credentials: [fixtures]
+  credentials: [appareil]

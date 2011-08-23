@@ -22,8 +22,11 @@ class Fiche extends BaseFiche {
   }
 
   public function getTimeSpent() {
-    $diff = $this->getEndHour() - $this->getStartHour();
-    return $this->getEndHour() && $this->getStartHour() && $diff ? date('H:i:s', strtotime($diff)) : null;
+    if(!strtotime($this->getEndHour()) || !strtotime($this->getStartHour())) {
+      return;
+    }
+    $diff = strtotime($this->getEndHour()) - strtotime($this->getStartHour());
+    return myUser::convert_seconds_to_time($diff ? $diff*1000 : 0);
   }
 
   /**

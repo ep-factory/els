@@ -28,21 +28,18 @@
       <h2><?php echo $category ?></h2>
     </div>
     <div class="contentbox">
-      <?php $count = $category->getLimitedFiches($configuration->getPagerMaxPerPage()/2, $sf_user->hasGroup('technicien') ? false : null, $sf_user->hasGroup('coordinateur') ? false : null)->count() ?>
+      <?php $fiches = $category->getLimitedFiches($sf_user->getRawValue(), $configuration->getPagerMaxPerPage()/2) ?>
+      <?php $count = $category->getLimitedFiches($sf_user->getRawValue(), null, "count") ?>
       <?php if($sf_user->hasGroup('consultant')): ?>
         <p><?php echo __('No result', array(), 'sf_admin') ?> Utilisez la <?php echo link_to('recherche', '@search') ?> pour trouver des fiches.</p>
         <ul class="sf_admin_list_actions">
-          <?php if($sf_user->hasCredential('create')): ?>
-            <?php echo $helper->linkToNew(array('credential' => array('create'), 'category_id' => $category['id'], 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
-          <?php endif ?>
+          <?php echo $helper->linkToNew(array('credential' => array('create'), 'category_id' => $category['id'], 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
         </ul>
         <div style="clear: both"></div>
-      <?php elseif(!$count): ?>
+      <?php elseif(!$fiches->count()): ?>
         <p><?php echo __('No result', array(), 'sf_admin') ?></p>
         <ul class="sf_admin_list_actions">
-          <?php if($sf_user->hasCredential('create')): ?>
-            <?php echo $helper->linkToNew(array('credential' => array('create'), 'category_id' => $category['id'], 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
-          <?php endif ?>
+          <?php echo $helper->linkToNew(array('credential' => array('create'), 'category_id' => $category['id'], 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
         </ul>
         <div style="clear: both"></div>
       <?php else: ?>
@@ -56,9 +53,9 @@
             <tr>
               <td colspan="5">
                 <span>
-                  <?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $count), $count, 'sf_admin') ?>
-                  <?php if($category->getCountFiches($sf_user->hasGroup('technicien') ? false : null, $sf_user->hasGroup('coordinateur') ? false : null) > $count): ?>
-                    <?php $nb = $category->getCountFiches($sf_user->hasGroup('technicien') ? false : null, $sf_user->hasGroup('coordinateur') ? false : null)-$count ?>
+                  <?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $fiches->count()), $fiches->count(), 'sf_admin') ?>
+                  <?php if($count > $fiches->count()): ?>
+                    <?php $nb = $count-$fiches->count() ?>
                     <div style="display: none;" id="filter<?php echo $category->getPrimaryKey() ?>">
                       <?php $filters->bind($configuration->getCategoryFilters($filters, $category->getRawValue())->getRawValue()) ?>
                       <?php include_partial('fiche/filters', array('form' => $filters, 'configuration' => $configuration, $sf_user->hasGroup('technicien') ? false : null)) ?>
@@ -68,9 +65,7 @@
                 </span>
                 <span>
                   <ul class="sf_admin_list_actions">
-                    <?php if($sf_user->hasCredential('create')): ?>
-                      <?php echo $helper->linkToNew(array('credential' => array('create'), 'category_id' => $category['id'], 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
-                    <?php endif ?>
+                    <?php echo $helper->linkToNew(array('credential' => array('create'), 'category_id' => $category['id'], 'params' => array(), 'class_suffix' => 'new', 'label' => 'New')) ?>
                   </ul>
                   <div style="clear: both"></div>
                 </span>
@@ -78,7 +73,7 @@
             </tr>
           </tfoot>
           <tbody>
-            <?php foreach($category->getLimitedFiches($configuration->getPagerMaxPerPage()/2, $sf_user->hasGroup('technicien') ? false : null, $sf_user->hasGroup('coordinateur') ? false : null) as $i => $fiche): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
+            <?php foreach($fiches as $i => $fiche): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
               <tr class="sf_admin_row <?php echo $odd ?>">
                 <?php include_partial('fiche/list_td_tabular', array('fiche' => $fiche)) ?>
               </tr>

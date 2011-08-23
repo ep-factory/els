@@ -8,15 +8,19 @@ all:
         label: Fiches
       search:
         label: Rechercher
+        credentials: [search]
       export:
         label: Exporter
         credentials: [export]
       document:
         label: Documents
-        credentials: [[create_document, document]]
+        credentials: [[create-document, document]]
       appareil:
         label: Appareils
-        credentials: [fixtures]
+        credentials: [appareil]
+      element:
+        label: Eléments
+        credentials: [element]
       atelier:
         label: Ateliers
         credentials: [fixtures]
@@ -38,9 +42,6 @@ all:
       demandeur:
         label: Demandeurs
         credentials: [fixtures]
-      element:
-        label: Eléments
-        credentials: [[fixtures, create, edit]]
       poste:
         label: Postes
         credentials: [fixtures]

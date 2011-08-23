@@ -1,11 +1,2 @@
 default:
-  credentials: [[fixtures, create, edit]]
-
-new:
-  credentials: [create, edit]
-
-create:
-  credentials: [create, edit]
-
-close:
-  credentials: [create, edit]
+  credentials: [element]

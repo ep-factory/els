@@ -4,16 +4,16 @@ class myUser extends sfGuardSecurityUser
 {
   public function canEdit(Fiche $fiche)
   {
-    if($this->hasGroup('technicien')) {
-      return (is_null($fiche->getSfGuardUserId()) || $fiche->getSfGuardUserId() == $this->getGuardUser()->getPrimaryKey()) && !$fiche->getIsResolved() && !$fiche->getIsFinished();
+    // Si la fiche est close, seul Dieu peut l'éditer
+    if($fiche->getIsFinished()) {
+      return $this->isSuperAdmin();
     }
-    elseif($this->hasGroup('coordinateur')) {
-      return !$fiche->getIsFinished();
+    // Si la fiche n'est pas fermée, seul son propriétaire peut l'éditer
+    elseif(!$fiche->getIsResolved()) {
+      return $this->hasCredential('edit-own') && $this->getGuardUser()->getPrimaryKey() == $fiche->getSfGuardUserId();
     }
-    elseif($this->hasGroup('consultant')) {
-      return false;
-    }
-    return true;
+    // Si la fiche est fermée, seul un coordinateur pour l'éditer
+    return $this->hasCredential('edit-resolved');
   }
 
   /**

@@ -15,24 +15,16 @@ generator:
       actions:
         _new:
           credentials: [create]
-        _edit:
-          credentials: [edit]
-        _unresolve:
-          label: Rouvrir fiche
-          action: unresolve
-          credentials: [resolve]
-        _resolve:
-          label: Fermer fiche
-          action: resolve
-          credentials: [resolve]
-        _close:
-          label: Clore
-          action: close
-          credentials: [close]
         _add:
-          label: 'Ajouter fille'
+          label: Ajouter fille
           action: add
           credentials: [create]
+        _unresolve:
+          label: Rouvrir fiche
+        _resolve:
+          label: Fermer fiche
+        _close:
+          label: Clore
         _show:
           label: Consulter
           action: show
@@ -158,6 +150,9 @@ generator:
           _edit: ~
           _show: ~
           _add: ~
+          _resolve: ~
+          _unresolve: ~
+          _close: ~
         actions:
           _new: ~
       show:

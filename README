@@ -4,11 +4,5 @@ Certains plugins sont des sous-modules de github :
 - sfEPFactoryFormPlugin : https://vincentchalamon@github.com/vincentchalamon/sfEPFactoryFormPlugin.git
 
 TODO
-X bouton "Ajouter appareil" sur formulaire Fiche
-X bug save_and_add au redirect
-X traduire les filtres date
-X enlever les actions sur sfGuardGroup & sfGuardPermission
-- revoir credentials en sfGuardPermission (cf. mail loic)
-X rajouter sfGuardUser (show) : groups & permissions
-X rajouter sfGuardGroup (show) : permissions & users
-X masquer sfGuardPermission
+- vérifier chaque action (crud) de fiche par permission
+- créer nouveau module pour la recherche (inspiré du module fiche)

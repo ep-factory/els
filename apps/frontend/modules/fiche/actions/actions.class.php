@@ -104,6 +104,24 @@ class ficheActions extends autoFicheActions {
     return utf8_decode($value);
   }
 
+  public function executeEnableKeyboard(sfWebRequest $request) {
+    $this->forward404Unless($request->isXmlHttpRequest() && $request->hasParameter('enable'));
+    $this->getUser()->setAttribute('enable_keyboard', $request->getParameter('enable', false) ? true : false);
+    return sfView::NONE;
+  }
+
+  public function executeDemandeur_autocomplete(sfWebRequest $request) {
+    $this->forward404Unless($request->isXmlHttpRequest());
+    $objects = DemandeurTable::getInstance()->createQuery()->select("id, name")->where("name LIKE ?", "%".$request->getParameter("q")."%")->andWhere('is_active = 1')->limit(10)->fetchArray();
+    return $this->renderText(json_encode($objects));
+  }
+
+  public function executeTags_autocomplete(sfWebRequest $request) {
+    $this->forward404Unless($request->isXmlHttpRequest());
+    $tags = TagTable::getInstance()->createQuery("tag")->select("tag.name AS id, tag.name AS name")->where("tag.name LIKE ?", "%".$request->getParameter("q")."%")->limit(10)->fetchArray();
+    return $this->renderText(json_encode($tags));
+  }
+
   public function executeDashboard(sfWebRequest $request) {
     // sorting
     if($request->getParameter('sort') && $this->isValidSortColumn($request->getParameter('sort')))
@@ -145,54 +163,59 @@ class ficheActions extends autoFicheActions {
   protected function buildQuery()
   {
     $query = parent::buildQuery();
-    $action = $this->getRequest()->getParameter('action');
-    if($this->getUser()->hasGroup('technicien') && !in_array($action, array('filter', 'dashboard')))
-    {
-      $query->andWhere($query->getRootAlias().".is_resolved = 0");
+    if($this->getRequest()->getParameter('action') != 'filter') {
+      if($this->getUser()->hasCredential('view')) {
+        $query->andWhere($query->getRootAlias().".is_resolved = 1");
+        $query->andWhere($query->getRootAlias().".is_finished = 0");
+      }
+      elseif($this->getUser()->hasPermission('view-resolved')) {
+        $query->andWhere($query->getRootAlias().".is_resolved = 1");
+        $query->andWhere($query->getRootAlias().".is_finished = 0");
+      }
     }
     return $query;
   }
 
   public function executeEdit(sfWebRequest $request) {
     parent::executeEdit($request);
-    $this->forwardIf(!$this->getUser()->canEdit($this->fiche), sfConfig::get('sf_secure_module'), sfConfig::get('sf_secure_action'));
-  }
-
-  public function executeEnableKeyboard(sfWebRequest $request) {
-    $this->forward404Unless($request->isXmlHttpRequest() && $request->hasParameter('enable'));
-    $this->getUser()->setAttribute('enable_keyboard', $request->getParameter('enable', false) ? true : false);
-    return sfView::NONE;
-  }
-
-  public function executeDemandeur_autocomplete(sfWebRequest $request) {
-    $this->forward404Unless($request->isXmlHttpRequest());
-    $objects = DemandeurTable::getInstance()->createQuery()->select("id, name")->where("name LIKE ?", "%".$request->getParameter("q")."%")->andWhere('is_active = 1')->limit(10)->fetchArray();
-    return $this->renderText(json_encode($objects));
-  }
-
-  public function executeTags_autocomplete(sfWebRequest $request) {
-    $this->forward404Unless($request->isXmlHttpRequest());
-    $tags = TagTable::getInstance()->createQuery("tag")->select("tag.name AS id, tag.name AS name")->where("tag.name LIKE ?", "%".$request->getParameter("q")."%")->limit(10)->fetchArray();
-    return $this->renderText(json_encode($tags));
+    $this->forwardIf(!$this->getUser()->canEdit($this->fiche), $this->getModuleName(), "index");
   }
 
   public function executeUnresolve(sfWebRequest $request) {
+    $this->forwardIf(!$this->getUser()->isSuperAdmin() && $this->getUser()->hasCredential('reopen-own') && $this->getRoute()->getObject()->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey(), $this->getModuleName(), "index");
     $this->getRoute()->getObject()->unresolve();
     $this->getUser()->setFlash('notice', "L'intervention a été correctement rouverte.");
-    $this->redirect("@fiche_show?id=".$this->getRoute()->getObject()->getPrimaryKey());
+    $this->redirect($request->getReferer());
   }
 
   public function executeResolve(sfWebRequest $request) {
+    $this->forwardIf(!$this->getUser()->isSuperAdmin() && $this->getUser()->hasCredential('resolve-own') && $this->getRoute()->getObject()->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey(), $this->getModuleName(), "index");
     $this->getRoute()->getObject()->resolve();
     $this->getUser()->setFlash('notice', "L'intervention a été correctement fermée.");
-    $this->redirect("@fiche_show?id=".$this->getRoute()->getObject()->getPrimaryKey());
+    $this->redirect($request->getReferer());
   }
 
   public function executeClose(sfWebRequest $request) {
     $this->getRoute()->getObject()->close();
     $this->getUser()->setFlash('notice', "L'intervention a été correctement clos.");
-    $this->redirect("@fiche_show?id=".$this->getRoute()->getObject()->getPrimaryKey());
+    $this->redirect($request->getReferer());
   }
+
+  /*public function executeShow(sfWebRequest $request) {
+    parent::executeShow($request);
+    // Permission pour voir une fiche close
+    if($this->fiche->getIsFinished()) {
+      $this->forwardIf($this->getUser()->hasCredential('show-resolved'), $this->getModuleName(), "index");
+    }
+    // Permission pour voir une fiche fermée
+    elseif($this->fiche->getIsResolved()) {
+      $this->forwardIf(!$this->getUser()->hasCredential('view-resolved'), $this->getModuleName(), "index");
+    }
+    // Permission pour voir une fiche non fermée
+    else {
+      $this->forwardIf(!$this->getUser()->hasCredential('view'), $this->getModuleName(), "index");
+    }
+  }*/
 
   public function executeCreate(sfWebRequest $request)
   {

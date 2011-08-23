@@ -8,35 +8,69 @@ sfGuardUser:
     is_super_admin: true
 
 sfGuardPermission:
-  create:
-    name:           create
-    description:    Créer une intervention
-  edit:
-    name:           edit
-    description:    Editer une intervention
-  resolve:
-    name:           resolve
-    description:    Résoudre une intervention
-  close:
-    name:           close
-    description:    Clore une intervention
   fixtures:
     name:           fixtures
     description:    Gérer les données additionnelles
+  search:
+    name:           search
+    description:    Rechercher
+  element:
+    name:           element
+    description:    Créer un élémént
+  appareil:
+    name:           appareil
+    description:    Créer un appareil
+  create:
+    name:           create
+    description:    Créer une fiche
+  edit-own:
+    name:           edit-own
+    description:    Editer une fiche propriétaire
+  edit-resolved:
+    name:           edit-resolved
+    description:    Editer une fiche fermée
+  resolve:
+    name:           resolve
+    description:    Fermer une fiche
+  resolve-own:
+    name:           resolve-own
+    description:    Fermer une fiche propriétaire
+  reopen:
+    name:           reopen
+    description:    Rouvrir une fiche fermée
+  reopen-own:
+    name:           reopen-own
+    description:    Rouvrir une fiche fermée propriétaire
+  close:
+    name:           close
+    description:    Clore une fiche
+  view:
+    name:           view
+    description:    Consulter une fiche non fermée
+  view-resolved:
+    name:           view-resolved
+    description:    Voir une fiche fermée
+  show-resolved:
+    name:           show-resolved
+    description:    Consulter une fiche fermée
+  show-closed:
+    name:           show-closed
+    description:    Consulter une fiche close
   export:
     name:           export
-    description:    Exporter les interventions
-  create_document:
-    name:           create_document
-    description:    Dépôt de documents
+    description:    Exporter
+  create-document:
+    name:           create-document
+    description:    Dépôt de document
   document:
     name:           document
-    description:    Consultation de documents
+    description:    Consultation de document
 
 sfGuardGroup:
   consultant:
     name:           consultant
     description:    Groupe des consultants
+    Permissions:    [search, show-resolved, show-closed]
     Users:
       consultant:
         first_name: Consultant
@@ -47,7 +81,7 @@ sfGuardGroup:
   technicien:
     name:           technicien
     description:    Groupe des techniciens
-    Permissions:    [create, edit, resolve]
+    Permissions:    [search, element, create, edit-own, resolve-own, reopen-own, view, show-resolved, show-closed]
     Users:
       technicien:
         first_name: Technicien
@@ -58,7 +92,7 @@ sfGuardGroup:
   coordinateur:
     name:           coordinateur
     description:    Groupe des coordinateurs
-    Permissions:    [create, edit, resolve, close, fixtures, export, create_document, document]
+    Permissions:    [search, element, appareil, fixtures, create, edit-resolved, resolve, reopen, view-resolved, show-resolved, show-closed]
     Users:
       coordinateur:
         first_name: Coordinateur

@@ -1,4 +1,5 @@
 <?php slot('menu', 'fiche') ?>
+<?php use_helper('JavascriptBase') ?>
 <?php use_javascript('/sfEPFactoryFormPlugin/js/tools.js') ?>
 <style type="text/css">
   .sf_admin_show_field_Ppc strong,

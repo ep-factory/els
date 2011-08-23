@@ -22,48 +22,31 @@ class Category extends BaseCategory {
   }
 
   /**
-   * Count current category fiches
-   * 
-   * @return integer Number
-   */
-  public function getCountFiches($resolved = null, $finished = null) {
-    if(!isset($this->_values['count_fiches'])) {
-      $query = FicheTable::getInstance()->createQuery('fiche')
-                      ->where('fiche.category_id = ?', $this->getPrimaryKey())
-                      ->innerJoin('fiche.CaseCode case_code')
-                      ->innerJoin('fiche.Category category')
-                      ->andWhere('fiche.deleted_at IS NULL')
-                      ->andWhere('fiche.is_finished = ?', !is_null($finished) ? $finished : false);
-      if(!is_null($resolved)) {
-        $query->andWhere('fiche.is_resolved = ?', $resolved);
-      }
-      $this->_values['count_fiches'] = $query->count();
-    }
-    return $this->_values['count_fiches'];
-  }
-
-  /**
    * Retrieve last fiches for current category
-   * 
+   *
+   * @param myUser $user Current user
    * @param integer $limit Query limit
    * @return Doctrine_Collection Fiches
    */
-  public function getLimitedFiches($limit = 10, $resolved = null, $finished = null) {
-    if(!isset($this->_values['limited_fiches'])) {
-      $query = FicheTable::getInstance()->createQuery('fiche')
-                      ->where('fiche.category_id = ?', $this->getPrimaryKey())
-                      ->innerJoin('fiche.CaseCode case_code')
-                      ->innerJoin('fiche.Category category')
-                      ->andWhere('fiche.deleted_at IS NULL')
-                      ->andWhere('fiche.is_finished = ?', !is_null($finished) ? $finished : false)
-                      ->limit($limit)
-                      ->orderBy('fiche.fiche_date DESC');
-      if(!is_null($resolved)) {
-        $query->andWhere('fiche.is_resolved = ?', $resolved);
-      }
-      $this->_values['limited_fiches'] = $query->execute();
+  public function getLimitedFiches(myUser $user, $limit = 10, $action = "execute") {
+    $query = FicheTable::getInstance()->createQuery('fiche')
+                    ->where('fiche.category_id = ?', $this->getPrimaryKey())
+                    ->innerJoin('fiche.CaseCode case_code')
+                    ->innerJoin('fiche.Category category')
+                    ->andWhere('fiche.deleted_at IS NULL')
+                    ->orderBy('fiche.fiche_date DESC');
+    if($limit) {
+      $query->limit($limit);
     }
-    return $this->_values['limited_fiches'];
+    if($user->hasPermission('view')) {
+      $query->andWhere('fiche.is_resolved = 0');
+      $query->andWhere('fiche.is_finished = 0');
+    }
+    elseif($user->hasPermission('view-resolved')) {
+      $query->andWhere('fiche.is_resolved = 1');
+      $query->andWhere('fiche.is_finished = 0');
+    }
+    return $query->{$action}();
   }
 
 }

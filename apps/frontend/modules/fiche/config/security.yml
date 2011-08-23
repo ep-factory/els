@@ -1,29 +1,35 @@
 enableKeyboard:
   is_secure: false
 
+tags_autocomplete:
+  is_secure: false
+
+demandeur_autocomplete:
+  is_secure: false
+
+dashboard:
+  credentials: [search]
+
 new:
   credentials: [create]
 
 create:
   credentials: [create]
 
-edit:
-  credentials: [edit]
-
-resolve:
-  credentials: [resolve]
-
-unresolve:
-  credentials: [resolve]
+export:
+  credentials: [export]
 
 close:
   credentials: [close]
 
-export:
-  credentials: [export]
+show:
+  credentials: [[view, view-resolved, show-resolved, show-closed]]
 
-tags_autocomplete:
-  is_secure: false
+edit:
+  credentials: [[edit-own, edit-resolved]]
 
-demandeur_autocomplete:
-  is_secure: false
+resolve:
+  credentials: [[resolve, resolve-own]]
+
+unresolve:
+  credentials: [[reopen, reopen-own]]
