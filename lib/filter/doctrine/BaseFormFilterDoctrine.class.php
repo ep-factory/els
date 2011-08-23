@@ -40,11 +40,11 @@ abstract class BaseFormFilterDoctrine extends sfFormFilterDoctrine {
     }
     // Tags
     if($this->getTable()->hasTemplate('Taggable')) {
-      $objects = TagTable::getObjectTaggedWith($values);
+      $objects = TagTable::getObjectTaggedWithQuery($this->getTable()->getClassnameToReturn(), $values, $this->getTable()->createQuery()->where('deleted_at IS NULL'))->execute();
       if($objects) {
         $ids = array();
         foreach($objects as $object) {
-          if(!in_array($object->getPrimaryKey(), $ids)) {
+          if(!$object->getDeletedAt() && !in_array($object->getPrimaryKey(), $ids)) {
             $ids[] = $object->getPrimaryKey();
           }
         }

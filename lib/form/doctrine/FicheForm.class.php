@@ -208,7 +208,7 @@ EOF
   public function getJavaScripts() {
     return array_merge(parent::getJavaScripts(), array(
         '/sfEPFactoryFormPlugin/js/jquery.min.js',
-        'fancybox/jquery.fancybox-1.3.4.pack.js',
+        '/sfAdminTemplatePlugin/js/jquery.fancybox-1.3.4.pack.js',
         'ficheForm.js'
     ));
   }
@@ -219,7 +219,7 @@ EOF
    * @return array Stylesheet files list
    */
   public function getStylesheets() {
-    return array_merge(parent::getStylesheets(), array('/js/fancybox/jquery.fancybox-1.3.4.css' => 'screen'));
+    return array_merge(parent::getStylesheets(), array('/sfAdminTemplatePlugin/css/jquery.fancybox-1.3.4.css' => 'screen'));
   }
 
   /**

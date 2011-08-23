@@ -433,6 +433,10 @@ class PluginTagTable extends Doctrine_Table
         }
         
         $tag_ids = $q->execute(array(), Doctrine::HYDRATE_ARRAY);
+
+        if(!$tag_ids) {
+          return array();
+        }
         
         $q = Doctrine_Query::create()
                            ->select('tg.taggable_id')

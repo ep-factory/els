@@ -18,14 +18,14 @@ class ficheGeneratorHelper extends BaseFicheGeneratorHelper {
   }
 
   public function linkToEdit($object, $params) {
-    return $this->getUser()->canEdit($object->getRawValue()) ? parent::linkToEdit($object, $params) : null;
+    return !$object->isNew() && $this->getUser()->canEdit($object->getRawValue()) ? parent::linkToEdit($object, $params) : null;
   }
 
   public function linkToResolve($object, $params) {
     // La fiche est déjà fermée
     // L'utilisateur n'a pas la permission de fermer une fiche
     // L'utilisateur a la permission de fermer sa fiche mais il n'en est pas le propriétaire
-    if($object->getIsResolved() || !$this->getUser()->hasCredential(array('resolve', 'resolve-own'), false) || ($this->getUser()->hasCredential('resolve-own') && $object->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey())) {
+    if($object->isNew() || $object->getIsResolved() || !$this->getUser()->hasCredential(array('resolve', 'resolve-own'), false) || ($this->getUser()->hasCredential('resolve-own') && $object->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey())) {
       return null;
     }
     return '<li class="sf_admin_action_resolve">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('resolve'), $object, array('title' => __($params['label'], array(), 'sf_admin'))).'</li>';
@@ -36,7 +36,7 @@ class ficheGeneratorHelper extends BaseFicheGeneratorHelper {
     // L'utilisateur n'a pas la permission de rouvrir une fiche
     // L'utilisateur a la permission de rouvrir sa fiche mais il n'en est pas le propriétaire
     // La fiche est close et l'utilisateur n'est pas Dieu
-    if(!$object->getIsResolved() || !$this->getUser()->hasCredential(array('reopen', 'reopen-own'), false) || ($this->getUser()->hasCredential('reopen-own') && $object->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey()) || ($object->getIsFinished() && !$this->getUser()->isSuperAdmin())) {
+    if($object->isNew() || !$object->getIsResolved() || !$this->getUser()->hasCredential(array('reopen', 'reopen-own'), false) || ($this->getUser()->hasCredential('reopen-own') && $object->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey()) || ($object->getIsFinished() && !$this->getUser()->isSuperAdmin())) {
       return null;
     }
     return '<li class="sf_admin_action_unresolve">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('unresolve'), $object, array('title' => __($params['label'], array(), 'sf_admin'))).'</li>';
@@ -45,7 +45,7 @@ class ficheGeneratorHelper extends BaseFicheGeneratorHelper {
   public function linkToClose($object, $params) {
     // La fiche est déjà close
     // L'utilisateur n'a pas la permission de clore une fiche
-    if($object->getIsFinished() || !$this->getUser()->hasCredential('close')) {
+    if($object->isNew() || $object->getIsFinished() || !$this->getUser()->hasCredential('close')) {
       return null;
     }
     // La fiche n'a aucun appareil et l'utilisateur n'est pas Dieu
@@ -56,17 +56,17 @@ class ficheGeneratorHelper extends BaseFicheGeneratorHelper {
   }
 
   public function linkToShow($object, $params) {
+    if($object->isNew()) {
+      return null;
+    }
     $action = sfContext::getInstance()->getRequest()->getParameter('action');
     // La navigation n'est pas dans la recherche
     // La fiche est close
     // L'utilisateur n'est pas Dieu
-    if($action != 'dashboard' && ($object->getIsFinished() || !$this->getUser()->isSuperAdmin())) {
-      return null;
-    }
     // La navigation est dans la recherche
     // La fiche est close et l'utilisateur n'a pas la permission de la voir
     // La fiche est fermée et l'utilisateur n'a pas la permission de la voir
-    elseif($action == 'dashboard' && ($object->getIsFinished() && !$this->getUser()->hasCredential('show-closed')) && ($object->getIsResolved() && !$this->getUser()->hasCredential('show-resolved'))) {
+    if($object->isNew() || ($action != 'dashboard' && ($object->getIsFinished() || !$this->getUser()->isSuperAdmin())) || ($action == 'dashboard' && ($object->getIsFinished() && !$this->getUser()->hasCredential('show-closed')) && ($object->getIsResolved() && !$this->getUser()->hasCredential('show-resolved')))) {
       return null;
     }
     return '<li class="sf_admin_action_show">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('show'), $object, array('title' => __($params['label'], array(), 'sf_admin'))).'</li>';
