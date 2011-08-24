@@ -79,6 +79,7 @@ class Fiche extends BaseFiche {
     }
     $this->getTable()->createQuery()
             ->set('is_finished', true)
+            ->set('finished_date', '"'.date('Y-m-d H:i:s').'"')
             ->set('finished_author_id', sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
             ->whereIn('id', $this->getHierarchyIds())
             ->update()->execute();

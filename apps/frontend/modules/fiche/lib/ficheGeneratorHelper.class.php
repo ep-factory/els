@@ -60,13 +60,26 @@ class ficheGeneratorHelper extends BaseFicheGeneratorHelper {
       return null;
     }
     $action = sfContext::getInstance()->getRequest()->getParameter('action');
-    // La navigation n'est pas dans la recherche
+    // Nouvelle fiche
+    if($object->isNew()) {
+      return null;
+    }
     // La fiche est close
-    // L'utilisateur n'est pas Dieu
-    // La navigation est dans la recherche
-    // La fiche est close et l'utilisateur n'a pas la permission de la voir
-    // La fiche est fermée et l'utilisateur n'a pas la permission de la voir
-    if($object->isNew() || ($action != 'dashboard' && ($object->getIsFinished() || !$this->getUser()->isSuperAdmin())) || ($action == 'dashboard' && ($object->getIsFinished() && !$this->getUser()->hasCredential('show-closed')) && ($object->getIsResolved() && !$this->getUser()->hasCredential('show-resolved')))) {
+    if($object->getIsFinished()) {
+      // La navigation n'est pas dans la recherche
+      // L'utilisateur n'est pas Dieu
+      if($action != 'dashboard' && !$this->getUser()->isSuperAdmin()) {
+        return null;
+      }
+      // La navigation est dans la recherche
+      // L'utilisateur n'a pas la permission de consulter une fiche close
+      if($action == 'dashboard' && !$this->getUser()->hasCredential('show-closed')) {
+        return null;
+      }
+    }
+    // La fiche est fermée
+    // L'utilisateur n'a pas la permission de consulter une fiche fermée
+    if($object->getIsResolved() && !$this->getUser()->hasCredential('show-resolved')) {
       return null;
     }
     return '<li class="sf_admin_action_show">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('show'), $object, array('title' => __($params['label'], array(), 'sf_admin'))).'</li>';

@@ -2,7 +2,7 @@
 <?php use_helper('JavascriptBase') ?>
 <?php use_javascript('/sfEPFactoryFormPlugin/js/tools.js') ?>
 <style type="text/css">
-  <?php if($sf_request->getParameter('action') == 'show' && $fiche->getIsControlled()): ?>
+  <?php if($sf_request->getParameter('action') == 'show' && ($fiche->getIsControlled() || (!$fiche->getUnsolvedName() && !$fiche->getUnsolvedDate()))): ?>
     .sf_admin_show_field_unsolved_name, .sf_admin_show_field_unsolved_date {
       display: none;
     }

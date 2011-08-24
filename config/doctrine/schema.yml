@@ -155,6 +155,7 @@ Fiche:
     is_finished:
       type: boolean
       default: false
+    finished_date: timestamp
     finished_author_id: integer
     is_resolved:
       type: boolean

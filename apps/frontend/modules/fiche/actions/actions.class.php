@@ -26,7 +26,7 @@ class ficheActions extends autoFicheActions {
         $handle = fopen($filename, 'w+');
         chmod($filename, 0777);
         // Headers
-        $headers = array();
+        $headers = array('N° de fiche');
         foreach($this->configuration->getValue('show.display') as $header) {
           if(is_array($header)) {
             foreach($header as $name) {
@@ -40,7 +40,7 @@ class ficheActions extends autoFicheActions {
         fputcsv($handle, $headers, ";", '"');
         // Results
         foreach($results as $result) {
-          $line = array();
+          $line = array($result->getNumber());
           foreach($this->configuration->getValue('show.display') as $column) {
             if(is_array($column)) {
               foreach($column as $name) {
@@ -57,7 +57,8 @@ class ficheActions extends autoFicheActions {
         $this->setLayout(false);
         $response = $this->getResponse();
         $response->setHttpHeader('Content-Disposition', 'attachment; filename="'.basename($filename).'"');
-        $response->setContentType('text/csv; charset=windows-1252/Winlatin1');
+        //$response->setContentType('text/csv; charset=windows-1252/Winlatin1');
+        $response->setContentType('text/csv; charset=UTF-8');
         $response->setContent(file_get_contents($filename));
         unlink($filename);
         return sfView::NONE;
@@ -69,7 +70,7 @@ class ficheActions extends autoFicheActions {
   }
 
   protected function retrieveLabel($name) {
-    return utf8_decode($this->configuration->getFieldConfiguration("list", preg_replace('/^[_~](.*)$/i', '$1', $name))->getConfig('label'));
+    return $this->configuration->getFieldConfiguration("list", preg_replace('/^[_~](.*)$/i', '$1', $name))->getConfig('label');
   }
 
   protected function retrieveValue(Fiche $fiche, $column) {
@@ -78,11 +79,17 @@ class ficheActions extends autoFicheActions {
       $name = ucfirst($name);
     }
     $value = $fiche->{"get".ucfirst(sfInflector::camelize($name))}();
+    // sfDoctrineRecord
+    if(is_object($value) && $value instanceof sfDoctrineRecord) {
+      $value = $value->isNew() ? null : $value->__toString();
+    }
     // Array
     if(is_object($value) && $value instanceof Doctrine_Collection) {
       $objects = array();
       foreach($value as $object) {
-        $objects[] = $object->__toString();
+        if($object && !$object->isNew()) {
+          $objects[] = $object->__toString();
+        }
       }
       $value = $objects;
     }
@@ -101,7 +108,7 @@ class ficheActions extends autoFicheActions {
     elseif(preg_match('/^(\d{2}):(\d{2}):(\d{2})$/i', $value)) {
       $value = date('H\hi', strtotime($value));
     }
-    return utf8_decode($value);
+    return $value;
   }
 
   public function executeEnableKeyboard(sfWebRequest $request) {
@@ -164,7 +171,7 @@ class ficheActions extends autoFicheActions {
   {
     $query = parent::buildQuery();
     if($this->getRequest()->getParameter('action') != 'filter') {
-      if($this->getUser()->hasCredential('view')) {
+      if($this->getUser()->hasPermission('view')) {
         $query->andWhere($query->getRootAlias().".is_resolved = 1");
         $query->andWhere($query->getRootAlias().".is_finished = 0");
       }
