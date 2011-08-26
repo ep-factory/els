@@ -92,7 +92,7 @@ sfGuardGroup:
   coordinateur:
     name:           coordinateur
     description:    Groupe des coordinateurs
-    Permissions:    [search, element, appareil, fixtures, create, edit-resolved, resolve, reopen, view-resolved, show-resolved, show-closed]
+    Permissions:    [search, element, appareil, fixtures, create, close, edit-resolved, resolve, reopen, view-resolved, show-resolved, show-closed]
     Users:
       coordinateur:
         first_name: Coordinateur
