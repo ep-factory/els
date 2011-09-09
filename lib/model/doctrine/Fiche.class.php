@@ -59,13 +59,17 @@ class Fiche extends BaseFiche {
   }
 
   /**
-   * Resolve current fiche, parent and children
+   * Resolve current fiche
    *
-   * @param boolean $return Return list of ids to resolve hierarchy
-   * @return mixed Void or list of ids
+   * @return Fiche
    */
-  public function resolve($return = false) {
-    if(!count($this->getHierarchyIds())) {
+  public function resolve() {
+    $this->setIsResolved(true)
+         ->setResolvedDate(date('Y-m-d H:i:s'))
+         ->setResolvedAuthorId(sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
+         ->save();
+    return $this;
+    /*if(!count($this->getHierarchyIds())) {
       return;
     }
     if($return) {
@@ -76,16 +80,21 @@ class Fiche extends BaseFiche {
             ->set('resolved_date', '"'.date('Y-m-d H:i:s').'"')
             ->set('resolved_author_id', sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
             ->whereIn('id', $this->getHierarchyIds())
-            ->update()->execute();
+            ->update()->execute();*/
   }
 
   /**
    * Close current fiche
    *
-   * @return void
+   * @return Fiche
    */
   public function close() {
-    if(!count($this->getHierarchyIds())) {
+    $this->setIsFinished(true)
+         ->setFinishedDate(date('Y-m-d H:i:s'))
+         ->setFinishedAuthorId(sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
+         ->save();
+    return $this;
+    /*if(!count($this->getHierarchyIds())) {
       return;
     }
     $this->getTable()->createQuery()
@@ -93,7 +102,7 @@ class Fiche extends BaseFiche {
             ->set('finished_date', '"'.date('Y-m-d H:i:s').'"')
             ->set('finished_author_id', sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
             ->whereIn('id', $this->getHierarchyIds())
-            ->update()->execute();
+            ->update()->execute();*/
   }
 
   /**

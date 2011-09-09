@@ -26,7 +26,7 @@ generator:
       list:
         title: Codes affaire
         display: [name, is_active]
-        table_method: findActive
+        table_method: findUndeleted
       filter:
         display: [search]
       form:    ~

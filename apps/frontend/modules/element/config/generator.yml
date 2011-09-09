@@ -34,7 +34,7 @@ generator:
       list:
         title: Eléments
         display: [marque, type, ref, is_active]
-        table_method: findActive
+        table_method: findUndeleted
       filter:
         display: [search]
       form:    ~

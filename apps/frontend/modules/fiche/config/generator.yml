@@ -29,6 +29,8 @@ generator:
           label: Consulter
           action: show
       fields:
+        Childrens:
+          label: Filles
         search:
           label: Rechercher
         created_at:
@@ -163,6 +165,7 @@ generator:
           _resolve: ~
           _unresolve: ~
           _close: ~
+          _add: ~
         display:
           Intervenant: [sfGuardUser, Poste, label]
           Sécurité: [Ppc, ppi_number, acr_number, mo_number]
@@ -171,6 +174,7 @@ generator:
           Symptomes: [problem, cause, solution]
           Résolution: [is_tested, test_mechanic, test_operator, _is_stopped, _is_ips, is_controlled, unsolved_name, unsolved_date]
           Maintenance: [_elements]
+          Filles: [_filles]
       filter:
         display: [fiche_date, is_resolved, is_finished, search]
       form:

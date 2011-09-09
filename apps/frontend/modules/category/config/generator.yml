@@ -28,7 +28,7 @@ generator:
       list:
         title: Catégories
         display: [name, code, is_active]
-        table_method: findActive
+        table_method: findUndeleted
       filter:
         display: [search]
       form:    ~
