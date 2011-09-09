@@ -28,7 +28,7 @@ generator:
       list:
         title: Bâtiments
         display: [name, sigle, is_active]
-        table_method: findActive
+        table_method: findUndeleted
       filter:
         display: [search]
       form:    ~
