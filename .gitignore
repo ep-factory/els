@@ -19,3 +19,4 @@
 /web/sfDoctrineActAsTaggablePlugin
 /web/sfDoctrinePlugin
 /web/sfAdminTemplatePlugin
+/web/uploads/*

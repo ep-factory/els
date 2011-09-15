@@ -116,6 +116,7 @@ Element:
     is_active:
       type: boolean
       default: true
+    server_id: integer
 
 Atelier:
   actAs:
@@ -278,5 +279,150 @@ FicheElement:
       local: element_installed_id
       onDelete: SET NULL
     Fiche:
+      onDelete: CASCADE
+      foreignAlias: Elements
+
+FicheLog:
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+    Taggable: ~
+  columns:
+    fiche_id:
+      type: integer
+      notnull: true
+    criticity:
+      type: integer
+      default: 0
+    sf_guard_user_id: integer
+    parent_id: integer
+    is_finished:
+      type: boolean
+      default: false
+    finished_date: timestamp
+    finished_author_id: integer
+    is_resolved:
+      type: boolean
+      default: false
+    resolved_date: timestamp
+    resolved_author_id: integer
+    category_id:
+      type: integer
+      notnull: true
+    case_code_id:
+      type: integer
+      notnull: true
+    ppc_id: integer
+    number:
+      type: string(13)
+      notnull: true
+    label: string(255)
+    fiche_date: date
+    poste_id:
+      type: integer
+      notnull: true
+    ppi_number:
+      type: string(255)
+      notnull: true
+    mo_number:
+      type: string(255)
+      notnull: true
+    acr_number:
+      type: string(255)
+      notnull: true
+    appareil_id: integer
+    is_cmr:
+      type: boolean
+      default: false
+    demandeur_id: integer
+    appel_hour: timestamp
+    start_hour: timestamp
+    end_hour: timestamp
+    problem: clob
+    cause: clob
+    solution: clob
+    unsolved_name: string(255)
+    unsolved_date: date
+    is_tested:
+      type: boolean
+      default: false
+    test_mechanic: string(255)
+    test_operator: string(255)
+    is_stopped:
+      type: boolean
+      default: false
+    is_ips:
+      type: boolean
+      default: false
+    is_controlled:
+      type: boolean
+      default: false
+    batiment_id:
+      type: integer
+      notnull: true
+    atelier_id: integer
+    annexe_id: integer
+  relations:
+    Fiche:
+      foreignAlias: Logs
+    Parent:
+      class: Fiche
+      local: parent_id
+      foreign: id
+      foreignAlias: Logs
+    FinishedAuthor:
+      class: sfGuardUser
+      local: finished_author_id
+      foreign: id
+      foreignAlias: Logs
+    ResolvedAuthor:
+      class: sfGuardUser
+      local: resolved_author_id
+      foreign: id
+      foreignAlias: Logs
+    Appareil:
+      foreignAlias: Logs
+    Category:
+      foreignAlias: Logs
+    Poste:
+      foreignAlias: Logs
+    CaseCode:
+      foreignAlias: Logs
+    Ppc:
+      foreignAlias: Logs
+    Demandeur:
+      foreignAlias: Logs
+    Batiment:
+      foreignAlias: Logs
+    Atelier:
+      foreignAlias: Logs
+    Annexe:
+      foreignAlias: Logs
+    sfGuardUser:
+      foreignAlias: Logs
+
+FicheLogElement:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    fiche_log_id:
+      type: integer
+      notnull: true
+    element_changed_id: integer
+    element_changed_serial: string(255)
+    element_installed_id: integer
+    element_installed_serial: string(255)
+  relations:
+    ElementChanged:
+      class: Element
+      local: element_changed_id
+      onDelete: SET NULL
+    ElementInstalled:
+      class: Element
+      local: element_installed_id
+      onDelete: SET NULL
+    FicheLog:
       onDelete: CASCADE
       foreignAlias: Elements

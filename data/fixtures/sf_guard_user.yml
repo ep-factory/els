@@ -65,6 +65,9 @@ sfGuardPermission:
   document:
     name:           document
     description:    Consultation de document
+  synchro:
+    name:           synchro
+    description:    Synchroniser
 
 sfGuardGroup:
   consultant:
@@ -81,7 +84,7 @@ sfGuardGroup:
   technicien:
     name:           technicien
     description:    Groupe des techniciens
-    Permissions:    [search, element, create, edit-own, resolve-own, reopen-own, view, show-resolved, show-closed]
+    Permissions:    [search, element, create, edit-own, resolve-own, reopen-own, view, show-resolved, show-closed, synchro]
     Users:
       technicien:
         first_name: Technicien
