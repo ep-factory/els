@@ -15,6 +15,7 @@ class ElementForm extends BaseElementForm {
    */
   public function configure() {
     unset($this['created_at'], $this['updated_at'], $this['deleted_at']);
+    $this->widgetSchema['server_id'] = new sfWidgetFormInputHidden();
     if($this->getUser()->getAttribute('enable_keyboard', false)) {
       $this->widgetSchema['marque'] = new sfWidgetFormKeyboard();
       $this->widgetSchema['type'] = new sfWidgetFormKeyboard();

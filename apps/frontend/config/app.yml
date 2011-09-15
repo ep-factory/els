@@ -1,4 +1,7 @@
 all:
+  synchronization:
+    import: "http://els.local/frontend_dev.php/synchronisation/import"
+    export: "http://els.local/frontend_dev.php/synchronisation/export"
   sf_guard_plugin:
     success_signin_url: "@homepage"
   machine_id: A
@@ -50,3 +53,6 @@ all:
       sf_guard_group:
         label: Groupes
         credentials: [admin]
+      synchro:
+        label: Synchroniser
+        credentials: [synchro]

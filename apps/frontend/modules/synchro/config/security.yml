@@ -1,0 +1,8 @@
+index:
+  credentials: [synchro]
+
+import:
+  is_secure: false
+
+export:
+  is_secure: false

@@ -72,8 +72,8 @@ class ficheGeneratorConfiguration extends BaseFicheGeneratorConfiguration {
                 'is_tested',
                 'test_mechanic',
                 'test_operator',
-                '_is_stopped',
-                '_is_ips',
+                'is_stopped',
+                'is_ips',
                 'is_controlled',
                 'unsolved_name',
                 'unsolved_date'),
@@ -136,6 +136,66 @@ class ficheGeneratorConfiguration extends BaseFicheGeneratorConfiguration {
             'Filles' => array('_filles'));
         break;
     }
+  }
+
+  public function retrieveValue(Fiche $object, $name)
+  {
+    $options = $object->getTable()->getColumnDefinition($name);
+    // Default value
+    $value = $object->{"get".ucfirst(sfInflector::classify($name))}();
+    // Field is relation
+    /*if (preg_match('/_id$/i', $name) && $this->retrieveRelationName($object, $name))
+    {
+      $value = $this->retrieveRelationName($object, $name);
+    }*/
+    // Field is date
+    if ($value && $options['type'] == 'date')
+    {
+      $value = format_date(strtotime($value), "EEEE dd MMMM yyyy");
+    }
+    // Field is time
+    if ($value && $options['type'] == 'time')
+    {
+      $value = date('H\hi', strtotime($value));
+    }
+    // Field is timestamp
+    if ($value && $options['type'] == 'timestamp')
+    {
+      $value = format_date(strtotime($value), "EEEE dd MMMM yyyy")." ".date('H\hi', strtotime($value));
+    }
+    // Field is boolean
+    if ($options['type'] == 'boolean')
+    {
+      $value = $value ? "<img src='/sfAdminTemplatePlugin/images/icon_ticklist.png' />" : null;
+    }
+    // Convert array to string
+    if (is_array($value) || $value instanceof Doctrine_Collection)
+    {
+      $html = "";
+      foreach ($value as $element)
+      {
+        $html.= "<li>$element</li>";
+      }
+      $value = "<ul>$html</ul>";
+    }
+    // Test if relation exists
+    if ($object->getTable()->hasRelation($name))
+    {
+      if ($object->getTable()->getRelation($name)->getType() == Doctrine_Relation::MANY)
+      {
+        $relationValues = array();
+        foreach ($object[$name] as $relationValue)
+        {
+          $relationValues[] = (string)$relationValue;
+        }
+        $value = implode(', ', $relationValues);
+      }
+      else
+      {
+        $value = $object[$name] && !$object[$name]->isNew() ? $object[$name] : false;
+      }
+    }
+    return $value;
   }
 
 }

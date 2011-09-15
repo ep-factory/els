@@ -34,7 +34,7 @@ abstract class BaseFormFilterDoctrine extends sfFormFilterDoctrine {
     $params = array();
     foreach($this->getTable()->getColumns() as $name => $options) {
       if(in_array($options['type'], array('string', 'clob'))) {
-        $where.= sprintf("%s %s.%s LIKE ?", count($params) ? " OR" : null, $query->getRootAlias(), $name);
+        $where.= sprintf("%s %s.%s LIKE ?", count($params) ? " OR" : null, $query->getRootAlias(), "%$name%");
         $params[] = "%$values%";
       }
     }

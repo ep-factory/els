@@ -1,3 +1,22 @@
+### SYNCHRO ###
+synchro:
+  url:   /synchronisation
+  param: { module: synchro, action: index }
+
+synchro_import:
+  url:   /synchronisation/import
+  param: { module: synchro, action: import }
+  requirements:
+    sf_method: [post]
+
+synchro_export:
+  url:   /synchronisation/export
+  param: { module: synchro, action: export }
+  requirements:
+    sf_method: [get]
+    sf_format: xml
+### FIN SYNCHRO ###
+
 uploadify:
   url:   /uploadify
   param: { module: document, action: uploadify }

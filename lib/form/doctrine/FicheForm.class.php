@@ -76,7 +76,7 @@ class FicheForm extends BaseFicheForm {
       $this->getContext()->getController()->redirect("@fiche");
     }
     $this->setDefault('ppc_id', $ppc->getPrimaryKey());
-    $this->widgetSchema['ppc_id'] = new sfWidgetFormInputPlain(array('value' => $this->isNew() ? $ppc : $this->getObject()->getPpc()));
+    $this->widgetSchema['ppc_id'] = new sfWidgetFormInputPlain(array('value' => !$this->getObject()->getPpcId() ? $ppc : $this->getObject()->getPpc()));
     $this->widgetSchema['fiche_date'] = new sfWidgetFormDateJQueryUI();
     $this->widgetSchema['fiche_date']->setAttribute('class', 'validate[optional,custom[date_custom]]');
     $this->getWidgetSchema()->setHelp('fiche_date', 'Format requis : dd/mm/YYYY');

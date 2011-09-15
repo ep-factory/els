@@ -15,4 +15,8 @@
 /lib/model/doctrine/sfDoctrineGuardPlugin/base/*
 /lib/filter/doctrine/sfDoctrineGuardPlugin/base/*
 /lib/form/doctrine/sfDoctrineGuardPlugin/base/*
-/web/sf*
+/web/sf
+/web/sfDoctrineActAsTaggablePlugin
+/web/sfDoctrinePlugin
+/web/sfAdminTemplatePlugin
+/web/uploads/*

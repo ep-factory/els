@@ -12,6 +12,17 @@
  */
 class Fiche extends BaseFiche {
 
+  public function preSave($event) {
+    parent::preSave($event);
+    if(!$this->getPpcId()) {
+      $ppc = PpcTable::getInstance()->findOneByIsActive(true);
+      if(!$ppc) {
+        throw new sfException('Aucun PPC actif. Veuillez contacter un administrateur.');
+      }
+      $this->setPpcId($ppc->getPrimaryKey());
+    }
+  }
+
   /**
    * Render fiche to string
    *

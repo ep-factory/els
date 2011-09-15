@@ -13,6 +13,13 @@
     });
   });
 </script>
+<?php if(!$fiche->getIsTested()): ?>
+  <style type="text/css">
+    .sf_admin_show_field_test_mechanic, .sf_admin_show_field_test_operator {
+      display: none;
+    }
+  </style>
+<?php endif ?>
 <?php use_helper('I18N', 'Date') ?>
 <?php $sf_response->addMeta('title', 'Administration | '.__('Fiches', array(), 'messages').' | '.__('%%number%%', array('%%number%%' => $fiche->getNumber()), 'messages')) ?>
 <?php slot('breadcrumb', array(array('url' => '@fiche', 'label' => __('Fiches', array(), 'messages')), array('url' => '@fiche_show?id='.$sf_request->getParameter('id'), 'label' => __('%%number%%', array('%%number%%' => $fiche->getNumber()), 'messages')))) ?>

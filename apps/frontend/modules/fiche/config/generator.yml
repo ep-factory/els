@@ -176,7 +176,7 @@ generator:
           Maintenance: [_elements]
           Filles: [_filles]
       filter:
-        display: [fiche_date, created_at, is_resolved, is_finished, search]
+        display: [fiche_date, is_resolved, is_finished, search]
       form:
         actions:
           _save: ~

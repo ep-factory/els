@@ -26,7 +26,7 @@ class ficheActions extends autoFicheActions {
         $handle = fopen($filename, 'w+');
         chmod($filename, 0777);
         // Headers
-        $headers = array('N° de fiche');
+        $headers = array('N° de fiche', 'Catégorie', 'Code Affaire');
         foreach($this->configuration->getValue('show.display') as $header) {
           if(is_array($header)) {
             foreach($header as $name) {
@@ -40,7 +40,7 @@ class ficheActions extends autoFicheActions {
         fputcsv($handle, $headers, ";", '"');
         // Results
         foreach($results as $result) {
-          $line = array($result->getNumber());
+          $line = array($result->getNumber(), $result->getCategoryCode(), $result->getCaseCode());
           foreach($this->configuration->getValue('show.display') as $column) {
             if(is_array($column)) {
               foreach($column as $name) {
@@ -170,7 +170,7 @@ class ficheActions extends autoFicheActions {
   protected function buildQuery()
   {
     $query = parent::buildQuery();
-    if($this->getRequest()->getParameter('action') != 'filter') {
+    if($this->getRequest()->getParameter('action') == 'index') {
       if($this->getUser()->hasPermission('view')) {
         $query->andWhere($query->getRootAlias().".is_resolved = 1");
         $query->andWhere($query->getRootAlias().".is_finished = 0");
@@ -250,7 +250,7 @@ class ficheActions extends autoFicheActions {
     $object = $this->getRoute()->getObject();
     $class = get_class($object);
     $values = $object->toArray();
-    unset($values['id'], $values['fiche_date'], $values['sf_guard_user_id'], $values['start_hour'], $values['end_hour']);
+    unset($values['id'], $values['fiche_date'], $values['sf_guard_user_id'], $values['start_hour'], $values['end_hour'], $values['is_finished'], $values['is_resolved']);
     $values['parent_id'] = $object->getPrimaryKey();
     $values['tags'] = $object->getTags();
     $values['Elements'] = $object->getElements();
