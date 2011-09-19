@@ -34,6 +34,9 @@ class synchroActions extends sfActions
       try {
         if($this->sendRest($values)) {
           // Load values from server export
+          if(!is_dir(sfConfig::get('sf_upload_dir'))) {
+            mkdir(sfConfig::get('sf_upload_dir'), 0777);
+          }
           $filename = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.date('Y-m-d-H-i-s').'.sql';
           file_put_contents($filename, file_get_contents(sfConfig::get('app_synchronization_export')));
           list($username, $password, $dbname, $host) = $this->getConfig();
