@@ -23,7 +23,7 @@ class Element extends BaseElement {
   
   public function postInsert($event) {
     parent::postInsert($event);
-    if(sfContext::getInstance()->getRequest()->getParameter('action') == 'import') {
+    if(sfContext::hasInstance() && sfContext::getInstance()->getRequest()->getParameter('action') == 'import') {
       $this->setServerId($this->getPrimaryKey())->save();
     }
   }
