@@ -10,6 +10,11 @@
  */
 class synchroActions extends sfActions
 {
+  public function preExecute() {
+    parent::preExecute();
+    sfConfig::set('sf_web_debug', false);
+  }
+  
  /**
   * Display synchronization page
   *
@@ -32,7 +37,12 @@ class synchroActions extends sfActions
           $filename = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.date('Y-m-d-H-i-s').'.sql';
           file_put_contents($filename, file_get_contents(sfConfig::get('app_synchronization_export')));
           list($username, $password, $dbname, $host) = $this->getConfig();
-          exec("mysqldump -h $host -u $username -p$password $dbname<$filename");
+          if($password) {
+            exec("mysql -h $host -u $username -p$password $dbname<$filename");
+          }
+          else {
+            exec("mysql -h $host -u $username $dbname<$filename");
+          }
           unlink($filename);
           return $this->renderText(json_encode(array('code' => 'success', 'message'=> "Les données ont été correctement importées.")));
         }
