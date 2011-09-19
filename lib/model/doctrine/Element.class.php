@@ -20,5 +20,12 @@ class Element extends BaseElement {
   public function __toString() {
     return sprintf("%s - %s", $this->getMarque(), $this->getType());
   }
+  
+  public function postInsert($event) {
+    parent::postInsert($event);
+    if(sfContext::getInstance()->getRequest()->getParameter('action') == 'import') {
+      $this->setServerId($this->getPrimaryKey())->save();
+    }
+  }
 
 }
