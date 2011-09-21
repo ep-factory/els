@@ -1,0 +1,105 @@
+sfGuardUser:
+  admin:
+    first_name: Vincent
+    last_name: CHALAMON
+    email_address: vincentchalamon@gmail.com
+    username: admin
+    password: admin
+    is_super_admin: true
+
+sfGuardPermission:
+  fixtures:
+    name:           fixtures
+    description:    Gérer les données additionnelles
+  search:
+    name:           search
+    description:    Rechercher
+  element:
+    name:           element
+    description:    Créer un élémént
+  appareil:
+    name:           appareil
+    description:    Créer un appareil
+  create:
+    name:           create
+    description:    Créer une fiche
+  edit-own:
+    name:           edit-own
+    description:    Editer une fiche propriétaire
+  edit-resolved:
+    name:           edit-resolved
+    description:    Editer une fiche fermée
+  resolve:
+    name:           resolve
+    description:    Fermer une fiche
+  resolve-own:
+    name:           resolve-own
+    description:    Fermer une fiche propriétaire
+  reopen:
+    name:           reopen
+    description:    Rouvrir une fiche fermée
+  reopen-own:
+    name:           reopen-own
+    description:    Rouvrir une fiche fermée propriétaire
+  close:
+    name:           close
+    description:    Clore une fiche
+  view:
+    name:           view
+    description:    Consulter une fiche non fermée
+  view-resolved:
+    name:           view-resolved
+    description:    Voir une fiche fermée
+  show-resolved:
+    name:           show-resolved
+    description:    Consulter une fiche fermée
+  show-closed:
+    name:           show-closed
+    description:    Consulter une fiche close
+  export:
+    name:           export
+    description:    Exporter
+  create-document:
+    name:           create-document
+    description:    Dépôt de document
+  document:
+    name:           document
+    description:    Consultation de document
+  synchro:
+    name:           synchro
+    description:    Synchroniser
+
+sfGuardGroup:
+  consultant:
+    name:           consultant
+    description:    Groupe des consultants
+    Permissions:    [search, show-resolved, show-closed]
+    Users:
+      consultant:
+        first_name: Consultant
+        last_name:  Consultant
+        email_address: consultant@els.com
+        username:   consultant
+        password:   consultant
+  technicien:
+    name:           technicien
+    description:    Groupe des techniciens
+    Permissions:    [search, element, create, edit-own, resolve-own, reopen-own, view, show-resolved, show-closed, synchro]
+    Users:
+      technicien:
+        first_name: Technicien
+        last_name:  Technicien
+        email_address: technicien@els.com
+        username:   technicien
+        password:   technicien
+  coordinateur:
+    name:           coordinateur
+    description:    Groupe des coordinateurs
+    Permissions:    [search, element, appareil, fixtures, create, close, edit-resolved, resolve, reopen, view-resolved, show-resolved, show-closed]
+    Users:
+      coordinateur:
+        first_name: Coordinateur
+        last_name:  Coordinateur
+        email_address: coordinateur@els.com
+        username:   coordinateur
+        password:   coordinateur

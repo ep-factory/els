@@ -1,0 +1,9 @@
+Poste:
+  matin:
+    Name: Matin
+  journee:
+    Name: Journée
+  soir:
+    Name: Soir
+  nuit:
+    Name: Nuit

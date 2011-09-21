@@ -140,10 +140,12 @@ class Fiche extends BaseFiche {
   public function preInsert($event) {
     parent::preInsert($event);
     // Force number
-    $number = $this->getTable()->createQuery()
-                    ->where('created_at >= ?', date('Y-m-d 00:00:00'))
-                    ->count();
-    $this->setNumber(preg_replace('/\-/i', '', date('Y-m-d')).sfConfig::get('app_machine_id').str_pad($number + 1, 4, "0", STR_PAD_LEFT));
+    if(!$this->getNumber()) {
+      $number = $this->getTable()->createQuery()
+                     ->where('created_at >= ?', date('Y-m-d 00:00:00'))
+                     ->count();
+      $this->setNumber(preg_replace('/\-/i', '', date('Y-m-d')).sfConfig::get('app_machine_id').str_pad($number + 1, 4, "0", STR_PAD_LEFT));
+    }
   }
 
 }

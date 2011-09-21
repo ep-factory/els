@@ -29,6 +29,7 @@ class synchroActions extends sfActions
               ->leftJoin('fiche.Elements fiche_element')
               ->leftJoin('fiche_element.ElementChanged changed')
               ->leftJoin('fiche_element.ElementInstalled installed')
+              ->leftJoin('fiche.Demandeur demandeur')
               ->fetchArray();
       // Send values in rest
       try {
@@ -78,7 +79,7 @@ class synchroActions extends sfActions
       return true;
     }
     else {
-      throw new sfException(curl_error($curl));
+      throw new sfException("Curl error. ".curl_error($curl));
       curl_close($curl);
       return false;
     }
@@ -93,12 +94,16 @@ class synchroActions extends sfActions
   {
     $this->forward404Unless($request->isMethod("post") || $request->hasParameter('values'));
     try {
+      $this->logMessage(count(unserialize($request->getParameter("values")))." fiches reçues.");
       $records = new Doctrine_Collection('Fiche');
       foreach(unserialize($request->getParameter("values")) as $fiche) {
         // Test si la fiche existe
         $record = FicheTable::getInstance()->findOneByNumber($fiche['number']);
         $elements = $fiche['Elements'];
         $fiche['Elements'] = array();
+        $demandeur = $fiche['Demandeur'];
+        $fiche['Demandeur'] = array();
+        $fiche['demandeur_id'] = null;
         if(!$record) {
           $record = new Fiche();
           unset($fiche['id']);
@@ -116,6 +121,13 @@ class synchroActions extends sfActions
           }
         }
         $record->fromArray($fiche);
+        // Manage Demandeur
+        $existingDemandeur = DemandeurTable::getInstance()->findOneByName($demandeur['name']);
+        if(!$existingDemandeur) {
+          $existingDemandeur = new Demandeur();
+          $existingDemandeur->setName($demandeur['name']);
+        }
+        $record->setDemandeur($existingDemandeur);
         // Manage Elements
         foreach($elements as $object) {
           $ficheElement = new FicheElement();
@@ -134,21 +146,23 @@ class synchroActions extends sfActions
               $element->fromArray($object[$name]);
               $ficheElement[$name] = $element;
             }
-            $ficheElement->setElementChangedSerial($object['element_changed_serial']);
-            $ficheElement->setElementInstalledSerial($object['element_installed_serial']);
           }
+          $ficheElement->setElementChangedSerial($object['element_changed_serial']);
+          $ficheElement->setElementInstalledSerial($object['element_installed_serial']);
           $record->getElements()->add($ficheElement);
         }
         // Add current Fiche to Doctrine_Collection
         $records->add($record);
       }
       // Save recursive Fiche & FicheElement & Element
+      $this->logMessage($records->count()." fiches doivent être enregistrées.");
       $records->save();
     }
     catch(Exception $error) {
-      return $this->renderText(json_encode(array('code' => 'error', 'message' => "Une erreur est survenue : ".$error->getMessage())));
+      $this->logMessage("Une erreur est survenue : ".$error->getMessage());
+      //return $this->renderText(json_encode(array('code' => 'error', 'message' => "Une erreur est survenue : ".$error->getMessage())));
     }
-    return $this->renderText(json_encode(array('code' => 'success', 'message' => "Les fiches ont été correctement importées.")));
+    return sfView::NONE;//$this->renderText(json_encode(array('code' => 'success', 'message' => "Les fiches ont été correctement importées.")));
   }
   
  /**
