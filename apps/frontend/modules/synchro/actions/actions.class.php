@@ -114,7 +114,8 @@ class synchroActions extends sfActions
         else {
           $record->unlink("Elements", $record->getElements()->getPrimaryKeys());
           // Conflict if fiche.sf_guard_user_id != record.sf_guard_user_id
-          if($record['sf_guard_user_id'] && $record['sf_guard_user_id'] != $fiche['sf_guard_user_id']) {
+          if(($record['sf_guard_user_id'] && $record['sf_guard_user_id'] != $fiche['sf_guard_user_id'])
+              || $record['is_resolved'] || $record['is_finished']) {
             unset($fiche['id']);
             $log = new FicheLog();
             $log->fromArray($fiche);
