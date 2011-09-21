@@ -1,0 +1,61 @@
+Batiment:
+  batiment1:
+    Name: Bâtiment 01
+    sigle: B01
+  batiment2:
+    Name: Bâtiment 02
+    sigle: B02
+  batiment3:
+    Name: Bâtiment 03
+    sigle: B03
+  batiment4:
+    Name: Bâtiment 04
+    sigle: B04
+  batiment5:
+    Name: Bâtiment 05
+    sigle: B05
+  batiment6:
+    Name: Bâtiment 06
+    sigle: B06
+  batiment7:
+    Name: Bâtiment 07
+    sigle: B07
+  batiment8:
+    Name: Bâtiment 08
+    sigle: B08
+  batiment9E:
+    Name: Bâtiment 09E
+    sigle: B09E
+  batiment9A:
+    Name: Bâtiment 09A
+    sigle: B09A
+  batiment10:
+    Name: Bâtiment 10
+    sigle: B10
+  batiment11:
+    Name: Bâtiment 11
+    sigle: B11
+  batiment12:
+    Name: Bâtiment 12
+    sigle: B12
+  batiment13:
+    Name: Bâtiment 13
+    sigle: B13
+  batiment14:
+    Name: Bâtiment 14
+    sigle: B14
+  batiment15:
+    Name: Bâtiment 15
+    sigle: B15
+  batiment16:
+    Name: Bâtiment 16
+    sigle: B16
+  batiment17:
+    Name: Bâtiment 17
+    sigle: B17
+  batiment18:
+    Name: Bâtiment 18
+    sigle: B18
+  batiment19:
+    Name: Poste de Garde
+    sigle: B2
