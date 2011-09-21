@@ -164,9 +164,9 @@ class synchroActions extends sfActions
     }
     catch(Exception $error) {
       $this->logMessage("Une erreur est survenue : ".$error->getMessage());
-      //return $this->renderText(json_encode(array('code' => 'error', 'message' => "Une erreur est survenue : ".$error->getMessage())));
+      return $this->renderText(json_encode(array('code' => 'error', 'message' => "Une erreur est survenue : ".$error->getMessage())));
     }
-    return sfView::NONE;//$this->renderText(json_encode(array('code' => 'success', 'message' => "Les fiches ont été correctement importées.")));
+    return $this->renderText(json_encode(array('code' => 'success', 'message' => "Les fiches ont été correctement importées.")));
   }
   
  /**
