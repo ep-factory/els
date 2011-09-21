@@ -25,7 +25,7 @@ class ficheGeneratorHelper extends BaseFicheGeneratorHelper {
     // La fiche est déjà fermée
     // L'utilisateur n'a pas la permission de fermer une fiche
     // L'utilisateur a la permission de fermer sa fiche mais il n'en est pas le propriétaire
-    if($object->isNew() || $object->getIsResolved() || !$this->getUser()->hasCredential(array('resolve', 'resolve-own'), false) || ($this->getUser()->hasCredential('resolve-own') && $object->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey())) {
+    if($object->isNew() || $object->getIsResolved() || !($this->getUser()->hasPermission('resolve') || $this->getUser()->hasPermission('resolve-own')) || ($this->getUser()->hasPermission('resolve-own') && $object->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey())) {
       return null;
     }
     return '<li class="sf_admin_action_resolve">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('resolve'), $object, array('title' => __($params['label'], array(), 'sf_admin'))).'</li>';
