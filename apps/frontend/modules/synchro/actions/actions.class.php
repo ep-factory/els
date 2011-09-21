@@ -68,6 +68,9 @@ class synchroActions extends sfActions
    */
   protected function sendRest(array $values)
   {
+    if(!$values) {
+      return true;
+    }
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_HEADER, false);
     curl_setopt($curl, CURLOPT_POST, true);
