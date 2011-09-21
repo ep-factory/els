@@ -172,7 +172,7 @@ EOF
 
     // Defaults from request & user
     $this->setDefault('parent_id', $this->getRequest()->getParameter('parent_id', $this->getObject()->getParentId()));
-    if(!$this->getUser()->isSuperAdmin()) {
+    if($this->getUser()->hasGroup('technicien')) {
       $this->setDefault('sf_guard_user_id', $this->getUser()->getGuardUser()->getPrimaryKey());
     }
     $this->setDefault('category_id', $this->getRequest()->getParameter('category_id', $this->getObject()->hasParent() ? $this->getObject()->getParent()->getCategoryId() : CategoryTable::getInstance()->findByIsActive(true)->getFirst()->getPrimaryKey()));

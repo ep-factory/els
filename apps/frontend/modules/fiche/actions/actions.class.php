@@ -184,6 +184,11 @@ class ficheActions extends autoFicheActions {
   }
 
   public function executeEdit(sfWebRequest $request) {
+    $this->fiche = $this->getRoute()->getObject();
+    if($this->getUser()->hasGroup('technicien') && !$this->fiche->getSfGuardUserId()) {
+      $this->fiche->setSfGuardUserId($this->getUser()->getGuardUser()->getPrimaryKey());
+    }
+    $this->form = $this->configuration->getForm($this->fiche);
     parent::executeEdit($request);
     $this->forwardIf(!$this->getUser()->canEdit($this->fiche), $this->getModuleName(), "index");
   }

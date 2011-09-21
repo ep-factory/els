@@ -1,0 +1,7 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:dbname=els;hostname=localhost'
+      username: els
+      password: Wbe6sr3Eup7SjPy2
