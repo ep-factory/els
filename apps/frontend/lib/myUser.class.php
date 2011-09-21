@@ -10,7 +10,7 @@ class myUser extends sfGuardSecurityUser
     }
     // Si la fiche n'est pas fermée, seul son propriétaire peut l'éditer
     elseif(!$fiche->getIsResolved()) {
-      return $this->hasCredential('edit-own') && $this->getGuardUser()->getPrimaryKey() == $fiche->getSfGuardUserId();
+      return !$fiche->getSfGuardUserId() || $this->hasCredential('edit-own') && $this->getGuardUser()->getPrimaryKey() == $fiche->getSfGuardUserId();
     }
     // Si la fiche est fermée, seul un coordinateur pour l'éditer
     return $this->hasCredential('edit-resolved');
