@@ -62,6 +62,7 @@ class sfGuardRouting
       'module'              => 'sfGuardUser',
       'prefix_path'         => 'guard/users',
       'with_wildcard_routes' => true,
+      'object_actions'      => array('enable' => 'get', 'disable' => 'get'),
       'collection_actions'  => array('filter' => 'post', 'batch' => 'post'),
       'requirements'        => array(),
     )));

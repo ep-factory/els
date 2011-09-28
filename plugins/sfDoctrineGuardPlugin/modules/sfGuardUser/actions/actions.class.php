@@ -20,4 +20,16 @@ class sfGuardUserActions extends autoSfGuardUserActions
     }
     return $query;
   }
+  
+  public function executeDisable(sfWebRequest $request) {
+    $this->getRoute()->getObject()->setIsActive(false)->save();
+    $this->getUser()->setFlash('notice', "Le compte utilisateur a été correctement désactivé.");
+    $this->redirect('@sf_guard_user');
+  }
+  
+  public function executeEnable(sfWebRequest $request) {
+    $this->getRoute()->getObject()->setIsActive(true)->save();
+    $this->getUser()->setFlash('notice', "Le compte utilisateur a été correctement activé.");
+    $this->redirect('@sf_guard_user');
+  }
 }

@@ -17,6 +17,14 @@ generator:
           credentials: [admin]
         _new:
           credentials: [admin]
+        _disable:
+          label: Désactiver
+          action: disable
+          credentials: [admin]
+        _enable:
+          label: Activer
+          action: enable
+          credentials: [admin]
 
       fields:
         search:
@@ -49,6 +57,12 @@ generator:
       list:
         title:   Utilisateurs
         display: [username, last_name, first_name, is_active, last_login]
+        table_method: findUndeleted
+        object_actions:
+          _edit: ~
+          _show: ~
+          _enable: ~
+          _disable: ~
 
       show:
         title:   %%first_name%% %%last_name%% (%%username%%)

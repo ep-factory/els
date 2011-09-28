@@ -36,8 +36,11 @@ class Fiche extends BaseFiche {
     if(!strtotime($this->getEndHour()) || !strtotime($this->getStartHour())) {
       return;
     }
-    $diff = strtotime($this->getEndHour()) - strtotime($this->getStartHour());
-    return myUser::convert_seconds_to_time($diff ? $diff*1000 : 0);
+    $from = new DateTime($this->getStartHour());
+    $to = new DateTime($this->getEndHour());
+    return date_diff($from, $to)->format('%Hh%I');
+    /*$diff = strtotime($this->getEndHour()) - strtotime($this->getStartHour());
+    return myUser::convert_seconds_to_time($diff ? $diff*1000 : 0);*/
   }
 
   /**
@@ -141,10 +144,7 @@ class Fiche extends BaseFiche {
     parent::preInsert($event);
     // Force number
     if(!$this->getNumber()) {
-      $number = $this->getTable()->createQuery()
-                     ->where('created_at >= ?', date('Y-m-d 00:00:00'))
-                     ->count();
-      $this->setNumber(preg_replace('/\-/i', '', date('Y-m-d')).sfConfig::get('app_machine_id').str_pad($number + 1, 4, "0", STR_PAD_LEFT));
+      $this->setNumber(date('YmdHis').sfConfig::get('app_machine_id'));
     }
   }
 
