@@ -126,12 +126,14 @@ class synchroActions extends sfActions
         }
         $record->fromArray($fiche);
         // Manage Demandeur
-        $existingDemandeur = DemandeurTable::getInstance()->findOneByName($demandeur['name']);
-        if(!$existingDemandeur) {
-          $existingDemandeur = new Demandeur();
-          $existingDemandeur->setName($demandeur['name']);
+        if(isset($demandeur['name'])) {
+          $existingDemandeur = DemandeurTable::getInstance()->findOneByName($demandeur['name']);
+          if(!$existingDemandeur) {
+            $existingDemandeur = new Demandeur();
+            $existingDemandeur->setName($demandeur['name']);
+          }
+          $record->setDemandeur($existingDemandeur);
         }
-        $record->setDemandeur($existingDemandeur);
         // Manage Elements
         foreach($elements as $object) {
           $ficheElement = new FicheElement();
