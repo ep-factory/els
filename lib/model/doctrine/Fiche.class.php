@@ -144,7 +144,7 @@ class Fiche extends BaseFiche {
     parent::preInsert($event);
     // Force number
     if(!$this->getNumber()) {
-      $this->setNumber(date('YmdHis').sfConfig::get('app_machine_id'));
+      $this->setNumber(date('ymdHis').sfConfig::get('app_machine_id'));
     }
   }
 
