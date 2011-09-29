@@ -31,6 +31,12 @@ class synchroActions extends sfActions
               ->leftJoin('fiche_element.ElementInstalled installed')
               ->leftJoin('fiche.Demandeur demandeur')
               ->fetchArray();
+      foreach($values as $key => $value) {
+        $tags = FicheTable::getInstance()->find($value['id'])->getTags();
+        if($tags) {
+          $values[$key]['tags'] = array_values($tags);
+        }
+      }
       // Send values in rest
       try {
         if($this->sendRest($values)) {
