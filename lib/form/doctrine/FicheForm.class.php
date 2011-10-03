@@ -26,6 +26,11 @@ class FicheForm extends BaseFicheForm {
     $this->validatorSchema['number']->setOption('required', false);
 
     // Specific fields
+    if($this->getUser()->getAttribute('enable_keyboard', false)) {
+      $this->widgetSchema['ppi_number'] = new sfWidgetFormKeyboard(array('layout' => 'hour'));
+      $this->widgetSchema['mo_number'] = new sfWidgetFormKeyboard(array('layout' => 'hour'));
+      $this->widgetSchema['acr_number'] = new sfWidgetFormKeyboard(array('layout' => 'hour'));
+    }
     if($this->getUser()->hasGroup('technicien')) {
       $this->widgetSchema['sf_guard_user_id'] = new sfWidgetFormInputHidden();
     }

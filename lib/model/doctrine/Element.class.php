@@ -21,6 +21,12 @@ class Element extends BaseElement {
     return sprintf("%s - %s", $this->getMarque(), $this->getType());
   }
   
+  public function preSave($event) {
+    parent::preSave($event);
+    $this->setRef(strtoupper($this->getRef()));
+    $this->setMarque(strtoupper($this->getMarque()));
+  }
+  
   public function postInsert($event) {
     parent::postInsert($event);
     if(sfContext::hasInstance() && sfContext::getInstance()->getRequest()->getParameter('action') == 'import') {

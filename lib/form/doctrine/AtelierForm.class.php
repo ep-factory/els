@@ -15,6 +15,9 @@ class AtelierForm extends BaseAtelierForm {
    */
   public function configure() {
     unset($this['created_at'], $this['updated_at'], $this['deleted_at']);
+    if($this->isNew()) {
+      unset($this['is_active']);
+    }
     if($this->getUser()->getAttribute('enable_keyboard', false)) {
       $this->widgetSchema['name'] = new sfWidgetFormKeyboard();
     }
