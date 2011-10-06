@@ -78,7 +78,7 @@ class ficheGeneratorConfiguration extends BaseFicheGeneratorConfiguration {
                 'unsolved_name',
                 'unsolved_date'),
             'Maintenance' => array('_elements'),
-            'Filles' => array('_filles'));
+            'Filles' => array('_childrens'));
         break;
 
       case 472:
@@ -104,7 +104,7 @@ class ficheGeneratorConfiguration extends BaseFicheGeneratorConfiguration {
                 'Atelier',
                 'Annexe'),
             'Symptomes' => array('solution'),
-            'Filles' => array('_filles'));
+            'Filles' => array('_childrens'));
         break;
 
       case 490:
@@ -133,7 +133,7 @@ class ficheGeneratorConfiguration extends BaseFicheGeneratorConfiguration {
                 'Annexe',
                 'is_cmr'),
             'Symptomes' => array('solution'),
-            'Filles' => array('_filles'));
+            'Filles' => array('_childrens'));
         break;
     }
   }
