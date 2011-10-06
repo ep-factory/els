@@ -30,6 +30,7 @@ class ficheGeneratorConfiguration extends BaseFicheGeneratorConfiguration {
     $allowed['tags']['is_real'] = true;
     $allowed['time_spent'] = array('is_link' => false, 'is_real' => true, 'is_partial' => false, 'is_component' => false, 'type' => 'Text', 'label' => 'Temps passé');
     $allowed['elements'] = array('is_link' => false, 'is_real' => true, 'is_partial' => false, 'is_component' => false, 'type' => 'Text', 'label' => 'Eléments');
+    $allowed['childrens'] = array('is_link' => false, 'is_real' => true, 'is_partial' => false, 'is_component' => false, 'type' => 'Text', 'label' => 'Filles');
     return $allowed;
   }
 
