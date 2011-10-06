@@ -174,7 +174,7 @@ generator:
           Symptomes: [problem, cause, solution]
           Résolution: [is_tested, test_mechanic, test_operator, _is_stopped, _is_ips, is_controlled, unsolved_name, unsolved_date]
           Maintenance: [_elements]
-          Filles: [_filles]
+          Filles: [_childrens]
       filter:
         display: [fiche_date, is_resolved, is_finished, search]
       form:
