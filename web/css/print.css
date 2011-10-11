@@ -1,0 +1,14 @@
+#header {
+   display: none;
+}
+
+#breadcrumb, #main_menu {
+   display: none;
+}
+
+#footer {
+   display: none;
+}
+ul.sf_admin_actions {
+display: none;
+}
