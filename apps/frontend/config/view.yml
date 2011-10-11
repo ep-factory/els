@@ -12,7 +12,7 @@ default:
     language:     fr
     robots:       index, follow
 
-  stylesheets:    [/sfEPFactoryFormPlugin/switcher/js-switcher.css, main.css]
+  stylesheets:    [/sfEPFactoryFormPlugin/switcher/js-switcher.css, main.css, print: { media: print }]
 
   javascripts:    [/sfEPFactoryFormPlugin/switcher/switcher.js]
 
