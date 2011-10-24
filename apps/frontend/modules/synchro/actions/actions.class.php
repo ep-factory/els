@@ -83,13 +83,18 @@ class synchroActions extends sfActions
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_URL, sfConfig::get('app_synchronization_import'));
     curl_setopt($curl, CURLOPT_POSTFIELDS, array('values' => serialize($values)));
-    if(curl_exec($curl)) {
-      curl_close($curl);
+    $return = curl_exec($curl);
+    curl_close($curl);
+    if($return !== false) {
+      $return = json_decode($return);
+      if($return->code == "error") {
+        throw new sfException("Return error : ".$return->message);
+        return false;
+      }
       return true;
     }
     else {
-      throw new sfException("Curl error. ".curl_error($curl));
-      curl_close($curl);
+      throw new sfException("Curl error : ".curl_error($curl));
       return false;
     }
   }

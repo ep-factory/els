@@ -193,10 +193,12 @@ EOF
           break;
 
         case 472:
+          unset($this['demandeur_id']);
           $fields = array_merge($fields, array('label', 'solution'));
           break;
 
         case 490:
+          unset($this['demandeur_id']);
           $fields = array_merge($fields, array('label', 'solution'));
           $this->setDefault('label', 'Entretien des éclairages');
           break;
