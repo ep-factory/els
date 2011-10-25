@@ -70,7 +70,7 @@ class ficheActions extends autoFicheActions {
   }
 
   protected function retrieveLabel($name) {
-    return $this->configuration->getFieldConfiguration("list", preg_replace('/^[_~](.*)$/i', '$1', $name))->getConfig('label');
+    return utf8_decode($this->configuration->getFieldConfiguration("list", preg_replace('/^[_~](.*)$/i', '$1', $name))->getConfig('label'));
   }
 
   protected function retrieveValue(Fiche $fiche, $column) {
@@ -108,7 +108,7 @@ class ficheActions extends autoFicheActions {
     elseif(preg_match('/^(\d{2}):(\d{2}):(\d{2})$/i', $value)) {
       $value = date('H\hi', strtotime($value));
     }
-    return $value;
+    return utf8_decode($value);
   }
 
   public function executeEnableKeyboard(sfWebRequest $request) {
