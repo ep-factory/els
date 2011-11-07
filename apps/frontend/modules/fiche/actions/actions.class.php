@@ -57,8 +57,8 @@ class ficheActions extends autoFicheActions {
         $this->setLayout(false);
         $response = $this->getResponse();
         $response->setHttpHeader('Content-Disposition', 'attachment; filename="'.basename($filename).'"');
-        $response->setContentType('text/csv; charset=windows-1252/Winlatin1');
-        //$response->setContentType('text/csv; charset=UTF-8');
+        //$response->setContentType('text/csv; charset=windows-1252/Winlatin1');
+        $response->setContentType('text/csv; charset=UTF-8');
         $response->setContent(file_get_contents($filename));
         unlink($filename);
         return sfView::NONE;
@@ -70,7 +70,7 @@ class ficheActions extends autoFicheActions {
   }
 
   protected function retrieveLabel($name) {
-    return utf8_decode($this->configuration->getFieldConfiguration("list", preg_replace('/^[_~](.*)$/i', '$1', $name))->getConfig('label'));
+    return $this->configuration->getFieldConfiguration("list", preg_replace('/^[_~](.*)$/i', '$1', $name))->getConfig('label');
   }
 
   protected function retrieveValue(Fiche $fiche, $column) {
@@ -108,7 +108,7 @@ class ficheActions extends autoFicheActions {
     elseif(preg_match('/^(\d{2}):(\d{2}):(\d{2})$/i', $value)) {
       $value = date('H\hi', strtotime($value));
     }
-    return utf8_decode($value);
+    return $value;
   }
 
   public function executeEnableKeyboard(sfWebRequest $request) {
