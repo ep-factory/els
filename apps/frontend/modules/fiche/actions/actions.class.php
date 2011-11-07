@@ -57,8 +57,8 @@ class ficheActions extends autoFicheActions {
         $this->setLayout(false);
         $response = $this->getResponse();
         $response->setHttpHeader('Content-Disposition', 'attachment; filename="'.basename($filename).'"');
-        $response->setContentType('text/csv; charset=windows-1252/Winlatin1');
-        //$response->setContentType('text/csv; charset=UTF-8');
+        //$response->setContentType('text/csv; charset=windows-1252/Winlatin1');
+        $response->setContentType('text/csv; charset=UTF-8');
         $response->setContent(file_get_contents($filename));
         unlink($filename);
         return sfView::NONE;
