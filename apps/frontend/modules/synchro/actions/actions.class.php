@@ -137,7 +137,7 @@ class synchroActions extends sfActions
         }
         $record->fromArray($fiche);
         // Manage Demandeur
-        if(isset($demandeur['name'])) {
+        if(isset($demandeur['name']) && $demandeur['name']) {
           $existingDemandeur = DemandeurTable::getInstance()->findOneByName($demandeur['name']);
           if(!$existingDemandeur) {
             $existingDemandeur = new Demandeur();
