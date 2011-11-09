@@ -26,7 +26,7 @@ class ficheActions extends autoFicheActions {
         $handle = fopen($filename, 'w+');
         chmod($filename, 0777);
         // Headers
-        $headers = array('N° de fiche', 'Catégorie', 'Code Affaire');
+        $headers = array('N. de fiche', 'Categorie', 'Code Affaire');
         foreach($this->configuration->getValue('show.display') as $header) {
           if(is_array($header)) {
             foreach($header as $name) {
@@ -108,6 +108,9 @@ class ficheActions extends autoFicheActions {
     elseif(preg_match('/^(\d{2}):(\d{2}):(\d{2})$/i', $value)) {
       $value = date('H\hi', strtotime($value));
     }
+    $value = str_replace("\n", "", $value);
+    $value = str_replace("\r\n", "", $value);
+    $value = str_replace("\r", "", $value); ;
     return utf8_decode($value);
   }
 
