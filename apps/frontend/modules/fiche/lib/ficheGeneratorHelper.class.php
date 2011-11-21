@@ -48,8 +48,9 @@ class ficheGeneratorHelper extends BaseFicheGeneratorHelper {
     if($object->isNew() || $object->getIsFinished() || !$this->getUser()->hasCredential('close')) {
       return null;
     }
-    // La fiche n'a aucun appareil et l'utilisateur n'est pas Dieu
-    if(!$this->getUser()->isSuperAdmin() && !$object->getAppareilId()) {
+    
+    // La fiche n'a aucun appareil est une 481 et l'utilisateur n'est pas Dieu
+    if(!$this->getUser()->isSuperAdmin() && !$object->getAppareilId() && $object->getCategory()->getCode()==481 ) {
       return '<li class="sf_admin_action_close">'.link_to_function(__($params['label'], array(), 'sf_admin'), "alert('Vous devez associer un appareil à cette fiche.');").'</li>';
     }
     return '<li class="sf_admin_action_close">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('close'), $object, array('title' => __($params['label'], array(), 'sf_admin'))).'</li>';
