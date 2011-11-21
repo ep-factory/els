@@ -109,7 +109,8 @@ class ficheActions extends autoFicheActions {
       $value = date('H\hi', strtotime($value));
     }
     // Replace line returns
-    $value = str_replace("\r", null, str_replace("\r\n", null, str_replace("\n", null, $value)));
+    //$value = str_replace("\r", null, str_replace("\r\n", null, str_replace("\n", null, $value)));
+    $value = preg_replace("/(\r\n|\n|\r)/", "~", $value);
     return utf8_decode($value);
   }
 
