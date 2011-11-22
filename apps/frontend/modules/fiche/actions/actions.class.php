@@ -78,7 +78,14 @@ class ficheActions extends autoFicheActions {
     if(FicheTable::getInstance()->hasRelation(ucfirst($name))) {
       $name = ucfirst($name);
     }
-    $value = $fiche->{"get".ucfirst(sfInflector::camelize($name))}();
+    $method = "get".ucfirst(sfInflector::camelize($name));
+    if(method_exists($fiche, "getExport".ucfirst(sfInflector::camelize($name)))) {
+      $method = "getExport".ucfirst(sfInflector::camelize($name));
+    }
+    if(!method_exists($fiche, $method)) {
+      return;
+    }
+    $value = $fiche->{$method}();
     // sfDoctrineRecord
     if(is_object($value) && $value instanceof sfDoctrineRecord) {
       $value = $value->isNew() ? null : $value->__toString();
