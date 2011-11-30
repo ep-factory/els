@@ -8,18 +8,6 @@ class Version2 extends Doctrine_Migration_Base
     {
         $this->dropForeignKey('fiche', 'fiche_parent_id_fiche_id');
         $this->dropForeignKey('fiche_log', 'fiche_log_parent_id_fiche_id');
-        $this->createForeignKey('fiche', 'fiche_parent_number_fiche_number', array(
-             'name' => 'fiche_parent_number_fiche_number',
-             'local' => 'parent_number',
-             'foreign' => 'number',
-             'foreignTable' => 'fiche',
-             ));
-        $this->createForeignKey('fiche_log', 'fiche_log_parent_number_fiche_number', array(
-             'name' => 'fiche_log_parent_number_fiche_number',
-             'local' => 'parent_number',
-             'foreign' => 'number',
-             'foreignTable' => 'fiche',
-             ));
         $this->addIndex('fiche', 'fiche_parent_number', array(
              'fields' => 
              array(
@@ -37,6 +25,18 @@ class Version2 extends Doctrine_Migration_Base
              array(
               0 => 'parent_number',
              ),
+             ));
+        $this->createForeignKey('fiche', 'fiche_parent_number_fiche_number', array(
+             'name' => 'fiche_parent_number_fiche_number',
+             'local' => 'parent_number',
+             'foreign' => 'number',
+             'foreignTable' => 'fiche',
+             ));
+        $this->createForeignKey('fiche_log', 'fiche_log_parent_number_fiche_number', array(
+             'name' => 'fiche_log_parent_number_fiche_number',
+             'local' => 'parent_number',
+             'foreign' => 'number',
+             'foreignTable' => 'fiche',
              ));
     }
 
