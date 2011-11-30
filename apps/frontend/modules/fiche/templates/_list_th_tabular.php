@@ -1,10 +1,10 @@
 <?php slot('sf_admin.current_header') ?>
 <th class="sf_admin_text sf_admin_list_th_number">
   <?php if ('number' == $sort[0]): ?>
-    <?php echo link_to(__('Num√©ro', array(), 'messages'), '@fiche', array('query_string' => 'sort=number&sort_type='.($sort[1] == 'asc' ? 'desc' : 'asc'))) ?>
+    <?php echo link_to(__('Numéro', array(), 'messages'), '@fiche', array('query_string' => 'sort=number&sort_type='.($sort[1] == 'asc' ? 'desc' : 'asc'))) ?>
     <?php echo image_tag(sfConfig::get('sf_admin_module_web_dir').'/images/'.$sort[1].'.png', array('alt' => __($sort[1], array(), 'sf_admin'), 'title' => __($sort[1], array(), 'sf_admin'))) ?>
   <?php else: ?>
-    <?php echo link_to(__('Num√©ro', array(), 'messages'), '@fiche', array('query_string' => 'sort=number&sort_type=asc')) ?>
+    <?php echo link_to(__('Numéro', array(), 'messages'), '@fiche', array('query_string' => 'sort=number&sort_type=asc')) ?>
   <?php endif; ?>
 </th>
 <?php end_slot(); ?>
@@ -15,7 +15,7 @@
 <?php end_slot(); ?>
 <?php include_slot('sf_admin.current_header') ?><?php slot('sf_admin.current_header') ?>
 <th class="sf_admin_text sf_admin_list_th_Category">
-  <?php echo __('B√¢timent', array(), 'messages') ?>
+  <?php echo __('Bâtiment', array(), 'messages') ?>
 </th>
 <?php end_slot(); ?>
 <?php include_slot('sf_admin.current_header') ?><?php slot('sf_admin.current_header') ?>
@@ -43,7 +43,7 @@
     <?php echo __('Intervenant', array(), 'messages') ?>
   </th>
   <th class="sf_admin_boolean sf_admin_list_th_is_resolved">
-    <?php echo __('R√©solue', array(), 'messages') ?>
+    <?php echo __('Résolue', array(), 'messages') ?>
   </th>
   <?php end_slot(); ?>
   <?php include_slot('sf_admin.current_header') ?>
@@ -51,10 +51,10 @@
   <?php slot('sf_admin.current_header') ?>
   <th class="sf_admin_boolean sf_admin_list_th_is_finished">
     <?php if ('is_finished' == $sort[0]): ?>
-      <?php echo link_to(__('Clotur√©', array(), 'messages'), '@fiche', array('query_string' => 'sort=is_finished&sort_type='.($sort[1] == 'asc' ? 'desc' : 'asc'))) ?>
+      <?php echo link_to(__('Cloturé', array(), 'messages'), '@fiche', array('query_string' => 'sort=is_finished&sort_type='.($sort[1] == 'asc' ? 'desc' : 'asc'))) ?>
       <?php echo image_tag(sfConfig::get('sf_admin_module_web_dir').'/images/'.$sort[1].'.png', array('alt' => __($sort[1], array(), 'sf_admin'), 'title' => __($sort[1], array(), 'sf_admin'))) ?>
     <?php else: ?>
-      <?php echo link_to(__('Clotur√©', array(), 'messages'), '@fiche', array('query_string' => 'sort=is_finished&sort_type=asc')) ?>
+      <?php echo link_to(__('Cloturé', array(), 'messages'), '@fiche', array('query_string' => 'sort=is_finished&sort_type=asc')) ?>
     <?php endif; ?>
   </th>
   <?php end_slot(); ?>
