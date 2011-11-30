@@ -43,6 +43,25 @@ class Fiche extends BaseFiche {
     return myUser::convert_seconds_to_time($diff ? $diff*1000 : 0);*/
   }
 
+  public function getExportTimeSpent() {
+    if(!strtotime($this->getEndHour()) || !strtotime($this->getStartHour())) {
+      return;
+    }   
+    $timeDebut =strtotime($this->getStartHour());
+    $timeFin = strtotime($this->getEndHour());
+    $nbHeure=0;
+    if($timeFin > $timeDebut){
+        $diff = ($timeFin - $timeDebut);
+        if ($diff >= 3600){
+          $nbHeure = floor($diff/3600);
+          $diff = $diff-($nbHeure*3600);
+        }
+        $nbMinuteCent = floor((($diff/60)*100)/60);         
+        return $nbHeure.','.$nbMinuteCent;
+    }
+    return;  
+  }
+
   /**
    * Check if current fiche has parent
    *
@@ -67,12 +86,12 @@ class Fiche extends BaseFiche {
    * @return Fiche
    */
   public function resolve() {
-    $this->setIsResolved(true)
+    /*$this->setIsResolved(true)
          ->setResolvedDate(date('Y-m-d H:i:s'))
          ->setResolvedAuthorId(sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
          ->save();
-    return $this;
-    /*if(!count($this->getHierarchyIds())) {
+    return $this;*/
+    if(!count($this->getHierarchyIds())) {
       return;
     }
     if($return) {
@@ -83,7 +102,7 @@ class Fiche extends BaseFiche {
             ->set('resolved_date', '"'.date('Y-m-d H:i:s').'"')
             ->set('resolved_author_id', sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
             ->whereIn('id', $this->getHierarchyIds())
-            ->update()->execute();*/
+            ->update()->execute();
   }
 
   /**
@@ -92,20 +111,19 @@ class Fiche extends BaseFiche {
    * @return Fiche
    */
   public function close() {
-    $this->setIsFinished(true)
-         ->setFinishedDate(date('Y-m-d H:i:s'))
-         ->setFinishedAuthorId(sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
-         ->save();
-    return $this;
-    /*if(!count($this->getHierarchyIds())) {
-      return;
+    $nbFicheEncoreOuverte = $this->getTable()->createQuery()
+            ->where('is_finished = ?', FALSE)
+            ->andWhere('parent_id = ? ', $this->getPrimaryKey())
+            ->count();
+    if($nbFicheEncoreOuverte == 0)
+    {
+      $this->setIsFinished(true)
+              ->setFinishedDate(date('Y-m-d H:i:s'))
+              ->setFinishedAuthorId(sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
+              ->save();
+      return $this;
     }
-    $this->getTable()->createQuery()
-            ->set('is_finished', true)
-            ->set('finished_date', '"'.date('Y-m-d H:i:s').'"')
-            ->set('finished_author_id', sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
-            ->whereIn('id', $this->getHierarchyIds())
-            ->update()->execute();*/
+    return;
   }
 
   /**
@@ -133,6 +151,13 @@ class Fiche extends BaseFiche {
    */
   public function getCategoryCode() {
     return $this->getCategory()->getCode();
+  }
+
+  public function getFirstTag($idFiche){
+  if($TaggingId = TaggingTable::getInstance()->findOneByTaggableId($idFiche)){;
+    $tag =  TagTable::getInstance()->find($TaggingId->tag_id);
+    return $tag->name;   
+    }
   }
 
   /**

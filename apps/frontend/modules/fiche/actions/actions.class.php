@@ -82,9 +82,6 @@ class ficheActions extends autoFicheActions {
     if(method_exists($fiche, "getExport".ucfirst(sfInflector::camelize($name)))) {
       $method = "getExport".ucfirst(sfInflector::camelize($name));
     }
-    if(!method_exists($fiche, $method)) {
-      return;
-    }
     $value = $fiche->{$method}();
     // sfDoctrineRecord
     if(is_object($value) && $value instanceof sfDoctrineRecord) {
@@ -177,8 +174,7 @@ class ficheActions extends autoFicheActions {
     $this->setTemplate('index');
   }
 
-  protected function buildQuery()
-  {
+  protected function buildQuery(){
     $query = parent::buildQuery();
     if($this->getRequest()->getParameter('action') == 'index') {
       if($this->getUser()->hasPermission('view')) {
@@ -218,8 +214,12 @@ class ficheActions extends autoFicheActions {
   }
 
   public function executeClose(sfWebRequest $request) {
-    $this->getRoute()->getObject()->close();
-    $this->getUser()->setFlash('notice', "L'intervention a été correctement clos.");
+    if($this->getRoute()->getObject()->close()){
+      $this->getUser()->setFlash('notice', "L'intervention a été correctement clôturée.");
+    }
+    else{
+      $this->getUser()->setFlash('error', "Les Fiches filles doivent être clôturées avant.");
+    }
     $this->redirect($request->getReferer());
   }
 
@@ -239,8 +239,7 @@ class ficheActions extends autoFicheActions {
     }
   }*/
 
-  public function executeCreate(sfWebRequest $request)
-  {
+  public function executeCreate(sfWebRequest $request){
     $this->form = $this->configuration->getForm();
     $datas = $request->getParameter($this->form->getName());
     if(isset($datas['parent_id']) && $datas['parent_id'] && $object = FicheTable::getInstance()->find($datas['parent_id'])) {

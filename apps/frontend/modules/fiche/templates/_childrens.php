@@ -4,7 +4,7 @@
     <span>
       <ul>
         <?php foreach($fiche->getChildrens() as $children): ?>
-          <li><?php echo link_to($children, "fiche_show", $children, array('target' => '_blank')) ?></li>
+          <li><?php echo link_to($children, "fiche_show", $children, array('target' => '_self')) ?></li>
         <?php endforeach ?>
       </ul>
     </span>
