@@ -34,7 +34,7 @@ class Category extends BaseCategory {
                     ->innerJoin('fiche.CaseCode case_code')
                     ->innerJoin('fiche.Category category')
                     ->andWhere('fiche.deleted_at IS NULL')
-                    ->andWhere('fiche.parent_id IS NULL')
+                    ->andWhere('fiche.parent_number IS NULL')
                     ->orderBy('fiche.fiche_date DESC');
     if($limit) {
       $query->limit($limit);

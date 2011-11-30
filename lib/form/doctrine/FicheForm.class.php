@@ -16,7 +16,8 @@ class FicheForm extends BaseFicheForm {
   public function configure() {
     unset($this['created_at'], $this['updated_at'], $this['deleted_at']);
     // Hidden fields
-    $this->widgetSchema['parent_id'] = new sfWidgetFormInputHidden();
+    $this->widgetSchema['parent_number'] = new sfWidgetFormInputHidden();
+    $this->validatorSchema['parent_number']->setOption('column', 'number');
     $this->widgetSchema['category_id'] = new sfWidgetFormInputHidden();
     $this->widgetSchema['resolved_author_id'] = new sfWidgetFormInputHidden();
     $this->widgetSchema['finished_author_id'] = new sfWidgetFormInputHidden();
@@ -170,20 +171,20 @@ EOF
       }
     }
 
-    if($this->getObject()->getParentId()) {
+    if($this->getObject()->getParentNumber()) {
       $this->widgetSchema['appel_hour'] = new sfWidgetFormInputPlain(array('value' => preg_replace('/^(\d{4})-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{1,2}):(\d{1,2})$/i', '$3/$2/$1 $4H$5', $this->getObject()->getParent()->getAppelHour())));
       $this->validatorSchema['appel_hour'] = new sfValidatorDateTime(array('required' => false));
     }
 
     // Defaults from request & user
-    $this->setDefault('parent_id', $this->getRequest()->getParameter('parent_id', $this->getObject()->getParentId()));
+    $this->setDefault('parent_number', $this->getRequest()->getParameter('parent_number', $this->getObject()->getParentNumber()));
     if($this->getUser()->hasGroup('technicien')) {
       $this->setDefault('sf_guard_user_id', $this->getUser()->getGuardUser()->getPrimaryKey());
     }
     $this->setDefault('category_id', $this->getRequest()->getParameter('category_id', $this->getObject()->hasParent() ? $this->getObject()->getParent()->getCategoryId() : CategoryTable::getInstance()->findByIsActive(true)->getFirst()->getPrimaryKey()));
 
     // Specific form from category
-    $fields = array('id', 'category_id', 'parent_id', 'case_code_id', 'criticity', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
+    $fields = array('id', 'category_id', 'parent_number', 'case_code_id', 'criticity', 'tags', 'finished_author_id', 'resolved_author_id', 'category_id', 'number', 'fiche_date', 'poste_id', 'ppi_number', 'mo_number', 'acr_number', 'is_resolved', 'is_finished', 'start_hour', 'end_hour', 'solution', 'sf_guard_user_id', 'batiment_id', 'atelier_id', 'annexe_id');
     $category = CategoryTable::getInstance()->find($this->isNew() ? $this->getDefault('category_id') : $this->getObject()->getCategoryId());
     if($category) {
       switch($category->getCode()) {

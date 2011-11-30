@@ -45,7 +45,7 @@ generator:
           label: Cloturé
         is_resolved:
           label: Fermée
-        parent_id:
+        parent_number:
           label: Parent
         parent:
           label: Parent

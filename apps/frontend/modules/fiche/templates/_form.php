@@ -10,7 +10,7 @@
     <?php if($sf_request->hasParameter('category_id')): ?>
       <input type="hidden" name="category_id" value="<?php echo $sf_request->getParameter("category_id") ?>" />
     <?php elseif($form->getObject()->hasParent()): ?>
-      <input type="hidden" name="parent_id" value="<?php echo $form->getObject()->getParentId() ?>" />
+      <input type="hidden" name="parent_number" value="<?php echo $form->getObject()->getParentNumber() ?>" />
       <input type="hidden" name="category_id" value="<?php echo $form->getObject()->getParent()->getCategoryId() ?>" />
     <?php endif ?>
     <?php echo $form->renderHiddenFields(false) ?>

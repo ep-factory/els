@@ -68,7 +68,7 @@ class Fiche extends BaseFiche {
    * @return boolean Condition
    */
   public function hasParent() {
-    return $this->getParentId() != $this->getPrimaryKey() && $this->getParentId() && $this->getParent() && !$this->getParent()->isNew();
+    return $this->getParentNumber() != $this->getNumber() && $this->getParentNumber() && $this->getParent() && !$this->getParent()->isNew();
   }
 
   /**
@@ -113,7 +113,7 @@ class Fiche extends BaseFiche {
   public function close() {
     $nbFicheEncoreOuverte = $this->getTable()->createQuery()
             ->where('is_finished = ?', FALSE)
-            ->andWhere('parent_id = ? ', $this->getPrimaryKey())
+            ->andWhere('parent_number = ? ', $this->getNumber())
             ->count();
     if($nbFicheEncoreOuverte == 0)
     {
@@ -169,7 +169,12 @@ class Fiche extends BaseFiche {
     parent::preInsert($event);
     // Force number
     if(!$this->getNumber()) {
-      $this->setNumber(date('ymdHis').sfConfig::get('app_machine_id'));
+      if(!sfContext::hasInstance()) {
+        $this->setNumber(substr(md5(rand()), 0, 12).sfConfig::get('app_machine_id'));
+      }
+      else {
+        $this->setNumber(date('ymdHis').sfConfig::get('app_machine_id'));
+      }
     }
   }
 

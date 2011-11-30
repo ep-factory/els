@@ -152,7 +152,7 @@ Fiche:
       type: integer
       default: 0
     sf_guard_user_id: integer
-    parent_id: integer
+    parent_number: string(13)
     is_finished:
       type: boolean
       default: false
@@ -173,6 +173,7 @@ Fiche:
     number:
       type: string(13)
       notnull: true
+      unique: true
     label: string(255)
     fiche_date: date
     poste_id:
@@ -222,8 +223,8 @@ Fiche:
   relations:
     Parent:
       class: Fiche
-      local: parent_id
-      foreign: id
+      local: parent_number
+      foreign: number
       foreignAlias: Childrens
     FinishedAuthor:
       class: sfGuardUser
@@ -295,7 +296,7 @@ FicheLog:
       type: integer
       default: 0
     sf_guard_user_id: integer
-    parent_id: integer
+    parent_number: string(13)
     is_finished:
       type: boolean
       default: false
@@ -367,8 +368,8 @@ FicheLog:
       foreignAlias: Logs
     Parent:
       class: Fiche
-      local: parent_id
-      foreign: id
+      local: parent_number
+      foreign: number
       foreignAlias: Logs
     FinishedAuthor:
       class: sfGuardUser
