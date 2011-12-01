@@ -168,13 +168,11 @@ class Fiche extends BaseFiche {
   public function preInsert($event) {
     parent::preInsert($event);
     // Force number
-    if(!$this->getNumber()) {
-      if(!sfContext::hasInstance()) {
-        $this->setNumber(substr(md5(rand()), 0, 12).sfConfig::get('app_machine_id'));
-      }
-      else {
-        $this->setNumber(date('ymdHis').sfConfig::get('app_machine_id'));
-      }
+    if(!sfContext::hasInstance()) {
+      $this->setNumber(substr(md5(rand()), 0, 12).sfConfig::get('app_machine_id'));
+    }
+    else {
+      $this->setNumber(date('ymdHis').sfConfig::get('app_machine_id'));
     }
   }
 

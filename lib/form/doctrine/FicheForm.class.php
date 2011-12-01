@@ -24,7 +24,7 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['is_finished'] = new sfWidgetFormInputHidden();
     $this->widgetSchema['is_resolved'] = new sfWidgetFormInputHidden();
     $this->widgetSchema['number'] = new sfWidgetFormInputHidden();
-    $this->validatorSchema['number']->setOption('required', false);
+    $this->validatorSchema['number'] = new sfValidatorChoice(array('choices' => array($this->getObject()->get('number')), 'empty_value' => $this->getObject()->get('number'), 'required' => false));
 
     // Specific fields
     if($this->getUser()->getAttribute('enable_keyboard', false)) {

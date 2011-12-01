@@ -173,7 +173,6 @@ Fiche:
     number:
       type: string(13)
       notnull: true
-      unique: true
     label: string(255)
     fiche_date: date
     poste_id:
