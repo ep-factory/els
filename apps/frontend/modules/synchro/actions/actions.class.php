@@ -108,77 +108,82 @@ class synchroActions extends sfActions
   public function executeImport(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod("post") || $request->hasParameter('values'));
-    try {
-      $this->logMessage(count(unserialize($request->getParameter("values")))." fiches reçues.");
-      $records = new Doctrine_Collection('Fiche');
-      foreach(unserialize($request->getParameter("values")) as $fiche) {
-        // Test si la fiche existe
-        $record = FicheTable::getInstance()->findOneByNumber($fiche['number']);
-        $elements = $fiche['Elements'];
-        $demandeur = $fiche['Demandeur'];
-        unset($fiche['Demandeur'], $fiche['Elements']);
-        $fiche['demandeur_id'] = null;
-        if(!$record) {
-          $record = new Fiche();
-          unset($fiche['id']);
-        }
-        else {
-          $record->unlink("Elements", $record->getElements()->getPrimaryKeys());
-          // Conflict if fiche.sf_guard_user_id != record.sf_guard_user_id
-          if(($record['sf_guard_user_id'] && $record['sf_guard_user_id'] != $fiche['sf_guard_user_id'])
-              || $record['is_resolved'] || $record['is_finished']) {
-            unset($fiche['id']);
-            $log = new FicheLog();
-            $log->fromArray($fiche);
-            $log->setFiche($record);
-            $log->save();
-            continue;
-          }
-        }
-        $record->fromArray($fiche);
-        // Manage Demandeur
-        if(isset($demandeur['name']) && $demandeur['name']) {
-          $existingDemandeur = DemandeurTable::getInstance()->findOneByName($demandeur['name']);
-          if(!$existingDemandeur) {
-            $existingDemandeur = new Demandeur();
-            $existingDemandeur->setName($demandeur['name']);
-          }
-          $record->setDemandeur($existingDemandeur);
-        }
-        // Manage Elements
-        foreach($elements as $object) {
-          $ficheElement = new FicheElement();
-          // ElementChanged ElementInstalled
-          foreach(array('ElementChanged', 'ElementInstalled') as $name) {
-            if(isset($object[$name]) && $object[$name]) {
-              // Try to retrieve existing Element
-              if($object[$name]['server_id']) {
-                $element = ElementTable::getInstance()->findOneByServerId($object[$name]['server_id']);
-              }
-              // Create new Element
-              if(!isset($element) || !$element) {
-                $element = new Element();
-              }
-              unset($object[$name]['id'], $object[$name]['server_id']);
-              $element->fromArray($object[$name]);
-              $ficheElement[$name] = $element;
-            }
-          }
-          $ficheElement->setElementChangedSerial($object['element_changed_serial']);
-          $ficheElement->setElementInstalledSerial($object['element_installed_serial']);
-          $record->getElements()->add($ficheElement);
-        }
-        // Add current Fiche to Doctrine_Collection
-        $records->add($record);
+    $connection = FicheTable::getInstance()->getConnection();
+    $connection->beginInternalTransaction();
+    $this->logMessage(count(unserialize($request->getParameter("values")))." fiches reçues.");
+    $count = 0;
+    foreach(unserialize($request->getParameter("values")) as $fiche) {
+      $this->logMessage("Fiche numéro ".$fiche['number']);
+      // Test si la fiche existe
+      $record = FicheTable::getInstance()->findOneByNumber($fiche['number']);
+      $elements = $fiche['Elements'];
+      $demandeur = $fiche['Demandeur'];
+      unset($fiche['Demandeur'], $fiche['Elements']);
+      $fiche['demandeur_id'] = null;
+      if(!$record) {
+        $record = new Fiche();
+        unset($fiche['id']);
       }
-      // Save recursive Fiche & FicheElement & Element
-      $this->logMessage($records->count()." fiches doivent être enregistrées.");
-      $records->save();
+      else {
+        $record->unlink("Elements", $record->getElements()->getPrimaryKeys());
+        // Conflict if fiche.sf_guard_user_id != record.sf_guard_user_id
+        if(($record['sf_guard_user_id'] && $record['sf_guard_user_id'] != $fiche['sf_guard_user_id'])
+            || $record['is_resolved'] || $record['is_finished']) {
+          unset($fiche['id']);
+          $log = new FicheLog();
+          $log->fromArray($fiche);
+          $log->setFiche($record);
+          $log->save();
+          continue;
+        }
+      }
+      $record->fromArray($fiche);
+      // Manage Demandeur
+      if(isset($demandeur['name']) && $demandeur['name']) {
+        $existingDemandeur = DemandeurTable::getInstance()->findOneByName($demandeur['name']);
+        if(!$existingDemandeur) {
+          $existingDemandeur = new Demandeur();
+          $existingDemandeur->setName($demandeur['name']);
+        }
+        $record->setDemandeur($existingDemandeur);
+      }
+      // Manage Elements
+      foreach($elements as $object) {
+        $ficheElement = new FicheElement();
+        // ElementChanged ElementInstalled
+        foreach(array('ElementChanged', 'ElementInstalled') as $name) {
+          if(isset($object[$name]) && $object[$name]) {
+            // Try to retrieve existing Element
+            if($object[$name]['server_id']) {
+              $element = ElementTable::getInstance()->findOneByServerId($object[$name]['server_id']);
+            }
+            // Create new Element
+            if(!isset($element) || !$element) {
+              $element = new Element();
+            }
+            unset($object[$name]['id'], $object[$name]['server_id']);
+            $element->fromArray($object[$name]);
+            $ficheElement[$name] = $element;
+          }
+        }
+        $ficheElement->setElementChangedSerial($object['element_changed_serial']);
+        $ficheElement->setElementInstalledSerial($object['element_installed_serial']);
+        $record->getElements()->add($ficheElement);
+      }
+      // Save current Fiche
+      try {
+        $record->save($connection);
+        $count++;
+      }
+      catch(Exception $error) {
+        $connection->rollback();
+        $this->logMessage("Une erreur est survenue : ".$error->getMessage());
+        return $this->renderText(json_encode(array('code' => 'error', 'message' => "Une erreur est survenue : ".$error->getMessage())));
+      }
     }
-    catch(Exception $error) {
-      $this->logMessage("Une erreur est survenue : ".$error->getMessage());
-      return $this->renderText(json_encode(array('code' => 'error', 'message' => "Une erreur est survenue : ".$error->getMessage())));
-    }
+    $connection->commit();
+    // Save recursive Fiche & FicheElement & Element & Demandeur
+    $this->logMessage("$count fiches ont été enregistrées.");
     return $this->renderText(json_encode(array('code' => 'success', 'message' => "Les fiches ont été correctement importées.")));
   }
   

@@ -68,28 +68,9 @@ class Fiche extends BaseFiche {
    * @return boolean Condition
    */
   public function hasParent() {
-    return $this->getParentNumber() != $this->getNumber() && $this->getParentNumber() && $this->getParent() && !$this->getParent()->isNew();
+    return $this->getParentNumber() != $this->getNumber() && $this->getParentNumber() && $this->getParent() && !$this->getParent()->isNew() && $this->getParent()->getPrimaryKey();
   }
   
-  protected $childrens;
-  public function getChildrens() {
-    if(is_null($this->childrens)) {
-      $this->childrens = $this->getNumber() ? $this->getTable()->findByParentNumber($this->getNumber()) : new Doctrine_Collection(get_class($this));
-    }
-    return $this->childrens;
-  }
-  
-  protected $parent;
-  public function getParent() {
-    if(is_null($this->parent)) {
-      $this->parent = false;
-      if($this->getParentNumber() && $this->getNumber() && $this->getParentNumber() != $this->getNumber()) {
-        $this->parent = $this->getTable()->findOneByNumber($this->getParentNumber());
-      }
-    }
-    return $this->parent;
-  }
-
   /**
    * Unresolve current fiche, parent and children
    *

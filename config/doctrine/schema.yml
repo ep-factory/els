@@ -220,11 +220,11 @@ Fiche:
     atelier_id: integer
     annexe_id: integer
   relations:
-#    Parent:
-#      class: Fiche
-#      local: parent_number
-#      foreign: number
-#      foreignAlias: Childrens
+    Parent:
+      class: Fiche
+      local: parent_number
+      foreign: number
+      foreignAlias: Childrens
     FinishedAuthor:
       class: sfGuardUser
       local: finished_author_id
@@ -365,11 +365,11 @@ FicheLog:
   relations:
     Fiche:
       foreignAlias: Logs
-#    Parent:
-#      class: Fiche
-#      local: parent_number
-#      foreign: number
-#      foreignAlias: Logs
+    Parent:
+      class: Fiche
+      local: parent_number
+      foreign: number
+      foreignAlias: Logs
     FinishedAuthor:
       class: sfGuardUser
       local: finished_author_id
