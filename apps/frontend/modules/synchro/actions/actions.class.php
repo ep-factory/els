@@ -40,6 +40,7 @@ class synchroActions extends sfActions
       // Send values in rest
       try {
         if($this->sendRest($values)) {
+          return $this->renderText(json_encode(array('code' => 'success', 'message'=> "Les données ont été correctement importées.")));
           // Load values from server export
           if(!is_dir(sfConfig::get('sf_upload_dir'))) {
             mkdir(sfConfig::get('sf_upload_dir'), 0777);
@@ -114,9 +115,8 @@ class synchroActions extends sfActions
         // Test si la fiche existe
         $record = FicheTable::getInstance()->findOneByNumber($fiche['number']);
         $elements = $fiche['Elements'];
-        $fiche['Elements'] = array();
         $demandeur = $fiche['Demandeur'];
-        $fiche['Demandeur'] = array();
+        unset($fiche['Demandeur'], $fiche['Elements']);
         $fiche['demandeur_id'] = null;
         if(!$record) {
           $record = new Fiche();

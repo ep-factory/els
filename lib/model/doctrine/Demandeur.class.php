@@ -13,7 +13,7 @@
 class Demandeur extends BaseDemandeur {
   public function preSave($event) {
     parent::preSave($event);
-    $this->setName(strtoupper($this->getName()));
+    $this->setName(strtoupper(Doctrine_Inflector::unaccent($this->getName())));
   }
 
 }
