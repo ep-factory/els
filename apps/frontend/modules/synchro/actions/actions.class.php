@@ -130,6 +130,15 @@ class synchroActions extends sfActions
           unset($fiche['id']);
           $log = new FicheLog();
           $log->fromArray($fiche);
+          // Manage Demandeur
+          if(isset($demandeur['name']) && $demandeur['name']) {
+            $existingDemandeur = DemandeurTable::getInstance()->findOneByName($demandeur['name']);
+            if(!$existingDemandeur) {
+              $existingDemandeur = new Demandeur();
+              $existingDemandeur->setName($demandeur['name']);
+            }
+            $log->setDemandeur($existingDemandeur);
+          }
           $log->setFiche($record);
           $log->save();
           continue;
