@@ -126,7 +126,7 @@ class ficheActions extends autoFicheActions {
 
   public function executeDemandeur_autocomplete(sfWebRequest $request) {
     $this->forward404Unless($request->isXmlHttpRequest());
-    $objects = DemandeurTable::getInstance()->createQuery()->select("id, name")->where("name LIKE ?", "%".$request->getParameter("q")."%")->andWhere('is_active = 1')->limit(10)->fetchArray();
+    $objects = DemandeurTable::getInstance()->createQuery()->select("id, name")->where("name LIKE ?", "%".$request->getParameter("q")."%")->andWhere('is_active = 1 AND deleted_at IS NULL')->limit(10)->fetchArray();
     return $this->renderText(json_encode($objects));
   }
 
