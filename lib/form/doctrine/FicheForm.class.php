@@ -54,7 +54,8 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['batiment_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['atelier_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['annexe_id']->setOption('table_method', 'findActive');
-    $this->widgetSchema['tags'] = new sfWidgetFormInputToken(array('url' => $this->genUrl('@fiche_tags_autocomplete')));
+    //$this->widgetSchema['tags'] = new sfWidgetFormInputToken(array('url' => $this->genUrl('@fiche_tags_autocomplete')));
+    $this->widgetSchema['tags'] = new sfWidgetFormInputAutocomplete(array('multiple' => true, 'url' => $this->genUrl('@fiche_tags_autocomplete')));
     $this->getWidgetSchema()->setHelp('tags', 'Séparez vos tags par des virgules : toto, tata, titi.');
     $this->validatorSchema['tags'] = new sfValidatorString(array('required' => false));
     if($this->isNew()) {

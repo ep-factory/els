@@ -6,15 +6,12 @@ synchro:
 synchro_import:
   url:   /synchronisation/import
   param: { module: synchro, action: import }
-  requirements:
-    sf_method: [post]
+  requirements: { sf_method: [post] }
 
 synchro_export:
   url:   /synchronisation/export
   param: { module: synchro, action: export }
-  requirements:
-    sf_method: [get]
-    sf_format: xml
+  requirements: { sf_method: [get] }
 ### FIN SYNCHRO ###
 
 uploadify:
@@ -45,6 +42,11 @@ document:
     prefix_path:          /document
     column:               id
     with_wildcard_routes: true
+
+fiche_update_filters:
+  url:   /fiche/updateFilters
+  param: { module: fiche, action: updateFilters }
+  requirements: { sf_method: [post] }
 
 fiche:
   class: sfDoctrineRouteCollection

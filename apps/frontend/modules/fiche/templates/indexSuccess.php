@@ -12,7 +12,17 @@
     });
     $('.displayMore').live('click', function(event){
       event.preventDefault();
-      $($(this).attr('href')).find('form').submit();
+      $.ajax({
+        url: "<?php echo url_for("@fiche_update_filters") ?>",
+        type: "post",
+        data: "category_id=" + $(this).attr('rel'),
+        error: function(){
+          alert("Une erreur est survenue.");
+        },
+        success: function(){
+          $(location).attr('href', "<?php echo url_for("@search") ?>");
+        }
+      });
     });
   });
 </script>
@@ -56,11 +66,7 @@
                   <?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $fiches->count()), $fiches->count(), 'sf_admin') ?>
                   <?php if($count > $fiches->count()): ?>
                     <?php $nb = $count-$fiches->count() ?>
-                    <div style="display: none;" id="filter<?php echo $category->getPrimaryKey() ?>">
-                      <?php $filters->bind($configuration->getCategoryFilters($filters, $category->getRawValue())->getRawValue()) ?>
-                      <?php include_partial('fiche/filters', array('form' => $filters, 'configuration' => $configuration, $sf_user->hasGroup('technicien') ? false : null)) ?>
-                    </div>
-                    <p><strong><a href="#filter<?php echo $category->getPrimaryKey() ?>" class="displayMore"><?php echo sprintf('Afficher les %s autres...', $nb) ?></a></strong></p>
+                    <p><strong><a href="#" rel="<?php echo $category->getPrimaryKey() ?>" class="displayMore"><?php echo sprintf('Afficher les %s autres...', $nb) ?></a></strong></p>
                   <?php endif; ?>
                 </span>
                 <span>

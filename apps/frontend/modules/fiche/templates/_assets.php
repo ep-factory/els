@@ -66,5 +66,27 @@
         $(this).css('height', 'auto');
       }
     });
+    // Heures
+    $('#fiche_fiche_date').live('change', function(){
+      // Only if empty
+      if(!$('#fiche_appel_hour').val().length) {
+        $("#fiche_appel_hour").val($(this).val() + " 00h00");
+      }
+      if(!$('#fiche_start_hour').val().length) {
+        $("#fiche_start_hour").val($(this).val() + " 00h00");
+      }
+      if(!$('#fiche_end_hour').val().length) {
+        $("#fiche_end_hour").val($(this).val() + " 00h00");
+      }
+    });
+    $('#fiche_appel_hour').live('change', function(){
+      // Only if empty
+      if(!$('#fiche_start_hour').val().length) {
+        $("#fiche_start_hour").val($(this).val());
+      }
+      if(!$('#fiche_end_hour').val().length) {
+        $("#fiche_end_hour").val($(this).val());
+      }
+    });
   });
 </script>

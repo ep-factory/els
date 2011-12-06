@@ -15,6 +15,9 @@ class FicheFormFilter extends BaseFicheFormFilter
    */
   public function configure()
   {
+    // Category
+    $this->widgetSchema['category_id'] = new sfWidgetFormInputHidden();
+    
     // Is finished
     $this->widgetSchema['is_finished']->setOption('renderer_class', 'sfWidgetFormSelectRadio');
     $this->widgetSchema['is_finished']->setOption('choices', array('' => 'tous', 1 => 'oui', 0 => 'non'));

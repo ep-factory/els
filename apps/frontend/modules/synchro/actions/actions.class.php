@@ -125,8 +125,8 @@ class synchroActions extends sfActions
       else {
         $record->unlink("Elements", $record->getElements()->getPrimaryKeys());
         // Conflict if fiche.sf_guard_user_id != record.sf_guard_user_id
-        if(($record['sf_guard_user_id'] && $record['sf_guard_user_id'] != $fiche['sf_guard_user_id'])
-            || $record['is_resolved'] || $record['is_finished']) {
+        if(($record['sf_guard_user_id'] && $record['sf_guard_user_id'] != $fiche['sf_guard_user_id'])){
+            //|| $record['is_resolved'] || $record['is_finished']) {
           unset($fiche['id']);
           $log = new FicheLog();
           $log->fromArray($fiche);
@@ -203,7 +203,8 @@ class synchroActions extends sfActions
   {
     list($username, $password, $dbname, $host) = $this->getConfig();
     system("mysqldump -h $host -u $username -p$password $dbname --skip-comments --ignore-table=$dbname.fiche --ignore-table=$dbname.fiche_element --ignore-table=$dbname.fiche_log");
-    system("mysqldump -h $host -u $username -p$password $dbname --skip-comments --where=\"fiche.is_finished=0 AND fiche.is_resolved=0\" --tables fiche fiche_element");
+    system("mysqldump -h $host -u $username -p$password $dbname --skip-comments --where=\"fiche.fiche_date >= '".date('Y-m-d', strtotime("-14 days"))."'\" --tables fiche");
+    system("mysqldump -h $host -u $username -p$password $dbname --skip-comments --tables fiche_element");
     return sfView::NONE;
   }
   
