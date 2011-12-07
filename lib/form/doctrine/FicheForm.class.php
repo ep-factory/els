@@ -84,11 +84,11 @@ class FicheForm extends BaseFicheForm {
     }
     $this->setDefault('ppc_id', $ppc->getPrimaryKey());
     $this->widgetSchema['ppc_id'] = new sfWidgetFormInputPlain(array('value' => !$this->getObject()->getPpcId() ? $ppc : $this->getObject()->getPpc()));
-    $this->widgetSchema['fiche_date'] = new sfWidgetFormDateJQueryUI();
+    $this->widgetSchema['fiche_date'] = new sfWidgetFormDateJQueryUI(array('show_button_panel' => true));
     $this->widgetSchema['fiche_date']->setAttribute('class', 'validate[optional,custom[date_custom]]');
     $this->getWidgetSchema()->setHelp('fiche_date', 'Format requis : dd/mm/YYYY');
     $this->validatorSchema['fiche_date'] = new sfValidatorDateCustom(array('required' => false));
-    $this->widgetSchema['unsolved_date'] = new sfWidgetFormDateJQueryUI();
+    $this->widgetSchema['unsolved_date'] = new sfWidgetFormDateJQueryUI(array('show_button_panel' => true));
     $this->validatorSchema['unsolved_date'] = new sfValidatorDateCustom(array('required' => false));
     $this->validatorSchema['appel_hour'] = new sfValidatorTimestamp(array('required' => false));
     $this->validatorSchema['start_hour'] = new sfValidatorTimestamp(array('required' => false));
@@ -131,7 +131,7 @@ EOF
       if(isset($this->widgetSchema[$name])) {
         // Hour
         if(preg_match('/hour$/i', $name)) {
-          $this->widgetSchema[$name] = new sfWidgetFormTimestamp(array('stepMinute' => 15));
+          $this->widgetSchema[$name] = new sfWidgetFormTimestamp(array('stepMinute' => 15, 'show_button_panel' => true));
           $this->getWidgetSchema()->setHelp($name, 'Format requis : dd/mm/YYYY HHhii');
         }
         // Keyboard

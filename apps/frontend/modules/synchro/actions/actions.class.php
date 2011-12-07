@@ -116,11 +116,10 @@ class synchroActions extends sfActions
       $record = FicheTable::getInstance()->findOneByNumber($fiche['number']);
       $elements = $fiche['Elements'];
       $demandeur = $fiche['Demandeur'];
-      unset($fiche['Demandeur'], $fiche['Elements']);
+      unset($fiche['Demandeur'], $fiche['Elements'], $fiche['id']);
       $fiche['demandeur_id'] = null;
       if(!$record) {
         $record = new Fiche();
-        unset($fiche['id']);
       }
       else {
         $record->unlink("Elements", $record->getElements()->getPrimaryKeys());
