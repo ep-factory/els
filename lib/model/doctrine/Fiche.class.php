@@ -153,9 +153,9 @@ class Fiche extends BaseFiche {
   }
 
   public function getFirstTag($idFiche){
-  if($TaggingId = TaggingTable::getInstance()->findOneByTaggableId($idFiche)){;
-    $tag =  TagTable::getInstance()->find($TaggingId->tag_id);
-    return $tag->name;   
+    $tags = $this->getTags();	
+	  foreach ($tags as $tag){
+      return $tag;
     }
   }
 
