@@ -43,7 +43,7 @@ class FicheForm extends BaseFicheForm {
     $this->widgetSchema['poste_id']->setOption('order_by', array('id', 'ASC'));
     $this->widgetSchema['poste_id']->setOption('table_method', 'findActive');
     $this->widgetSchema['appareil_id']->setOption('table_method', 'findActive');
-    $this->widgetSchema['appareil_id']->setOption('add_empty', 'Autre');
+    $this->widgetSchema['appareil_id']->setOption('add_empty', 'Aucun');
     $this->widgetSchema['appareil_id']->setAttribute('class', 'noTransform');
     if($this->getUser()->hasCredential('appareil')) {
       $this->getWidgetSchema()->setHelp('appareil_id', sprintf("<a href='%s' class='fancybox'>Créer un nouvel appareil</a>", $this->genUrl('@appareil_new')));
