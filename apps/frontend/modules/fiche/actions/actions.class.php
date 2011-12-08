@@ -15,7 +15,7 @@ class ficheActions extends autoFicheActions {
   
   public function executeUpdateFilters(sfWebRequest $request) {
     $this->forward404Unless($request->isXmlHttpRequest() && $request->isMethod("post"));
-    $this->setFilters(array('category_id' => $request->getParameter("category_id")));
+    $this->setFilters(array('category_id' => $request->getParameter("category_id"), 'is_resolved' => 0));
     return sfView::NONE;
   }
 
