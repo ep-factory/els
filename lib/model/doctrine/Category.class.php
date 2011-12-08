@@ -40,12 +40,10 @@ class Category extends BaseCategory {
       $query->limit($limit);
     }
     if($user->hasPermission('view')) {
-      echo "view";
       $query->andWhere('fiche.is_resolved = 0');
       $query->andWhere('fiche.is_finished = 0');
     }
     elseif($user->hasPermission('view-resolved')) {
-      echo "view-resolved";
       $query->andWhere('fiche.is_resolved = 1');
       $query->andWhere('fiche.is_finished = 0');
     }

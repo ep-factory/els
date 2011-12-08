@@ -15,7 +15,16 @@ class ficheActions extends autoFicheActions {
   
   public function executeUpdateFilters(sfWebRequest $request) {
     $this->forward404Unless($request->isXmlHttpRequest() && $request->isMethod("post"));
-    $this->setFilters(array('category_id' => $request->getParameter("category_id"), 'is_resolved' => 0));
+    $filters = array('category_id' => $request->getParameter("category_id"));
+    if($this->getUser()->hasPermission('view')) {
+      $filters['is_resolved'] = 0;
+      $filters['is_finished'] = 0;
+    }
+    elseif($this->getUser()->hasPermission('view-resolved')) {
+      $filters['is_resolved'] = 1;
+      $filters['is_finished'] = 0;
+    }
+    $this->setFilters($filters);
     return sfView::NONE;
   }
 
@@ -158,7 +167,7 @@ class ficheActions extends autoFicheActions {
 
   public function executeIndex(sfWebRequest $request) {
     $this->categories = CategoryTable::getInstance()->findAll();
-    $this->filters = $this->configuration->getFilterForm($this->getFilters());
+    //$this->filters = $this->configuration->getFilterForm($this->getFilters());
   }
 
   public function executeFilter(sfWebRequest $request) {
@@ -180,7 +189,7 @@ class ficheActions extends autoFicheActions {
     $this->setTemplate('index');
   }
 
-  protected function buildQuery(){
+  /*protected function buildQuery(){
     $query = parent::buildQuery();
     if($this->getRequest()->getParameter('action') == 'index') {
       if($this->getUser()->hasPermission('view')) {
@@ -193,7 +202,7 @@ class ficheActions extends autoFicheActions {
       }
     }
     return $query;
-  }
+  }*/
 
   public function executeEdit(sfWebRequest $request) {
     $this->fiche = $this->getRoute()->getObject();
