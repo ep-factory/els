@@ -10,6 +10,9 @@
  */
 class synchroActions extends sfActions
 {
+  /**
+   * Disable debug bar
+   */
   public function preExecute() {
     parent::preExecute();
     sfConfig::set('sf_web_debug', false);

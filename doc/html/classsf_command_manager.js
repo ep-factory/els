@@ -1,0 +1,25 @@
+var classsf_command_manager =
+[
+    [ "__construct", "classsf_command_manager.html#acb390cf54375b2309f9a171fea765e91", null ],
+    [ "getArgumentSet", "classsf_command_manager.html#ac1347a9eec8646a064d827522bb73b15", null ],
+    [ "getArgumentValue", "classsf_command_manager.html#a5f36a3eec67744dc5719a72209ef5f01", null ],
+    [ "getArgumentValues", "classsf_command_manager.html#a5e1d471286c46a0adf1d8d6beb0f1e26", null ],
+    [ "getErrors", "classsf_command_manager.html#a6e548ebf2656742bfd19939ead923ed2", null ],
+    [ "getOptionSet", "classsf_command_manager.html#afcb0e7a004df9fd1d361e844ef8774e8", null ],
+    [ "getOptionValue", "classsf_command_manager.html#a23ac6fafd452b25100f937108043a8ab", null ],
+    [ "getOptionValues", "classsf_command_manager.html#ae46c49e2d0f5866716dcb7355a9b4088", null ],
+    [ "isValid", "classsf_command_manager.html#a7b37efab7473a1effc29f8be2421f6e3", null ],
+    [ "parseLongOption", "classsf_command_manager.html#a05ef194a8aee4819459445887ba0efdd", null ],
+    [ "parseShortOption", "classsf_command_manager.html#a970cc1f04d39fc829323d46bfffab741", null ],
+    [ "process", "classsf_command_manager.html#a2eba4b07acfc8e233c65b198283f4e91", null ],
+    [ "setArgumentSet", "classsf_command_manager.html#a3f9508e1ed962f6ca8187217a3930452", null ],
+    [ "setOption", "classsf_command_manager.html#a70c632258702ff579744ceb2e10e455a", null ],
+    [ "setOptionSet", "classsf_command_manager.html#a029809e278f44c4eec77fe8fe65a3500", null ],
+    [ "$arguments", "classsf_command_manager.html#a61eded163d962fc248b3cf209000979b", null ],
+    [ "$argumentSet", "classsf_command_manager.html#a92504cc9ba25c6a1e928b10bd3b034dd", null ],
+    [ "$argumentValues", "classsf_command_manager.html#a0ad7d7bfcb9f0ceaaefcf1aa6b201f16", null ],
+    [ "$errors", "classsf_command_manager.html#ab24faf4aa647cdcee494fc48524ad4ff", null ],
+    [ "$optionSet", "classsf_command_manager.html#a8896b4ac47b149dbb09b834ad76cbef1", null ],
+    [ "$optionValues", "classsf_command_manager.html#aba530ebcc578b77a09d482ac4805da29", null ],
+    [ "$parsedArgumentValues", "classsf_command_manager.html#a1a557f8fab7a6d596daffb581748d4ee", null ]
+];

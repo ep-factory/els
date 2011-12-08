@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['select',['SELECT',['../class_doctrine___query___abstract.html#a35973b14dbe24cfc841a4f19db764f28',1,'Doctrine_Query_Abstract\SELECT()'],['../class_doctrine___view.html#a35973b14dbe24cfc841a4f19db764f28',1,'Doctrine_View\SELECT()']]],
+  ['sequence',['SEQUENCE',['../interface_platform.html#a6db37c17daa51c9f588e901acf3d9b2f',1,'Platform']]],
+  ['serial',['SERIAL',['../interface_platform.html#a2f015ddb4cf5e19b82bf7191a2a3e9fa',1,'Platform']]],
+  ['stacktrace_5ftag',['STACKTRACE_TAG',['../class_xml_logger.html#a06daa8137c28d9b86ca552aa7fc7136b',1,'XmlLogger']]],
+  ['state_5factive',['STATE_ACTIVE',['../class_doctrine___transaction.html#ac3f3de48f1dde4affc3192273c665a6a',1,'Doctrine_Transaction']]],
+  ['state_5fbusy',['STATE_BUSY',['../class_doctrine___transaction.html#a2079680022af9a37d39e1ed1d5649eb4',1,'Doctrine_Transaction']]],
+  ['state_5fclean',['STATE_CLEAN',['../class_doctrine___query___abstract.html#a1b944c776949e9c0660f4d7b08cf6a55',1,'Doctrine_Query_Abstract\STATE_CLEAN()'],['../class_doctrine___record.html#a1b944c776949e9c0660f4d7b08cf6a55',1,'Doctrine_Record\STATE_CLEAN()']]],
+  ['state_5fdirect',['STATE_DIRECT',['../class_doctrine___query___abstract.html#a79acf35d3716a1c6bd1bd0c7c4c837db',1,'Doctrine_Query_Abstract']]],
+  ['state_5fdirty',['STATE_DIRTY',['../class_doctrine___query___abstract.html#a53f40b6aa8360fb891d6516dea517b57',1,'Doctrine_Query_Abstract\STATE_DIRTY()'],['../class_doctrine___record.html#a53f40b6aa8360fb891d6516dea517b57',1,'Doctrine_Record\STATE_DIRTY()']]],
+  ['state_5flocked',['STATE_LOCKED',['../class_doctrine___query___abstract.html#a64bd61dc65fa8d6e20adb49b6919d978',1,'Doctrine_Query_Abstract\STATE_LOCKED()'],['../class_doctrine___record.html#a64bd61dc65fa8d6e20adb49b6919d978',1,'Doctrine_Record\STATE_LOCKED()']]],
+  ['state_5fproxy',['STATE_PROXY',['../class_doctrine___record.html#a1e3e1b93ec033ad9ab397dc77f6b349b',1,'Doctrine_Record']]],
+  ['state_5fsleep',['STATE_SLEEP',['../class_doctrine___transaction.html#a1dee6728d9baba284fc48ec202a0aa02',1,'Doctrine_Transaction']]],
+  ['state_5ftclean',['STATE_TCLEAN',['../class_doctrine___record.html#a6eeedb3a75ea2fbe951b00ec31522f39',1,'Doctrine_Record']]],
+  ['state_5ftdirty',['STATE_TDIRTY',['../class_doctrine___record.html#a4f671d30eda680905ed81d520917b11a',1,'Doctrine_Record']]],
+  ['state_5ftlocked',['STATE_TLOCKED',['../class_doctrine___record.html#aeeeaba07b88663c92f16905096a32945',1,'Doctrine_Record']]],
+  ['std_5fseparator_5fchar',['STD_SEPARATOR_CHAR',['../interface_name_generator.html#a063ab137f5436c0db4ba528aae362676',1,'NameGenerator']]]
+];

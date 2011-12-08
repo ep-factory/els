@@ -21,12 +21,22 @@ class Element extends BaseElement {
     return sprintf("%s - %s", $this->getMarque(), $this->getType());
   }
   
+  /**
+   * Force ref & marque
+   * 
+   * @param Doctrine_Event $event
+   */
   public function preSave($event) {
     parent::preSave($event);
     $this->setRef(strtoupper($this->getRef()));
     $this->setMarque(strtoupper($this->getMarque()));
   }
   
+  /**
+   * Force server_id
+   * 
+   * @param Doctrine_Event $event 
+   */
   public function postInsert($event) {
     parent::postInsert($event);
     if(sfContext::hasInstance() && sfContext::getInstance()->getRequest()->getParameter('action') == 'import') {

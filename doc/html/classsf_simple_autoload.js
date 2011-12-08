@@ -1,0 +1,27 @@
+var classsf_simple_autoload =
+[
+    [ "__construct", "classsf_simple_autoload.html#aab4002090c3de3aa5c9e7358b535ac8b", null ],
+    [ "addDirectory", "classsf_simple_autoload.html#a5c4db7a9931ff4888910ff73ae2ff678", null ],
+    [ "addFile", "classsf_simple_autoload.html#a450666407a07666e47072e70dca4da86", null ],
+    [ "addFiles", "classsf_simple_autoload.html#afaa8f53cabf4ad27ac2092e53a180422", null ],
+    [ "autoload", "classsf_simple_autoload.html#aad6cfb5484c7eda55731134910c7a280", null ],
+    [ "getClassPath", "classsf_simple_autoload.html#a03148ab15ef9b5f81ca188327ebefb50", null ],
+    [ "getInstance", "classsf_simple_autoload.html#aa45ca86d86b4baae830469e88a355c3d", null ],
+    [ "loadCache", "classsf_simple_autoload.html#ab8c3ec4d9f977b32b63e6fc3393c2a83", null ],
+    [ "loadConfiguration", "classsf_simple_autoload.html#a15a4e0a1c47e2cd047af7bdf5ad36627", null ],
+    [ "register", "classsf_simple_autoload.html#a610b9c89b82e11ea426e1804874a6ef4", null ],
+    [ "reload", "classsf_simple_autoload.html#a7b2a44f6ec87a111c1bc3cc911cd15f5", null ],
+    [ "removeCache", "classsf_simple_autoload.html#aa4d270f851b11582f937113077d4823c", null ],
+    [ "saveCache", "classsf_simple_autoload.html#a14e6791361b1c9847af25e600d600204", null ],
+    [ "setClassPath", "classsf_simple_autoload.html#aad4f8c0e5c83e65253e3b97e92f09102", null ],
+    [ "unregister", "classsf_simple_autoload.html#a4adcc093546b265f1ace78ceb3c350a1", null ],
+    [ "$cacheChanged", "classsf_simple_autoload.html#aad9ba4428d81a92cdb30c0b116d4dc42", null ],
+    [ "$cacheFile", "classsf_simple_autoload.html#a27449648c91f145a3cf9c301ebda680f", null ],
+    [ "$cacheLoaded", "classsf_simple_autoload.html#a51de6bec9f7caaeda5e9dc949183fe19", null ],
+    [ "$classes", "classsf_simple_autoload.html#a4212f1eca3e4faf764728d56bc13dfd3", null ],
+    [ "$dirs", "classsf_simple_autoload.html#a1b709c1d79631ebc8320b41bda028b54", null ],
+    [ "$files", "classsf_simple_autoload.html#a9590b15215a21e9b42eb546aeef79704", null ],
+    [ "$instance", "classsf_simple_autoload.html#ad9d7ce33ebb142b70e58b68052ca0ea8", null ],
+    [ "$overriden", "classsf_simple_autoload.html#afe37721b03ece93820b0e92266fcdfe2", null ],
+    [ "$registered", "classsf_simple_autoload.html#a4832303f9bd07af05f1ec6874de46716", null ]
+];

@@ -12,7 +12,12 @@ require_once dirname(__FILE__).'/../lib/ficheGeneratorHelper.class.php';
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 class ficheActions extends autoFicheActions {
-  
+  /**
+   * Update user filters in ajax post
+   * 
+   * @param sfWebRequest $request
+   * @return sfView
+   */
   public function executeUpdateFilters(sfWebRequest $request) {
     $this->forward404Unless($request->isXmlHttpRequest() && $request->isMethod("post"));
     $filters = array('category_id' => $request->getParameter("category_id"));
@@ -28,6 +33,12 @@ class ficheActions extends autoFicheActions {
     return sfView::NONE;
   }
 
+  /**
+   * Export fiches
+   * 
+   * @param sfWebRequest $request
+   * @return sfView
+   */
   public function executeExport(sfWebRequest $request) {
     $this->form = new ExportFormFilter();
     if($request->isMethod("post")) {
@@ -84,10 +95,23 @@ class ficheActions extends autoFicheActions {
     }
   }
 
+  /**
+   * Retrieve element label for export
+   * 
+   * @param string $name
+   * @return string
+   */
   protected function retrieveLabel($name) {
     return utf8_decode($this->configuration->getFieldConfiguration("list", preg_replace('/^[_~](.*)$/i', '$1', $name))->getConfig('label'));
   }
 
+  /**
+   * Retrieve element value for export
+   * 
+   * @param Fiche $fiche
+   * @param string $column
+   * @return string
+   */
   protected function retrieveValue(Fiche $fiche, $column) {
     $name = preg_replace('/^[_~](.*)$/i', '$1', $column);
     if(FicheTable::getInstance()->hasRelation(ucfirst($name))) {
@@ -133,24 +157,47 @@ class ficheActions extends autoFicheActions {
     return utf8_decode($value);
   }
 
+  /**
+   * Enable/disable virtual keyboard
+   * 
+   * @param sfWebRequest $request
+   * @return sfView
+   */
   public function executeEnableKeyboard(sfWebRequest $request) {
     $this->forward404Unless($request->isXmlHttpRequest() && $request->hasParameter('enable'));
     $this->getUser()->setAttribute('enable_keyboard', $request->getParameter('enable', false) ? true : false);
     return sfView::NONE;
   }
 
+  /**
+   * Generate autocomplete on Demandeur table
+   * 
+   * @param sfWebRequest $request
+   * @return string
+   */
   public function executeDemandeur_autocomplete(sfWebRequest $request) {
     $this->forward404Unless($request->isXmlHttpRequest());
     $objects = DemandeurTable::getInstance()->createQuery()->select("id, name")->where("name LIKE ?", "%".$request->getParameter("q")."%")->andWhere('is_active = 1 AND deleted_at IS NULL')->limit(10)->fetchArray();
     return $this->renderText(json_encode($objects));
   }
 
+  /**
+   * Generate autocomplete on Tag table
+   * 
+   * @param sfWebRequest $request
+   * @return sfView
+   */
   public function executeTags_autocomplete(sfWebRequest $request) {
     $this->forward404Unless($request->isXmlHttpRequest());
     $tags = TagTable::getInstance()->createQuery("tag")->select("tag.name AS id, tag.name AS name")->where("tag.name LIKE ?", "%".$request->getParameter("q")."%")->limit(10)->fetchArray();
     return $this->renderText(json_encode($tags));
   }
 
+  /**
+   * Display dashboard
+   * 
+   * @param sfWebRequest $request 
+   */
   public function executeDashboard(sfWebRequest $request) {
     // sorting
     if($request->getParameter('sort') && $this->isValidSortColumn($request->getParameter('sort')))
@@ -165,11 +212,20 @@ class ficheActions extends autoFicheActions {
     $this->sort = $this->getSort();
   }
 
+  /**
+   * Display fiches list
+   * 
+   * @param sfWebRequest $request 
+   */
   public function executeIndex(sfWebRequest $request) {
     $this->categories = CategoryTable::getInstance()->findAll();
-    //$this->filters = $this->configuration->getFilterForm($this->getFilters());
   }
 
+  /**
+   * Override admin generator filters
+   * 
+   * @param sfWebRequest $request 
+   */
   public function executeFilter(sfWebRequest $request) {
     $this->setPage(1);
     if($request->hasParameter('_reset'))
@@ -189,21 +245,11 @@ class ficheActions extends autoFicheActions {
     $this->setTemplate('index');
   }
 
-  /*protected function buildQuery(){
-    $query = parent::buildQuery();
-    if($this->getRequest()->getParameter('action') == 'index') {
-      if($this->getUser()->hasPermission('view')) {
-        $query->andWhere($query->getRootAlias().".is_resolved = 1");
-        $query->andWhere($query->getRootAlias().".is_finished = 0");
-      }
-      elseif($this->getUser()->hasPermission('view-resolved')) {
-        $query->andWhere($query->getRootAlias().".is_resolved = 1");
-        $query->andWhere($query->getRootAlias().".is_finished = 0");
-      }
-    }
-    return $query;
-  }*/
-
+  /**
+   * Display edit form
+   * 
+   * @param sfWebRequest $request 
+   */
   public function executeEdit(sfWebRequest $request) {
     $this->fiche = $this->getRoute()->getObject();
     if($this->getUser()->hasGroup('technicien') && !$this->fiche->getSfGuardUserId()) {
@@ -214,6 +260,11 @@ class ficheActions extends autoFicheActions {
     $this->forwardIf(!$this->getUser()->canEdit($this->fiche), $this->getModuleName(), "index");
   }
 
+  /**
+   * Unresolve fiche
+   * 
+   * @param sfWebRequest $request 
+   */
   public function executeUnresolve(sfWebRequest $request) {
     $this->forwardIf(!$this->getUser()->isSuperAdmin() && $this->getUser()->hasCredential('reopen-own') && $this->getRoute()->getObject()->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey(), $this->getModuleName(), "index");
     $this->getRoute()->getObject()->unresolve();
@@ -221,6 +272,11 @@ class ficheActions extends autoFicheActions {
     $this->redirect($request->getReferer());
   }
 
+  /**
+   * Resolve fiche
+   * 
+   * @param sfWebRequest $request 
+   */
   public function executeResolve(sfWebRequest $request) {
     $this->forwardIf(!$this->getUser()->isSuperAdmin() && $this->getUser()->hasCredential('resolve-own') && $this->getRoute()->getObject()->getSfGuardUserId() != $this->getUser()->getGuardUser()->getPrimaryKey(), $this->getModuleName(), "index");
     $this->getRoute()->getObject()->resolve();
@@ -228,6 +284,11 @@ class ficheActions extends autoFicheActions {
     $this->redirect($request->getReferer());
   }
 
+  /**
+   * Close fiche
+   * 
+   * @param sfWebRequest $request 
+   */
   public function executeClose(sfWebRequest $request) {
     if($this->getRoute()->getObject()->close()){
       $this->getUser()->setFlash('notice', "L'intervention a été correctement clôturée.");
@@ -238,22 +299,11 @@ class ficheActions extends autoFicheActions {
     $this->redirect($request->getReferer());
   }
 
-  /*public function executeShow(sfWebRequest $request) {
-    parent::executeShow($request);
-    // Permission pour voir une fiche close
-    if($this->fiche->getIsFinished()) {
-      $this->forwardIf($this->getUser()->hasCredential('show-resolved'), $this->getModuleName(), "index");
-    }
-    // Permission pour voir une fiche fermée
-    elseif($this->fiche->getIsResolved()) {
-      $this->forwardIf(!$this->getUser()->hasCredential('view-resolved'), $this->getModuleName(), "index");
-    }
-    // Permission pour voir une fiche non fermée
-    else {
-      $this->forwardIf(!$this->getUser()->hasCredential('view'), $this->getModuleName(), "index");
-    }
-  }*/
-
+  /**
+   * Create fiche
+   * 
+   * @param sfWebRequest $request 
+   */
   public function executeCreate(sfWebRequest $request){
     $this->form = $this->configuration->getForm();
     $datas = $request->getParameter($this->form->getName());
@@ -275,6 +325,11 @@ class ficheActions extends autoFicheActions {
     $this->setTemplate('new');
   }
 
+  /**
+   * Create fiche daughter
+   * 
+   * @param sfWebRequest $request 
+   */
   public function executeAdd(sfWebRequest $request) {
     $object = $this->getRoute()->getObject();
     $class = get_class($object);

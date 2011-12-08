@@ -2,43 +2,18 @@
 <html><head><title></title>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <link rel="stylesheet" type="text/css" href="search.css"/>
+<script type="text/javascript" src="variables_61.js"></script>
 <script type="text/javascript" src="search.js"></script>
 </head>
 <body class="SRPage">
 <div id="SRIndex">
-<div class="SRStatus" id="Loading">Chargement...</div>
-<div class="SRResult" id="SR_all">
- <div class="SREntry">
-  <a id="Item0" onkeydown="return searchResults.Nav(event,0)" onkeypress="return searchResults.Nav(event,0)" onkeyup="return searchResults.Nav(event,0)" class="SRSymbol" href="../class_criteria.html#ab56e734000051e5c12c8c5cf6d8d160d" target="_parent">ALL</a>
-  <span class="SRScope">Criteria</span>
- </div>
-</div>
-<div class="SRResult" id="SR_alt_5fnot_5fequal">
- <div class="SREntry">
-  <a id="Item1" onkeydown="return searchResults.Nav(event,1)" onkeypress="return searchResults.Nav(event,1)" onkeyup="return searchResults.Nav(event,1)" class="SRSymbol" href="../class_criteria.html#a2ae7d7675ed3e03b464f4b78d50f6d72" target="_parent">ALT_NOT_EQUAL</a>
-  <span class="SRScope">Criteria</span>
- </div>
-</div>
-<div class="SRResult" id="SR_asc">
- <div class="SREntry">
-  <a id="Item2" onkeydown="return searchResults.Nav(event,2)" onkeypress="return searchResults.Nav(event,2)" onkeyup="return searchResults.Nav(event,2)" class="SRSymbol" href="../class_criteria.html#a32bea9cb6a1769ec537f6acdfe4618a8" target="_parent">ASC</a>
-  <span class="SRScope">Criteria</span>
- </div>
-</div>
-<div class="SRResult" id="SR_attr_5fautocommit">
- <div class="SREntry">
-  <a id="Item3" onkeydown="return searchResults.Nav(event,3)" onkeypress="return searchResults.Nav(event,3)" onkeyup="return searchResults.Nav(event,3)" class="SRSymbol" href="../class_doctrine___core.html#a8afc186c96837a01f1a5291a004d1d66" target="_parent">ATTR_AUTOCOMMIT</a>
-  <span class="SRScope">Doctrine_Core</span>
- </div>
-</div>
-<div class="SRResult" id="SR_attr_5flistener">
- <div class="SREntry">
-  <a id="Item4" onkeydown="return searchResults.Nav(event,4)" onkeypress="return searchResults.Nav(event,4)" onkeyup="return searchResults.Nav(event,4)" class="SRSymbol" href="../class_doctrine___core.html#a837e8cb767916d268e97fed21eac80cd" target="_parent">ATTR_LISTENER</a>
-  <span class="SRScope">Doctrine_Core</span>
- </div>
-</div>
-<div class="SRStatus" id="Searching">Recherche...</div>
-<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div id="SRResults"></div>
+<script type="text/javascript"><!--
+createResults();
+--></script>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
 <script type="text/javascript"><!--
 document.getElementById("Loading").style.display="none";
 document.getElementById("NoMatches").style.display="none";

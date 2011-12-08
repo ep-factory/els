@@ -10,8 +10,16 @@
  * @author     Vincent CHALAMON <vincentchalamon@gmail.com>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Demandeur extends BaseDemandeur {
-  public function preSave($event) {
+class Demandeur extends BaseDemandeur
+{
+
+  /**
+   * Force name
+   * 
+   * @param Doctrine_Event $event 
+   */
+  public function preSave($event)
+  {
     parent::preSave($event);
     $this->setName(strtoupper(Doctrine_Inflector::unaccent($this->getName())));
   }

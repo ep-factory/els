@@ -10,13 +10,22 @@
  * @author     Vincent CHALAMON <vincentchalamon@gmail.com>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Fiche extends BaseFiche {
+class Fiche extends BaseFiche
+{
 
-  public function preSave($event) {
+  /**
+   * Force PPC active
+   * 
+   * @param Doctrine_Event $event 
+   */
+  public function preSave($event)
+  {
     parent::preSave($event);
-    if(!$this->getPpcId()) {
+    if(!$this->getPpcId())
+    {
       $ppc = PpcTable::getInstance()->findOneByIsActive(true);
-      if(!$ppc) {
+      if(!$ppc)
+      {
         throw new sfException('Aucun PPC actif. Veuillez contacter un administrateur.');
       }
       $this->setPpcId($ppc->getPrimaryKey());
@@ -28,38 +37,55 @@ class Fiche extends BaseFiche {
    *
    * @return string Label
    */
-  public function __toString() {
+  public function __toString()
+  {
     return sprintf("Fiche n°%s %s %s", $this->getNumber(), $this->getCaseCode(), $this->getCategoryCode());
   }
 
-  public function getTimeSpent() {
-    if(!strtotime($this->getEndHour()) || !strtotime($this->getStartHour())) {
+  /**
+   * Get time spent for render
+   * 
+   * @return string
+   */
+  public function getTimeSpent()
+  {
+    if(!strtotime($this->getEndHour()) || !strtotime($this->getStartHour()))
+    {
       return;
     }
     $from = new DateTime($this->getStartHour());
     $to = new DateTime($this->getEndHour());
     return date_diff($from, $to)->format('%Hh%I');
-    /*$diff = strtotime($this->getEndHour()) - strtotime($this->getStartHour());
-    return myUser::convert_seconds_to_time($diff ? $diff*1000 : 0);*/
+    /* $diff = strtotime($this->getEndHour()) - strtotime($this->getStartHour());
+      return myUser::convert_seconds_to_time($diff ? $diff*1000 : 0); */
   }
 
-  public function getExportTimeSpent() {
-    if(!strtotime($this->getEndHour()) || !strtotime($this->getStartHour())) {
+  /**
+   * Get time spent for export
+   * 
+   * @return string
+   */
+  public function getExportTimeSpent()
+  {
+    if(!strtotime($this->getEndHour()) || !strtotime($this->getStartHour()))
+    {
       return;
-    }   
-    $timeDebut =strtotime($this->getStartHour());
-    $timeFin = strtotime($this->getEndHour());
-    $nbHeure=0;
-    if($timeFin > $timeDebut){
-        $diff = ($timeFin - $timeDebut);
-        if ($diff >= 3600){
-          $nbHeure = floor($diff/3600);
-          $diff = $diff-($nbHeure*3600);
-        }
-        $nbMinuteCent = floor((($diff/60)*100)/60);         
-        return $nbHeure.','.$nbMinuteCent;
     }
-    return;  
+    $timeDebut = strtotime($this->getStartHour());
+    $timeFin = strtotime($this->getEndHour());
+    $nbHeure = 0;
+    if($timeFin > $timeDebut)
+    {
+      $diff = ($timeFin - $timeDebut);
+      if($diff >= 3600)
+      {
+        $nbHeure = floor($diff / 3600);
+        $diff = $diff - ($nbHeure * 3600);
+      }
+      $nbMinuteCent = floor((($diff / 60) * 100) / 60);
+      return $nbHeure.','.$nbMinuteCent;
+    }
+    return;
   }
 
   /**
@@ -67,16 +93,18 @@ class Fiche extends BaseFiche {
    *
    * @return boolean Condition
    */
-  public function hasParent() {
+  public function hasParent()
+  {
     return $this->getParentNumber() != $this->getNumber() && $this->getParentNumber() && $this->getParent() && !$this->getParent()->isNew() && $this->getParent()->getPrimaryKey();
   }
-  
+
   /**
    * Unresolve current fiche, parent and children
    *
    * @return mixed Void or list of ids
    */
-  public function unresolve() {
+  public function unresolve()
+  {
     $this->setIsResolved(false)->save();
   }
 
@@ -85,16 +113,19 @@ class Fiche extends BaseFiche {
    *
    * @return Fiche
    */
-  public function resolve() {
-    /*$this->setIsResolved(true)
-         ->setResolvedDate(date('Y-m-d H:i:s'))
-         ->setResolvedAuthorId(sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
-         ->save();
-    return $this;*/
-    if(!count($this->getHierarchyIds())) {
+  public function resolve()
+  {
+    /* $this->setIsResolved(true)
+      ->setResolvedDate(date('Y-m-d H:i:s'))
+      ->setResolvedAuthorId(sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
+      ->save();
+      return $this; */
+    if(!count($this->getHierarchyIds()))
+    {
       return;
     }
-    if($return) {
+    if($return)
+    {
       return $this->getHierarchyIds();
     }
     $this->getTable()->createQuery()
@@ -110,7 +141,8 @@ class Fiche extends BaseFiche {
    *
    * @return Fiche
    */
-  public function close() {
+  public function close()
+  {
     $nbFicheEncoreOuverte = $this->getTable()->createQuery()
             ->where('is_finished = ?', FALSE)
             ->andWhere('parent_number = ? ', $this->getNumber())
@@ -129,15 +161,19 @@ class Fiche extends BaseFiche {
    *
    * @return array Ids
    */
-  protected function getHierarchyIds() {
-    if(!sfContext::hasInstance() || !sfContext::getInstance()->getUser()->isAuthenticated()) {
+  protected function getHierarchyIds()
+  {
+    if(!sfContext::hasInstance() || !sfContext::getInstance()->getUser()->isAuthenticated())
+    {
       return array();
     }
     $ids = array($this->getPrimaryKey());
-    if($this->hasParent()) {
+    if($this->hasParent())
+    {
       $ids = array_merge($ids, $this->getParent()->resolve(true));
     }
-    if($this->getChildrens()->count()) {
+    if($this->getChildrens()->count())
+    {
       $ids = array_merge($ids, $this->getChildrens()->getPrimaryKeys());
     }
     return $ids;
@@ -148,30 +184,42 @@ class Fiche extends BaseFiche {
    *
    * @return string
    */
-  public function getCategoryCode() {
+  public function getCategoryCode()
+  {
     return $this->getCategory()->getCode();
   }
 
-  public function getFirstTag($idFiche){
-    $tags = $this->getTags();	
-	  foreach ($tags as $tag){
+  /**
+   * Get first tag in tags list
+   * 
+   * @return string
+   */
+  public function getFirstTag()
+  {
+    foreach($this->getTags() as $tag)
+    {
       return $tag;
     }
+    return false;
   }
 
   /**
-   * Force fiche number and time spent
+   * Force fiche number
    * 
    * @param Doctrine_Event $event Event
    */
-  public function preInsert($event) {
+  public function preInsert($event)
+  {
     parent::preInsert($event);
-    if(!$this->getNumber()) {
+    if(!$this->getNumber())
+    {
       // Force number
-      if(!sfContext::hasInstance()) {
+      if(!sfContext::hasInstance())
+      {
         $this->setNumber(substr(md5(rand()), 0, 12).sfConfig::get('app_machine_id'));
       }
-      else {
+      else
+      {
         $this->setNumber(date('ymdHis').sfConfig::get('app_machine_id'));
       }
     }

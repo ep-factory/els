@@ -1,0 +1,25 @@
+var class_doctrine___record___generator =
+[
+    [ "__get", "class_doctrine___record___generator.html#ae81b2060d9ee5a7bd5f20404fc2439a1", null ],
+    [ "__isset", "class_doctrine___record___generator.html#a524ff4d984c2911d5121270a2bbd22ae", null ],
+    [ "addChild", "class_doctrine___record___generator.html#a96a0142b9a637ee3b424275de28b035c", null ],
+    [ "buildChildDefinitions", "class_doctrine___record___generator.html#a577e8ed701765f32d45e48025d27279c", null ],
+    [ "buildForeignKeys", "class_doctrine___record___generator.html#afc362b5a43a047da7fd93fce4b65c1a7", null ],
+    [ "buildForeignRelation", "class_doctrine___record___generator.html#a7fbee45fcca0c68a94a1b765041f981c", null ],
+    [ "buildLocalRelation", "class_doctrine___record___generator.html#ac23e219195501307ce6bab25e1927386", null ],
+    [ "buildRelation", "class_doctrine___record___generator.html#ad19706bef264feef04785141468fe7ee", null ],
+    [ "buildTable", "class_doctrine___record___generator.html#a1834925547a13dd06475b60f48fe4a18", null ],
+    [ "generateClass", "class_doctrine___record___generator.html#aca37b2c5c098b244db7082bad246b2c1", null ],
+    [ "generateClassFromTable", "class_doctrine___record___generator.html#a1a41393f1d0d392f4db5d46f7bcab2ca", null ],
+    [ "getOption", "class_doctrine___record___generator.html#a86acce3c002ca1af709fd1b04f2f82fa", null ],
+    [ "getOptions", "class_doctrine___record___generator.html#a1a49b8dded6e91a52e2fd07195d334da", null ],
+    [ "getRelationForeignKey", "class_doctrine___record___generator.html#a3b45222cbf9e5a91c21db599d1420e21", null ],
+    [ "getRelationLocalKey", "class_doctrine___record___generator.html#a45abc49b01cea853d6920df50d06b2c7", null ],
+    [ "initialize", "class_doctrine___record___generator.html#a81ce30f75a026fd6d2ff489817b87e00", null ],
+    [ "initOptions", "class_doctrine___record___generator.html#aa2d21310ff484dadb71011d38d3e539d", null ],
+    [ "ownerHasMany", "class_doctrine___record___generator.html#a29117a38b85bb84c1a34ce1191874b70", null ],
+    [ "ownerHasOne", "class_doctrine___record___generator.html#a3e585d0f4250e99b3e9c566d279275e8", null ],
+    [ "setOption", "class_doctrine___record___generator.html#a7184fec9134a57cae6ef66b3588513d1", null ],
+    [ "$_initialized", "class_doctrine___record___generator.html#a5650089a6e7b16808cf900379eefc137", null ],
+    [ "$_options", "class_doctrine___record___generator.html#a1bebdc689c84eee59ad24c77e5531762", null ]
+];

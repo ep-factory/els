@@ -10,15 +10,26 @@
  * @author     Vincent CHALAMON <vincentchalamon@gmail.com>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class FicheElement extends BaseFicheElement {
-  public function __toString() {
+class FicheElement extends BaseFicheElement
+{
+
+  /**
+   * Render fiche element object
+   * 
+   * @return string
+   */
+  public function __toString()
+  {
     $return = "";
-    if($this->getElementChangedId()) {
+    if($this->getElementChangedId())
+    {
       $return.= sprintf(' | Changé : %s (%s)', $this->getElementChanged(), $this->getElementChangedSerial());
     }
-    if($this->getElementInstalledId()) {
+    if($this->getElementInstalledId())
+    {
       $return.= sprintf(' | Installé : %s (%s)', $this->getElementInstalled(), $this->getElementInstalledSerial());
     }
     return substr($return, 3);
   }
+
 }

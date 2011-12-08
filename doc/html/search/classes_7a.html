@@ -2,33 +2,18 @@
 <html><head><title></title>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <link rel="stylesheet" type="text/css" href="search.css"/>
+<script type="text/javascript" src="classes_7a.js"></script>
 <script type="text/javascript" src="search.js"></script>
 </head>
 <body class="SRPage">
 <div id="SRIndex">
-<div class="SRStatus" id="Loading">Chargement...</div>
-<div class="SRResult" id="SR_zendcodeanalyzertask">
- <div class="SREntry">
-  <a id="Item0" onkeydown="return searchResults.Nav(event,0)" onkeypress="return searchResults.Nav(event,0)" onkeyup="return searchResults.Nav(event,0)" class="SRSymbol" href="../class_zend_code_analyzer_task.html" target="_parent">ZendCodeAnalyzerTask</a>
- </div>
-</div>
-<div class="SRResult" id="SR_zipfileset">
- <div class="SREntry">
-  <a id="Item1" onkeydown="return searchResults.Nav(event,1)" onkeypress="return searchResults.Nav(event,1)" onkeyup="return searchResults.Nav(event,1)" class="SRSymbol" href="../class_zip_file_set.html" target="_parent">ZipFileSet</a>
- </div>
-</div>
-<div class="SRResult" id="SR_ziptask">
- <div class="SREntry">
-  <a id="Item2" onkeydown="return searchResults.Nav(event,2)" onkeypress="return searchResults.Nav(event,2)" onkeyup="return searchResults.Nav(event,2)" class="SRSymbol" href="../class_zip_task.html" target="_parent">ZipTask</a>
- </div>
-</div>
-<div class="SRResult" id="SR_ztask">
- <div class="SREntry">
-  <a id="Item3" onkeydown="return searchResults.Nav(event,3)" onkeypress="return searchResults.Nav(event,3)" onkeyup="return searchResults.Nav(event,3)" class="SRSymbol" href="../classz_task.html" target="_parent">zTask</a>
- </div>
-</div>
-<div class="SRStatus" id="Searching">Recherche...</div>
-<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div id="SRResults"></div>
+<script type="text/javascript"><!--
+createResults();
+--></script>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
 <script type="text/javascript"><!--
 document.getElementById("Loading").style.display="none";
 document.getElementById("NoMatches").style.display="none";

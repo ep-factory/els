@@ -10,14 +10,16 @@
  * @author     Vincent CHALAMON <vincentchalamon@gmail.com>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Category extends BaseCategory {
+class Category extends BaseCategory
+{
 
   /**
    * Render category to string
    *
    * @return string Category to string
    */
-  public function __toString() {
+  public function __toString()
+  {
     return $this->getName()." (".$this->getCode().")";
   }
 
@@ -26,24 +28,29 @@ class Category extends BaseCategory {
    *
    * @param myUser $user Current user
    * @param integer $limit Query limit
+   * @param string $action Query action
    * @return Doctrine_Collection Fiches
    */
-  public function getLimitedFiches(myUser $user, $limit = 10, $action = "execute") {
+  public function getLimitedFiches(myUser $user, $limit = 10, $action = "execute")
+  {
     $query = FicheTable::getInstance()->createQuery('fiche')
-                    ->where('fiche.category_id = ?', $this->getPrimaryKey())
-                    ->innerJoin('fiche.CaseCode case_code')
-                    ->innerJoin('fiche.Category category')
-                    ->andWhere('fiche.deleted_at IS NULL')
-                    ->andWhere('fiche.parent_number IS NULL')
-                    ->orderBy('fiche.fiche_date DESC');
-    if($limit) {
+            ->where('fiche.category_id = ?', $this->getPrimaryKey())
+            ->innerJoin('fiche.CaseCode case_code')
+            ->innerJoin('fiche.Category category')
+            ->andWhere('fiche.deleted_at IS NULL')
+            ->andWhere('fiche.parent_number IS NULL')
+            ->orderBy('fiche.fiche_date DESC');
+    if($limit)
+    {
       $query->limit($limit);
     }
-    if($user->hasPermission('view')) {
+    if($user->hasPermission('view'))
+    {
       $query->andWhere('fiche.is_resolved = 0');
       $query->andWhere('fiche.is_finished = 0');
     }
-    elseif($user->hasPermission('view-resolved')) {
+    elseif($user->hasPermission('view-resolved'))
+    {
       $query->andWhere('fiche.is_resolved = 1');
       $query->andWhere('fiche.is_finished = 0');
     }

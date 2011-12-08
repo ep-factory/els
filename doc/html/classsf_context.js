@@ -1,0 +1,26 @@
+var classsf_context =
+[
+    [ "__destruct", "classsf_context.html#a421831a265621325e1fdd19aace0c758", null ],
+    [ "getActionName", "classsf_context.html#a26f353f733e6f7a64eaeba330af5770e", null ],
+    [ "getConfiguration", "classsf_context.html#ad6a7980e832ca964872fe29113ab1642", null ],
+    [ "getController", "classsf_context.html#aa8b89e0bad51878addc1300cd3e95b5c", null ],
+    [ "getEventDispatcher", "classsf_context.html#a1038704d0a304d447214b6a700e7607f", null ],
+    [ "getInstance", "classsf_context.html#ad134f540c5578123fabd50e83a3bc933", null ],
+    [ "getModuleName", "classsf_context.html#a7e79740a77d43616dc9e0976f603fb7a", null ],
+    [ "getRequest", "classsf_context.html#adf1a35ad20e475c59cc0967d5764aa22", null ],
+    [ "getResponse", "classsf_context.html#a6c907e8af775e517a77037dd0164222f", null ],
+    [ "getRouting", "classsf_context.html#a9ce7f610bcf25473161d0050f41f83b5", null ],
+    [ "getStorage", "classsf_context.html#a2ee306b3cf5ab89be63cfdef2db1000d", null ],
+    [ "getUser", "classsf_context.html#ae81b7186fb97a7c6457edcc68c9aa2ef", null ],
+    [ "hasInstance", "classsf_context.html#aabea252aaf2bf265677fdc29ed4e3fa1", null ],
+    [ "inject", "classsf_context.html#aa7c2f7d7f8e1684ce79ae6e16f5558ac", null ],
+    [ "$configuration", "classsf_context.html#ab2a3e8712b2462d01e8ebacaa08bafa7", null ],
+    [ "$controller", "classsf_context.html#a388ef7b1db5e6f728e63cee704ce6e23", null ],
+    [ "$instance", "classsf_context.html#ad9d7ce33ebb142b70e58b68052ca0ea8", null ],
+    [ "$request", "classsf_context.html#abb35c8495a232b510389fa6d7b15d38a", null ],
+    [ "$response", "classsf_context.html#af4b6fb1bbc77ccc05f10da3b16935b99", null ],
+    [ "$routing", "classsf_context.html#a58616d5c0b82edd6a8d43364e7f0a5ef", null ],
+    [ "$sessionPath", "classsf_context.html#ada5ab13c21419562b5ec978dc9f6ff1a", null ],
+    [ "$storage", "classsf_context.html#a23658d9b796eebdea4cee5c9f0046894", null ],
+    [ "$user", "classsf_context.html#a598ca4e71b15a1313ec95f0df1027ca5", null ]
+];

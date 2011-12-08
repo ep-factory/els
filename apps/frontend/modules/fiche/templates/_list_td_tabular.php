@@ -2,7 +2,7 @@
   <?php echo $fiche->getNumber() ?>
 </td>
 <td class="sf_admin_text sf_admin_list_td_Category">
-  <?php echo $fiche->getFirstTag($fiche->getId()) ?>
+  <?php echo $fiche->getFirstTag() ?>
 </td>
 <td class="sf_admin_text sf_admin_list_td_Category">
   <?php echo $fiche->getBatiment() ?>

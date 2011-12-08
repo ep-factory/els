@@ -2,6 +2,12 @@
 
 class myUser extends sfGuardSecurityUser
 {
+  /**
+   * Check if user can edit fiche
+   * 
+   * @param Fiche $fiche
+   * @return boolean
+   */
   public function canEdit(Fiche $fiche)
   {
     // Si la fiche est close, seul Dieu peut l'éditer

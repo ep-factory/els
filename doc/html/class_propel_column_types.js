@@ -1,0 +1,27 @@
+var class_propel_column_types =
+[
+    [ "getPdoType", "class_propel_column_types.html#ac872802910bfa357c4c8b073008416c0", null ],
+    [ "BIGINT", "class_propel_column_types.html#a3788c3ac8385665ca74b56937e02dc38", null ],
+    [ "BINARY", "class_propel_column_types.html#a1867376965f2ff908bfd19037eabaab6", null ],
+    [ "BLOB", "class_propel_column_types.html#aca060cf18b8b32018f0f107b1b64b355", null ],
+    [ "BOOLEAN", "class_propel_column_types.html#ad86de3fd01ad9511fa7ac1dd7dbe57e1", null ],
+    [ "BU_DATE", "class_propel_column_types.html#a759c2896d8c63494a88faddc7fb3ffc2", null ],
+    [ "BU_TIMESTAMP", "class_propel_column_types.html#a09d0ac42c38ba7041fa72578d0657fe7", null ],
+    [ "CHAR", "class_propel_column_types.html#aea7568dbb4d42d31a6dc90627d6d4558", null ],
+    [ "CLOB", "class_propel_column_types.html#a6350b3deb959d7953a94f0702898c3ab", null ],
+    [ "DATE", "class_propel_column_types.html#a2710435d730458ebdf5de85f8fee5c85", null ],
+    [ "DECIMAL", "class_propel_column_types.html#ad2d051c4ef9fc7f6a421b40ccf876c9d", null ],
+    [ "DOUBLE", "class_propel_column_types.html#afd87c96ae3a25bf5804a4f3d2183a9f7", null ],
+    [ "FLOAT", "class_propel_column_types.html#a21a03e42b9a6cc8851d3c7459831f554", null ],
+    [ "INTEGER", "class_propel_column_types.html#a01eecdf29bca732e683a4a15b5b9bbcf", null ],
+    [ "LONGVARBINARY", "class_propel_column_types.html#a5ee07178b36ce09d5a223d460996f224", null ],
+    [ "LONGVARCHAR", "class_propel_column_types.html#a44f8c706d0b871b02c2445f77b967a58", null ],
+    [ "NUMERIC", "class_propel_column_types.html#a19cabff2391d99103d1bf11b0ed2972e", null ],
+    [ "REAL", "class_propel_column_types.html#a299e297b2bdc88cabebbd0b166117275", null ],
+    [ "SMALLINT", "class_propel_column_types.html#ac7af845d09e77db26d17f7d97b0a3450", null ],
+    [ "TIME", "class_propel_column_types.html#a51eb6cfbceb348ac5f40f954bb47b5a5", null ],
+    [ "TIMESTAMP", "class_propel_column_types.html#ac47fbbede956035c3546c2df4c0b7dbc", null ],
+    [ "TINYINT", "class_propel_column_types.html#ac2dee41599693c314fba6e5eb5078325", null ],
+    [ "VARBINARY", "class_propel_column_types.html#ab4ca0eea4dfa9a74fa512b1c36f2c355", null ],
+    [ "VARCHAR", "class_propel_column_types.html#a076027c871430c0764181c7f49d0147b", null ]
+];
