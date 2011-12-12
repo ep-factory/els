@@ -124,6 +124,9 @@ class synchroActions extends sfActions
       if(!$record) {
         $record = new Fiche();
       }
+      elseif($record->getIsResolved()) {
+        continue;
+      }
       else {
         $record->unlink("Elements", $record->getElements()->getPrimaryKeys());
         // Conflict if fiche.sf_guard_user_id != record.sf_guard_user_id
