@@ -38,8 +38,8 @@
       <h2><?php echo $category ?></h2>
     </div>
     <div class="contentbox">
-      <?php $fiches = $category->getLimitedFiches($sf_user->getRawValue(), $configuration->getPagerMaxPerPage()/2) ?>
-      <?php $count = $category->getLimitedFiches($sf_user->getRawValue(), null, "count") ?>
+      <?php $fiches = $category->getLimitedFiches($sf_user->getRawValue(), $configuration->getPagerMaxPerPage()/2, "execute", $sort) ?>
+      <?php $count = $category->getLimitedFiches($sf_user->getRawValue(), null, "count", $sort) ?>
       <?php if($sf_user->hasGroup('consultant')): ?>
         <p><?php echo __('No result', array(), 'sf_admin') ?> Utilisez la <?php echo link_to('recherche', '@search') ?> pour trouver des fiches.</p>
         <ul class="sf_admin_list_actions">
@@ -56,7 +56,7 @@
         <table width="100%">
           <thead>
             <tr>
-              <?php include_partial('fiche/list_th_tabular', array('sort' => array('fiche_date', 'desc'))) ?>
+              <?php include_partial('fiche/list_th_tabular', array('sort' => $sort)) ?>
             </tr>
           </thead>
           <tfoot>

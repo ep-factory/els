@@ -218,6 +218,7 @@ class ficheActions extends autoFicheActions {
    * @param sfWebRequest $request 
    */
   public function executeIndex(sfWebRequest $request) {
+    parent::executeIndex($request);
     $this->categories = CategoryTable::getInstance()->findAll();
   }
 
@@ -309,8 +310,8 @@ class ficheActions extends autoFicheActions {
     $datas = $request->getParameter($this->form->getName());
     if(isset($datas['parent_number']) && $datas['parent_number'] && $object = FicheTable::getInstance()->findOneByNumber($datas['parent_number'])) {
       $class = get_class($object);
-      $values = $object->toArray();
-      unset($values['id'], $values['fiche_date'], $values['sf_guard_user_id'], $values['start_hour'], $values['end_hour']);
+      $values = $object->toArray(false);
+      unset($values['number'], $values['id'], $values['fiche_date'], $values['sf_guard_user_id'], $values['start_hour'], $values['end_hour'], $values['is_finished'], $values['is_resolved']);
       $values['parent_number'] = $object->getNumber();
       $values['tags'] = $object->getTags();
       $values['Elements'] = $object->getElements();
@@ -333,7 +334,7 @@ class ficheActions extends autoFicheActions {
   public function executeAdd(sfWebRequest $request) {
     $object = $this->getRoute()->getObject();
     $class = get_class($object);
-    $values = $object->toArray();
+    $values = $object->toArray(false);
     unset($values['number'], $values['id'], $values['fiche_date'], $values['sf_guard_user_id'], $values['start_hour'], $values['end_hour'], $values['is_finished'], $values['is_resolved']);
     $values['parent_number'] = $object->getNumber();
     $values['tags'] = $object->getTags();

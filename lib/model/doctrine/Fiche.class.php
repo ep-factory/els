@@ -115,18 +115,9 @@ class Fiche extends BaseFiche
    */
   public function resolve()
   {
-    /* $this->setIsResolved(true)
-      ->setResolvedDate(date('Y-m-d H:i:s'))
-      ->setResolvedAuthorId(sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
-      ->save();
-      return $this; */
     if(!count($this->getHierarchyIds()))
     {
       return;
-    }
-    if($return)
-    {
-      return $this->getHierarchyIds();
     }
     $this->getTable()->createQuery()
             ->set('is_resolved', true)
@@ -144,8 +135,7 @@ class Fiche extends BaseFiche
   public function close()
   {
     $nbFicheEncoreOuverte = $this->getTable()->createQuery()
-            ->where('is_finished = ?', FALSE)
-            ->andWhere('parent_number = ? ', $this->getNumber())
+            ->where('is_finished = 0 AND parent_number = ?', $this->getNumber())
             ->count();
     if($nbFicheEncoreOuverte == 0)
     {
@@ -161,21 +151,23 @@ class Fiche extends BaseFiche
    *
    * @return array Ids
    */
-  protected function getHierarchyIds()
+  public function getHierarchyIds()
   {
     if(!sfContext::hasInstance() || !sfContext::getInstance()->getUser()->isAuthenticated())
     {
       return array();
     }
     $ids = array($this->getPrimaryKey());
-    if($this->hasParent())
+    // Retrieve parent ids
+    if($this->getParentNumber())
     {
-      $ids = array_merge($ids, $this->getParent()->resolve(true));
+      $ids = array_merge($ids, $this->getParent()->getHierarchyIds());
     }
-    if($this->getChildrens()->count())
+    // Retrieve children ids
+    /*if($this->getChildrens()->count())
     {
       $ids = array_merge($ids, $this->getChildrens()->getPrimaryKeys());
-    }
+    }*/
     return $ids;
   }
 

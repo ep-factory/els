@@ -172,7 +172,7 @@ EOF
       }
     }
 
-    if($this->getObject()->hasParent()) {
+    if($this->getObject()->getParentNumber()/*$this->getObject()->hasParent()*/) {
       $this->widgetSchema['appel_hour'] = new sfWidgetFormInputPlain(array('value' => preg_replace('/^(\d{4})-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{1,2}):(\d{1,2})$/i', '$3/$2/$1 $4H$5', $this->getObject()->getParent()->getAppelHour())));
       $this->validatorSchema['appel_hour'] = new sfValidatorDateTime(array('required' => false));
     }

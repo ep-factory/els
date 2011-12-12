@@ -31,7 +31,7 @@ class Category extends BaseCategory
    * @param string $action Query action
    * @return Doctrine_Collection Fiches
    */
-  public function getLimitedFiches(myUser $user, $limit = 10, $action = "execute")
+  public function getLimitedFiches(myUser $user, $limit = 10, $action = "execute", $sort = array())
   {
     $query = FicheTable::getInstance()->createQuery('fiche')
             ->where('fiche.category_id = ?', $this->getPrimaryKey())
@@ -40,6 +40,10 @@ class Category extends BaseCategory
             ->andWhere('fiche.deleted_at IS NULL')
             ->andWhere('fiche.parent_number IS NULL')
             ->orderBy('fiche.fiche_date DESC');
+    if($sort)
+    {
+      $query->addOrderBy($sort[0]." ".$sort[1]);
+    }
     if($limit)
     {
       $query->limit($limit);
