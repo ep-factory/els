@@ -143,8 +143,9 @@ class Fiche extends BaseFiche
               ->setFinishedDate(date('Y-m-d H:i:s'))
               ->setFinishedAuthorId(sfContext::getInstance()->getUser()->getGuardUser()->getPrimaryKey())
               ->save();
+      return $this;
     }
-    return $this;
+    return false;
   }
 
   /**
