@@ -38,11 +38,21 @@ class Category extends BaseCategory
             ->innerJoin('fiche.CaseCode case_code')
             ->innerJoin('fiche.Category category')
             ->andWhere('fiche.deleted_at IS NULL')
-            ->andWhere('fiche.parent_number IS NULL')
-            ->orderBy('fiche.fiche_date DESC');
+            ->andWhere('fiche.parent_number IS NULL');
     if($sort)
     {
-      $query->addOrderBy($sort[0]." ".$sort[1]);
+      if(count($sort) && $sort[0] && $sort[0])
+      {
+        $query->addOrderBy($sort[0]." ".$sort[1]);
+      }
+      else
+      {
+        $query->addOrderBy('fiche.fiche_date DESC');
+      }
+    }
+    else
+    {
+      $query->addOrderBy('fiche.fiche_date DESC');
     }
     if($limit)
     {

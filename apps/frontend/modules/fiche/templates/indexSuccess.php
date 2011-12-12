@@ -56,7 +56,7 @@
         <table width="100%">
           <thead>
             <tr>
-              <?php include_partial('fiche/list_th_tabular', array('sort' => $sort)) ?>
+              <?php include_partial('fiche/list_th_tabular', array('sort' => count($sort) && $sort[0] ? $sort : array('fiche_date', 'DESC'))) ?>
             </tr>
           </thead>
           <tfoot>
