@@ -248,6 +248,10 @@ EOF
     if(isset($this->widgetSchema['elements_list'])) {
       $this->widgetSchema['elements_list']->setDefault($this->getObject()->getElements());
     }
+    if($this->getUser()->getAttribute('enable_keyboard', false) && isset($this->widgetSchema['demandeur_id']))
+    {
+      $this->setDefault('demandeur_id', $this->getObject()->getDemandeur()->getName());
+    }
   }
 
   /**
