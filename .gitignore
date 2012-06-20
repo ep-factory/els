@@ -21,3 +21,4 @@
 /web/sfAdminTemplatePlugin
 /web/uploads/*
 /apps/frontend/config/app.yml
+.DS_Store

@@ -30,6 +30,7 @@ class Fiche extends BaseFiche
       }
       $this->setPpcId($ppc->getPrimaryKey());
     }
+    //die("<pre>".print_r($this->toArray(), true)."</pre>");
   }
 
   /**
